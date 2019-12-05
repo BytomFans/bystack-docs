@@ -29,7 +29,7 @@ git clone https://github.com/BytomFans/java-docs.git
 1. 使用命令 `yarn start` or `npm start`运行网站.
 2. 如果没有自动打开本地的示例网站，请在 [http://localhost:3000](http://localhost:3000/) 访问站点.
 
-![](./img/example.png)
+![](./docs/img/example.png)
 
 ### 概述
 
