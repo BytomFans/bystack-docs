@@ -10,59 +10,59 @@ Blockmeta是比原链的区块浏览器，用于查看区块、交易、地址�
 
 ##### 搜索
 
-![image.png](./img/71.png)
+![image.png](img/71.png)
 
 可输入区块高度、地址、交易哈希来搜索详细信息。
 
 ##### 区块
 
-![image.png](./img/72.png)
+![image.png](img/72.png)
 
 区块页面主要展示区块详细信息，既包含区块高度、交易时间、区块哈希等区块基本信息，还展示了区块挖矿地址、难度等挖矿信息，同时也包含了该区块相关所有交易信息（可通过点击交易记录面板右侧展开按钮查看当前交易详情）。
 
 ##### 地址
 
-![image.png](./img/73.png)
+![image.png](img/73.png)
 
 地址页面主要展示该地址余额、总计接收、发送的比原数目，以及该地址交易总数和交易详情。
 
 ##### 交易
 
-![image.png](./img/74.png)
+![image.png](img/74.png)
 
 交易页面主要展示该交易所属区块高度、交易时间、数据大小、确认数、交易状态等信息。
 
 ##### 资产
 
-![image.png](./img/75.png)
+![image.png](img/75.png)
 
 资产页面主要展示在比原链上创建的新资产的资产ID、发行总量、地址数、创建时间等信息。
 
 ##### 节点
 
-![image.png](./img/76.png)
+![image.png](img/76.png)
 
 节点页面主要展示在比原链出块间隔、交易数、节点总数、节点活跃情况、区块高度等信息。
 
 ##### 矿池份额
 
-![image.png](./img/77.png)
+![image.png](img/77.png)
 
 矿池份额页面主要展示在比原链矿池占比情况、矿池份额走势等信息。
 
 ##### 历史参数
 
-![image.png](./img/78.jpeg)
+![image.png](img/78.jpeg)
 
 历史参数页面主要展示在比原链产出曲线、价格曲线、Github Star曲线、交易数曲线等数据。
 
 ##### Vapor浏览器
 
-![image.png](./img/79.png)
+![image.png](img/79.png)
 
 #### API工具
 
-![image.png](./img/80.png)
+![image.png](img/80.png)
 
 网址：[https://apidoc.blockmeta.com/#!//](https://apidoc.blockmeta.com/#!//)
 
