@@ -8,7 +8,7 @@ sidebar_label: BBFT共识
 
 共识过程示意(假设一个由7个节点组成的单层拓扑共识网络）:
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/2.png)
+![2.png](https://i.loli.net/2019/12/06/eQnYAjf7lkK8G91.png)
 
 **S0,S1：** 超级共识节点。选举可以采用网络拓扑延迟和资产抵押结合的方式，目的是在减少节点作恶的可能性的同时尽量减少网络的整体延时。作为普通节点和领导节点之间的中继，对信息做整合和转发。
 **L：** 领导节点。选举可以采用普通的轮询方式在超级节点中选出。

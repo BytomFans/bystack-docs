@@ -8,14 +8,14 @@ sidebar_label: Bapp开发流程
 
 1. 打开Google浏览器的应用商店，搜索Bystore
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/62.png)
+![image.png](https://ibb.co/CvpVk0x)
 
 下载链接：[http://t.cn/E6cFFwb](http://t.cn/E6cFFwb)
 
 
 2. 然后点击添加到Chrome,就可以添加到我们的：
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/43.png)
+![image.png](https://ibb.co/C95MXZZ)
 
 
 3. 使用google插件钱包
@@ -32,15 +32,15 @@ Dapp demo是一个基于比原的储蓄合约，该demo可以进行资产的锁�
 
 根据源码里面的readme.md文件进行搭建dapp,然后我们在本地打开[http://127.0.0.1:8080](http://127.0.0.1:8080) 后就可以看该dapp应用。然后我们点开我们的账户如下图：
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/64.png)
+![64.png](https://i.loli.net/2019/12/06/RUtzPhZESiQxHNM.png)
 
 点击saving，我们看到的是储蓄资产界面，用户可以设置资产的金额，并储蓄资产
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/65.png)
+![image.png](https://ibb.co/5R6fPnw)
 
 下图是我们收益的页面，我们可以看到自己储蓄的收益，如果是到期的话我们可以提出自己的收益。
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/66.png)
+![image.png](https://ibb.co/GcbZS1w)
 
 
 ##### Dapp调起Google插件的实现
@@ -48,19 +48,19 @@ Dapp demo是一个基于比原的储蓄合约，该demo可以进行资产的锁�
 
 ###### 初始化注入
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/67.jpeg)
+![image.png](https://ibb.co/yS1z4YQ)
 
 
 ###### 检查插件，账户
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/68.png)
+![image.png](https://ibb.co/Hq58Mxp)
 
 
 ###### 调交易接口
 
 下图是发送交易的API接口，接口的具体文档参考:[https://github.com/Bytom/Bystore/wiki/API-reference](https://github.com/Bytom/Bystore/wiki/API-reference)。还有其他的API接口都在该文档里面。监听事件接口bytom.request(eventName, options)。
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/69.jpeg)
+![image.png](https://ibb.co/HCz873c)
 
 
 ##### 后端服务器接口
@@ -82,7 +82,7 @@ step2: 如果需要自己搭建BlockCenter后端服务器，参考项目说明�
 
 step3: 开发智能合约，并编译。然后将编译后的合约参数配置在dapp的配置文件，如下图：（全红部分是测试网合约配置参数）
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/70.png)
+![image.png](https://ibb.co/gmh6FMb)
 
 step4: 调用Chrome插件钱包。
 

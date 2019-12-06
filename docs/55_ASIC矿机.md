@@ -19,7 +19,7 @@ Bitmain B7
 
 **查看运行状态**
 
-![image.png](https://raw.githubusercontent.com/BytomFans/bystack-docs/gh-pages/img/59.png)
+![image.png](59.png)
 
 详细教程：[B7矿机使用说明](https://support.bitmain.com/hc/zh-cn/articles/360020739874-B7%E7%9F%BF%E6%9C%BA%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)
 
