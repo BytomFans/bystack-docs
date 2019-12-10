@@ -74,6 +74,7 @@
         "Blockcenter": [
             "docs_38",
             "docs_39",
+            "docs_63",
             "docs_40"
         ],
         "开发工具": [
@@ -100,7 +101,8 @@
             "docs_53",
             "docs_54",
             "docs_55",
-            "docs_56"
+            "docs_56",
+            "docs_65"
         ],
         "客户端下载": [
             "docs_57",
@@ -110,7 +112,8 @@
              "docs_59"  
         ],
         "FAQ": [      
-             "docs_60"
+             "docs_60",
+             "docs_64"
         ]
     }
 }
