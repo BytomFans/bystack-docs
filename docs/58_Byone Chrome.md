@@ -8,19 +8,14 @@ Byone是一款基于Bystack的桌面端数字钱包，支持Chrome等桌面端�
 
 **打开Google浏览器的应用商店，搜索Bystore**
 
-![image.png](https://ibb.co/CvpVk0x)
+![image.png](https://i.ibb.co/VD0M7BX/62.png)
 
 下载链接：[http://t.cn/E6cFFwb](http://t.cn/E6cFFwb)
 
 
 **然后点击添加到Chrome,就可以添加到我们的应用中心：**
 
-![image.png](https://ibb.co/bHFfMt4)
-
-
-**注册使用google插件钱包**
-
-![image.png](https://ibb.co/NC7Zw6W)
+![image.png](https://i.ibb.co/7gQ9dh3/63.png)
 
 
 

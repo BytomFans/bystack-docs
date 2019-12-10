@@ -78,7 +78,7 @@ contract contract_name(...) locks valueAmount of valueAsset {
 
 比原链`DAPP`主要由前端和后端两部分组成：`DAPP`前端负责的功能包括页面的展示、与插件钱包的连接、以及与后端的交互；`DAPP`后端需要根据合约的实际情况做不同的业务逻辑处理，但是都需要包含同步合约交易和`UTXO`信息等功能。因此，比原`DAPP`的总体框架模型大致如下：
 
-![dapp_frame.png](https://cdn.nlark.com/yuque/0/2019/png/439737/1568100945321-0cb3ebdf-14f2-4052-aa72-d8fa31f56f6f.png#align=left&display=inline&height=963&name=dapp_frame.png&originHeight=963&originWidth=1127&search=&size=138658&status=done&width=1127)
+![dapp_frame.png](https://i.ibb.co/BrDjKKH/1568100945321-0cb3ebdf-14f2-4052-aa72-d8fa31f56f6f.png)
 
 #### 4. DAPP前端
 

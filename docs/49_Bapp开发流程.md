@@ -8,14 +8,14 @@ sidebar_label: Bapp开发流程
 
 1. 打开Google浏览器的应用商店，搜索Bystore
 
-![image.png](https://ibb.co/CvpVk0x)
+![image.png](https://i.ibb.co/jG93c47/62.png)
 
 下载链接：[http://t.cn/E6cFFwb](http://t.cn/E6cFFwb)
 
 
 2. 然后点击添加到Chrome,就可以添加到我们的：
 
-![image.png](https://ibb.co/C95MXZZ)
+![image.png](https://i.ibb.co/4SZYDGG/43.png)
 
 
 3. 使用google插件钱包
@@ -36,11 +36,11 @@ Dapp demo是一个基于比原的储蓄合约，该demo可以进行资产的锁�
 
 点击saving，我们看到的是储蓄资产界面，用户可以设置资产的金额，并储蓄资产
 
-![image.png](https://ibb.co/5R6fPnw)
+![image.png](https://i.ibb.co/BCtS9rF/65.png)
 
 下图是我们收益的页面，我们可以看到自己储蓄的收益，如果是到期的话我们可以提出自己的收益。
 
-![image.png](https://ibb.co/GcbZS1w)
+![image.png](https://i.ibb.co/WgYrJd9/66.png)
 
 
 ##### Dapp调起Google插件的实现
@@ -48,19 +48,19 @@ Dapp demo是一个基于比原的储蓄合约，该demo可以进行资产的锁�
 
 ###### 初始化注入
 
-![image.png](https://ibb.co/yS1z4YQ)
+![image.png](https://i.ibb.co/FVMQH0D/67.jpg)
 
 
 ###### 检查插件，账户
 
-![image.png](https://ibb.co/Hq58Mxp)
+![image.png](https://i.ibb.co/L1V7qJh/68.png)
 
 
 ###### 调交易接口
 
 下图是发送交易的API接口，接口的具体文档参考:[https://github.com/Bytom/Bystore/wiki/API-reference](https://github.com/Bytom/Bystore/wiki/API-reference)。还有其他的API接口都在该文档里面。监听事件接口bytom.request(eventName, options)。
 
-![image.png](https://ibb.co/HCz873c)
+![image.png](https://i.ibb.co/DYC24TB/69.jpg)
 
 
 ##### 后端服务器接口
@@ -82,7 +82,7 @@ step2: 如果需要自己搭建BlockCenter后端服务器，参考项目说明�
 
 step3: 开发智能合约，并编译。然后将编译后的合约参数配置在dapp的配置文件，如下图：（全红部分是测试网合约配置参数）
 
-![image.png](https://ibb.co/gmh6FMb)
+![image.png](https://i.ibb.co/XjMVkZf/70.png)
 
 step4: 调用Chrome插件钱包。
 
