@@ -1,5 +1,5 @@
 # BytomJava.github.io
-此文档介绍了包含[bytom java sdk](<https://github.com/Bytom/bytom-java-sdk>)提供支持的网站配置和文档。
+此文档介绍了包含[bytom docs](https://github.com/BytomFans/bystack-docs)提供支持的网站配置和文档。
 
 ## 入门
 
@@ -14,7 +14,7 @@
 3. 在github上clone项目到本地文件夹，项目中包含两个文件夹： `docs` and `website`.
 
 ```bash
-git clone https://github.com/BytomFans/java-docs.git
+git clone https://github.com/BytomFans/bystack-docs.git
 ```
 
 ### 安装
