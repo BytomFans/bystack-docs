@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>BApp开发框架 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="从目前已经发布的`DAPP`来看，`DAPP`架构大致可以分成3种类型：插件钱包模式、全节点钱包模式和兼容模式。"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="BApp开发框架 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="从目前已经发布的`DAPP`来看，`DAPP`架构大致可以分成3种类型：插件钱包模式、全节点钱包模式和兼容模式。"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Bapp开发</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">BApp开发框架</h1></header><article><div><span><p>从目前已经发布的<code>DAPP</code>来看，<code>DAPP</code>架构大致可以分成3种类型：插件钱包模式、全节点钱包模式和兼容模式。</p>
+<ul>
+<li>插件钱包模式是借助封装了钱包的浏览器插件通过<code>RPC</code>协议与区块链节点通信，插件在运行时会将<code>Web3</code>框架注入到<code>DAPP</code>前端页面中，然后<code>DApp</code>通过<code>Web3</code>来与区块链节点通信。</li>
+<li>全节点钱包模式需要项目方同步并持有一个区块链节点，并对外提供一个浏览器环境与用户进行交互。</li>
+<li>兼容模式可以在插件钱包和全节点钱包下同时使用，即上述两种方式可以自由切换，安全性能相对较高。</li>
+</ul>
+<p>比原链<code>DAPP</code>的架构模式跟账户模型<code>DAPP</code>的插件钱包模式有些相似，都是由<code>DAPP</code>前端、插件钱包和合约程序共同组成，其区别在于账户模型的插件钱包是直接连接区块链节点，而比原链插件钱包连接的是比原的去中心化钱包服务器<code>blockcenter</code>，该服务器主要是为了管理插件钱包的相关信息。此外，比原链是<code>UTXO</code>模型的区块链系统，合约程序存在于无状态的<code>UTXO</code>中，如果要实现这样一个具体的<code>DAPP</code>，就需要在前端和后端多做一些逻辑的处理。</p>
+<p>比原链DAPP开发流程具体如下：</p>
+<h4><a class="anchor" aria-hidden="true" id="1-编写、编译并实例化智能合约"></a><a href="#1-编写、编译并实例化智能合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 编写、编译并实例化智能合约</h4>
+<p><strong>编写智能合约</strong></p>
+<p>比原链的智能合约是由<code>Equity</code>语言编写的，使用<code>Equity</code>语言可以实现许多典型的金融模型案例。<code>Equity</code>智能合约模板结构如下：</p>
+<pre><code class="hljs">contract contract_name(<span class="hljs-params">...</span>) locks valueAmount of valueAsset {
+  clause clause_name(<span class="hljs-params">...</span>) {
+    <span class="hljs-params">...</span>
+    lock/unlock <span class="hljs-params">...</span>
+  }
+  <span class="hljs-params">...</span>
+}
+</code></pre>
+<p><code>Equity</code>语法结构简单，语句意思明确，编写比原智能合约可以参考<a href="https://docs.bytom.io/mydoc_smart_contract_overview.cn.html"><code>Equity</code>合约介绍</a>，文档中对<code>Equity</code>语言的语法和编译方法都做了详细的介绍。此外，文档还对一些典型的<a href="https://docs.bytom.io/mydoc_contract_template.cn.html">模板合约</a>进行了介绍，开发者可以进行参考。</p>
+<p><strong>编译并实例化合约</strong></p>
+<p>编译合约目前支持两种方式：一种是使用<code>Equity</code>编译工具，另一种是调用比原链中编译合约的<code>RPC</code>接口<code>compile</code>; 而合约实例化是为了将合约脚本按照用户设定的参数进行锁定，编译并实例化合约可以参考<a href="https://docs.bytom.io/mydoc_smart_contract_build.cn.html">编译并实例化合约</a>的上半部分说明，该文档不仅介绍了合约的参数构造说明，还对编译合约的步骤进行详细说明。而编译器以及相关工具位于<code>github</code>项目<a href="https://github.com/Bytom/equity"><code>Equity</code></a>中，用户可以下载源代码并编译使用。</p>
+<p>工具编译和实例化示例如下：</p>
+<pre><code class="hljs css language-sh">// compile
+./equity [contract_name] --bin
+
+// instance
+./equity [contract_name] --instance [arguments ...]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="2-部署合约"></a><a href="#2-部署合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 部署合约</h4>
+<p>部署合约即发送合约交易，调用比原链的<code>build-transaction</code>接口将指定数量的资产发送到合约<code>program</code>中，只需将输出<code>output</code>中接收方<code>control_program</code>设置为指定合约即可。用户可以参考<a href="https://docs.bytom.io/mydoc_smart_contract_build.cn.html">合约交易说明</a>中的锁定合约章节，交易的构造按照文档中介绍进行参考即可。如果合约交易发送成功，并且交易已经成功上链，便可以通过调用<code>API</code>接口<code>list-unspent-outputs</code>来查找该合约的<code>UTXO</code>。</p>
+<p>部署合约交易模板大致如下：</p>
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-string">"actions"</span>: [
+    <span class="hljs-comment">// inputs</span>
+    {
+    <span class="hljs-comment">// btm fee</span>
+    },
+    {
+    amount, asset, spend_account
+    <span class="hljs-comment">// spend user asset</span>
+    },
+
+    <span class="hljs-comment">// outputs</span>
+    {
+    amount, asset, contract_program
+    <span class="hljs-comment">// receive contract program with instantiated result</span>
+    }
+  ],
+  ...
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="3-搭建dapp架构"></a><a href="#3-搭建dapp架构" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 搭建DAPP架构</h4>
+<p>比原链<code>DAPP</code>主要由前端和后端两部分组成：<code>DAPP</code>前端负责的功能包括页面的展示、与插件钱包的连接、以及与后端的交互；<code>DAPP</code>后端需要根据合约的实际情况做不同的业务逻辑处理，但是都需要包含同步合约交易和<code>UTXO</code>信息等功能。因此，比原<code>DAPP</code>的总体框架模型大致如下：</p>
+<p><img src="https://i.ibb.co/BrDjKKH/1568100945321-0cb3ebdf-14f2-4052-aa72-d8fa31f56f6f.png" alt="dapp_frame.png"></p>
+<h4><a class="anchor" aria-hidden="true" id="4-dapp前端"></a><a href="#4-dapp前端" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. DAPP前端</h4>
+<p><code>DAPP</code>前端除了页面展示之外，还包含三个重要的业务模块：第一个是与插件钱包的交互，第二个是对输入合约参数进行验证逻辑的处理，第三个是与后端服务器的交互。插件钱包是用户跟区块链节点服务器通信的窗口，比原的插件钱包除了与后台服务器进行交互之外，还包含一些本地业务逻辑处理的接口<code>API</code>，具体内容可以参考一下<a href="https://github.com/Bytom/Bystore/wiki/Dapp-Developer-Guide">DAPP开发者向导</a>。由于比原链是基于<code>UTXO</code>模型的区块链系统，交易是由多输入和多输出构成的结构，并且交易输入或输出的位置也需要按照顺序来排列，因此开发<code>DAPP</code>需要前端处理一些构建交易的逻辑。除此之外，合约中的<code>lock-unlock</code>语句中涉及到数量的计算需要根据抽象语法树来进行预计算，计算的结果将用于构建交易，而<code>verify</code>、<code>if-else</code>等其他语句类型也需要进行相关的预校验，从而防止用户在执行合约的时候报错。</p>
+<p>从功能层面来说，前端主要包含页面的设计、插件的调用、合约交易逻辑的处理、后端服务器的交互等。接下来对这几个重要的部分展开说明：</p>
+<ul>
+<li>前端页面的设计主要是网页界面的设计，这个部分开发者可以自己的喜好来进行设计</li>
+<li>插件钱包已经进行了结构化的封装，并且提供了外部接口给<code>DAPP</code>开发者调用，开发者只需要将插件的参数按照规则进行填充，具体请参考<a href="https://github.com/Bytom/Bystore/wiki/Dapp-Developer-Guide">DAPP开发者向导</a></li>
+<li>比原链的合约交易是多输入多输出的交易结构，前端需要进行一些预判断逻辑的处理，然后再选择合适的合约交易模板结构。</li>
+<li>DAPP的插件连接的是去中心化的<code>blockcenter</code>服务器，<code>blockcenter</code>从比原节点服务器上同步所有区块信息和交易信息，该部分<code>RPC</code>调用在插件钱包层进行了高度的封装，用户只需按照<code>API</code>接口调用即可。除此之外，需要开发者搭建一个后端服务器，主要用于处理<code>DAPP</code>的业务逻辑，同时实时同步合约交易和<code>UTXO</code>等状态信息。</li>
+</ul>
+<p>前端逻辑处理流程大致如下：</p>
+<ul>
+<li>调用插件，比原的<code>chrome</code>插件源码位于<a href="https://github.com/Bytom/Bytom-JS-SDK">Bytom-JS-SDK</a>，开发比原<code>DAPP</code>时调用插件的说明可以参考<a href="https://github.com/Bytom/Bystore/wiki/Dapp-Developer-Guide">Dapp Developer Guide</a>，其网络配置如下：</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'load'</span>, <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span>.bytom !== <span class="hljs-string">'undefined'</span>) {
+    <span class="hljs-keyword">let</span> networks = {
+        <span class="hljs-attr">solonet</span>: ... <span class="hljs-comment">// solonet bycoin url </span>
+        <span class="hljs-attr">testnet</span>: ... <span class="hljs-comment">// testnet bycoin url </span>
+        <span class="hljs-attr">mainnet</span>: ... <span class="hljs-comment">// mainnet bycoin url </span>
+    };
+
+    ...
+
+    startApp();
+});
+</code></pre>
+<ul>
+<li>配置合约参数，可以采用文件配置的方式，该步骤是为了让前端得到需要用到的一些已经固定化的合约参数，其前端配置文件为<a href="https://github.com/Bytom/Bytom-Dapp-Demo/blob/master/contracts/configure.json.js"><code>configure.json.js</code></a>，其示例模型如下:</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"solonet"</span>: {
+        ...         <span class="hljs-comment">// contract arguments</span>
+        <span class="hljs-string">"gas"</span>: <span class="hljs-number">0.4</span>  <span class="hljs-comment">// btm fee</span>
+    },
+    <span class="hljs-string">"testnet"</span>:{
+        ...
+    },
+    <span class="hljs-string">"mainnet"</span>:{
+        ...
+    }
+}
+</code></pre>
+<ul>
+<li>前端预计算处理，如果合约中包含<code>lock-unlock</code>语句，并且<code>Amount</code>是一个数值表达式，那么前端来提取计算表达式并进行相应的预计算。此外，前端还需要预判下所有可验证的<code>verify</code>语句，从而判定交易是否可行，因为一旦前端对这些验证失败，合约将必然验证失败。此外，如果<code>define</code>或<code>assign</code>语句涉及的变量，前端也需预计算这些变量的值。</li>
+<li>构建合约交易模板，由于解锁合约是解锁<code>lock</code>语句条件，构造交易需要根据<code>lock</code>语句或<code>unlock</code>语句来进行变换。解锁合约交易是由<code>inputs</code>和<code>outputs</code>构成，交易的第一个<code>input</code>输入一般都是是固定的，即合约<code>UTXO</code>的哈希值，除此之外，其他输入输出都需要根据<code>DAPP</code>中的实际合约来进行变更，其模型大致如下：</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> input = []
+input.push(spendUTXOAction(utxohash))
+... <span class="hljs-comment">// other input</span>
+
+<span class="hljs-keyword">const</span> output = []
+output.push(controlProgramAction(amount, asset, program))
+... <span class="hljs-comment">// other output</span>
+</code></pre>
+<ul>
+<li>启动前端服务</li>
+</ul>
+<p>编译前端命令如下：</p>
+<pre><code class="hljs css language-sh">npm run build
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>启动之前需要先启动<code>DAPP</code>后端服务器，然后再启动前端服务，其前端启动命令如下：</p>
+<pre><code class="hljs css language-sh">npm start
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="5dapp后端"></a><a href="#5dapp后端" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.DAPP后端</h4>
+<p><code>DAPP</code>后端主要负责根据合约实现对应的业务应用，同时提供给前端调用的应用服务接口，并且实时同步合约交易和<code>UTXO</code>等状态信息。<code>blockcenter</code>服务器是比原链的去中心化钱包服务器，管理着所有的区块、交易和<code>UTXO</code>等信息，<code>DAPP</code>后端向它定时请求并保持状态的同步更新，比原官方插件钱包默认连接的就是该服务器。此外，<code>DAPP</code>开发者也可以根据应用需求搭建自己的去中心化钱包服务器以及相关的钱包插件。<code>DAPP</code>后端业务模型是多变的，一般向<code>blockcenter</code>同步合约交易和<code>UTXO</code>等状态信息是共同必备的操作，除此之外，<code>DAPP</code>的业务模型、数据库模型、性能等都需要根据实际情况来进行设计。</p>
+<p><code>DAPP</code>后端服务器架构可以参考一下<a href="https://github.com/oysheng/bufferserver">储蓄分红DAPP后端服务器bufferserver</a>的源代码及其说明。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_62"><span class="arrow-prev">← </span><span>Bytom Spanner</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_45"><span>BApp案例</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

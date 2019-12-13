@@ -1,0 +1,1574 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>合约模版 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 典型合约模板解析"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="合约模版 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### 典型合约模板解析"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>智能合约</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">合约模版</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="典型合约模板解析"></a><a href="#典型合约模板解析" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>典型合约模板解析</h4>
+<p><strong>单签验证合约</strong></p>
+<p><code>LockWithPublicKey</code>源代码如下：</p>
+<pre><code class="hljs">contract <span class="hljs-constructor">LockWithPublicKey(<span class="hljs-params">publicKey</span>: PublicKey)</span> locks valueAmount <span class="hljs-keyword">of</span> valueAsset {
+    clause unlock<span class="hljs-constructor">WithSig(<span class="hljs-params">sig</span>: Signature)</span> {
+      verify check<span class="hljs-constructor">TxSig(<span class="hljs-params">publicKey</span>, <span class="hljs-params">sig</span>)</span>
+      unlock valueAmount <span class="hljs-keyword">of</span> valueAsset
+    }
+  }
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>ae7cac</code></li>
+<li>合约对应的指令码为：<code>TXSIGHASH SWAP CHECKSIG</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>publicKey</code> : e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>20e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c0</code></p>
+<p>对应的解锁合约的参数如下：</p>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+  }
+</code></pre>
+<p>对应的解锁合约交易模板示例如下：</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"913d941faf5a19501ab4c06747fe1eb38c5ae76b74d0f5af524fc40ee6bf7116"</span>,
+        <span class="hljs-attr">"arguments"</span>: [
+          {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+            <span class="hljs-attr">"raw_data"</span>: {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0100000000000000"</span>
+              ]
+            }
+          }
+        ],
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+      },
+      {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">100000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+        <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+      },
+      {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+      }
+    ],
+    <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+  }
+</code></pre>
+<h3></h3>
+<p><strong>多签验证合约</strong></p>
+<p><code>LockWithMultiSig</code>源代码如下：</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">contract</span> <span class="hljs-selector-tag">LockWithMultiSig</span>(<span class="hljs-attribute">publicKey1</span>: PublicKey,
+                          <span class="hljs-attribute">publicKey2</span>: PublicKey,
+                          <span class="hljs-attribute">publicKey3</span>: PublicKey) <span class="hljs-selector-tag">locks</span> <span class="hljs-selector-tag">valueAmount</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">valueAsset</span> {
+    <span class="hljs-selector-tag">clause</span> <span class="hljs-selector-tag">spend</span>(<span class="hljs-attribute">sig1</span>: Signature, <span class="hljs-attribute">sig2</span>: Signature) {
+      <span class="hljs-selector-tag">verify</span> <span class="hljs-selector-tag">checkTxMultiSig</span>([publicKey1, publicKey2, publicKey3], [sig1, sig2])
+      <span class="hljs-selector-tag">unlock</span> <span class="hljs-selector-tag">valueAmount</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">valueAsset</span>
+    }
+  }
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>537a547a526bae71557a536c7cad</code></li>
+<li>合约对应的指令码为：<code>3 ROLL 4 ROLL 2 TOALTSTACK TXSIGHASH 2ROT 5 ROLL 3 FROMALTSTACK SWAP CHECKMULTISIG</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>publicKey1</code> : e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78</li>
+<li><code>publicKey2</code> : 1f51c25decab2168835f1292a5432707ed94b90be8f5ec0d62aca1c6daa1ec55</li>
+<li><code>publicKey3</code> : e386c85178418fc72f8182111aa818ac736f3f7f1eee75ccdd7e5a057abe8fe0</li>
+</ul>
+<p>添加合约参数后的合约程序如下：（注意添加合约参数的顺序与虚拟机入栈的顺序是相反的）<code>20e386c85178418fc72f8182111aa818ac736f3f7f1eee75ccdd7e5a057abe8fe0201f51c25decab2168835f1292a5432707ed94b90be8f5ec0d62aca1c6daa1ec5520e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78740e537a547a526bae71557a536c7cad00c0</code></p>
+<p>对应的解锁合约的参数如下：（注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>sig1</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+  }
+</code></pre>
+<ul>
+<li><code>sig2</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"e0f470a91bcd99497b4804d76264a293e257ca906938a43e34a6a0e619bbf5f1606a2866eca2ceec9f93348c577b052f30bb7ef41b4b09fff28eb1004ca1f8d5"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010200000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+  }
+</code></pre>
+<p>对应的解锁合约交易模板示例如下：</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"bf6a3999cfbd25cef24ff1b19c6f2e0988de2e8ef3d40ed7c15402f2a7327bfa"</span>,
+        <span class="hljs-attr">"arguments"</span>: [
+          {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+            <span class="hljs-attr">"raw_data"</span>: {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0100000000000000"</span>
+              ]
+            }
+          },
+          {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+            <span class="hljs-attr">"raw_data"</span>: {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"e0f470a91bcd99497b4804d76264a293e257ca906938a43e34a6a0e619bbf5f1606a2866eca2ceec9f93348c577b052f30bb7ef41b4b09fff28eb1004ca1f8d5"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010200000000000000"</span>,
+                <span class="hljs-string">"0100000000000000"</span>
+              ]
+            }
+          }
+        ],
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+      },
+      {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">200000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+        <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+      },
+      {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+      }
+    ],
+    <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+  }
+</code></pre>
+<h3></h3>
+<p><strong>pubkey哈希校验和单签验证合约</strong></p>
+<p><code>LockWithPublicKeyHash</code>源代码如下：</p>
+<pre><code class="hljs">contract <span class="hljs-constructor">LockWithPublicKeyHash(<span class="hljs-params">pubKeyHash</span>: Hash)</span> locks valueAmount <span class="hljs-keyword">of</span> valueAsset {
+    clause spend(pubKey: PublicKey, <span class="hljs-keyword">sig</span>: Signature) {
+      verify sha3(pubKey)<span class="hljs-operator"> == </span>pubKeyHash
+      verify check<span class="hljs-constructor">TxSig(<span class="hljs-params">pubKey</span>, <span class="hljs-params">sig</span>)</span>
+      unlock valueAmount <span class="hljs-keyword">of</span> valueAsset
+    }
+  }
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>5279aa887cae7cac</code></li>
+<li>合约对应的指令码为：<code>2 PICK SHA3 EQUALVERIFY SWAP TXSIGHASH SWAP CHECKSIG</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>pubKeyHash</code> : b3f37834dfa74174e9f0d208302e77c637cfe66c3e37fe1e1574e416b3516e89</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>20b3f37834dfa74174e9f0d208302e77c637cfe66c3e37fe1e1574e416b3516e8974085279aa887cae7cac00c0</code></p>
+<p>对应的解锁合约的参数如下：（注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>pubKey</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"b3f37834dfa74174e9f0d208302e77c637cfe66c3e37fe1e1574e416b3516e89"</span>
+}
+  }
+</code></pre>
+<ul>
+<li><code>sig</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+  }
+</code></pre>
+<p>对应的解锁合约交易模板示例如下：</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"f98e0aa007dec76a827e924c25678e8c04b922fb28da9f5513a92787ac53725b"</span>,
+        <span class="hljs-attr">"arguments"</span>: [
+          {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+            <span class="hljs-attr">"raw_data"</span>: {
+              <span class="hljs-attr">"value"</span>: <span class="hljs-string">"b3f37834dfa74174e9f0d208302e77c637cfe66c3e37fe1e1574e416b3516e89"</span>
+            }
+          },
+          {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+            <span class="hljs-attr">"raw_data"</span>: {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0100000000000000"</span>
+              ]
+            }
+          }
+        ],
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+      },
+      {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">300000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+        <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+      },
+      {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+      }
+    ],
+    <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+  }
+</code></pre>
+<p><strong>字符串哈希校验合约</strong></p>
+<p><code>RevealPreimage</code>源代码如下：</p>
+<pre><code class="hljs"><span class="hljs-function">contract <span class="hljs-title">RevealPreimage</span><span class="hljs-params">(hash: Hash)</span> locks valueAmount of valueAsset </span>{
+    <span class="hljs-function">clause <span class="hljs-title">reveal</span><span class="hljs-params">(<span class="hljs-built_in">string</span>: <span class="hljs-keyword">String</span>)</span> </span>{
+      <span class="hljs-function">verify <span class="hljs-title">sha3</span><span class="hljs-params">(<span class="hljs-built_in">string</span>)</span> </span>== hash
+      unlock valueAmount of valueAsset
+    }
+  }
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>7caa87</code></li>
+<li>合约对应的指令码为：<code>SWAP SHA3 EQUAL</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>hash</code> : 22e829107201c6b975b1dc60b928117916285ceb4aa5c6d7b4b8cc48038083e0</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>2022e829107201c6b975b1dc60b928117916285ceb4aa5c6d7b4b8cc48038083e074037caa8700c0</code></p>
+<p>对应的解锁合约的参数如下：（注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>string</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"string"</span>
+}
+  }
+</code></pre>
+<ul>
+<li>或者 （<code>string</code>的16进制为<code>737472696e67</code>）</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"737472696e67"</span>
+}
+  }
+</code></pre>
+<p>对应的解锁合约交易模板示例如下：</p>
+<pre><code class="hljs">{
+    <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"actions"</span>: [
+      {
+        <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"35fe216572bea7d81effd2fed2db1bc257f977dfa492299742a0dee2a9ae1c8e"</span>,
+        <span class="hljs-attr">"arguments"</span>: [
+          {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+            <span class="hljs-attr">"raw_data"</span>: {
+              <span class="hljs-attr">"value"</span>: <span class="hljs-string">"string"</span>
+            }
+          }
+        ],
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+      },
+      {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">400000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+        <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+      },
+      {
+        <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+        <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+      }
+    ],
+    <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+  }
+</code></pre>
+<p><strong>币币交易合约</strong></p>
+<p><code>TradeOffer</code>源代码如下：</p>
+<pre><code class="hljs"><span class="hljs-attr">contract</span> <span class="hljs-string">TradeOffer(assetRequested: Asset,</span>
+                    <span class="hljs-attr">amountRequested</span>: <span class="hljs-string">Amount,</span>
+                    <span class="hljs-attr">seller</span>: <span class="hljs-string">Program,</span>
+                    <span class="hljs-attr">cancelKey</span>: <span class="hljs-string">PublicKey) locks valueAmount of valueAsset {</span>
+    <span class="hljs-attr">clause</span> <span class="hljs-string">trade() {</span>
+      <span class="hljs-attr">lock</span> <span class="hljs-string">amountRequested of assetRequested with seller</span>
+      <span class="hljs-attr">unlock</span> <span class="hljs-string">valueAmount of valueAsset</span>
+    <span class="hljs-attr">}</span>
+    <span class="hljs-attr">clause</span> <span class="hljs-string">cancel(sellerSig: Signature) {</span>
+      <span class="hljs-attr">verify</span> <span class="hljs-string">checkTxSig(cancelKey, sellerSig)</span>
+      <span class="hljs-attr">unlock</span> <span class="hljs-string">valueAmount of valueAsset</span>
+    <span class="hljs-attr">}</span>
+  <span class="hljs-attr">}</span>
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>547a6413000000007b7b51547ac1631a000000547a547aae7cac</code></li>
+<li>合约对应的指令码为：<code>4 ROLL JUMPIF:$cancel $trade FALSE ROT ROT 1 4 ROLL CHECKOUTPUT JUMP:$_end $cancel 4 ROLL 4 ROLL TXSIGHASH SWAP CHECKSIG $_end</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>assetRequested</code> : 1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22</li>
+<li><code>amountRequested</code> : 99</li>
+<li><code>seller</code> : 0014c5a5b563c4623018557fb299259542b8739f6bc2</li>
+<li><code>cancelKey</code> : e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>20e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78160014c5a5b563c4623018557fb299259542b8739f6bc20163201e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22741a547a6413000000007b7b51547ac1631a000000547a547aae7cac00c0</code></p>
+<p>对应的解锁合约的参数如下：（注意该合约包含两个<code>clause</code>，在解锁合约的时候任选其一即可，其中<code>clause_selector</code>指的是选择的解锁<code>clause</code>在合约中的位置（位置序号从<code>0</code>开始计算），此外还需注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>clause trade</code>解锁参数 :</li>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"00"</span>
+}
+}
+</code></pre>
+<ul>
+<li><code>lock</code>语句的交易<code>action</code>构造 : <code>lock amountRequested of assetRequested with seller</code>语句表示解锁账户需要支付对应的<code>amountRequested</code>数量的<code>assetRequested</code>资产到对应的接收对象<code>seller</code>，注意上述参数必须严格匹配，否则合约执行将失败.</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">99</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"2a1861ba3a5f7bbdb98392b33289465b462fe8e9d4b9c00f78cbcb1ac20fa93f"</span>,
+<span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557f299259542b8739f6bc2"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"control_program"</span>
+},
+{
+<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0G1JJF0KG0A06"</span>,
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">99</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"2a1861ba3a5f7bbdb98392b33289465b462fe8e9d4b9c00f78cbcb1ac20fa93f"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_account"</span>
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下：</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause trade</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"9f3a63d2f8352a6891dadd8a8337268873c84a852594f35b0b9815a4b9d56d86"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">99</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">99</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">500000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a1861ba3a5f7bbdb98392b33289465b462fe8e9d4b9c00f78cbcb1ac20fa93f"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li><code>clause cancel</code>解锁参数 :（注意参数顺序）</li>
+<li><code>sellerSig</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+}
+</code></pre>
+<ul>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"01"</span>
+}
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下:</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause cancel</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"9f3a63d2f8352a6891dadd8a8337268873c84a852594f35b0b9815a4b9d56d86"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+            <span class="hljs-attr">"derivation_path"</span>: [
+              <span class="hljs-string">"010100000000000000"</span>,
+              <span class="hljs-string">"0100000000000000"</span>
+            ]
+          }
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">500000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014929ec7d92f89d74716ba9591eaea588aa1867f75"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<h3></h3>
+<h4><a class="anchor" aria-hidden="true" id="第三方信任机构托管合约"></a><a href="#第三方信任机构托管合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>第三方信任机构托管合约</h4>
+<p><code>Escrow</code>源代码如下：</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">contract</span> <span class="hljs-selector-tag">Escrow</span>(<span class="hljs-attribute">agent</span>: PublicKey,
+                <span class="hljs-attribute">sender</span>: Program,
+                <span class="hljs-attribute">recipient</span>: Program) <span class="hljs-selector-tag">locks</span> <span class="hljs-selector-tag">valueAmount</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">valueAsset</span> {
+    <span class="hljs-selector-tag">clause</span> <span class="hljs-selector-tag">approve</span>(<span class="hljs-attribute">sig</span>: Signature) {
+      <span class="hljs-selector-tag">verify</span> <span class="hljs-selector-tag">checkTxSig</span>(agent, sig)
+      <span class="hljs-selector-tag">lock</span> <span class="hljs-selector-tag">valueAmount</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">valueAsset</span> <span class="hljs-selector-tag">with</span> <span class="hljs-selector-tag">recipient</span>
+    }
+    <span class="hljs-selector-tag">clause</span> <span class="hljs-selector-tag">reject</span>(<span class="hljs-attribute">sig</span>: Signature) {
+      <span class="hljs-selector-tag">verify</span> <span class="hljs-selector-tag">checkTxSig</span>(agent, sig)
+      <span class="hljs-selector-tag">lock</span> <span class="hljs-selector-tag">valueAmount</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">valueAsset</span> <span class="hljs-selector-tag">with</span> <span class="hljs-selector-tag">sender</span>
+    }
+  }
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>537a641a000000537a7cae7cac6900c3c251557ac16328000000537a7cae7cac6900c3c251547ac1</code></li>
+<li>合约对应的指令码为：<code>3 ROLL JUMPIF:$reject $approve 3 ROLL SWAP TXSIGHASH SWAP CHECKSIG VERIFY FALSE AMOUNT ASSET 1 5 ROLL CHECKOUTPUT JUMP:$_end $reject 3 ROLL SWAP TXSIGHASH SWAP CHECKSIG VERIFY FALSE AMOUNT ASSET 1 4 ROLL CHECKOUTPUT $_end</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>agent</code> : e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78</li>
+<li><code>sender</code> : 0014905df16bc248790676744bab063a1ae810803bd7</li>
+<li><code>recipient</code> : 0014929ec7d92f89d74716ba9591eaea588aa1867f75</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>160014929ec7d92f89d74716ba9591eaea588aa1867f75160014905df16bc248790676744bab063a1ae810803bd720e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787428537a641a000000537a7cae7cac6900c3c251557ac16328000000537a7cae7cac6900c3c251547ac100c0</code>
+对应的解锁合约的参数如下：（注意该合约包含两个<code>clause</code>，在解锁合约的时候任选其一即可，其中<code>clause_selector</code>指的是选择的解锁<code>clause</code>在合约中的位置（位置序号从<code>0</code>开始计算），此外还需注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>clause approve</code>解锁参数 :</li>
+<li><code>sellerSig</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+}
+</code></pre>
+<ul>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"00"</span>
+}
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下:（注意接收<code>control_program</code>字段必须为<code>recipient</code>，否则执行失败）</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause approve</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"15ee3368e77a0699eadaf99bbc096a48595ac975d05b10b198d902dde808e120"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+            <span class="hljs-attr">"derivation_path"</span>: [
+              <span class="hljs-string">"010100000000000000"</span>,
+              <span class="hljs-string">"0100000000000000"</span>
+            ]
+          }
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">600000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014929ec7d92f89d74716ba9591eaea588aa1867f75"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li><code>clause reject</code>解锁参数 :</li>
+</ul>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+  <span class="hljs-attr">"raw_data"</span>: {
+    <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+    <span class="hljs-attr">"derivation_path"</span>: [
+      <span class="hljs-string">"010100000000000000"</span>,
+      <span class="hljs-string">"0100000000000000"</span>
+    ]
+  }
+}
+</code></pre>
+<ul>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"01"</span>
+}
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下:（注意接收<code>control_program</code>字段必须为<code>sender</code>，否则执行失败）</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause reject</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"15ee3368e77a0699eadaf99bbc096a48595ac975d05b10b198d902dde808e120"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+            <span class="hljs-attr">"derivation_path"</span>: [
+              <span class="hljs-string">"010100000000000000"</span>,
+              <span class="hljs-string">"0100000000000000"</span>
+            ]
+          }
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">600000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<hr>
+<p><strong>抵押贷款合约</strong></p>
+<p><code>LoanCollateral</code>源代码如下：</p>
+<pre><code class="hljs"><span class="hljs-attr">contract</span> <span class="hljs-string">LoanCollateral(assetLoaned: Asset,</span>
+                        <span class="hljs-attr">amountLoaned</span>: <span class="hljs-string">Amount,</span>
+                        <span class="hljs-attr">blockHeight</span>: <span class="hljs-string">Integer,</span>
+                        <span class="hljs-attr">lender</span>: <span class="hljs-string">Program,</span>
+                        <span class="hljs-attr">borrower</span>: <span class="hljs-string">Program) locks valueAmount of valueAsset {</span>
+    <span class="hljs-attr">clause</span> <span class="hljs-string">repay() {</span>
+      <span class="hljs-attr">lock</span> <span class="hljs-string">amountLoaned of assetLoaned with lender</span>
+      <span class="hljs-attr">lock</span> <span class="hljs-string">valueAmount of valueAsset with borrower</span>
+    <span class="hljs-attr">}</span>
+    <span class="hljs-attr">clause</span> <span class="hljs-string">default() {</span>
+      <span class="hljs-attr">verify</span> <span class="hljs-string">above(blockHeight)</span>
+      <span class="hljs-attr">lock</span> <span class="hljs-string">valueAmount of valueAsset with lender</span>
+    <span class="hljs-attr">}</span>
+  <span class="hljs-attr">}</span>
+</code></pre>
+<ul>
+<li><p>合约编译之后的字节码为：<code>557a641b000000007b7b51557ac16951c3c251557ac163260000007bcd9f6900c3c251567ac1</code></p></li>
+<li><p>合约对应的指令码为：<code>5 ROLL JUMPIF:$default $repay FALSE ROT ROT 1 5 ROLL CHECKOUTPUT VERIFY 1 AMOUNT ASSET 1 5 ROLL CHECKOUTPUT JUMP:$_end $default ROT BLOCKHEIGHT LESSTHAN VERIFY FALSE AMOUNT ASSET 1 6 ROLL CHECKOUTPUT $_end</code></p></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>assetLoaned</code> : 1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22</li>
+<li><code>amountLoaned</code> : 88</li>
+<li><code>blockHeight</code> : 1920</li>
+<li><code>lender</code> : 0014905df16bc248790676744bab063a1ae810803bd7</li>
+<li><code>borrower</code> : 0014929ec7d92f89d74716ba9591eaea588aa1867f75</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>160014929ec7d92f89d74716ba9591eaea588aa1867f75160014905df16bc248790676744bab063a1ae810803bd70280070158201e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c227426557a641b000000007b7b51557ac16951c3c251557ac163260000007bcd9f6900c3c251567ac100c0</code></p>
+<p>对应的解锁合约的参数如下：（注意该合约包含两个<code>clause</code>，在解锁合约的时候任选其一即可，其中<code>clause_selector</code>指的是选择的解锁<code>clause</code>在合约中的位置（位置序号从<code>0</code>开始计算），此外还需注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>clause repay</code>解锁参数 :</li>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"00"</span>
+}
+}
+</code></pre>
+<ul>
+<li>连续两个<code>lock</code>语句的交易<code>action</code>构造 : <code>lock amountLoaned of assetLoaned with lender</code>语句表示解锁账户需要支付对应的<code>amountLoaned</code>数量的<code>assetLoaned</code>资产到对应的接收对象<code>lender</code>; <code>lock valueAmount of valueAsset with borrower</code>语句表示将合约锁定的<code>valueAmount</code>数量的<code>valueAsset</code>资产到对应的接收对象<code>borrower</code>。注意上述参数必须严格匹配，否则合约执行将失败.</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">88</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+<span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"control_program"</span>
+},
+{
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">700000000</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"2ee76aeaa110308fcdfb382fa02a4a35823d5a589ffcaddb23f11f8a1fae3302"</span>,
+<span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014929ec7d92f89d74716ba9591eaea588aa1867f75"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"control_program"</span>
+},
+{
+<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">88</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_account"</span>
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下：</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause repay</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"3cf74c303558b7343cfa20b32ccddfd8e66293ae1970f7612ca6cb9a006e76bc"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">88</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">700000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2ee76aeaa110308fcdfb382fa02a4a35823d5a589ffcaddb23f11f8a1fae3302"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014929ec7d92f89d74716ba9591eaea588aa1867f75"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">88</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li><code>clause default</code>解锁参数 :（注意参数顺序）</li>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"01"</span>
+}
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下:（注意接收<code>control_program</code>字段必须为<code>lender</code>，否则执行失败）</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause default</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"3cf74c303558b7343cfa20b32ccddfd8e66293ae1970f7612ca6cb9a006e76bc"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">700000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<h3></h3>
+<h4><a class="anchor" aria-hidden="true" id="看涨期权合约"></a><a href="#看涨期权合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>看涨期权合约</h4>
+<p><code>CallOption</code>源代码如下：</p>
+<pre><code class="hljs"><span class="hljs-attr">contract</span> <span class="hljs-string">CallOption(strikePrice: Amount,</span>
+                    <span class="hljs-attr">strikeCurrency</span>: <span class="hljs-string">Asset,</span>
+                    <span class="hljs-attr">seller</span>: <span class="hljs-string">Program,</span>
+                    <span class="hljs-attr">buyerKey</span>: <span class="hljs-string">PublicKey,</span>
+                    <span class="hljs-attr">blockHeight</span>: <span class="hljs-string">Integer) locks valueAmount of valueAsset {</span>
+    <span class="hljs-attr">clause</span> <span class="hljs-string">exercise(buyerSig: Signature) {</span>
+      <span class="hljs-attr">verify</span> <span class="hljs-string">below(blockHeight)</span>
+      <span class="hljs-attr">verify</span> <span class="hljs-string">checkTxSig(buyerKey, buyerSig)</span>
+      <span class="hljs-attr">lock</span> <span class="hljs-string">strikePrice of strikeCurrency with seller</span>
+      <span class="hljs-attr">unlock</span> <span class="hljs-string">valueAmount of valueAsset</span>
+    <span class="hljs-attr">}</span>
+    <span class="hljs-attr">clause</span> <span class="hljs-string">expire() {</span>
+      <span class="hljs-attr">verify</span> <span class="hljs-string">above(blockHeight)</span>
+      <span class="hljs-attr">lock</span> <span class="hljs-string">valueAmount of valueAsset with seller</span>
+    <span class="hljs-attr">}</span>
+  <span class="hljs-attr">}</span>
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>557a6420000000547acda069547a547aae7cac69007c7b51547ac1632c000000547acd9f6900c3c251567ac1</code></li>
+<li>合约对应的指令码为：<code>5 ROLL JUMPIF:$expire $exercise FALSE ROT ROT 1 5 ROLL CHECKOUTPUT VERIFY 1 AMOUNT ASSET 1 5 ROLL CHECKOUTPUT JUMP:$_end $expire ROT BLOCKHEIGHT LESSTHAN VERIFY FALSE AMOUNT ASSET 1 6 ROLL CHECKOUTPUT $_end</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>strikePrice</code> : 199</li>
+<li><code>strikeCurrency</code> : 1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22</li>
+<li><code>seller</code> : 0014905df16bc248790676744bab063a1ae810803bd7</li>
+<li><code>buyerKey</code> : e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78</li>
+<li><code>blockHeight</code> : 3096</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>02180c20e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78160014905df16bc248790676744bab063a1ae810803bd7201e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c2201c7742c557a6420000000547acda069547a547aae7cac69007c7b51547ac1632c000000547acd9f6900c3c251567ac100c0</code></p>
+<p>对应的解锁合约的参数如下：（注意该合约包含两个<code>clause</code>，在解锁合约的时候任选其一即可，其中<code>clause_selector</code>指的是选择的解锁<code>clause</code>在合约中的位置（位置序号从<code>0</code>开始计算），此外还需注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>clause exercise</code>解锁参数 :</li>
+<li><code>buyerSig</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+}
+</code></pre>
+<ul>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"00"</span>
+}
+}
+</code></pre>
+<ul>
+<li><code>lock</code>语句的交易<code>action</code>构造 : <code>lock strikePrice of strikeCurrency with seller</code>语句表示解锁账户需要支付对应的<code>strikePrice</code>数量的<code>strikeCurrency</code>资产到对应的接收对象<code>seller</code>，注意上述参数必须严格匹配，否则合约执行将失败.</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">199</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+<span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"control_program"</span>
+},
+{
+<span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+<span class="hljs-string">"amount"</span>: <span class="hljs-number">199</span>,
+<span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+<span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_account"</span>
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下：</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause exercise</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"7afa15ad39356a7e6dc363fba823146ecb0132967f067ddfa13494a34a984518"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+            <span class="hljs-attr">"derivation_path"</span>: [
+              <span class="hljs-string">"010100000000000000"</span>,
+              <span class="hljs-string">"0100000000000000"</span>
+            ]
+          }
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">199</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014c5a5b563c4623018557fb299259542b8739f6bc2"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">199</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">800000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a1861ba3a5f7bbdb98392b33289465b462fe8e9d4b9c00f78cbcb1ac20fa93f"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li><code>clause expire</code>解锁参数 :</li>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+}
+}
+</code></pre>
+<ul>
+<li>或</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"01"</span>
+}
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下:（注意接收<code>control_program</code>字段必须为<code>seller</code>，否则执行失败）</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause expire</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"7afa15ad39356a7e6dc363fba823146ecb0132967f067ddfa13494a34a984518"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">800000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<h3></h3>
+<h4><a class="anchor" aria-hidden="true" id="可修改价格的币币交易合约"></a><a href="#可修改价格的币币交易合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>可修改价格的币币交易合约</h4>
+<p><code>PriceChanger</code>源代码如下：</p>
+<pre><code class="hljs">contract <span class="hljs-constructor">PriceChanger(<span class="hljs-params">askAmount</span>: Amount, <span class="hljs-params">askAsset</span>: Asset, <span class="hljs-params">sellerKey</span>: PublicKey, <span class="hljs-params">sellerProg</span>: Program)</span> locks valueAmount <span class="hljs-keyword">of</span> valueAsset {
+    clause change<span class="hljs-constructor">Price(<span class="hljs-params">newAmount</span>: Amount, <span class="hljs-params">newAsset</span>: Asset, <span class="hljs-params">sig</span>: Signature)</span> {
+      verify check<span class="hljs-constructor">TxSig(<span class="hljs-params">sellerKey</span>, <span class="hljs-params">sig</span>)</span>
+      lock valueAmount <span class="hljs-keyword">of</span> valueAsset <span class="hljs-keyword">with</span> <span class="hljs-constructor">PriceChanger(<span class="hljs-params">newAmount</span>, <span class="hljs-params">newAsset</span>, <span class="hljs-params">sellerKey</span>, <span class="hljs-params">sellerProg</span>)</span>
+    }
+    clause redeem<span class="hljs-literal">()</span> {
+      lock askAmount <span class="hljs-keyword">of</span> askAsset <span class="hljs-keyword">with</span> sellerProg
+      unlock valueAmount <span class="hljs-keyword">of</span> valueAsset
+    }
+  }
+</code></pre>
+<ul>
+<li>合约编译之后的字节码为：<code>557a6432000000557a5479ae7cac6900c3c25100597a89587a89587a89587a89557a890274787e008901c07ec1633a000000007b537a51567ac1</code></li>
+<li>合约对应的指令码为：<code>5 05 ROLL JUMPIF:$redeem $changePrice 5 05 ROLL 4 04 PICK TXSIGHASH SWAP CHECKSIG VERIFY FALSE AMOUNT ASSET 1 01 FALSE 9 09 ROLL CATPUSHDATA 8 08 ROLL CATPUSHDATA 8 08 ROLL CATPUSHDATA 8 08 ROLL CATPUSHDATA 5 05 ROLL CATPUSHDATA DATA_2 7478 CAT FALSE CATPUSHDATA DATA_1 c0 CAT CHECKOUTPUT JUMP:$_end $redeem FALSE ROT 3 03 ROLL 1 01 6 06 ROLL CHECKOUTPUT $_end</code></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>askAmount</code> : 20000</li>
+<li><code>askAsset</code> : c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee</li>
+<li><code>sellerKey</code> : 055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf</li>
+<li><code>sellerProg</code> : 0014dedfd406c591aa221a047a260107f877da92fec5</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>160014dedfd406c591aa221a047a260107f877da92fec520055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf20c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee02204e3a557a6432000000557a5479ae7cac6900c3c25100597a89587a89587a89587a89557a890274787e008901c07ec1633a000000007b537a51567ac1747800c0</code></p>
+<p>对应的解锁合约的参数如下：（注意该合约包含两个<code>clause</code>，在解锁合约的时候任选其一即可，其中<code>clause_selector</code>指的是选择的解锁<code>clause</code>在合约中的位置（位置序号从<code>0</code>开始计算），此外还需注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>clause changePrice</code>解锁参数 :</li>
+<li><code>newAmount</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">10000</span>
+}
+}
+</code></pre>
+<ul>
+<li><code>newAsset</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"3addca837514d599c509aed802c0b7671838b363a298cbcb0acb06bc24076cf4"</span>
+}
+}
+</code></pre>
+<ul>
+<li><code>sig</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"a4d4f09a04371516d37e1d27f92c9cb41e4b1e7f62762cf23ed3904a9dfd2d794195862fffd00bf7ac373e5891c8d2eb660dc5ff9c040ec4e01f973bbfd31c23"</span>,
+  <span class="hljs-attr">"derivation_path"</span>: [
+    <span class="hljs-string">"010100000000000000"</span>,
+    <span class="hljs-string">"0100000000000000"</span>
+  ]
+}
+}
+</code></pre>
+<ul>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+}
+}
+</code></pre>
+<ul>
+<li><p>合约参数构造完成之后，需要对合约<code>lock</code>语句中接收对象进行指定。该合约中的接收对象是一个新的合约程序，<code>lock valueAmount of valueAsset with PriceChanger(newAmount, newAsset, sellerKey, sellerProg)</code>语句表示合约锁定的资产被重新锁定到合约对象中，因此需要构造实例化的合约程序作为接收对象。接收合约的参数如下：</p>
+<ul>
+<li><code>newAmount</code> : 10000</li>
+<li><code>newAsset</code> : 3addca837514d599c509aed802c0b7671838b363a298cbcb0acb06bc24076cf4</li>
+<li><code>sellerKey</code> : 055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf</li>
+<li><code>sellerProg</code> : 0014dedfd406c591aa221a047a260107f877da92fec5</li>
+</ul></li>
+<li><p>添加合约参数后的实例化合约程序如下：<code>160014dedfd406c591aa221a047a260107f877da92fec520055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf203addca837514d599c509aed802c0b7671838b363a298cbcb0acb06bc24076cf40210273a557a6432000000557a5479ae7cac6900c3c25100597a89587a89587a89587a89557a890274787e008901c07ec1633a000000007b537a51567ac1747800c0</code></p></li>
+</ul>
+<p>对应的解锁合约交易模板示例如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">// clause changePrice</span>
+{
+<span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+<span class="hljs-attr">"actions"</span>: [
+    {
+    <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"31feac2f482f48dd99117569a3148d1b84211d41b64a980dc9ec37bda922b0c8"</span>,
+    <span class="hljs-attr">"arguments"</span>: [
+        {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+        <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">10000</span>
+        }
+        },
+        {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+        <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-string">"3addca837514d599c509aed802c0b7671838b363a298cbcb0acb06bc24076cf4"</span>
+        }
+        },
+        {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+        <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"a4d4f09a04371516d37e1d27f92c9cb41e4b1e7f62762cf23ed3904a9dfd2d794195862fffd00bf7ac373e5891c8d2eb660dc5ff9c040ec4e01f973bbfd31c23"</span>,
+            <span class="hljs-attr">"derivation_path"</span>: [
+            <span class="hljs-string">"010100000000000000"</span>,
+            <span class="hljs-string">"0100000000000000"</span>
+            ]
+        }
+        },
+        {
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+        <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+        }
+        }
+    ],
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+    <span class="hljs-attr">"amount"</span>: <span class="hljs-number">900</span>,
+    <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a62180553e70131f668639116d6d1e29417537766b5244cbe49fa6b36c5d7b0"</span>,
+    <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"160014dedfd406c591aa221a047a260107f877da92fec520055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf203addca837514d599c509aed802c0b7671838b363a298cbcb0acb06bc24076cf40210273a557a6432000000557a5479ae7cac6900c3c25100597a89587a89587a89587a89557a890274787e008901c07ec1633a000000007b537a51567ac1747800c0"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+    <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0ILGLSTC00A02"</span>,
+    <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+    <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+],
+<span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+<span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li><code>clause redeem</code>解锁参数 :</li>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+}
+}
+</code></pre>
+<ul>
+<li>其对应的解锁合约交易模板示例如下:</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause redeem</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"31feac2f482f48dd99117569a3148d1b84211d41b64a980dc9ec37bda922b0c8"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014dedfd406c591aa221a047a260107f877da92fec5"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0JPC5DBOG0A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0JPC5DBOG0A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">900</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a62180553e70131f668639116d6d1e29417537766b5244cbe49fa6b36c5d7b0"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014bf54f5adbbd2dc11bffb50277b5a993cec75e924"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="可部分借贷的抵押贷款合约"></a><a href="#可部分借贷的抵押贷款合约" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>可部分借贷的抵押贷款合约</h4>
+<p><code>PartLoanCollateral</code>源代码如下：</p>
+<pre><code class="hljs">contract PartLoanCollateral(assetLoaned: Asset,
+                          amountLoaned: Amount,
+                          blockHeight: <span class="hljs-type">Integer</span>,
+                          lender: Program,
+                          borrower: Program) locks valueAmount <span class="hljs-keyword">of</span> valueAsset {
+    clause repay(amountPartLoaned: Amount) {
+      <span class="hljs-keyword">if</span> amountPartLoaned &gt; <span class="hljs-number">0</span> &amp;&amp; amountPartLoaned &lt; amountLoaned {
+        <span class="hljs-keyword">lock</span> amountPartLoaned <span class="hljs-keyword">of</span> assetLoaned <span class="hljs-keyword">with</span> lender
+        <span class="hljs-keyword">lock</span> valueAmount*amountPartLoaned/amountLoaned <span class="hljs-keyword">of</span> valueAsset <span class="hljs-keyword">with</span> borrower
+        <span class="hljs-keyword">lock</span> valueAmount-(valueAmount*amountPartLoaned/amountLoaned) <span class="hljs-keyword">of</span> valueAsset <span class="hljs-keyword">with</span> PartLoanCollateral(assetLoaned, amountLoaned-amountPartLoaned, blockHeight, lender, borrower)
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">lock</span> amountLoaned <span class="hljs-keyword">of</span> assetLoaned <span class="hljs-keyword">with</span> lender
+        <span class="hljs-keyword">lock</span> valueAmount <span class="hljs-keyword">of</span> valueAsset <span class="hljs-keyword">with</span> borrower
+      }
+    }
+    clause <span class="hljs-keyword">default</span>() {
+      verify above(blockHeight)
+      <span class="hljs-keyword">lock</span> valueAmount <span class="hljs-keyword">of</span> valueAsset <span class="hljs-keyword">with</span> lender
+    }
+  }
+</code></pre>
+<ul>
+<li><p>合约编译之后的字节码为：<code>567a6477000000567900a0577954799f9a916164630000000057795379515879c16951c3587995547996c2515979c16952c3767c59799555799694c251005a798959798958798957795c7994895679895579890274787e008901c07ec16963720000000070515879c16951c3c2515979c1696383000000537acd9f6900c3c251577ac1</code></p></li>
+<li><p>合约对应的指令码为：<code>6 06 ROLL JUMPIF:$default $repay 6 06 PICK FALSE GREATERTHAN 7 07 PICK 4 04 PICK LESSTHAN BOOLAND NOT NOP JUMPIF 63000000 FALSE 7 07 PICK 3 03 PICK 1 01 8 08 PICK CHECKOUTPUT VERIFY 1 01 AMOUNT 8 08 PICK MUL 4 04 PICK DIV ASSET 1 01 9 09 PICK CHECKOUTPUT VERIFY 2 02 AMOUNT DUP SWAP 9 09 PICK MUL 5 05 PICK DIV SUB ASSET 1 01 FALSE 10 0a PICK CATPUSHDATA 9 09 PICK CATPUSHDATA 8 08 PICK CATPUSHDATA 7 07 PICK 12 0c PICK SUB CATPUSHDATA 6 06 PICK CATPUSHDATA 5 05 PICK CATPUSHDATA DATA_2 7478 CAT FALSE CATPUSHDATA DATA_1 c0 CAT CHECKOUTPUT VERIFY JUMP 72000000 FALSE 2OVER 1 01 8 08 PICK CHECKOUTPUT VERIFY 1 01 AMOUNT ASSET 1 01 9 09 PICK CHECKOUTPUT VERIFY JUMP:$_end $default 3 03 ROLL BLOCKHEIGHT LESSTHAN VERIFY FALSE AMOUNT ASSET 1 01 7 07 ROLL CHECKOUTPUT $_end</code></p></li>
+</ul>
+<p>假如合约参数如下：</p>
+<ul>
+<li><code>assetLoaned</code> : c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee</li>
+<li><code>amountLoaned</code> : 8000</li>
+<li><code>blockHeight</code> : 1900</li>
+<li><code>lender</code> : 0014dedfd406c591aa221a047a260107f877da92fec5</li>
+<li><code>borrower</code> : 0014bf54f5adbbd2dc11bffb50277b5a993cec75e924</li>
+</ul>
+<p>添加合约参数后的合约程序如下：<code>160014bf54f5adbbd2dc11bffb50277b5a993cec75e924160014dedfd406c591aa221a047a260107f877da92fec5026c0702401f20c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee4c83567a6477000000567900a0577954799f9a916164630000000057795379515879c16951c3587995547996c2515979c16952c3767c59799555799694c251005a798959798958798957795c7994895679895579890274787e008901c07ec16963720000000070515879c16951c3c2515979c1696383000000537acd9f6900c3c251577ac1747800c0</code></p>
+<p>对应的解锁合约的参数如下：（注意该合约包含两个<code>clause</code>，在解锁合约的时候任选其一即可，其中<code>clause_selector</code>指的是选择的解锁<code>clause</code>在合约中的位置（位置序号从<code>0</code>开始计算），此外还需注意解锁合约参数的顺序，否则会执行VM失败）</p>
+<ul>
+<li><code>clause changePrice</code>解锁参数 :</li>
+<li><code>amountPartLoaned</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">2000</span>
+}
+}
+</code></pre>
+<ul>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+}
+}
+</code></pre>
+<ul>
+<li>从合约中可以看出<code>lock</code>语句位于<code>if-else</code>语句块中，并且<code>if</code>语句下面的<code>lock</code>语句个数跟<code>else</code>语句下的<code>lock</code>语句个数不相同，因此合约解锁之前，需要对语句的执行流程进行预判断。当<code>amountPartLoaned</code>等于2000时，是小于<code>amountLoaned</code>的值8000，所以执行的流程是<code>if</code>语句下面合约流程。此外，<code>lock</code>语句中<code>valueAmount*amountPartLoaned/amountLoaned</code>和<code>valueAmount-(valueAmount*amountPartLoaned/amountLoaned)</code>需要用户在使用之前先计算好，假如合约锁定的资产值<code>valueAmount</code>为3000, 那么<code>valueAmount*amountPartLoaned/amountLoaned</code>的计算结果为750，而<code>valueAmount-(valueAmount*amountPartLoaned/amountLoaned)</code>的计算结果为2250。最后，该合约中的接收对象是一个新的合约程序，<code>lock valueAmount-(valueAmount*amountPartLoaned/amountLoaned) of valueAsset with PartLoanCollateral(assetLoaned, amountLoaned-amountPartLoaned, blockHeight, lender, borrower)</code>语句表示合约锁定的资产被重新锁定到合约对象中，因此需要构造实例化的合约程序作为接收对象。</li>
+</ul>
+<p>接收合约的参数如下：</p>
+<ul>
+<li><code>assetLoaned</code> : c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee</li>
+<li><code>amountLoaned</code> : 6000</li>
+<li><code>blockHeight</code> : 1900</li>
+<li><code>lender</code> : 0014dedfd406c591aa221a047a260107f877da92fec5</li>
+<li><code>borrower</code> : 0014bf54f5adbbd2dc11bffb50277b5a993cec75e924</li>
+<li>添加合约参数后的实例化合约程序如下：<code>160014bf54f5adbbd2dc11bffb50277b5a993cec75e924160014dedfd406c591aa221a047a260107f877da92fec5026c0702701720c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee4c83567a6477000000567900a0577954799f9a916164630000000057795379515879c16951c3587995547996c2515979c16952c3767c59799555799694c251005a798959798958798957795c7994895679895579890274787e008901c07ec16963720000000070515879c16951c3c2515979c1696383000000537acd9f6900c3c251577ac1747800c0</code></li>
+</ul>
+<p>对应的解锁合约交易模板示例如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">// clause repay</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"a80552a346e271aaa7c71d0fa362a6b02aa844bb71a72934db64bc2b9906d0b9"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">2000</span>
+          }
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">2000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014dedfd406c591aa221a047a260107f877da92fec5"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">750</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a62180553e70131f668639116d6d1e29417537766b5244cbe49fa6b36c5d7b0"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014bf54f5adbbd2dc11bffb50277b5a993cec75e924"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">2250</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a62180553e70131f668639116d6d1e29417537766b5244cbe49fa6b36c5d7b0"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"160014bf54f5adbbd2dc11bffb50277b5a993cec75e924160014dedfd406c591aa221a047a260107f877da92fec5026c0702701720c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee4c83567a6477000000567900a0577954799f9a916164630000000057795379515879c16951c3587995547996c2515979c16952c3767c59799555799694c251005a798959798958798957795c7994895679895579890274787e008901c07ec16963720000000070515879c16951c3c2515979c1696383000000537acd9f6900c3c251577ac1747800c0"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0JPC5DBOG0A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">2000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0JPC5DBOG0A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li>当<code>amountPartLoaned</code>大于或等于<code>amountLoaned</code>的值8000时，执行的流程是<code>else</code>语句下面合约流程。对应的解锁合约交易模板示例如下：</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause repay</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"a80552a346e271aaa7c71d0fa362a6b02aa844bb71a72934db64bc2b9906d0b9"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">8000</span>
+          }
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">0</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014dedfd406c591aa221a047a260107f877da92fec5"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">3000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a62180553e70131f668639116d6d1e29417537766b5244cbe49fa6b36c5d7b0"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014bf54f5adbbd2dc11bffb50277b5a993cec75e924"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0JPC5DBOG0A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0JPC5DBOG0A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<ul>
+<li><code>clause default</code>解锁参数 :</li>
+<li><code>clause_selector</code> :</li>
+</ul>
+<pre><code class="hljs">{
+<span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+<span class="hljs-attr">"raw_data"</span>: {
+  <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+}
+}
+</code></pre>
+<ul>
+<li>对应的解锁合约交易模板示例如下:</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-comment">// clause default</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"a80552a346e271aaa7c71d0fa362a6b02aa844bb71a72934db64bc2b9906d0b9"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"value"</span>: <span class="hljs-number">1</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">3000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"2a62180553e70131f668639116d6d1e29417537766b5244cbe49fa6b36c5d7b0"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014905df16bc248790676744bab063a1ae810803bd7"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0ILGLSTC00A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_31"><span class="arrow-prev">← </span><span>操作符</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_34"><span>合约开发和部署</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

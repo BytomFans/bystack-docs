@@ -1,0 +1,1594 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>BlockCenter Vapor API · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### BlockCenter-Vapor API"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="BlockCenter Vapor API · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="### BlockCenter-Vapor API"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Blockcenter</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">BlockCenter Vapor API</h1></header><article><div><span><h3><a class="anchor" aria-hidden="true" id="blockcenter-vapor-api"></a><a href="#blockcenter-vapor-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>BlockCenter-Vapor API</h3>
+<p><strong>BaseURL：<a href="https://bcapi.bystack.com/api/v2/vapor">https://bcapi.bystack.com/api/v2/vapor</a></strong>
+**</p>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="account"></a><a href="#account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Account</h4>
+<p><strong>/account/copy 【POST】</strong></p>
+<p>Create a wallet using a public key. Each wallet is identified by a guid.</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- coin, 指定资产.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b2889fc3-444e-447b-8d2b-69e357bdd341"</span>,
+    <span class="hljs-attr">"coin"</span>:<span class="hljs-string">"btm"</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Object- data, 返回结果数据
+<ul>
+<li>String- guid, 钱包唯一标识.</li>
+<li>String- address, 钱包的Bytom地址.</li>
+<li>String- label, 地址的标签.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:{
+            <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b2889fc3-444e-447b-8d2b-69e357bdd341"</span>,
+            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"vp1qlldkdzrwqdd3rg037zxaeqcwnpdfqdjj040gnf"</span>,
+            <span class="hljs-attr">"label"</span>:<span class="hljs-string">"mock"</span>
+        }
+    }
+}
+</code></pre>
+<p><strong>/account/list-addresses 【POST】</strong></p>
+<p>List all addresses and the corresponding balances of a wallet.</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包的唯一标识.</li>
+</ul>
+<p>Optional(可选):</p>
+<ul>
+<li><code>Integer</code>- start, 开始数量，默认0.</li>
+<li><code>Integer</code>- <em>limit</em>, 查询数量，默认10.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"e276c676-ad38-4879-9790-87e5a1be1111"</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>String- _links, 下一页的URL</li>
+<li>Object- data, 返回结果数据
+<ul>
+<li>String- guid, 钱包唯一标识.</li>
+<li>String- address, 钱包的Bytom地址.</li>
+<li>String- label, 地址的标签.</li>
+<li>Array of object- balances, 金额相关信息
+<ul>
+<li>String- asset, 资产的唯一标识.</li>
+<li>String- balance, 资产金额数.</li>
+<li>String- total_received, 资产总接收金额数.</li>
+<li>String- total_sent,资产总发送金额数.</li>
+<li>Integer- decimals, 资产精度.</li>
+<li>String- alias, 资产别名.</li>
+<li>Integer- symbol, 资产标识名.</li>
+<li>String- icon, 资产图标.</li>
+<li>String- in_usd, 资产转换成usdt的价值.</li>
+<li>String- in_cny, 资产转换成cny的价值.</li>
+<li>String- in_btc, 资产转换成btc的价值.</li>
+</ul></li>
+<li>Array of object- votes, 投票信息
+<ul>
+<li>String- vote, 投给的公钥.</li>
+<li>String- total, 投票数.</li>
+<li>String- locked, 锁定的金额.</li>
+</ul></li>
+</ul></li>
+<li>Integer- start, 分页开始数.</li>
+<li>Integer- limit, 分页结束数.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"_links"</span>:{
+
+        },
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+                <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qz0vktvj0tv7wfkdku93pzul90stp5fefrkxcgm"</span>,
+                <span class="hljs-attr">"label"</span>:<span class="hljs-string">"mock"</span>,
+                <span class="hljs-attr">"balances"</span>:[
+                    {
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"a853110464934ba4cb35f1f98512f9f8700ae24da4bf18eb8b216bb38a3ffd1f"</span>,
+                        <span class="hljs-attr">"balance"</span>:<span class="hljs-string">"42400000001"</span>,
+                        <span class="hljs-attr">"total_received"</span>:<span class="hljs-string">"44400000000"</span>,
+                        <span class="hljs-attr">"total_sent"</span>:<span class="hljs-string">"1999999999"</span>,
+                        <span class="hljs-attr">"decimals"</span>:<span class="hljs-number">8</span>,
+                        <span class="hljs-attr">"icon"</span>: <span class="hljs-string">"icon.jpg"</span>,
+                        <span class="hljs-attr">"alias"</span>:<span class="hljs-string">"btm"</span>,
+                        <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"btm"</span>,
+                        <span class="hljs-attr">"in_usd"</span>:<span class="hljs-string">"0.00"</span>,
+                        <span class="hljs-attr">"in_cny"</span>:<span class="hljs-string">"0.00"</span>,
+                        <span class="hljs-attr">"in_btc"</span>:<span class="hljs-string">"0.000000"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                        <span class="hljs-attr">"balance"</span>:<span class="hljs-string">"3262476859534000"</span>,
+                        <span class="hljs-attr">"total_received"</span>:<span class="hljs-string">"3263535568514000"</span>,
+                        <span class="hljs-attr">"total_sent"</span>:<span class="hljs-string">"1058708980000"</span>,
+                        <span class="hljs-attr">"decimals"</span>:<span class="hljs-number">8</span>,
+                        <span class="hljs-attr">"icon"</span>: <span class="hljs-string">"icon.jpg"</span>,
+                        <span class="hljs-attr">"alias"</span>:<span class="hljs-string">"btm"</span>,
+                        <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"btm"</span>,
+                        <span class="hljs-attr">"in_usd"</span>:<span class="hljs-string">"2424020.31"</span>,
+                        <span class="hljs-attr">"in_cny"</span>:<span class="hljs-string">"16725740.12"</span>,
+                        <span class="hljs-attr">"in_btc"</span>:<span class="hljs-string">"704.042506"</span>
+                    }
+                ],
+                <span class="hljs-attr">"votes"</span>:[
+                    {
+                        <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"0f17286fb02772c606e5fb504194426494aae786602821e37bcebe7a17f61d753796848dce2e0469bb01d21d3aecc1dba95fabbc1fa16aa332b75ac723e8038d"</span>,
+                        <span class="hljs-attr">"total"</span>:<span class="hljs-number">500000000000</span>,
+                        <span class="hljs-attr">"locked"</span>:<span class="hljs-number">350000000000</span>
+                    }
+                ]
+            }
+        ],
+        <span class="hljs-attr">"limit"</span>:<span class="hljs-number">10</span>,
+        <span class="hljs-attr">"start"</span>:<span class="hljs-number">0</span>
+    }
+}
+</code></pre>
+<p><strong>/account/list-wallets 【POST】</strong></p>
+<p>List created wallet of a public key and coin pair.
+<strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- pubkey, 公钥.</li>
+</ul>
+<p>Optional(可选):</p>
+<ul>
+<li><code>Integer</code>- start, 开始数量，默认0.</li>
+<li><code>Integer</code>- <em>limit</em>, 查询数量，默认10.</li>
+<li>Object- filter, 过滤条件.
+<ul>
+<li>String- type, 地址类型, pay-to-pubkey (P2PK), pay-to-pubkey-hash (P2PKH), and pay-to-script-hash (P2SH).</li>
+<li>String- guid, 钱包guid.</li>
+<li>String- account_index, 账户索引</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"pubkey"</span>:<span class="hljs-string">"82b5c28d07a5f7442d564d25b2f95a9bf46c826bff4b27593f37250cd9639a797d1f501b69f895b830138fabc6f91e2b3b3c8df26642a34be4af27886b9134dc"</span>,
+    <span class="hljs-attr">"filter"</span>:{
+        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"P2PKH"</span>,
+        <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"mock"</span>,
+        <span class="hljs-attr">"account_index"</span>:<span class="hljs-number">1</span>
+    }
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>String- _links, 下一页的URL</li>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- access_token, 加入多钱钱包的验证码.</li>
+<li>String- guid, 钱包唯一标识.</li>
+<li>Array of String- address, 钱包的Vapor地址.</li>
+<li>String- status, 结果状态，0 等待，1 完成.</li>
+<li>Array of object- signers, 最小签名数.
+<ul>
+<li>String- pubkey, 签名者的公钥（唯一）.</li>
+<li>String- name, 签名者的名字（唯一）.</li>
+</ul></li>
+</ul></li>
+<li>Integer- start, 分页开始数.</li>
+<li>Integer- limit, 分页结束数.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"result"</span>: {
+        <span class="hljs-attr">"_links"</span>: {},
+        <span class="hljs-attr">"data"</span>: [
+            {
+                <span class="hljs-attr">"access_token"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-attr">"guid"</span>: <span class="hljs-string">"78e2afde-7073-4f1f-ada6-fe2c7dc634b3"</span>,
+                <span class="hljs-attr">"m"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"n"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"signers"</span>: [
+                    {
+                        <span class="hljs-attr">"pubkey"</span>: <span class="hljs-string">"b7f463446a31b3792cd168d52b7a89b3657bca3e25d6854db1488c389ab6fc8d538155c25c1ee6975cc7def19710908c7d9b7463ca34a22058b456b45e498db9"</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>
+                    }
+                ],
+                <span class="hljs-attr">"addresses"</span>: [
+                    <span class="hljs-string">"tp1qqqztfvm47h6rwhv82al87rq3w26npr5r9jhm3q"</span>,
+                    <span class="hljs-string">"tp1q2dydpj7ewm408tdd3v8awc5f6ehszszd0hxu9f"</span>
+                ]
+            }
+        ],
+        <span class="hljs-attr">"limit"</span>: <span class="hljs-number">10</span>,
+        <span class="hljs-attr">"start"</span>: <span class="hljs-number">0</span>
+    }
+}
+</code></pre>
+<p><strong>/account/new-address 【POST】</strong></p>
+<p>Create a new address for a wallet.</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包的唯一标识.</li>
+</ul>
+<p>Optional(可选):</p>
+<ul>
+<li>String- label, 地址标签.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"e276c676-ad38-4879-9790-87e5a1be1111"</span>,
+    <span class="hljs-attr">"label"</span>:<span class="hljs-string">""</span><span class="hljs-number">2</span>nd addr<span class="hljs-string">""</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Object- data, 返回结果数据
+<ul>
+<li>String- guid, 钱包唯一标识.</li>
+<li>String- address, 钱包的Vapor地址.</li>
+<li>String- label, 地址的标签.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">""</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:{
+            <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"e276c676-ad38-4879-9790-87e5a1be1111"</span>,
+            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qeuwdh3d4crfzatya9y3gpvnu4vtqrdhk5ayn39"</span>,
+            <span class="hljs-attr">"label"</span>:<span class="hljs-string">"2nd addr"</span>
+        }
+    }
+}
+</code></pre>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="merchant"></a><a href="#merchant" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Merchant</h4>
+<p><strong>/merchant/build-payment 【POST】</strong></p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- asset, 资产类型.</li>
+<li>Object- recipients, 接收地址和金额组成的键值对.</li>
+<li>Bool- forbid_chain_tx, 是否禁止链式交易，true 禁止，false 非禁止.</li>
+<li>String- memo, 备注.</li>
+<li>String- confirmations, 确认需要的交易确认数.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+    <span class="hljs-attr">"confirmations"</span>:<span class="hljs-number">1</span>,
+    <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"recipients"</span>: {
+        <span class="hljs-attr">"tm1q9jpad933ddjfm3ryena49f0fajg955ckjnjuhn"</span>: <span class="hljs-number">10000000000</span>
+    },
+    <span class="hljs-attr">"forbid_chain_tx"</span>: <span class="hljs-literal">false</span>,
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>String- _links, 下一页的URL</li>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- tx, 构建的交易信息.
+<ul>
+<li>String- hash, 交易哈希.</li>
+<li>Bool- status_fail, 构建交易状态（成功 false，失败true）.</li>
+<li>Integer- size, 交易大小.</li>
+<li>String- memo,  交易备注.</li>
+<li>Integer- submission_timestamp, 构建时间.</li>
+<li>Array of Object- inputs, 交易输入.</li>
+<li>Array of Object- outputs, 交易输出.</li>
+<li>Array of Object- balances, 交易资产金额信息.</li>
+<li>Bool- status_fail, 构建交易状态（成功 false，失败true）.</li>
+<li>Array of string- types, 交易类型.</li>
+</ul></li>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-fee, 交易费.</li>
+<li>String- signing_instructions, 签名信息.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"tx"</span>:{
+                    <span class="hljs-attr">"inputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">0</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"outputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">41250000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">0</span>,
+                    <span class="hljs-attr">"balances"</span>:[
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"eb4daea5edc379b6ab024c0e4ef963feafe6affcfe581d66f7ad3ec6d1828463"</span>
+                },
+                <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e5978c52e0508cbf1cd901919277e4dba80fb4440b4771bbaa3b6c483f9264d21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8094ebdc0301011600143c21d88332683d060ccf905a0f26ce82907ac132220120f3a597b7a1f8b7b210790d5ceef145ae8616d025a6fdb4aec67338bf937af6b9020139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6401160014f0928dc5f8878a4289b981d7c66386ff74be7fc300013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb4dfcfdc03011600143c21d88332683d060ccf905a0f26ce82907ac13200"</span>,
+                <span class="hljs-attr">"signing_instructions"</span>:[
+                    {
+                        <span class="hljs-attr">"derivation_path"</span>:[
+                            <span class="hljs-string">"2c000000"</span>,
+                            <span class="hljs-string">"99000000"</span>,
+                            <span class="hljs-string">"01000000"</span>,
+                            <span class="hljs-string">"00000000"</span>,
+                            <span class="hljs-string">"01000000"</span>
+                        ],
+                        <span class="hljs-attr">"sign_data"</span>:[
+                            <span class="hljs-string">"b9fb5dc0e7b7ee0e9c252439ec32fe6b222e0d170aee6b562634dfad3638560e"</span>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>/merchant/get-transaction 【POST】</strong></p>
+<p>Get the transaction by tx_id</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- tx_id, 交易哈希.</li>
+</ul>
+<pre><code class="hljs css language-javascript">{ <span class="hljs-string">"tx_id"</span>:<span class="hljs-string">"0f44a0af521b7993e72512a2fadc9736aaaf70f67fab16c7ae3f55494a7a3536"</span> }
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- hash, 交易哈希.</li>
+<li>Bool- status_fail, 构建交易状态（成功 false，失败true）.</li>
+<li>Integer- size, 交易大小.</li>
+<li>String- memo,  交易备注.</li>
+<li>Integer- submission_timestamp, 构建时间.</li>
+<li>Array of Object- inputs, 交易输入.</li>
+<li>Array of Object- outputs, 交易输出.</li>
+<li>Integer- block_height, 交易所属的区块高度.</li>
+<li>Integer- block_timestamp, 交易所属的区块时间戳.</li>
+<li>Array of Object- balances, 交易资产金额信息.</li>
+<li>Bool- status_fail, 构建交易状态（成功 false，失败true）.</li>
+<li>Integer-fee, 交易费.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:{
+            <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"7de59581513c471ef4cf2cd205de2608d2d7e9dd1d598251d75f8df112bd1ecd"</span>,
+            <span class="hljs-attr">"status_fail"</span>:<span class="hljs-literal">false</span>,
+            <span class="hljs-attr">"size"</span>:<span class="hljs-number">2231</span>,
+            <span class="hljs-attr">"submission_timestamp"</span>:<span class="hljs-number">1559720537</span>,
+            <span class="hljs-attr">"block_height"</span>:<span class="hljs-number">195118</span>,
+            <span class="hljs-attr">"block_timestamp"</span>:<span class="hljs-number">1559720542</span>,
+            <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>,
+            <span class="hljs-attr">"inputs"</span>:[
+                {
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"2097c36cdeb2fb82c971580f03d632ad5c09187d35e0e3e937cf9fd4894c35dd01160014489ac931be795efecb50a9bd2fcd569425f00be4060040e59c30120600a0724e1809202f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f4dfc01567a64f5010000c358797ca153795579a19a6957790400e1f5059653790400e1f505967c00a07c00a09a69c358797c9f91616429010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec169515879c2515a79c16952c3597994c251005a79895979895879895779895679895579890274787e008901c07ec16963f0010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec16951c3c2515a79c16963fc010000567a567aae7cac747800c0"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"smart contract"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"80c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba3400"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">9995000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                },
+                {
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"2f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                },
+                {
+                    <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"veto"</span>
+                },
+                {
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_input"</span>
+                }
+            ],
+            <span class="hljs-attr">"outputs"</span>:[
+                {
+                    <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"b4645bf3232bbb971fd7378d41bd74134a43cc7c108cce53e7fc045f641b3159"</span>,
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"2097c36cdeb2fb82c971580f03d632ad5c09187d35e0e3e937cf9fd4894c35dd01160014489ac931be795efecb50a9bd2fcd569425f00be4060040e59c30120600a0724e18092080c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba34004c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac747800c0"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"smart contract"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"2f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                },
+                {
+                    <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"3beb18d5e24f38c2742fca12e5468a8a36551607288fcc2d0799f09da182d645"</span>,
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"80c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba3400"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                },
+                {
+                    <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+                    <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"28d807f13c854fc07639539cf4442a42e32dc33ed9f7becebf061c6af044f153"</span>,
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">960000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"vote"</span>
+                },
+                {
+                    <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                    <span class="hljs-attr">"address"</span>:<span class="hljs-string">"bm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                    <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_output"</span>
+                }
+            ],
+            <span class="hljs-attr">"fee"</span>:<span class="hljs-number">40000000</span>,
+            <span class="hljs-attr">"balances"</span>:[
+                {
+                    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                    <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                }
+            ]
+        }
+    }
+}
+</code></pre>
+<hr>
+<p><strong>/merchant/list-transactions 【POST】</strong></p>
+<p>List all the transactions related to a wallet or an address.</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+</ul>
+<p>Optional(可选):</p>
+<ul>
+<li><code>Integer</code>- start, 开始数量，默认0.</li>
+<li><code>Integer</code>- <em>limit</em>, 查询数量，默认100.</li>
+<li>Object- filter, 过滤条件.
+<ul>
+<li>String- asset_id, 资产ID.</li>
+<li>String- tx_types, 交易类型 [&quot;veto&quot;/投票, &quot;vote&quot;/取消投票, &quot;in_crosschain&quot;/跨链输入, &quot;out_crosschain&quot;/跨链输出].</li>
+<li>Object- sort, 排序方式.
+<ul>
+<li>String- by, 排序的键.</li>
+<li>String- order, 顺序 desc，asc.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"filter"</span>:{
+        <span class="hljs-attr">"asset_id"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-attr">"tx_types"</span>: [<span class="hljs-string">"veto"</span>] <span class="hljs-comment">// 支持"veto", "vote", "in_crosschain", "out_crosschain"</span>
+    },
+    <span class="hljs-attr">"sort"</span>:{
+        <span class="hljs-attr">"by"</span>:<span class="hljs-string">"amount"</span>,
+        <span class="hljs-attr">"order"</span>:<span class="hljs-string">"desc"</span>
+    }
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>String- _links, 下一页的URL</li>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- hash, 交易哈希.</li>
+<li>Bool- status_fail, 构建交易状态（成功 false，失败true）.</li>
+<li>Integer- size, 交易大小.</li>
+<li>String- memo,  交易备注.</li>
+<li>Integer- submission_timestamp, 构建时间.</li>
+<li>Array of Object- inputs, 交易输入.</li>
+<li>Array of Object- outputs, 交易输出.</li>
+<li>Array of Object- balances, 交易资产金额信息.</li>
+<li>Bool- status_fail, 构建交易状态（成功 false，失败true）.</li>
+<li>Array of string- types, 交易类型.</li>
+<li>Integer-fee, 交易费.</li>
+</ul></li>
+<li><code>Integer</code>- start, 开始数量.</li>
+<li><code>Integer</code>- <em>limit</em>, 查询数量.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"_links"</span>:{
+            <span class="hljs-attr">"next"</span>:<span class="hljs-string">"/api/v1/vapor/merchant/list-transactions?limit=100&amp;start=100"</span>
+        },
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"7de59581513c471ef4cf2cd205de2608d2d7e9dd1d598251d75f8df112bd1ecd"</span>,
+                <span class="hljs-attr">"status_fail"</span>:<span class="hljs-literal">false</span>,
+                <span class="hljs-attr">"size"</span>:<span class="hljs-number">2231</span>,
+                <span class="hljs-attr">"submission_timestamp"</span>:<span class="hljs-number">1559720537</span>,
+                <span class="hljs-attr">"block_height"</span>:<span class="hljs-number">195118</span>,
+                <span class="hljs-attr">"block_timestamp"</span>:<span class="hljs-number">1559720542</span>,
+                <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>,
+                <span class="hljs-attr">"inputs"</span>:[
+                    {
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"2097c36cdeb2fb82c971580f03d632ad5c09187d35e0e3e937cf9fd4894c35dd01160014489ac931be795efecb50a9bd2fcd569425f00be4060040e59c30120600a0724e1809202f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f4dfc01567a64f5010000c358797ca153795579a19a6957790400e1f5059653790400e1f505967c00a07c00a09a69c358797c9f91616429010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec169515879c2515a79c16952c3597994c251005a79895979895879895779895679895579890274787e008901c07ec16963f0010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec16951c3c2515a79c16963fc010000567a567aae7cac747800c0"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"smart contract"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"80c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba3400"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">9995000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"2f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"veto"</span>
+                    }
+                    <span class="hljs-comment">//OR</span>
+                    {
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_input"</span>
+                    }
+                ],
+                <span class="hljs-attr">"outputs"</span>:[
+                    {
+                        <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"b4645bf3232bbb971fd7378d41bd74134a43cc7c108cce53e7fc045f641b3159"</span>,
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"2097c36cdeb2fb82c971580f03d632ad5c09187d35e0e3e937cf9fd4894c35dd01160014489ac931be795efecb50a9bd2fcd569425f00be4060040e59c30120600a0724e18092080c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba34004c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac747800c0"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"smart contract"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"2f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"3beb18d5e24f38c2742fca12e5468a8a36551607288fcc2d0799f09da182d645"</span>,
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"80c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba3400"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+                        <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"28d807f13c854fc07639539cf4442a42e32dc33ed9f7becebf061c6af044f153"</span>,
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">960000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"vote"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                        <span class="hljs-attr">"address"</span>:<span class="hljs-string">"bm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                        <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_output"</span>
+                    }
+                ],
+                <span class="hljs-attr">"fee"</span>:<span class="hljs-number">40000000</span>,
+                <span class="hljs-attr">"balances"</span>:[
+                    {
+                        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                        <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                    }
+                ]
+            }
+        ],
+        <span class="hljs-attr">"limit"</span>:<span class="hljs-number">100</span>,
+        <span class="hljs-attr">"start"</span>:<span class="hljs-number">0</span>
+    }
+}
+</code></pre>
+<p><strong>/merchant/list-txproposals 【POST】</strong></p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+</ul>
+<p>Optional(可选):</p>
+<ul>
+<li>Object- filter, 过滤条件.
+<ul>
+<li>String- tx_hash, 交易哈希.</li>
+<li>Object- status, 排序方式.</li>
+</ul></li>
+<li>Object- sort, 排序方式.
+<ul>
+<li>String- by, 排序的键.</li>
+<li>String- order, 顺序 desc，asc.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"filter"</span>:{
+        <span class="hljs-attr">"tx_hash"</span>:<span class="hljs-string">"mock"</span>,
+        <span class="hljs-attr">"status"</span>:<span class="hljs-number">1</span>
+    },
+   <span class="hljs-attr">"sort"</span>:{
+        <span class="hljs-attr">"by"</span>:<span class="hljs-string">"proposal_timestamp"</span>,
+        <span class="hljs-attr">"order"</span>:<span class="hljs-string">"desc"</span>
+    }
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>Object- tx, 构建的交易信息.</li>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-status, 交易状态.</li>
+<li>String- signing_instructions, 签名信息.</li>
+<li>String- signatures, 签名者信息.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"tx"</span>:{
+                    <span class="hljs-attr">"inputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"003132"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"coinbase"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">0</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"outputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">41250000000</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">0</span>,
+                    <span class="hljs-attr">"balances"</span>:[
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"status"</span>:<span class="hljs-number">1</span>,
+                <span class="hljs-attr">"signatures"</span>:[
+                    {
+                        <span class="hljs-attr">"name"</span>:<span class="hljs-string">"中本聪"</span>,
+                        <span class="hljs-attr">"pubkey"</span>:<span class="hljs-string">"mock"</span>,
+                        <span class="hljs-attr">"rejected"</span>:<span class="hljs-literal">true</span>
+                    }
+                ],
+                <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e5978c52e0508cbf1cd901919277e4dba80fb4440b4771bbaa3b6c483f9264d21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8094ebdc0301011600143c21d88332683d060ccf905a0f26ce82907ac132220120f3a597b7a1f8b7b210790d5ceef145ae8616d025a6fdb4aec67338bf937af6b9020139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6401160014f0928dc5f8878a4289b981d7c66386ff74be7fc300013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb4dfcfdc03011600143c21d88332683d060ccf905a0f26ce82907ac13200"</span>,
+                <span class="hljs-attr">"signing_instructions"</span>:[
+                    {
+                        <span class="hljs-attr">"derivation_path"</span>:[
+                            <span class="hljs-string">"2c000000"</span>,
+                            <span class="hljs-string">"99000000"</span>,
+                            <span class="hljs-string">"01000000"</span>,
+                            <span class="hljs-string">"00000000"</span>,
+                            <span class="hljs-string">"01000000"</span>
+                        ],
+                        <span class="hljs-attr">"sign_data"</span>:[
+                            <span class="hljs-string">"b9fb5dc0e7b7ee0e9c252439ec32fe6b222e0d170aee6b562634dfad3638560e"</span>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>/merchant/sign-txproposal 【POST】</strong></p>
+<p>Submit a signed transaction to the chain.</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- tx_hash, build-payment 返回的数据.</li>
+<li>Array of array- signatures, 包含签名数据的数组.</li>
+<li>String- pubkey, 备注.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"03f8d45a-6755-44f8-8342-32c78839f1bc"</span>,
+    <span class="hljs-attr">"tx_hash"</span>:<span class="hljs-string">"eb4daea5edc379b6ab024c0e4ef963feafe6affcfe581d66f7ad3ec6d1828463"</span>,
+    <span class="hljs-attr">"signatures"</span>:[
+        [
+            <span class="hljs-string">"4f5e0b94f983ab6d98c230e7edf031951c93809af318d0bb6c362714794c38c5939df58e43ac1a45599d777386724354c0ced7bab54d19bac02c233fa9e2050a"</span>
+        ]
+    ],
+    <span class="hljs-attr">"pubkey"</span>:<span class="hljs-string">"mock"</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>Object- tx, 构建的交易信息.</li>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-status, 交易状态.</li>
+<li>String- signing_instructions, 签名信息.</li>
+<li>String- signatures, 签名者信息.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"tx"</span>:{
+                    <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"7de59581513c471ef4cf2cd205de2608d2d7e9dd1d598251d75f8df112bd1ecd"</span>,
+                    <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>,
+                    <span class="hljs-attr">"inputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"2097c36cdeb2fb82c971580f03d632ad5c09187d35e0e3e937cf9fd4894c35dd01160014489ac931be795efecb50a9bd2fcd569425f00be4060040e59c30120600a0724e1809202f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f4dfc01567a64f5010000c358797ca153795579a19a6957790400e1f5059653790400e1f505967c00a07c00a09a69c358797c9f91616429010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec169515879c2515a79c16952c3597994c251005a79895979895879895779895679895579890274787e008901c07ec16963f0010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec16951c3c2515a79c16963fc010000567a567aae7cac747800c0"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"smartcontract"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"80c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba3400"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">9995000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                        },
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"2f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                        },
+                        {
+                            <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"veto"</span>
+                        },
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_input"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"outputs"</span>:[
+                        {
+                            <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"b4645bf3232bbb971fd7378d41bd74134a43cc7c108cce53e7fc045f641b3159"</span>,
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"2097c36cdeb2fb82c971580f03d632ad5c09187d35e0e3e937cf9fd4894c35dd01160014489ac931be795efecb50a9bd2fcd569425f00be4060040e59c30120600a0724e18092080c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba34004c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac747800c0"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"smartcontract"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"2f411f8edadc0f6c7a5ff956848550c63dee4b1e2e2ecf63af9070565f4d086f"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                        },
+                        {
+                            <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"3beb18d5e24f38c2742fca12e5468a8a36551607288fcc2d0799f09da182d645"</span>,
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"80c41b4c0f37e3fbb764ebe7730da26e54b0ab1dab711cf02c70f2756fba3400"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                        },
+                        {
+                            <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+                            <span class="hljs-attr">"utxo_id"</span>:<span class="hljs-string">"28d807f13c854fc07639539cf4442a42e32dc33ed9f7becebf061c6af044f153"</span>,
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">960000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"vote"</span>
+                        },
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"0014b5ce3ba56acef9c8d8772587351d3f40fd5379ee"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"bm1qkh8rhft2emuu3krhykrn28flgr74x70wclp4zx"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">1000000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_output"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">40000000</span>,
+                    <span class="hljs-attr">"balances"</span>:[
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"status"</span>:<span class="hljs-number">1</span>,
+                <span class="hljs-attr">"signature"</span>:[
+                    {
+                        <span class="hljs-attr">"name"</span>:<span class="hljs-string">"中本聪"</span>,
+                        <span class="hljs-attr">"pubkey"</span>:<span class="hljs-string">"mock"</span>,
+                        <span class="hljs-attr">"rejected"</span>:<span class="hljs-literal">true</span>
+                    }
+                ],
+                <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e5978c52e0508cbf1cd901919277e4dba80fb4440b4771bbaa3b6c483f9264d21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8094ebdc0301011600143c21d88332683d060ccf905a0f26ce82907ac132220120f3a597b7a1f8b7b210790d5ceef145ae8616d025a6fdb4aec67338bf937af6b9020139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6401160014f0928dc5f8878a4289b981d7c66386ff74be7fc300013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb4dfcfdc03011600143c21d88332683d060ccf905a0f26ce82907ac13200"</span>,
+                <span class="hljs-attr">"signing_instructions"</span>:[
+                    {
+                        <span class="hljs-attr">"derivation_path"</span>:[
+                            <span class="hljs-string">"2c000000"</span>,
+                            <span class="hljs-string">"99000000"</span>,
+                            <span class="hljs-string">"01000000"</span>,
+                            <span class="hljs-string">"00000000"</span>,
+                            <span class="hljs-string">"01000000"</span>
+                        ],
+                        <span class="hljs-attr">"sign_data"</span>:[
+                            <span class="hljs-string">"b9fb5dc0e7b7ee0e9c252439ec32fe6b222e0d170aee6b562634dfad3638560e"</span>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>/merchant/submit-payment 【POST】</strong></p>
+<p>Submit a signed transaction to the chain.</p>
+<p><strong>Body JSON:</strong></p>
+<ul>
+<li>Object(必选):
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- raw_transaction, build-payment 返回的数据.</li>
+<li>Array of array- signatures, 包含签名数据的数组.</li>
+<li>String- memo, 备注.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"03f8d45a-6755-44f8-8342-32c78839f1bc"</span>,
+    <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e26978b848afd77d559980e58db9b60559b716312bd1e24af7e44c6efa5c1605dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb0a885fd0201011600140ff923ae0944af0cfdd3eb3671db354eaa6b5795220120c44537a8d397ee09315755cd77fd02d66db015f32ba358c3bfafe20d887d041202013cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80c2d72f011600141e03ad3233693b551be8c86f5db062bdbe0c9f6600013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc8b292cd02011600140ff923ae0944af0cfdd3eb3671db354eaa6b579500"</span>,
+    <span class="hljs-attr">"signatures"</span>:[
+        [
+            <span class="hljs-string">"4f5e0b94f983ab6d98c230e7edf031951c93809af318d0bb6c362714794c38c5939df58e43ac1a45599d777386724354c0ced7bab54d19bac02c233fa9e2050a"</span>
+        ]
+    ],
+    <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Object- data, 返回结果数据
+<ul>
+<li>String- transaction_hash, 链上返回的交易哈希.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:{
+            <span class="hljs-attr">"transaction_hash"</span>:<span class="hljs-string">"9287dfe438f2387a02f6812b2f769ed85498ff59376c60b6d79d2506329330ee"</span>
+        }
+    }
+}
+</code></pre>
+<p><strong>/merchant/submit-txproposal 【POST】</strong></p>
+<p>Submit a signed transaction to the chain.</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- tx_hash, 交易哈希.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"03f8d45a-6755-44f8-8342-32c78839f1bc"</span>,
+    <span class="hljs-attr">"tx_hash"</span>:<span class="hljs-string">"eb4daea5edc379b6ab024c0e4ef963feafe6affcfe581d66f7ad3ec6d1828463"</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Object- data, 返回结果数据
+<ul>
+<li>String- transaction_hash, 链上返回的交易哈希.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:{
+            <span class="hljs-attr">"transaction_hash"</span>:<span class="hljs-string">"9287dfe438f2387a02f6812b2f769ed85498ff59376c60b6d79d2506329330ee"</span>
+        }
+    }
+}
+</code></pre>
+<p><strong>/merchant/build-vote 【POST】</strong></p>
+<p>Body JSON:</p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- amount, 投票数.</li>
+<li>String- vote, 投给的公钥.</li>
+<li>Bool- forbid_chain_tx, 是否禁止链式交易，true 禁止，false 非禁止.</li>
+<li>String- memo, 备注.</li>
+<li>String- confirmations, 确认需要的交易确认数.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">10000000000</span>,
+    <span class="hljs-attr">"confirmations"</span>:<span class="hljs-number">1</span>,
+    <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+    <span class="hljs-attr">"forbid_chain_tx"</span>: <span class="hljs-literal">false</span>,
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>Object- tx, 构建的交易信息.</li>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-status, 交易状态.</li>
+<li>String- signing_instructions, 签名信息.</li>
+<li>String- signatures, 签名者信息.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"tx"</span>:{
+                    <span class="hljs-attr">"inputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">0</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"outputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">41250000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"vote"</span>,
+                            <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">0</span>,
+                    <span class="hljs-attr">"balances"</span>:[
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"eb4daea5edc379b6ab024c0e4ef963feafe6affcfe581d66f7ad3ec6d1828463"</span>
+                },
+                <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e5978c52e0508cbf1cd901919277e4dba80fb4440b4771bbaa3b6c483f9264d21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8094ebdc0301011600143c21d88332683d060ccf905a0f26ce82907ac132220120f3a597b7a1f8b7b210790d5ceef145ae8616d025a6fdb4aec67338bf937af6b9020139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6401160014f0928dc5f8878a4289b981d7c66386ff74be7fc300013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb4dfcfdc03011600143c21d88332683d060ccf905a0f26ce82907ac13200"</span>,
+                <span class="hljs-attr">"signing_instructions"</span>:[
+                    {
+                        <span class="hljs-attr">"derivation_path"</span>:[
+                            <span class="hljs-string">"2c000000"</span>,
+                            <span class="hljs-string">"99000000"</span>,
+                            <span class="hljs-string">"01000000"</span>,
+                            <span class="hljs-string">"00000000"</span>,
+                            <span class="hljs-string">"01000000"</span>
+                        ],
+                        <span class="hljs-attr">"sign_data"</span>:[
+                            <span class="hljs-string">"b9fb5dc0e7b7ee0e9c252439ec32fe6b222e0d170aee6b562634dfad3638560e"</span>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>/merchant/build-veto 【POST】</strong></p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- amount, 取消的投票数.</li>
+<li>String- vote, 取消之前投给的公钥.</li>
+<li>Bool- forbid_chain_tx, 是否禁止链式交易，true 禁止，false 非禁止.</li>
+<li>String- memo, 备注.</li>
+<li>String- confirmations, 确认需要的交易确认数.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"amount"</span>:<span class="hljs-number">10000000000</span>,
+    <span class="hljs-attr">"confirmations"</span>:<span class="hljs-number">1</span>,
+    <span class="hljs-attr">"memo"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>,
+    <span class="hljs-attr">"forbid_chain_tx"</span>: <span class="hljs-literal">false</span>,
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>Object- tx, 构建的交易信息.</li>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-status, 交易状态.</li>
+<li>String- signing_instructions, 签名信息.</li>
+<li>String- signatures, 签名者信息.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"tx"</span>:{
+                    <span class="hljs-attr">"inputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">0</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"veto"</span>,
+                            <span class="hljs-attr">"vote"</span>:<span class="hljs-string">"50ef22b3a3fca7bc08916187cc9ec2f4005c9c6b1353aa1decbd4be3f3bb0fbe1967589f0d9dec13a388c0412002d2c267bdf3b920864e1ddc50581be5604ce1"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"outputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">41250000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">0</span>,
+                    <span class="hljs-attr">"balances"</span>:[
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"eb4daea5edc379b6ab024c0e4ef963feafe6affcfe581d66f7ad3ec6d1828463"</span>
+                },
+                <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e5978c52e0508cbf1cd901919277e4dba80fb4440b4771bbaa3b6c483f9264d21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8094ebdc0301011600143c21d88332683d060ccf905a0f26ce82907ac132220120f3a597b7a1f8b7b210790d5ceef145ae8616d025a6fdb4aec67338bf937af6b9020139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6401160014f0928dc5f8878a4289b981d7c66386ff74be7fc300013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb4dfcfdc03011600143c21d88332683d060ccf905a0f26ce82907ac13200"</span>,
+                <span class="hljs-attr">"signing_instructions"</span>:[
+                    {
+                        <span class="hljs-attr">"derivation_path"</span>:[
+                            <span class="hljs-string">"2c000000"</span>,
+                            <span class="hljs-string">"99000000"</span>,
+                            <span class="hljs-string">"01000000"</span>,
+                            <span class="hljs-string">"00000000"</span>,
+                            <span class="hljs-string">"01000000"</span>
+                        ],
+                        <span class="hljs-attr">"sign_data"</span>:[
+                            <span class="hljs-string">"b9fb5dc0e7b7ee0e9c252439ec32fe6b222e0d170aee6b562634dfad3638560e"</span>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>/merchant/build-crosschain 【POST】</strong></p>
+<p>Vapor-&gt;Bytom
+<strong>Body JSON:</strong></p>
+<ul>
+<li>Object(必选):
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- asset, 资产类型.</li>
+<li>Object- recipients, 接收地址和金额组成的键值对.</li>
+<li>Bool- forbid_chain_tx, 是否禁止链式交易，true 禁止，false 非禁止.</li>
+<li>String- confirmations, 确认需要的交易确认数.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+    <span class="hljs-attr">"confirmations"</span>:<span class="hljs-number">1</span>,
+    <span class="hljs-attr">"recipients"</span>: {
+        <span class="hljs-attr">"bm1q2lm5c7ajtutcjzhr4cvuge385ygynupe90m7xj"</span>: <span class="hljs-number">10000000000</span>
+    }
+    <span class="hljs-string">"forbid_chain_tx"</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">//多签传true</span>
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>Object- tx, 构建的交易信息.</li>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-status, 交易状态.</li>
+<li>String- signing_instructions, 签名信息.</li>
+<li>String- signatures, 签名者信息.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:[
+            {
+                <span class="hljs-attr">"tx"</span>:{
+                    <span class="hljs-attr">"inputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"tm1q029pd3n926xz75hr830mxuarh50m0ukpw8g27u"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">0</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"outputs"</span>:[
+                        {
+                            <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a8a16c665568c2f52e33c5fb373a3bd1fb7f2c1"</span>,
+                            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"bm1q2lm5c7ajtutcjzhr4cvuge385ygynupe90m7xj"</span>,
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">41250000000</span>,
+                            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"crosschain_output"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">0</span>,
+                    <span class="hljs-attr">"balances"</span>:[
+                        {
+                            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+                            <span class="hljs-attr">"amount"</span>:<span class="hljs-string">"41250000000"</span>
+                        }
+                    ],
+                    <span class="hljs-attr">"hash"</span>:<span class="hljs-string">"eb4daea5edc379b6ab024c0e4ef963feafe6affcfe581d66f7ad3ec6d1828463"</span>
+                },
+                <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010160015e5978c52e0508cbf1cd901919277e4dba80fb4440b4771bbaa3b6c483f9264d21ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8094ebdc0301011600143c21d88332683d060ccf905a0f26ce82907ac132220120f3a597b7a1f8b7b210790d5ceef145ae8616d025a6fdb4aec67338bf937af6b9020139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6401160014f0928dc5f8878a4289b981d7c66386ff74be7fc300013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffb4dfcfdc03011600143c21d88332683d060ccf905a0f26ce82907ac13200"</span>,
+                <span class="hljs-attr">"signing_instructions"</span>:[
+                    {
+                        <span class="hljs-attr">"derivation_path"</span>:[
+                            <span class="hljs-string">"2c000000"</span>,
+                            <span class="hljs-string">"99000000"</span>,
+                            <span class="hljs-string">"01000000"</span>,
+                            <span class="hljs-string">"00000000"</span>,
+                            <span class="hljs-string">"01000000"</span>
+                        ],
+                        <span class="hljs-attr">"sign_data"</span>:[
+                            <span class="hljs-string">"b9fb5dc0e7b7ee0e9c252439ec32fe6b222e0d170aee6b562634dfad3638560e"</span>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>/merchant/build-transaction 【POST】</strong></p>
+<p>高级build功能</p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+<li>String- inputs, 构建交易的输入.</li>
+<li>String- outputs, 构建交易的输出.</li>
+<li>String- confirmations, 确认需要的交易确认数.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"guid"</span>:<span class="hljs-string">"b5fe58d1-f065-414d-82c8-9be117bd6d66"</span>,
+    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">100000000</span>,
+    <span class="hljs-attr">"confirmations"</span>:<span class="hljs-number">1</span>,
+    <span class="hljs-attr">"inputs"</span>:[
+        {
+            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend_utxo"</span>,
+            <span class="hljs-attr">"output_id"</span>:<span class="hljs-string">"37921eee9453d2598b6357dfeddd2cf351850f5be917bdac0d1cf208859ece06"</span>
+        },
+        {
+            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"spend_wallet"</span>,
+            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">10000000000</span>
+        }
+    ],
+    <span class="hljs-attr">"outputs"</span>:[
+        {
+            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control_address"</span>,
+            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">99</span>,
+            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680"</span>,
+            <span class="hljs-attr">"address"</span>:<span class="hljs-string">"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68"</span>
+        },
+        {
+            <span class="hljs-attr">"type"</span>:<span class="hljs-string">"control_program"</span>,
+            <span class="hljs-attr">"amount"</span>:<span class="hljs-number">99</span>,
+            <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680"</span>,
+            <span class="hljs-attr">"control_program"</span>:<span class="hljs-string">"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68"</span>
+        }
+    ]
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>String- raw_transaction, 原生交易信息.</li>
+<li>Integer-fee, 交易费.</li>
+<li>String- signing_instructions, 签名信息.</li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"raw_transaction"</span>:<span class="hljs-string">"070100010161015f26b670f600f5a6f7330e2efa0f648d56bdf5ed3f3532cb2346db7803ff12cca7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe8ccdfd59901000116001413d965b24f5b3ce4d9b6e1621173e57c161a2729220120a833c20ed909dd0154d7d41e6c97424a4c583ef02afc2969730b41c7ba30606d01013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8099c4d5990101160014f0928dc5f8878a4289b981d7c66386ff74be7fc300"</span>,
+    <span class="hljs-attr">"signing_instructions"</span>:[
+        {
+            <span class="hljs-attr">"derivation_path"</span>:[
+
+            ],
+            <span class="hljs-attr">"sign_data"</span>:[
+                <span class="hljs-string">"fd82cc65e6821daf8d2fc98bf2641a579c17aa484838c01dc4b88c68eeca1299"</span>
+            ],
+            <span class="hljs-attr">"pubkey"</span>:<span class="hljs-string">"mock"</span>
+        },
+        {
+            <span class="hljs-attr">"derivation_path"</span>:[
+                <span class="hljs-string">"2c000000"</span>,
+                <span class="hljs-string">"99000000"</span>,
+                <span class="hljs-string">"01000000"</span>,
+                <span class="hljs-string">"00000000"</span>,
+                <span class="hljs-string">"01000000"</span>
+            ],
+            <span class="hljs-attr">"sign_data"</span>:[
+                <span class="hljs-string">"fd82cc65e6821daf8d2fc98bf2641a579c17aa484838c01dc4b88c68eeca1299"</span>
+            ],
+            <span class="hljs-attr">"pubkey"</span>:<span class="hljs-string">"a833c20ed909dd0154d7d41e6c97424a4c583ef02afc2969730b41c7ba30606d"</span>
+        }
+    ],
+    <span class="hljs-attr">"fee"</span>:<span class="hljs-number">449000</span>
+}
+</code></pre>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="q"></a><a href="#q" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Q</h4>
+<p><strong>/q/asset 【GET】</strong></p>
+<p>Query the price of an asset on a given blockchain. asset_id is a hexdecimal string.</p>
+<p><strong>Example:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- id, 资产ID.</li>
+</ul>
+<pre><code class="hljs css language-http">/q/asset?id=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- asset_id, 资产ID.</li>
+<li>String- alias, 资产别名.</li>
+<li>Float- usd_price, 1BTM等价的USDT.</li>
+<li>Float- cny_price, 1BTM等价的CNY.</li>
+<li>Float- btc_price, 1BTM等价的BTC.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"data"</span>:{
+        <span class="hljs-attr">"asset_id"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-attr">"alias"</span>:<span class="hljs-string">"btm"</span>,
+        <span class="hljs-attr">"usd_price"</span>:<span class="hljs-number">0.1426</span>,
+        <span class="hljs-attr">"cny_price"</span>:<span class="hljs-number">0.996774</span>,
+        <span class="hljs-attr">"btc_price"</span>:<span class="hljs-number">0.00002673</span>
+    }
+}
+</code></pre>
+<p><strong>/q/chain-status 【GET】</strong></p>
+<p>Query the current status of a blockchain.</p>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- block_height, 当前区块高度.</li>
+<li>String- block_hash, 当前区块哈希.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">"mock"</span>,
+    <span class="hljs-attr">"data"</span>:{
+        <span class="hljs-attr">"block_height"</span>:<span class="hljs-number">86200</span>,
+        <span class="hljs-attr">"block_hash"</span>:<span class="hljs-string">"b02efbc6cf4b6326bd514c990250e535e4bbdcdfe4dfa7f862815a1e53d7e477"</span>
+    }
+}
+</code></pre>
+<p><strong>/q/get-vote-status 【GET】</strong></p>
+<p>Only available in vapor</p>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>Object- data, 返回结果数据
+<ul>
+<li>Object- consensus_nodes,投票的数据.
+<ul>
+<li>String- location, 国家地区.</li>
+<li>Object- introduce, 节点介绍.</li>
+<li>String- vote_num, 投票数量.</li>
+<li>Object- declaration, 宣言.</li>
+<li>String- role, 超级节点类型[正式节点，备选节点，其他].</li>
+<li>Object- name, 节点名称.</li>
+<li>String- name_en, 节点英文名称.</li>
+<li>Object- homepage, 节点主页.</li>
+</ul></li>
+<li>String- total_vote_num, 总投票数.</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{   
+    <span class="hljs-attr">"code"</span>:<span class="hljs-number">200</span>,
+    <span class="hljs-attr">"msg"</span>:<span class="hljs-string">""</span>,
+    <span class="hljs-attr">"result"</span>:{
+        <span class="hljs-attr">"data"</span>:{
+            <span class="hljs-attr">"consensus_nodes"</span>:[
+                {
+                    <span class="hljs-attr">"location"</span>:<span class="hljs-string">"中国"</span>,
+                    <span class="hljs-attr">"introduce"</span>:<span class="hljs-string">"Tokenview是全球首款全币种区块链浏览器，旨在运用全球最新的区块链技术为用户提供一站式区块链信息检索与数据分析服务。Tokenview支持所有主流加密货币区块信息的极速查询，同时提供多样化的数据分析和图表。与此同时。"</span>,
+                    <span class="hljs-attr">"logo"</span>:<span class="hljs-string">"/uploads/1560843168.41532161560842725.83183341560752713.024456Tokenview.jpg"</span>,
+                    <span class="hljs-attr">"vote_num"</span>:<span class="hljs-number">560000000</span>,
+                    <span class="hljs-attr">"declaration"</span>:<span class="hljs-string">"尊敬的Bytom社区： 谨代表 Tokenview 团队，郑重宣布参加Bystack网络节点竞选。 Tokenview是全球首款全币种区块链浏览器，旨在运用全球最新的区块链技术为用户提供一站式区块链信息检索与数据分析服务。与此同时，Tokenview会不断增加新的币种和功能，致力于成为全球最好用，最强大的区块链浏览器。"</span>,
+                    <span class="hljs-attr">"role"</span>:<span class="hljs-number">2</span>,
+                    <span class="hljs-attr">"pub_key"</span>:<span class="hljs-string">"74248234dd0f57f505dae45168987b205f8423e882ad44fe5cfa2b055b9308e2c5a09e2abd6635204f312ded4b61ab7aa563ad743523ca7bec4c4ba8fe5a657d"</span>,
+                    <span class="hljs-attr">"name"</span>:<span class="hljs-string">"22Tokenview"</span>,
+                    <span class="hljs-attr">"name_en"</span>: <span class="hljs-string">"22Tokenview"</span>,
+                    <span class="hljs-attr">"homepage"</span>:<span class="hljs-string">"https://tokenview22.com"</span>
+                },
+                {
+                    <span class="hljs-attr">"location"</span>:<span class="hljs-string">""</span>,
+                    <span class="hljs-attr">"introduce"</span>:<span class="hljs-string">""</span>,
+                    <span class="hljs-attr">"logo"</span>:<span class="hljs-string">""</span>,
+                    <span class="hljs-attr">"vote_num"</span>:<span class="hljs-number">560000000</span>,
+                    <span class="hljs-attr">"declaration"</span>:<span class="hljs-string">""</span>,
+                    <span class="hljs-attr">"role"</span>:<span class="hljs-number">2</span>,
+                    <span class="hljs-attr">"pub_key"</span>:<span class="hljs-string">"964909579fac3b527ed48cf037142737799ff6f37b38860f8537e9d761b95a1e4ac209a13b766be5f43a930160dad9355ddcca7db965819767629aff571953bd"</span>,
+                    <span class="hljs-attr">"name"</span>:<span class="hljs-string">""</span>,
+                    <span class="hljs-attr">"name_en"</span>:<span class="hljs-string">""</span>,
+                    <span class="hljs-attr">"homepage"</span>:<span class="hljs-string">""</span>
+                }
+            ],
+            <span class="hljs-attr">"total_vote_num"</span>:<span class="hljs-number">1120000000</span>
+        }
+    },
+}
+</code></pre>
+<p><strong>/q/list-utxos 【POST】</strong></p>
+<p><strong>Body JSON:</strong></p>
+<p>Object(必选):</p>
+<ul>
+<li>String- guid, 钱包guid.</li>
+</ul>
+<p>Optional(可选):</p>
+<ul>
+<li><code>Integer</code>- start, 开始数量，默认0.</li>
+<li><code>Integer</code>- <em>limit</em>, 查询数量，默认10.</li>
+<li>Object- filter, 过滤条件.
+<ul>
+<li>String- asset, 资产ID.</li>
+<li>String- script, 地址脚本.</li>
+</ul></li>
+<li>Object- sort, 排序方式.
+<ul>
+<li>String- by, 排序的键.</li>
+<li>String- order, 顺序 desc，asc.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{ 
+    <span class="hljs-attr">"filter"</span>:   { <span class="hljs-attr">"script"</span>:<span class="hljs-string">"00147a6cfb076a560b9a37c4fd6ca2acc66f85b64a21"</span>, 
+        <span class="hljs-attr">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span> 
+    },
+    <span class="hljs-attr">"sort"</span>: { <span class="hljs-attr">"by"</span>:<span class="hljs-string">"amount"</span>, 
+            <span class="hljs-attr">"order"</span>:<span class="hljs-string">"desc"</span>
+    }
+}
+</code></pre>
+<p><strong>Result JSON:</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer- code, 错误码.</li>
+<li>String- msg, 错误码对应的错误信息.</li>
+<li>Object- result, 返回结果
+<ul>
+<li>String- _links, 下一页的URL</li>
+<li>Array of object- data, 返回结果数据
+<ul>
+<li>String- hash, UTXO的ID.</li>
+<li>String- asset, 资产ID.</li>
+<li>Integer-amount, 资产金额.</li>
+</ul></li>
+<li><code>Integer</code>- start, 开始数量.</li>
+<li><code>Integer</code>- <em>limit</em>, 查询数量.</li>
+</ul></li>
+</ul>
+<pre><code class="hljs css language-json">{ 
+    "code":200, 
+  "msg":"mock", 
+  "result":{ "data":
+                        { "votes":[ 
+                    { "vote":"mock", 
+                        "total":1, 
+                        "name":"mock", 
+                        "desc":"mock" } 
+                ], 
+              "total_vote_num": 1 
+                }
+                }
+      "limit":10,
+        "start":0
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_63"><span class="arrow-prev">← </span><span class="function-name-prevnext">BlockCenter Bytom API  V3</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_41"><span>Bytom API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

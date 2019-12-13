@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Bycoin API · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="bycoin api调用仅在bycoin dapp浏览器中支持。"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Bycoin API · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="bycoin api调用仅在bycoin dapp浏览器中支持。"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Bapp开发</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Bycoin API</h1></header><article><div><span><p>bycoin api调用仅在bycoin dapp浏览器中支持。</p>
+<h5><a class="anchor" aria-hidden="true" id="检查-bycoin"></a><a href="#检查-bycoin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>检查 bycoin</h5>
+<p>你可以通过!window.bycoin检查bycoin浏览器，如果当前的浏览器是bycoin bapp浏览器返回true</p>
+<h5><a class="anchor" aria-hidden="true" id="callapi"></a><a href="#callapi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>callAPI</h5>
+<p>我们提供了一系列的方法来提高您的dapp的性能。每个方法都有一个apiname。使用如下：</p>
+<p><code>bycoin.callAPI(apiName, options, callback)</code></p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>apiName</td><td>String</td><td>name of the method which you want to invoke, you will see the available apiNames below</td></tr>
+<tr><td>options</td><td>Object</td><td>options depend on the specific method</td></tr>
+<tr><td>callback</td><td>Function</td><td>callback of method</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(apiName, params, (error, result) =&gt; {
+  <span class="hljs-keyword">if</span>(error) {
+    alert(error.message)
+  } <span class="hljs-keyword">else</span> {
+    alert(result)
+  }
+})
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h4>
+<h5><a class="anchor" aria-hidden="true" id="navigator"></a><a href="#navigator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>navigator</h5>
+<h5><a class="anchor" aria-hidden="true" id="navigatorgetorientation"></a><a href="#navigatorgetorientation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>navigator.getOrientation</h5>
+<p>获取当前APP的状态定向，返回'LANDSCAPE'或者'PORTRAIT'</p>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'navigator.getOrientation'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, result</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(result)
+})
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="navigatorsetorientation"></a><a href="#navigatorsetorientation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>navigator.setOrientation</h5>
+<p>设置应用程序的定向，参数是'landscape'或者'portrait'</p>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'navigator.setOrientation'</span>, <span class="hljs-string">'landscape'</span>)
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="navigatorclosedapp"></a><a href="#navigatorclosedapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>navigator.closeDapp</h5>
+<p>关闭当前Bapp的窗口</p>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'navigator.closeDapp'</span>)
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="navigatorgoback"></a><a href="#navigatorgoback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>navigator.goBack</h5>
+<p>定向到当前网页的上一个历史记录，如：history.go(-1). 如果没有以前的记录，该方法将关闭当前的dapp窗口。</p>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'navigator.goBack'</span>)
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="native"></a><a href="#native" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native</h4>
+<h5><a class="anchor" aria-hidden="true" id="nativealert"></a><a href="#nativealert" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.alert</h5>
+<p>显示本机警报对话框以显示消息，如window.alert。</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>message</td><td>String</td><td>true</td><td>null</td><td>message to show</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.alert'</span>, <span class="hljs-string">'winner winner, chicken dinner！'</span>)
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativeconfirm"></a><a href="#nativeconfirm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.confirm</h5>
+<p>显示本机确认对话框，如window.confirm。如果用户单击了“取消”按钮，则回调函数将返回一个错误。</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>title</td><td>String</td><td>true</td><td>null</td><td>dialog title</td></tr>
+<tr><td>message</td><td>String</td><td>true</td><td>null</td><td>dialog content</td></tr>
+<tr><td>cancelText</td><td>String</td><td>true</td><td>null</td><td>cancel button text</td></tr>
+<tr><td>confirmText</td><td>String</td><td>true</td><td>null</td><td>confirm button text</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.confirm'</span>, {
+  <span class="hljs-attr">title</span>: <span class="hljs-string">'quick question'</span>,
+  <span class="hljs-attr">message</span>: <span class="hljs-string">'is Javascript the worst language?'</span>,
+  <span class="hljs-attr">cancelText</span>: <span class="hljs-string">'no'</span>,
+  <span class="hljs-attr">confirmText</span>: <span class="hljs-string">'yes'</span>,
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, result</span>) </span>{
+  <span class="hljs-keyword">if</span>(err) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'no'</span>)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'yes'</span>)
+  }
+})
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativetoastinfo"></a><a href="#nativetoastinfo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.toastInfo</h5>
+<p>异步消息通知用户</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>text</td><td>String</td><td>true</td><td>null</td><td>text to toast</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.toastInfo'</span>, <span class="hljs-string">'123456789'</span>)
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativesaveimage"></a><a href="#nativesaveimage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.saveImage</h5>
+<p>将图像保存到本地磁盘</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>url</td><td>String</td><td>true</td><td>null</td><td>image url</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.saveImage'</span>, { <span class="hljs-attr">url</span>:<span class="hljs-string">"https://photo.16pic.com/00/53/34/16pic_5334613_b.jpg"</span> },<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, ret</span>) </span>{
+     <span class="hljs-keyword">if</span>(err) {
+    alert(err)
+  } <span class="hljs-keyword">else</span> {
+    alert(<span class="hljs-string">'save image success.'</span>)
+  }
+  })
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativesavescreenshot"></a><a href="#nativesavescreenshot" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.saveScreenshot</h5>
+<p>将当前屏幕快照保存到本地磁盘</p>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.saveScreenshot'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, ret</span>) </span>{
+    <span class="hljs-keyword">if</span>(err) {
+        alert(err)
+      } <span class="hljs-keyword">else</span> {
+        alert(<span class="hljs-string">'save sreenshot success.'</span>)
+      }
+  })
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativeselectpicture"></a><a href="#nativeselectpicture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.selectPicture</h5>
+<p>从相册选择图片或拍照。它将返回base64格式的图像数据（jpeg默认值）。</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>maxWidth</td><td>Number</td><td>false</td><td>null</td><td>response will be corpped</td></tr>
+<tr><td>maxHeight</td><td>Number</td><td>false</td><td>null</td><td>response will be corpped</td></tr>
+<tr><td>quality</td><td>Number</td><td>false</td><td>1</td><td>quality of image, range of value is 0 to 1</td></tr>
+</tbody>
+</table>
+<p>相应:</p>
+<table>
+<thead>
+<tr><th>property</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>data</td><td>String</td><td>base64 data, default prefix 'data:image/jpeg;base64,'</td></tr>
+<tr><td>width</td><td>Number</td><td>image width</td></tr>
+<tr><td>height</td><td>Number</td><td>image height</td></tr>
+<tr><td>fileSize</td><td>Number</td><td>file size (b)</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.selectPicture'</span>,{
+  <span class="hljs-attr">maxWidth</span>: <span class="hljs-number">400</span>,
+  <span class="hljs-attr">maxHeight</span>: <span class="hljs-number">200</span>
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, ret</span>) </span>{
+  <span class="hljs-keyword">if</span>(err) {
+    alert(err.message)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'imgContainer'</span>).src = ret.data
+  }
+})
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativesetclipboard"></a><a href="#nativesetclipboard" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.setClipboard</h5>
+<p>设置文本到用户的剪贴板。</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>text</td><td>String</td><td>true</td><td>null</td><td>text to set</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.setClipboard'</span>, <span class="hljs-string">'are you ok?'</span>)
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativeshare"></a><a href="#nativeshare" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.share</h5>
+<p>打开本机共享组件</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>title</td><td>String</td><td>true</td><td>null</td><td>title</td></tr>
+<tr><td>message</td><td>String</td><td>true</td><td>null</td><td>content</td></tr>
+<tr><td>url</td><td>String</td><td>true</td><td>null</td><td>link. If you want to share an image, set url to base64 data</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.share'</span>, {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">'dapp example'</span>,
+    <span class="hljs-attr">message</span>: <span class="hljs-string">'this is example of dapp sdk'</span>,
+    <span class="hljs-attr">url</span>: location.href,
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, ret</span>) </span>{
+    <span class="hljs-keyword">if</span>(err) {
+      alert(err.message)
+    } <span class="hljs-keyword">else</span> {
+      alert(<span class="hljs-string">'share success!'</span>)
+    }
+  })
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="nativescanqrcode"></a><a href="#nativescanqrcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>native.scanQRCode</h5>
+<p>打开扫一扫，扫描二维码，返回二维码的字符串内容</p>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'native.scanQRCode'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, text</span>) </span>{
+    <span class="hljs-keyword">if</span>(err) {
+      alert(err.message)
+    } <span class="hljs-keyword">else</span> {
+      alert(text)
+    }
+  })
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="device"></a><a href="#device" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>device</h4>
+<h5><a class="anchor" aria-hidden="true" id="devicegetcurrentlanguage"></a><a href="#devicegetcurrentlanguage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>device.getCurrentLanguage</h5>
+<p>获取用户的当前语言设置。如果您的Bapp应该支持多种语言，则此信息可能很有用，但我们已将locale参数添加到Bapp的url中。在大多数情况下，您不需要调用此api</p>
+<p>Available locale:</p>
+<ul>
+<li>zh-CN</li>
+<li>en-US</li>
+</ul>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'device.getCurrentLanguage'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, language</span>) </span>{
+  <span class="hljs-keyword">if</span>(err) {
+    alert(err)
+  } <span class="hljs-keyword">else</span> {
+    alert(language)
+  }
+})
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="devicegetcurrentcurrency"></a><a href="#devicegetcurrentcurrency" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>device.getCurrentCurrency</h5>
+<p>获取用户的当前货币设置</p>
+<p>Available currencies:</p>
+<ul>
+<li>CNY</li>
+<li>USD</li>
+<li>BTC</li>
+</ul>
+<pre><code class="hljs css language-javascript">bycoin.callAPI(<span class="hljs-string">'device.getCurrentCurrency'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, currency</span>) </span>{
+  <span class="hljs-keyword">if</span>(err) {
+    alert(err)
+  } <span class="hljs-keyword">else</span> {
+    alert(currency)
+  }
+})
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_47"><span class="arrow-prev">← </span><span>Bytom API</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_49"><span>Bapp开发流程</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

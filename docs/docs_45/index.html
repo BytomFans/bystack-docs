@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>BApp案例 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 储蓄分红BAPP"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="BApp案例 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### 储蓄分红BAPP"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Bapp开发</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">BApp案例</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="储蓄分红bapp"></a><a href="#储蓄分红bapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>储蓄分红BAPP</h4>
+<p><strong>储蓄分红合约简介</strong></p>
+<p>储蓄分红合约指的是项目方发起了一个锁仓计划（即储蓄合约和取现合约），用户可以在准备期自由选择锁仓金额参与该计划，等到锁仓到期之后还可以自动获取锁仓的利润。用户可以在准备期内（<code>dueBlockHeight</code>）参与储蓄，按照合约规定可以 <code>1：1</code> 获取同等数量的储蓄票据资产，同时用户锁仓的资产（<code>deposit</code>）将放到取现合约中，并且项目方是无法动用的，等到锁仓期限（<code>expireBlockHeight</code>）一到，用户便可以调用取现合约将自己储蓄的资产连本待息一同取出来。其示意图如下:</p>
+<p><img src="https://i.ibb.co/NtNqzFH/60.png" alt="image.png"></p>
+<p>从上图中可以看出，项目方发布了一个利润为<code>20%</code>的锁仓项目，其中储蓄合约<code>FixedLimitCollect</code>锁定了<code>1000</code>个票据资产（<code>bill</code>），同时项目方将<code>200</code>个储蓄资产（<code>deposit</code>）锁定到利息合约中。待项目方发布完合约之后，所有用户便可以参与了。例如上图中<code>user1</code>调用合约储蓄了<code>500</code>，这<code>500</code>个储蓄资产将被锁定在取现合约<code>FixedLimitProfit</code>中，同时<code>user1</code>获得了<code>500</code>个票据资产，剩余找零的资产将继续锁定在储蓄合约<code>FixedLimitCollect</code>中，以此类推，<code>user2</code>和<code>user3</code>也是相同的流程，直到储蓄合约没有资产为止。取现合约<code>FixedLimitProfit</code>跟储蓄合约的模型大致相同，只是取现合约是由多个<code>UTXO</code>组成的，用户在取现的时候可以并行操作。但是如果合约中的面值不能支持用户一次性取现的话，需要分多次提取。例如<code>user1</code>拥有<code>500</code>个票据资产，而可以获得的本息总额为<code>600</code>，但是取现的<code>UTXO</code>面值为<code>500</code>,那么<code>user1</code>一次最多只能取<code>500</code>,剩下的<code>100</code>需要再构造一笔交易来提现。</p>
+<p><strong>合约源代码</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// 储蓄合约</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">"./FixedLimitProfit"</span>
+contract FixedLimitCollect(assetDeposited: Asset,
+                        <span class="hljs-attr">totalAmountBill</span>: Amount,
+                        <span class="hljs-attr">totalAmountCapital</span>: Amount,
+                        <span class="hljs-attr">dueBlockHeight</span>: Integer,
+                        <span class="hljs-attr">expireBlockHeight</span>: Integer,
+                        <span class="hljs-attr">additionalBlockHeight</span>: Integer,
+                        <span class="hljs-attr">banker</span>: Program,
+                        <span class="hljs-attr">bankerKey</span>: PublicKey) locks billAmount <span class="hljs-keyword">of</span> billAsset {
+    clause collect(amountDeposited: Amount, <span class="hljs-attr">saver</span>: Program) {
+        verify below(dueBlockHeight)
+        verify amountDeposited &lt;= billAmount &amp;&amp; totalAmountBill &lt;= totalAmountCapital
+        define sAmountDeposited: Integer = amountDeposited/<span class="hljs-number">100000000</span>
+        define sTotalAmountBill: Integer = totalAmountBill/<span class="hljs-number">100000000</span>
+        verify sAmountDeposited &gt; <span class="hljs-number">0</span> &amp;&amp; sTotalAmountBill &gt; <span class="hljs-number">0</span>
+        <span class="hljs-keyword">if</span> amountDeposited &lt; billAmount {
+            lock amountDeposited <span class="hljs-keyword">of</span> assetDeposited <span class="hljs-keyword">with</span> FixedLimitProfit(billAsset, totalAmountBill, totalAmountCapital, expireBlockHeight, additionalBlockHeight, banker, bankerKey)
+            lock amountDeposited <span class="hljs-keyword">of</span> billAsset <span class="hljs-keyword">with</span> saver
+            lock billAmount-amountDeposited <span class="hljs-keyword">of</span> billAsset <span class="hljs-keyword">with</span> FixedLimitCollect(assetDeposited, totalAmountBill, totalAmountCapital, dueBlockHeight, expireBlockHeight, additionalBlockHeight, banker, bankerKey)
+        } <span class="hljs-keyword">else</span> {
+            lock amountDeposited <span class="hljs-keyword">of</span> assetDeposited <span class="hljs-keyword">with</span> FixedLimitProfit(billAsset, totalAmountBill, totalAmountCapital, expireBlockHeight, additionalBlockHeight, banker, bankerKey)
+            lock billAmount <span class="hljs-keyword">of</span> billAsset <span class="hljs-keyword">with</span> saver
+        }
+    }
+    clause cancel(bankerSig: Signature) {
+        verify above(dueBlockHeight)
+        verify checkTxSig(bankerKey, bankerSig)
+        unlock billAmount <span class="hljs-keyword">of</span> billAsset
+    }
+}
+</code></pre>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// 取现合约(本金加利息)</span>
+contract FixedLimitProfit(assetBill: Asset,
+                        <span class="hljs-attr">totalAmountBill</span>: Amount,
+                        <span class="hljs-attr">totalAmountCapital</span>: Amount,
+                        <span class="hljs-attr">expireBlockHeight</span>: Integer,
+                        <span class="hljs-attr">additionalBlockHeight</span>: Integer,
+                        <span class="hljs-attr">banker</span>: Program,
+                        <span class="hljs-attr">bankerKey</span>: PublicKey) locks capitalAmount <span class="hljs-keyword">of</span> capitalAsset {
+    clause profit(amountBill: Amount, <span class="hljs-attr">saver</span>: Program) {
+        verify above(expireBlockHeight)
+        define sAmountBill: Integer = amountBill/<span class="hljs-number">100000000</span>
+        define sTotalAmountBill: Integer = totalAmountBill/<span class="hljs-number">100000000</span>
+        verify sAmountBill &gt; <span class="hljs-number">0</span> &amp;&amp; sTotalAmountBill &gt; <span class="hljs-number">0</span> &amp;&amp; amountBill &lt; totalAmountBill
+        define gain: Integer = totalAmountCapital*sAmountBill/sTotalAmountBill
+        verify gain &gt; <span class="hljs-number">0</span> &amp;&amp; gain &lt;= capitalAmount
+        <span class="hljs-keyword">if</span> gain &lt; capitalAmount {
+            lock amountBill <span class="hljs-keyword">of</span> assetBill <span class="hljs-keyword">with</span> banker
+            lock gain <span class="hljs-keyword">of</span> capitalAsset <span class="hljs-keyword">with</span> saver
+            lock capitalAmount - gain <span class="hljs-keyword">of</span> capitalAsset <span class="hljs-keyword">with</span> FixedLimitProfit(assetBill, totalAmountBill, totalAmountCapital, expireBlockHeight, additionalBlockHeight, banker, bankerKey)
+        } <span class="hljs-keyword">else</span> {
+            lock amountBill <span class="hljs-keyword">of</span> assetBill <span class="hljs-keyword">with</span> banker
+            lock capitalAmount <span class="hljs-keyword">of</span> capitalAsset <span class="hljs-keyword">with</span> saver
+        }
+    }
+    clause cancel(bankerSig: Signature) {
+        verify above(additionalBlockHeight)
+        verify checkTxSig(bankerKey, bankerSig)
+        unlock capitalAmount <span class="hljs-keyword">of</span> capitalAsset
+    }
+}
+</code></pre>
+<p>合约的源代码说明可以具体参考<a href="https://docs.bytom.io/mydoc_smart_contract_overview.cn.html"><code>Equity合约介绍</code></a>.</p>
+<p>注意事项：</p>
+<ul>
+<li>时间期限不是具体的时间，而是通过区块高度来大概估算的（平均区块时间间隔大概为<code>2.5</code>分钟）</li>
+<li>比原的精度是<code>8</code>, 即 <code>1BTM = 100000000 neu</code>，正常情况下参与计算都是以<code>neu</code>为单位的，然而虚拟机的<code>int64</code>类型的最大值是<code>9223372036854775807</code>，为了避免数值太大导致计算溢出，所以对计算的金额提出了金额限制（即<code>amountBill/100000000</code>）</li>
+<li>另外<code>clause cancel</code>是项目方的管理方法，如果储蓄或者取现没有满额，项目方也可以回收剩余的资产</li>
+</ul>
+<p><strong>编译并实例化合约</strong></p>
+<p>编译<code>Equity</code>合约可以参考一下<a href="https://github.com/Bytom/equity"><code>Equity</code>编译器</a>的介绍说明。假如储蓄合约<code>FixedLimitCollect</code>的参数如下：</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">assetDeposited</span>          <span class="hljs-selector-pseudo">:c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee</span>
+<span class="hljs-selector-tag">totalAmountBill</span>         <span class="hljs-selector-pseudo">:10000000000</span>
+<span class="hljs-selector-tag">totalAmountCapital</span>      <span class="hljs-selector-pseudo">:20000000000</span>
+<span class="hljs-selector-tag">dueBlockHeight</span>          <span class="hljs-selector-pseudo">:1070</span>
+<span class="hljs-selector-tag">expireBlockHeight</span>       <span class="hljs-selector-pseudo">:1090</span>
+<span class="hljs-selector-tag">additionalBlockHeight</span>   <span class="hljs-selector-pseudo">:1100</span>
+<span class="hljs-selector-tag">banker</span>                  <span class="hljs-selector-pseudo">:0014dedfd406c591aa221a047a260107f877da92fec5</span>
+<span class="hljs-selector-tag">bankerKey</span>               <span class="hljs-selector-pseudo">:055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf</span>
+</code></pre>
+<p>其中<code>bankerKey</code>是管理员的<code>publicKey</code>，可以通过比原链的接口<a href="https://github.com/Bytom/bytom/wiki/API-Reference#list-pubkeys"><code>list-pubkeys</code></a>来获取，注意管理员需要保存一下对应的<code>rootXpub</code>和<code>Path</code>，否则无法正确调用<code>clause cancel</code>。</p>
+<p>实例化合约命令如下：</p>
+<pre><code class="hljs css language-sh">// 储蓄合约
+./equity FixedLimitCollect --instance c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee 10000000000 20000000000 1070 1090 1100 0014dedfd406c591aa221a047a260107f877da92fec5 055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf
+
+// 取现合约
+./equity FixedLimitProfit --instance c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee 10000000000 20000000000 1090 1100 0014dedfd406c591aa221a047a260107f877da92fec5 055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf
+</code></pre>
+<p><strong>发布合约交易</strong></p>
+<p>发布合约交易即将资产锁定到合约中。由于目前无法在比原的<code>dashboard</code>上构造合约交易，所以需要借助外部工具来发送合约交易，比如<code>postman</code>。按照上述示意图所示，项目方需要发布<code>1000</code>个储蓄资产的储蓄合约和<code>200</code>个利息资产取现合约。假设项目方需要发布<code>1000</code>个储蓄资产（假如精度为<code>8</code>,那么<code>1000</code>个在比原链中表示为<code>100000000000</code>）的锁仓合约，那么他需要将对应数量的票据锁定在储蓄合约中，其交易模板如下：</p>
+<pre><code class="hljs css language-javascript">{
+  <span class="hljs-string">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-string">"actions"</span>: [
+    {
+      <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0ILGLSTC00A02"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0ILGLSTC00A02"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">100000000000</span>,
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"13016eff73ffb7539a69e122f80f5c1cc94446773ac3f64dec290429f87e73b3"</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">100000000000</span>,
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"13016eff73ffb7539a69e122f80f5c1cc94446773ac3f64dec290429f87e73b3"</span>,
+      <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"20055539eb36abcaaf127c63ae20e3d049cd28d0f1fe569df84da3aedb018ca1bf160014dedfd406c591aa221a047a260107f877da92fec5024c04024204022e040500c817a8040500e40b540220c6b12af8326df37b8d77c77bfa2547e083cbacde15cc48da56d4aa4e4235a3ee4d3b02597a642f0200005479cda069c35b797ca153795579a19a695a790400e1f5059653790400e1f505967c00a07c00a09a69c35b797c9f9161644d010000005b79c2547951005e79895d79895c79895b7989597989587989537a894caa587a649e0000005479cd9f6959790400e1f5059653790400e1f505967800a07800a09a5c7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f91616487000000005b795479515b79c1695178c2515d79c16952c3527994c251005d79895c79895b79895a79895979895879895779895679890274787e008901c07ec1696399000000005b795479515b79c16951c3c2515d79c16963aa000000557acd9f69577a577aae7cac890274787e008901c07ec169515b79c2515d79c16952c35c7994c251005d79895c79895b79895a79895979895879895779895679895579890274787e008901c07ec169632a020000005b79c2547951005e79895d79895c79895b7989597989587989537a894caa587a649e0000005479cd9f6959790400e1f5059653790400e1f505967800a07800a09a5c7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f91616487000000005b795479515b79c1695178c2515d79c16952c3527994c251005d79895c79895b79895a79895979895879895779895679890274787e008901c07ec1696399000000005b795479515b79c16951c3c2515d79c16963aa000000557acd9f69577a577aae7cac890274787e008901c07ec16951c3c2515d79c169633b020000547acd9f69587a587aae7cac747800c0"</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"control_program"</span>
+    }
+  ],
+  <span class="hljs-string">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+</code></pre>
+<p>合约交易成功后，合约<code>control_program</code>对应的<code>UTXO</code>将会被所有用户查询到，使用比原链的接口<a href="https://github.com/Bytom/bytom/wiki/API-Reference#list-unspent-outputs"><code>list-unspent-outputs</code></a>即可查询。</p>
+<p>此外，开发者需要存储一下合约<code>UTXO</code>的<code>assetID</code>和<code>program</code>，以便在<code>DAPP</code>的前端页面的<code>config</code>配置文件和<code>DAPP</code>后端中调用。如上所示：</p>
+<pre><code class="hljs">// 储蓄合约
+assetID：<span class="hljs-number">13016</span>eff<span class="hljs-number">73</span>ffb<span class="hljs-number">7539</span>a<span class="hljs-number">69e122</span>f<span class="hljs-number">80</span>f<span class="hljs-number">5</span><span class="hljs-keyword">c</span><span class="hljs-number">1</span><span class="hljs-keyword">cc</span><span class="hljs-number">94446773</span>ac<span class="hljs-number">3</span>f<span class="hljs-number">64</span>dec<span class="hljs-number">290429</span>f<span class="hljs-number">87e73</span>b<span class="hljs-number">3</span>
+program：<span class="hljs-number">20055539</span>eb<span class="hljs-number">36</span>abcaaf<span class="hljs-number">127</span><span class="hljs-keyword">c</span><span class="hljs-number">63</span>ae<span class="hljs-number">20e3</span>d<span class="hljs-number">049</span>cd<span class="hljs-number">28</span>d<span class="hljs-number">0</span>f<span class="hljs-number">1</span>fe<span class="hljs-number">569</span>df<span class="hljs-number">84</span>da<span class="hljs-number">3</span>aedb<span class="hljs-number">018</span>ca<span class="hljs-number">1</span>bf<span class="hljs-number">160014</span>dedfd<span class="hljs-number">406</span><span class="hljs-keyword">c</span><span class="hljs-number">591</span>aa<span class="hljs-number">221</span>a<span class="hljs-number">047</span>a<span class="hljs-number">260107</span>f<span class="hljs-number">877</span>da<span class="hljs-number">92</span>fec<span class="hljs-number">5024</span><span class="hljs-keyword">c</span><span class="hljs-number">04024204022e040500</span><span class="hljs-keyword">c</span><span class="hljs-number">817</span>a<span class="hljs-number">8040500e40</span>b<span class="hljs-number">540220</span><span class="hljs-keyword">c</span><span class="hljs-number">6</span>b<span class="hljs-number">12</span>af<span class="hljs-number">8326</span>df<span class="hljs-number">37</span>b<span class="hljs-number">8</span>d<span class="hljs-number">77</span><span class="hljs-keyword">c</span><span class="hljs-number">77</span>bfa<span class="hljs-number">2547e083</span>cbacde<span class="hljs-number">15</span><span class="hljs-keyword">cc</span><span class="hljs-number">48</span>da<span class="hljs-number">56</span>d<span class="hljs-number">4</span>aa<span class="hljs-number">4e4235</span>a<span class="hljs-number">3</span>ee<span class="hljs-number">4</span>d<span class="hljs-number">3</span>b<span class="hljs-number">02597</span>a<span class="hljs-number">642</span>f<span class="hljs-number">0200005479</span>cda<span class="hljs-number">069</span><span class="hljs-keyword">c</span><span class="hljs-number">35</span>b<span class="hljs-number">797</span>ca<span class="hljs-number">153795579</span>a<span class="hljs-number">19</span>a<span class="hljs-number">695</span>a<span class="hljs-number">790400e1</span>f<span class="hljs-number">5059653790400e1</span>f<span class="hljs-number">505967</span><span class="hljs-keyword">c</span><span class="hljs-number">00</span>a<span class="hljs-number">07</span><span class="hljs-keyword">c</span><span class="hljs-number">00</span>a<span class="hljs-number">09</span>a<span class="hljs-number">69</span><span class="hljs-keyword">c</span><span class="hljs-number">35</span>b<span class="hljs-number">797</span><span class="hljs-keyword">c</span><span class="hljs-number">9</span>f<span class="hljs-number">9161644</span>d<span class="hljs-number">010000005</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">2547951005e79895</span>d<span class="hljs-number">79895</span><span class="hljs-keyword">c</span><span class="hljs-number">79895</span>b<span class="hljs-number">7989597989587989537</span>a<span class="hljs-number">894</span>caa<span class="hljs-number">587</span>a<span class="hljs-number">649e0000005479</span>cd<span class="hljs-number">9</span>f<span class="hljs-number">6959790400e1</span>f<span class="hljs-number">5059653790400e1</span>f<span class="hljs-number">505967800</span>a<span class="hljs-number">07800</span>a<span class="hljs-number">09</span>a<span class="hljs-number">5</span><span class="hljs-keyword">c</span><span class="hljs-number">7956799</span>f<span class="hljs-number">9</span>a<span class="hljs-number">6955797</span>b<span class="hljs-number">957</span><span class="hljs-keyword">c</span><span class="hljs-number">96</span><span class="hljs-keyword">c</span><span class="hljs-number">37800</span>a<span class="hljs-number">052797</span>ba<span class="hljs-number">19</span>a<span class="hljs-number">69</span><span class="hljs-keyword">c</span><span class="hljs-number">3787</span><span class="hljs-keyword">c</span><span class="hljs-number">9</span>f<span class="hljs-number">91616487000000005</span>b<span class="hljs-number">795479515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">1695178</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16952</span><span class="hljs-keyword">c</span><span class="hljs-number">3527994</span><span class="hljs-keyword">c</span><span class="hljs-number">251005</span>d<span class="hljs-number">79895</span><span class="hljs-keyword">c</span><span class="hljs-number">79895</span>b<span class="hljs-number">79895</span>a<span class="hljs-number">79895979895879895779895679890274787e008901</span><span class="hljs-keyword">c</span><span class="hljs-number">07</span>ec<span class="hljs-number">1696399000000005</span>b<span class="hljs-number">795479515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16951</span><span class="hljs-keyword">c</span><span class="hljs-number">3</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16963</span>aa<span class="hljs-number">000000557</span>acd<span class="hljs-number">9</span>f<span class="hljs-number">69577</span>a<span class="hljs-number">577</span>aae<span class="hljs-number">7</span>cac<span class="hljs-number">890274787e008901</span><span class="hljs-keyword">c</span><span class="hljs-number">07</span>ec<span class="hljs-number">169515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16952</span><span class="hljs-keyword">c</span><span class="hljs-number">35</span><span class="hljs-keyword">c</span><span class="hljs-number">7994</span><span class="hljs-keyword">c</span><span class="hljs-number">251005</span>d<span class="hljs-number">79895</span><span class="hljs-keyword">c</span><span class="hljs-number">79895</span>b<span class="hljs-number">79895</span>a<span class="hljs-number">79895979895879895779895679895579890274787e008901</span><span class="hljs-keyword">c</span><span class="hljs-number">07</span>ec<span class="hljs-number">169632</span>a<span class="hljs-number">020000005</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">2547951005e79895</span>d<span class="hljs-number">79895</span><span class="hljs-keyword">c</span><span class="hljs-number">79895</span>b<span class="hljs-number">7989597989587989537</span>a<span class="hljs-number">894</span>caa<span class="hljs-number">587</span>a<span class="hljs-number">649e0000005479</span>cd<span class="hljs-number">9</span>f<span class="hljs-number">6959790400e1</span>f<span class="hljs-number">5059653790400e1</span>f<span class="hljs-number">505967800</span>a<span class="hljs-number">07800</span>a<span class="hljs-number">09</span>a<span class="hljs-number">5</span><span class="hljs-keyword">c</span><span class="hljs-number">7956799</span>f<span class="hljs-number">9</span>a<span class="hljs-number">6955797</span>b<span class="hljs-number">957</span><span class="hljs-keyword">c</span><span class="hljs-number">96</span><span class="hljs-keyword">c</span><span class="hljs-number">37800</span>a<span class="hljs-number">052797</span>ba<span class="hljs-number">19</span>a<span class="hljs-number">69</span><span class="hljs-keyword">c</span><span class="hljs-number">3787</span><span class="hljs-keyword">c</span><span class="hljs-number">9</span>f<span class="hljs-number">91616487000000005</span>b<span class="hljs-number">795479515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">1695178</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16952</span><span class="hljs-keyword">c</span><span class="hljs-number">3527994</span><span class="hljs-keyword">c</span><span class="hljs-number">251005</span>d<span class="hljs-number">79895</span><span class="hljs-keyword">c</span><span class="hljs-number">79895</span>b<span class="hljs-number">79895</span>a<span class="hljs-number">79895979895879895779895679890274787e008901</span><span class="hljs-keyword">c</span><span class="hljs-number">07</span>ec<span class="hljs-number">1696399000000005</span>b<span class="hljs-number">795479515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16951</span><span class="hljs-keyword">c</span><span class="hljs-number">3</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16963</span>aa<span class="hljs-number">000000557</span>acd<span class="hljs-number">9</span>f<span class="hljs-number">69577</span>a<span class="hljs-number">577</span>aae<span class="hljs-number">7</span>cac<span class="hljs-number">890274787e008901</span><span class="hljs-keyword">c</span><span class="hljs-number">07</span>ec<span class="hljs-number">16951</span><span class="hljs-keyword">c</span><span class="hljs-number">3</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">169633</span>b<span class="hljs-number">020000547</span>acd<span class="hljs-number">9</span>f<span class="hljs-number">69587</span>a<span class="hljs-number">587</span>aae<span class="hljs-number">7</span>cac<span class="hljs-number">747800</span><span class="hljs-keyword">c</span><span class="hljs-number">0</span>
+
+// 取现合约
+assetID：<span class="hljs-keyword">c</span><span class="hljs-number">6</span>b<span class="hljs-number">12</span>af<span class="hljs-number">8326</span>df<span class="hljs-number">37</span>b<span class="hljs-number">8</span>d<span class="hljs-number">77</span><span class="hljs-keyword">c</span><span class="hljs-number">77</span>bfa<span class="hljs-number">2547e083</span>cbacde<span class="hljs-number">15</span><span class="hljs-keyword">cc</span><span class="hljs-number">48</span>da<span class="hljs-number">56</span>d<span class="hljs-number">4</span>aa<span class="hljs-number">4e4235</span>a<span class="hljs-number">3</span>ee
+program：<span class="hljs-number">20055539</span>eb<span class="hljs-number">36</span>abcaaf<span class="hljs-number">127</span><span class="hljs-keyword">c</span><span class="hljs-number">63</span>ae<span class="hljs-number">20e3</span>d<span class="hljs-number">049</span>cd<span class="hljs-number">28</span>d<span class="hljs-number">0</span>f<span class="hljs-number">1</span>fe<span class="hljs-number">569</span>df<span class="hljs-number">84</span>da<span class="hljs-number">3</span>aedb<span class="hljs-number">018</span>ca<span class="hljs-number">1</span>bf<span class="hljs-number">160014</span>dedfd<span class="hljs-number">406</span><span class="hljs-keyword">c</span><span class="hljs-number">591</span>aa<span class="hljs-number">221</span>a<span class="hljs-number">047</span>a<span class="hljs-number">260107</span>f<span class="hljs-number">877</span>da<span class="hljs-number">92</span>fec<span class="hljs-number">5024</span><span class="hljs-keyword">c</span><span class="hljs-number">040242040500</span><span class="hljs-keyword">c</span><span class="hljs-number">817</span>a<span class="hljs-number">8040500e40</span>b<span class="hljs-number">540220</span><span class="hljs-keyword">c</span><span class="hljs-number">6</span>b<span class="hljs-number">12</span>af<span class="hljs-number">8326</span>df<span class="hljs-number">37</span>b<span class="hljs-number">8</span>d<span class="hljs-number">77</span><span class="hljs-keyword">c</span><span class="hljs-number">77</span>bfa<span class="hljs-number">2547e083</span>cbacde<span class="hljs-number">15</span><span class="hljs-keyword">cc</span><span class="hljs-number">48</span>da<span class="hljs-number">56</span>d<span class="hljs-number">4</span>aa<span class="hljs-number">4e4235</span>a<span class="hljs-number">3</span>ee<span class="hljs-number">4</span>caa<span class="hljs-number">587</span>a<span class="hljs-number">649e0000005479</span>cd<span class="hljs-number">9</span>f<span class="hljs-number">6959790400e1</span>f<span class="hljs-number">5059653790400e1</span>f<span class="hljs-number">505967800</span>a<span class="hljs-number">07800</span>a<span class="hljs-number">09</span>a<span class="hljs-number">5</span><span class="hljs-keyword">c</span><span class="hljs-number">7956799</span>f<span class="hljs-number">9</span>a<span class="hljs-number">6955797</span>b<span class="hljs-number">957</span><span class="hljs-keyword">c</span><span class="hljs-number">96</span><span class="hljs-keyword">c</span><span class="hljs-number">37800</span>a<span class="hljs-number">052797</span>ba<span class="hljs-number">19</span>a<span class="hljs-number">69</span><span class="hljs-keyword">c</span><span class="hljs-number">3787</span><span class="hljs-keyword">c</span><span class="hljs-number">9</span>f<span class="hljs-number">91616487000000005</span>b<span class="hljs-number">795479515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">1695178</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16952</span><span class="hljs-keyword">c</span><span class="hljs-number">3527994</span><span class="hljs-keyword">c</span><span class="hljs-number">251005</span>d<span class="hljs-number">79895</span><span class="hljs-keyword">c</span><span class="hljs-number">79895</span>b<span class="hljs-number">79895</span>a<span class="hljs-number">79895979895879895779895679890274787e008901</span><span class="hljs-keyword">c</span><span class="hljs-number">07</span>ec<span class="hljs-number">1696399000000005</span>b<span class="hljs-number">795479515</span>b<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16951</span><span class="hljs-keyword">c</span><span class="hljs-number">3</span><span class="hljs-keyword">c</span><span class="hljs-number">2515</span>d<span class="hljs-number">79</span><span class="hljs-keyword">c</span><span class="hljs-number">16963</span>aa<span class="hljs-number">000000557</span>acd<span class="hljs-number">9</span>f<span class="hljs-number">69577</span>a<span class="hljs-number">577</span>aae<span class="hljs-number">7</span>cac<span class="hljs-number">747800</span><span class="hljs-keyword">c</span><span class="hljs-number">0</span>
+</code></pre>
+<p><strong>储蓄分红DAPP架构模型</strong></p>
+<p>比原链的<code>DAPP</code>总体框架模型描述了<code>DAPP</code>的大致结构模型，结合储蓄分红合约案例，其具体流程如下：</p>
+<p><img src="https://i.ibb.co/2jtzHcd/61.jpg" alt="image.png"></p>
+<p><strong>DAPP前端</strong></p>
+<p>储蓄分红合约前端逻辑处理流程大致如下：</p>
+<ul>
+<li>调用插件</li>
+</ul>
+<p>比原的<code>chrome</code>插件源码位于<a href="https://github.com/Bytom/Bytom-JS-SDK">Bytom-JS-SDK</a>，开发比原<code>DAPP</code>时调用插件的说明可以参考<a href="https://github.com/Bytom/Bystore/wiki/Dapp-Developer-Guide">Dapp Developer Guide</a></p>
+<ul>
+<li>配置合约参数</li>
+</ul>
+<p>该<code>Dapp demo</code>中需要配置实例化的参数为<code>assetDeposited</code>、<code>totalAmountBill</code>、<code>totalAmountCapital</code>、<code>dueBlockHeight</code>、<code>expireBlockHeight</code>、<code>additionalBlockHeight</code>、<code>banker</code>、<code>bankerKey</code>。其前端配置文件为<a href="https://github.com/Bytom/Bytom-Dapp-Demo/blob/master/contracts/configure.json.js"><code>configure.json.js</code></a></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-string">"solonet"</span>: {
+        <span class="hljs-string">"depositProgram"</span>: <span class="hljs-string">"2091194ddbf3614cafbadb1274c33e61afd4d5044c6ec4c30f8202980199c30083160014c800033d5e94de5f22e23a6d3cbeaed87b55bd640600204aa9d101050010a5d4e8203310d9951697418af3cdbe7a9cdde1dc49bb5439503dacb33828d6c9ef5af5a24dfc01567a64f5010000c358797ca153795579a19a6957790400e1f5059653790400e1f505967c00a07c00a09a69c358797c9f91616429010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec169515879c2515a79c16952c3597994c251005a79895979895879895779895679895579890274787e008901c07ec16963f0010000005879c2547951005b79895a7989597989587989537a894c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac890274787e008901c07ec16951c3c2515a79c16963fc010000567a567aae7cac747800c0"</span>,
+        <span class="hljs-string">"profitProgram"</span>: <span class="hljs-string">"2091194ddbf3614cafbadb1274c33e61afd4d5044c6ec4c30f8202980199c30083160014c800033d5e94de5f22e23a6d3cbeaed87b55bd640600204aa9d101050010a5d4e820666f298d34806a6db0528c3b3d081bc00fa58aa393e7c42f90d67eb7db2a524f4c9a567a649300000057790400e1f5059653790400e1f505967800a07800a09a5a7956799f9a6955797b957c96c37800a052797ba19a69c3787c9f9161647c0000000059795479515979c1695178c2515b79c16952c3527994c251005b79895a79895979895879895779895679890274787e008901c07ec169638e0000000059795479515979c16951c3c2515b79c169639a000000567a567aae7cac747800c0"</span>,
+        <span class="hljs-string">"assetDeposited"</span>: <span class="hljs-string">"3310d9951697418af3cdbe7a9cdde1dc49bb5439503dacb33828d6c9ef5af5a2"</span>,
+        <span class="hljs-string">"assetBill"</span>: <span class="hljs-string">"666f298d34806a6db0528c3b3d081bc00fa58aa393e7c42f90d67eb7db2a524f"</span>,
+        <span class="hljs-string">"totalAmountBill"</span>: <span class="hljs-number">1000000000000</span>,
+        <span class="hljs-string">"totalAmountCapital"</span>: <span class="hljs-number">2000000000000</span>,
+        <span class="hljs-string">"dueBlockHeight"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"expireBlockHeight"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"banker"</span>: <span class="hljs-string">"0014c800033d5e94de5f22e23a6d3cbeaed87b55bd64"</span>,
+        <span class="hljs-string">"gas"</span>: <span class="hljs-number">0.4</span>
+    },
+    <span class="hljs-string">"testnet"</span>:{
+        <span class="hljs-string">"depositProgram"</span>: <span class="hljs-string">"20f39af759065598406ca988f0dd79af9175dd7adcbe019317a2d605578b1597ac1600147211ec12410ce8bd0d71cab0a29be3ea61c71eb103c8260203da240203da2402060080f420e6b50600407a10f35a2000d38a1c946e8cba1a69493240f281cd925002a43b81f516c4391b5fb2ffdacd4d4302597a64370200005479cda069c35b790400e1f5059600a05c797ba19a53795579a19a695a790400e1f5059653790400e1f505967800a07800a09a6955797b957c9600a069c35b797c9f9161645b010000005b79c2547951005e79895d79895c79895b7989597989587989537a894ca4587a64980000005479cd9f6959790400e1f5059653790400e1f505967800a07800a09a5c7956799f9a6955797b957c967600a069c3787c9f91616481000000005b795479515b79c1695178c2515d79c16952c3527994c251005d79895c79895b79895a79895979895879895779895679890274787e008901c07ec1696393000000005b795479515b79c16951c3c2515d79c16963a4000000557acd9f69577a577aae7cac890274787e008901c07ec169515b79c2515d79c16952c35c7994c251005d79895c79895b79895a79895979895879895779895679895579890274787e008901c07ec1696332020000005b79c2547951005e79895d79895c79895b7989597989587989537a894ca4587a64980000005479cd9f6959790400e1f5059653790400e1f505967800a07800a09a5c7956799f9a6955797b957c967600a069c3787c9f91616481000000005b795479515b79c1695178c2515d79c16952c3527994c251005d79895c79895b79895a79895979895879895779895679890274787e008901c07ec1696393000000005b795479515b79c16951c3c2515d79c16963a4000000557acd9f69577a577aae7cac890274787e008901c07ec16951c3c2515d79c1696343020000547acd9f69587a587aae7cac747800c0"</span>,
+        <span class="hljs-string">"profitProgram"</span>: <span class="hljs-string">"20f39af759065598406ca988f0dd79af9175dd7adcbe019317a2d605578b1597ac1600147211ec12410ce8bd0d71cab0a29be3ea61c71eb103c8260203da2402060080f420e6b50600407a10f35a20f855baf98778a892bad0371f5afca845191824dc8584585d566fbbc8ef1f304c4ca4587a64980000005479cd9f6959790400e1f5059653790400e1f505967800a07800a09a5c7956799f9a6955797b957c967600a069c3787c9f91616481000000005b795479515b79c1695178c2515d79c16952c3527994c251005d79895c79895b79895a79895979895879895779895679890274787e008901c07ec1696393000000005b795479515b79c16951c3c2515d79c16963a4000000557acd9f69577a577aae7cac747800c0"</span>,
+        <span class="hljs-string">"assetDeposited"</span>: <span class="hljs-string">"00d38a1c946e8cba1a69493240f281cd925002a43b81f516c4391b5fb2ffdacd"</span>,
+        <span class="hljs-string">"assetBill"</span>: <span class="hljs-string">"f855baf98778a892bad0371f5afca845191824dc8584585d566fbbc8ef1f304c"</span>,
+        <span class="hljs-string">"totalAmountBill"</span>: <span class="hljs-number">100000000000000</span>,
+        <span class="hljs-string">"totalAmountCapital"</span>: <span class="hljs-number">200000000000000</span>,
+        <span class="hljs-string">"dueBlockHeight"</span>: <span class="hljs-number">140506</span>,
+        <span class="hljs-string">"expireBlockHeight"</span>: <span class="hljs-number">140506</span>,
+        <span class="hljs-string">"banker"</span>: <span class="hljs-string">"00147211ec12410ce8bd0d71cab0a29be3ea61c71eb1"</span>,
+        <span class="hljs-string">"gas"</span>: <span class="hljs-number">0.4</span>
+    }
+}
+</code></pre>
+<ul>
+<li>前端预计算处理</li>
+</ul>
+<p>以储蓄合约<code>FixedLimitCollect</code>为例，前端需要对该合约进行<code>verify</code>语句的预判断逻辑，以防用户输入参数之后执行失败。此外，合约中<code>billAmount of billAsset</code>表示锁定的资产和数量，而<code>billAmount</code>、<code>billAsset</code>和<code>utxohash</code>都是储存在<code>DAPP</code>后端的数据表里面，因此前端需要调用<code>list-utxo</code>查找与该资产<code>asset</code>和<code>program</code>相关的所有未花费的utxo。 具体可以参考<a href="https://github.com/Bytom/Bytom-Dapp-Demo/tree/master/src"><code>DAPP DEMO</code>前端案例</a>。</p>
+<ul>
+<li>交易组成</li>
+</ul>
+<p>比原的交易是多输入多输出的模板结构，如果合约中包含了多个<code>lock</code>或<code>unlock</code>语句，那么就需要用户构造多输入多输出的交易模板，同时，构造交易还需要根据<code>lock</code>语句或<code>unlock</code>语句来变换。交易构造具体可以参考<a href="https://github.com/Bytom/Bytom-Dapp-Demo/tree/master/src/components/layout/save">储蓄合约交易模型</a>和<a href="https://github.com/Bytom/Bytom-Dapp-Demo/tree/master/src/components/layout/profit">取现合约交易模型</a>的前端源代码。</p>
+<ul>
+<li>交易<code>input</code>结构如下：</li>
+</ul>
+<p><code>spendUTXOAction(utxohash)</code>表示花费的合约<code>utxo</code>，其中<code>utxohash</code>表示合约<code>UTXO</code>的<code>hash</code>，而<code>spendWalletAction(amount, Constant.assetDeposited)</code>表示用户输入的储蓄或取现的数量（仅包含中需要资产交换的合约中），而资产类型则由前端固定。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">spendUTXOAction</span>(<span class="hljs-params">utxohash</span>)</span>{
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_utxo"</span>,
+        <span class="hljs-string">"output_id"</span>: utxohash
+    }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">spendWalletAction</span>(<span class="hljs-params">amount, asset</span>)</span>{
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">"amount"</span>: amount,
+        <span class="hljs-string">"asset"</span>: asset,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend_wallet"</span>
+    }
+}
+
+<span class="hljs-keyword">const</span> input = []
+input.push(spendUTXOAction(utxohash))
+input.push(spendWalletAction(amount, Constant.assetDeposited))
+</code></pre>
+<ul>
+<li>交易<code>output</code>结构如下：</li>
+</ul>
+<p>根据合约中<code>if-else</code>判定逻辑，下面便是储蓄分红合约的<code>output</code>的构造模型。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">controlProgramAction</span>(<span class="hljs-params">amount, asset, program</span>)</span>{
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">"amount"</span>: amount,
+        <span class="hljs-string">"asset"</span>: asset,
+        <span class="hljs-string">"control_program"</span>: program,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control_program"</span>
+    }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">controlAddressAction</span>(<span class="hljs-params">amount, asset, address</span>)</span>{
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">"amount"</span>: amount,
+        <span class="hljs-string">"asset"</span>: asset,
+        <span class="hljs-string">"address"</span>: address,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control_address"</span>
+    }
+}
+
+<span class="hljs-keyword">const</span> output = []
+<span class="hljs-keyword">if</span>(amountDeposited &lt; billAmount){
+    output.push(controlProgramAction(amountDeposited, Constant.assetDeposited, Constant.profitProgram))
+    output.push(controlAddressAction(amountDeposited, billAsset, saver))
+    output.push(controlProgramAction((billAmount-amountDeposited), billAsset, Constant.depositProgram))
+}<span class="hljs-keyword">else</span>{
+    output.push(controlProgramAction(amountDeposited, Constant.assetDeposited, Constant.profitProgram))
+    output.push(controlAddressAction(billAmount, billAsset, saver))
+}
+</code></pre>
+<ul>
+<li>启动前端服务</li>
+</ul>
+<p>编译前端命令如下：</p>
+<pre><code class="hljs css language-javascript">npm run build
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>启动之前需要先启动<code>DAPP</code>后端服务器，然后再启动前端服务，其前端启动命令如下：</p>
+<pre><code class="hljs css language-javascript">npm start
+</code></pre>
+<p><strong>DAPP后端</strong></p>
+<p><code>DAPP</code>后端根据储蓄分红合约实现对应的业务应用，同时提供给前端调用的应用服务接口，并且实时同步合约交易和<code>UTXO</code>等状态信息。此外，它在管理合约<code>UTXO</code>层面做了一些效率方面的处理，同时对<code>DAPP</code>的相关交易记录也进行了存储。具体可以参考一下<a href="https://github.com/oysheng/bufferserver"><code>bufferserver</code>源代码</a>。</p>
+<ul>
+<li>1）储蓄分红合约的架构说明如下：
+<ul>
+<li><code>DAPP</code>后端设计了<code>3</code>张关系型数据表：<code>base</code>、<code>utxo</code>和<code>balance</code>表。其中<code>base</code>表用于初始化该<code>DAPP</code>关注的合约<code>program</code>，即在查找<code>utxo</code>集合的时候，仅仅只需过滤出对应的<code>program</code>和资产即可; <code>utxo</code>表是该<code>DAPP</code>合约的<code>utxo</code>集合，其数据是从<code>blockcenter</code>服务器中实时同步过来的，主要是为了提高<code>DAPP</code>的并发性; <code>balance</code>表是为了记录用户参与该合约的交易列表。</li>
+<li>后端由<code>API</code>服务和同步服务两个进程组成，其中<code>API</code>服务进程用于响应前端的<code>RPC</code>请求，而同步进程包含了两个方面：一个是从<code>blockcenter</code>服务器同步<code>utxo</code>，另一个是则是通过区块链浏览器查询交易状态</li>
+<li>项目管理员调用<code>update-base</code>接口更新<code>DAPP</code>关注的合约<code>program</code>和<code>asset</code>。而<code>utxo</code>同步进程会根据<code>base</code>表的记录来定时扫描并更新本地的<code>utxo</code>表中的信息，并且根据超时时间定期解锁被锁定的<code>utxo</code></li>
+<li>用户在调用储蓄或取现之前需要查询合约的<code>utxo</code>是否可用，可用的<code>utxo</code>集合中包含了未确认的<code>utxo</code>。用户在前端在点击储蓄或取现按键的时候，会调用<code>utxo</code>最优匹配算法选择最佳的<code>utxo</code>，然后调用<code>update-utxo</code>接口对该<code>utxo</code>进行锁定，最后就用户就可以通过插件钱包调用<code>blockcenter</code>服务器的构建交易接口来创建交易、签名交易和提交交易。倘若所有合约<code>utxo</code>都被锁定了，则会缩短第一个<code>utxo</code>的锁定时间为<code>60s</code>，设置该时间间隔是为了保证未确认的交易被成功验证并生成未确认的<code>utxo</code>。如果该时间间隔并没有产生新的<code>utxo</code>，则认为前面一个用户并没有产生交易，则<code>60s</code>后可以再次花费该<code>utxo</code>。</li>
+<li>用户发送交易成功后会生成两条<code>balance</code>记录表，默认状态是失败的，其中交易ID用于向区块链浏览器查询交易状态，如果交易成功则会更新<code>balance</code>的交易状态。此外，前端页面的<code>balance</code>列表表只显示交易成功的记录。</li>
+</ul></li>
+<li>2）编译<code>bufferserver</code>源代码</li>
+</ul>
+<p>按照<a href="https://github.com/oysheng/bufferserver/blob/master/README.md"><code>README</code></a>安装部署服务需要的软件包<code>Mysql</code>和<code>Redis</code>，然后下载源代码并编译：</p>
+<pre><code class="hljs css language-sh">make all
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>编译完成之后，在<code>target</code>目录下会生成可执行文件<code>api</code>和<code>updater</code>。</p>
+<ul>
+<li>3）启动服务</li>
+</ul>
+<p>使用<code>root</code>用户创建数据库和数据表，其命令如下：</p>
+<pre><code class="hljs css language-javascript">mysql -u root -p &lt; database/dump.sql
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>修改配置文件<code>config_local.json</code>，字段说明参考<a href="https://github.com/oysheng/bufferserver/blob/master/README.md"><code>README</code></a>的<code>config</code>配置参数详解。</p>
+<p>启动<code>api</code>和<code>updater</code>服务器，其中<code>api</code>是提供<code>JSON RPC</code>请求的服务进程，<code>updater</code>是提供同步<code>blockcenter</code>和区块链浏览器数据请求的服务进程。</p>
+<pre><code class="hljs css language-javascript">./target/api config_local.json
+
+./target/updater config_local.json
+</code></pre>
+<ul>
+<li></li>
+</ul>
+<p>附：<code>DAPP</code>后端的<code>JSON RPC</code>接口可以参考<a href="https://github.com/oysheng/bufferserver/wiki"><code>API</code>接口说明</a>。</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_44"><span class="arrow-prev">← </span><span>BApp开发框架</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_46"><span>BApp SDK初始化</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

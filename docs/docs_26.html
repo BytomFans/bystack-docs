@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>P2P网络 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 节点发现协议"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="P2P网络 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### 节点发现协议"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>协议规范</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">P2P网络</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="节点发现协议"></a><a href="#节点发现协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点发现协议</h4>
+<p>节点发现主要负责发现网络中的其它运行Bytom协议节点。Bytom实现了类Kademlia的DHT存储有关网络中节点的信息。协议维护了一份节点路由表，节点路由表依据距离把网络中节点信息存储到表中不同的bucket中。</p>
+<h4><a class="anchor" aria-hidden="true" id="节点id及距离"></a><a href="#节点id及距离" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点ID及距离</h4>
+<p>网络中每个节点都有一个唯一ID，节点第一次启动时都会产生ED25519公私钥对，并保存在本地，其中公钥作为节点的ID，长度32byte。
+两个节点之间的<strong>距离</strong>是以下公式计算而来，所以节点之间的距离代表逻辑距离，而不是节点间的真实物理距离。</p>
+<p><img src="https://i.ibb.co/2qRD90V/25.png" alt="image.png"></p>
+<h4><a class="anchor" aria-hidden="true" id="节点路由表"></a><a href="#节点路由表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点路由表</h4>
+<table>
+<thead>
+<tr><th style="text-align:center">bucket index</th><th style="text-align:center">node</th><th style="text-align:center">node cache</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">k-bucket 0</td><td style="text-align:center">距离[1,2)</td><td style="text-align:center">距离[1,2)</td></tr>
+<tr><td style="text-align:center">k-bucket 1</td><td style="text-align:center">距离[2,4)</td><td style="text-align:center">距离[2,4)</td></tr>
+<tr><td style="text-align:center">k-bucket 2</td><td style="text-align:center">距离[4,8)</td><td style="text-align:center">距离[4,8)</td></tr>
+<tr><td style="text-align:center">…</td><td style="text-align:center">…</td><td style="text-align:center">…</td></tr>
+<tr><td style="text-align:center">k-bucket i</td><td style="text-align:center">距离 [2^i,2^(i+1)</td><td style="text-align:center">距离 [2^i,2^(i+1)</td></tr>
+<tr><td style="text-align:center">…</td><td style="text-align:center">…</td><td style="text-align:center">…</td></tr>
+<tr><td style="text-align:center">k-bucket 255</td><td style="text-align:center">距离[2^255, 2^(255+1))</td><td style="text-align:center">距离[2^255, 2^(255+1))</td></tr>
+</tbody>
+</table>
+<p>根据Kademilia协议节点需要保留其邻居节点的信息。邻居节点存储在由“k-buckets”组成的路由表中。对于每个bucket[i] (<code>0≤i&lt;256)</code>，存储距离自己“2^i”和“2^(i + 1)”之间的距离节点。
+协议使用“k = 16”，即每个k-bucket最多存储16个节点。bucket中节点按上次查看的时间排序 - 最近看到的节点位于bucket头部，最先看到的在bucket尾部。
+每当遇到新节点N1时，它就可以插入相应的桶中。如果桶中包含少于“k”的节点，则可以简单地将N1添加到桶头部。如果该桶已经包含<code>k</code>个节点，则取桶中最先看到的节点N2，需要通过发送ping数据包重新验证节点是否在线。如果没有从N2收到答复，那就是被认为是无效的，N2被移除bucket并且N1被添加到桶的前面。
+否则将N2加入cache中，如果cache也满了，则把最先放入cache中的节点N3删除。当有节点掉线时则会把cache中的最新节点放入bucket中。</p>
+<h4><a class="anchor" aria-hidden="true" id="路由表刷新"></a><a href="#路由表刷新" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>路由表刷新</h4>
+<p>节点通过定期迭代查找距离targetID距离近的节点来更新路由表。工作过程如下：
+a. 随机生成目标节点Id，记为TargetId，从1开始记录发现次数和刷新时间。
+b. 在当前节点的K桶里查找与目标节点最近的16个节点
+c. 向b中得到的每个节点发送findnode命令,接收到每个节点传回的neighbours节点
+d. 对c返回的每个节点进行ping-pong测试然后更新到本地k桶
+如果一轮FindNode查询无法返回比已知最近的节点更近的节点，启动器将FindNode重新发送到k个最近节点中未查找过得节点。</p>
+<h4><a class="anchor" aria-hidden="true" id="协议消息及编码"></a><a href="#协议消息及编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>协议消息及编码</h4>
+<p>协议实现了Kademlia协议的两组节点发现命令：</p>
+<table>
+<thead>
+<tr><th style="text-align:left">12</th><th style="text-align:left">ping&lt;-------------&gt;pongfindnode &lt;----------&gt;neighbors</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>节点发现消息作为UDP数据报发送。数据包的最大大小为1280字节。</p>
+<p>| 1 | packet = packet-header || packet-data |
+| :--- | :--- |</p>
+<p>每个数据包都以header开头：</p>
+<p>| 123 | packet-header = hash ||nodeID ||signature||packet-typehash = sha3（nodeID || signature || packet-type || packet-data）signature = sign（packet-type || packet-data） |
+| :--- | :--- |</p>
+<p><em>hash</em> 字段使在同一个UDP端口上运行多个协议时可识别。
+<em>packet-type</em> 是定义消息类型。</p>
+<p><strong>Ping Packet（0x01）</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:left">123</th><th style="text-align:left">packet-data = [version，from，to，expiration]from = [sender-ip，sender-udp-port，sender-tcp-port]to = [recipient-ip，recipient-udp-port，0]</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><em>expiration</em> 字段是绝对的UNIX时间戳。包含过去时间戳的数据包会因为过期而无法处理。
+收到ping数据包后，收件人应使用pong数据包进行回复。</p>
+<p><strong>Pong Packet（0x02）</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:left">1</th><th style="text-align:left">packet-data = [to，ping-hash，expiration]</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Pong是对ping的回复。
+<em>ping-hash</em> 应该等于相应ping包的hash。应该忽略没有包含最新ping-hash的pong数据包，因为不是对最新ping消息做出的响应。</p>
+<p><strong>FindNode Packet（0x03）</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:left">1</th><th style="text-align:left">packet-data = [target，expiration]</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><em>FindNode</em> 数据包请求接近target的节点的信息。收到FindNode后，收件人应回复<em>Neighbors</em>数据包，在其本地表中找到最接近target的16个节点并返回。</p>
+<p><strong>Neighbors Packet（0x04）</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:left">12</th><th style="text-align:left">packet-data = [node，expiration]nodes = [[ip，udp-port，tcp-port，node-id]，...]</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Neighbors是对FindNode的回复。</p>
+<h4><a class="anchor" aria-hidden="true" id="数据同步协议"></a><a href="#数据同步协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据同步协议</h4>
+<p>Bytom网络数据同步协议栈如下图所示。协议栈基于tcp/ip,Encryption完成数据的加密传输，Wire Protocol完成数据序列化，最上层为同步协议。</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Tx Sync/Block Sync/Fast Sync/Spv</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Wire Protocol</td></tr>
+<tr><td style="text-align:center">Encryption</td></tr>
+<tr><td style="text-align:center">TCP/IP</td></tr>
+</tbody>
+</table>
+<p><strong>基于tcp/ip同步协议</strong></p>
+<p>数据同步首先会在节点之间建立连接，建立连接后会对连接进行加密处理，区块，交易数据序列化为二进制数据流通过加密通道传递给其它节点。</p>
+<h4><a class="anchor" aria-hidden="true" id="建立加密连接"></a><a href="#建立加密连接" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>建立加密连接</h4>
+<p><strong>建立多路复用连接</strong>
+<em>MConnection</em> 是在单个tcp连接上支持多个独立流传输的多路复用连接，并且每个流提供了单独的服务质量保证。每个流称为<em>Channel</em>，每个<em>Channel</em>具有全局唯一的_ byte id _。每个<em>channel</em>也具有决定服务质量的相对优先级。<em>byte id</em> 和每个Channel的相对优先级在初始化时配置。
+MConnection支持三种数据包类型：</p>
+<ul>
+<li>Ping</li>
+<li>Pong</li>
+<li>Msg</li>
+</ul>
+<p><strong>Ping和Pong</strong>
+ping和pong消息向连接写入单个字节;分别为0x1和0x2。
+当我们在pingTimeout周期没有及时收到MConnection上的任何消息时，我们发送一条ping消息。
+当在MConnection上收到ping消息时，会发送一个pong作为响应。如果在ping之后没有及时收到pong消息，则节点将断开连接。</p>
+<p><strong>Msg</strong>
+通道中的消息被切割成较小的<em>msgPacket</em> 以进行多路复用。</p>
+<table>
+<thead>
+<tr><th style="text-align:left">12345</th><th style="text-align:left">type msgPacket struct {    ChannelID byte    EOF       byte // 1 means message ends here.    Bytes     []byte}</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>用<a href="https://github.com/Bytom/bytom/tree/master/vendor/github.com/tendermint/go-wire">go-wire</a>进行序列化，并以0x3为前缀。接收到的一组数据包的“字节”被附加在一起直到收到带有<code>EOF = 1</code> 的数据包，然后完整的序列化消息由相应<em>channel</em>的<em>onReceive</em>函数处理。</p>
+<p><strong>多路复用</strong>
+消息从<em>sendRoutine</em> 发送，它循环在select状态上并发送ping，pong或msg消息。该批数据消息可以包括来自多个<em>channel</em>的消息。消息字节排队等待在各自的通道中发送，每个通道一次取一个未发送的消息。从最近发送的字节与信道优先级的比最低的信道选择一个消息发送。</p>
+<p><strong>发送消息</strong>
+发送消息有两种方法：</p>
+<table>
+<thead>
+<tr><th style="text-align:left">12</th><th style="text-align:left">func (m MConnection) Send(chID byte, msg interface{}) bool {}func (m MConnection) TrySend(chID byte, msg interface{}) bool {}</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><code>Send（chID，msg）</code>是一个阻塞调用，等待<em>msg</em>成功排队到给定id字节<em>chID</em>的通道。消息<em>msg</em>被序列化使用<em>wire</em>子模块的<code>WriteBinary()</code>反射函数。
+<code>TrySend（chID，msg）</code>是一个非阻塞调用，它将消息<em>msg</em>排入<em>chID</em>通道如果队列未满;否则立即回<em>false</em>。
+<code>Send（）</code>和<code>TrySend（）</code>对每个<em>Peer</em>可见。</p>
+<p><strong>Peer</strong>
+每个<em>peer</em>都有一个<em>MConnection</em>实例，并含有其他信息，例如是否是outbound(主动拨号其它节点)，关于节点的各种身份信息，以及reactor使用的其他更高级别的线程安全数据。</p>
+<p><strong>Switch/Reactor</strong>
+<em>Switch</em> 控制peer连接，以在Reactor上接收传入消息。每个Reactor负责处理一个或多个channel传入的信息。因此，通常通过peer发送消息，在Reactor上接收传入的消息。
+新添加peer后，给定<code>reactor</code>的传入消息将通过该<code>reactor</code>的<code>Receive</code>方法处理，并且输出消息由每个节点的<code>Reactor</code>直接发送。 <code>reactor</code>使用节点之间的<code>go-routing</code>来处理这些。</p>
+<p><strong>连接加密及身份确认</strong>
+在节点拨号成功后，执行两次握手：第一次进行通道加密、身份验证，第二次进行版本、网络类型验证。</p>
+<p><strong>Peer Identity</strong>
+当尝试连接到peer时，我们使用<code>PeerURL：&lt;ID&gt; @ &lt;IP&gt;：&lt;PORT&gt;</code>。我们将尝试连接<em>IP：PORT</em>上的节点，并验证身份，通过经过身份id的签名，只有拥有相应私钥的节点可以建立连接。这可以防止对节点的中间人攻击。</p>
+<p><strong>通信加密、身份验证</strong>
+节点建立加密连接时使用<strong>Diffie-Helman密钥交换协议</strong>生成共享秘钥，使用<strong>NACL SecretBox</strong>对通信数据进行对称加密。
+工作流程如下：</p>
+<ul>
+<li>生成一个临时的ED25519密钥对</li>
+<li>将临时的公钥发送给对等方</li>
+<li>等待接收对等方的临时公钥</li>
+<li>使用对方临时公钥和我们的临时私钥计算Diffie-Hellman共享密钥</li>
+<li>生成两个用于加密（发送和接收）的随机数，流程如下：
+<ul>
+<li>按升序对临时的公钥进行排序并将它们连接起来</li>
+<li>进行RIPEMD160运算</li>
+<li>附加4个空字节（将散列扩展为24个字节）</li>
+<li>结果是nonce1</li>
+<li>翻转nonce1的最后一位以获得nonce2</li>
+<li>如果我们有一个较小的临时pubkey，使用nonce1接收，nonce2发送;否则相反</li>
+</ul></li>
+<li>从现在开始的所有通信都使用共享密钥和随机数进行加密，其中每个随机数每次使用时增加2</li>
+<li>我们现在有一个加密通道，但仍需要进行身份验证</li>
+<li>签名共同挑战：
+<ul>
+<li>对排序和连接的短暂pubkey进行SHA256运算</li>
+</ul></li>
+<li>使用我们的持久私钥签署共同挑战</li>
+<li>将go-wire编码的持久性pubkey和签名发送给节点</li>
+<li>等待从节点接收持久公钥和签名</li>
+<li>使用节点的持久公钥验证消息签名</li>
+</ul>
+<p>如果这是一个outgoing连接（主动连接其它节点）并且使用了节点ID，然后最后验证节点的持久公钥是否与我们拨号的节点ID相对应，即。 <code>peer.PubKey.Address() == &lt;ID&gt;</code>。
+现在连接现已通过身份验证，并且所有流量都已加密。
+<strong>注意</strong>：只有拨号节点可以验证节点的身份，但这是我们关心的，因为当我们加入网络时我们希望确保已经连接了目标节点（而不是被中间人攻击）。</p>
+<p><strong>版本确认</strong>
+版本确认允许节点交换其NodeInfo：</p>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">type</span> NodeInfo <span class="hljs-keyword">struct</span> {
+    PubKey     crypto.PubKeyEd25519 
+    Moniker    <span class="hljs-keyword">string</span>               
+    Network    <span class="hljs-keyword">string</span>               
+    RemoteAddr <span class="hljs-keyword">string</span>               
+    ListenAddr <span class="hljs-keyword">string</span>               
+    Version    <span class="hljs-keyword">string</span>               
+    Other      []<span class="hljs-keyword">string</span> 
+}
+
+</code></pre>
+<p>如果出现以下情况则断开连接：</p>
+<ul>
+<li><code>peer.NodeInfo.Version</code> 未格式化为<code>X-X-X</code>，其中X是称为Major，Minor和Revision的整数。</li>
+<li><code>peer.NodeInfo.Version</code> 主版本号与我们的不一样。</li>
+<li><code>peer.NodeInfo.Network</code> 网络类型与我们的不一样。</li>
+</ul>
+<p>此时，如果没有断开连接，则节点有效。它通过<code>AddPeer</code>方法添加到<code>switch</code>中，因此被添加到所有<code>reactor</code>中。</p>
+<h4><a class="anchor" aria-hidden="true" id="数据序列化协议"></a><a href="#数据序列化协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据序列化协议</h4>
+<p><strong>支持的类型</strong></p>
+<ul>
+<li>原始类型
+<ul>
+<li><code>uint8</code> (aka <code>byte</code>), <code>uint16</code>, <code>uint32</code>, <code>uint64</code></li>
+<li><code>int8</code>, <code>int16</code>, <code>int32</code>, <code>int64</code></li>
+<li><code>uint</code>, <code>int</code>: variable length (un)signed integers</li>
+<li><code>string</code>, <code>[]byte</code></li>
+<li><code>time</code></li>
+</ul></li>
+<li>派生类型
+<ul>
+<li>structs</li>
+<li>特定类型的变长数组</li>
+<li>特定类型的固定长度数组</li>
+<li>interfaces：注册的联合类型，前面是<code>type byte</code></li>
+<li>指针</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="二进制编码"></a><a href="#二进制编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>二进制编码</h4>
+<p><strong>固定长度基本类型</strong> 用1,2,3或4个大端字节编码。</p>
+<ul>
+<li><code>uint8</code>（又名<code>byte</code>），<code>uint16</code>，<code>uint32</code>，<code>uint64</code>：分别占用1,2,3和4个字节</li>
+<li><code>int8</code>，<code>int16</code>，<code>int32</code>，<code>int64</code>：分别占用1,2,3和4个字节</li>
+<li><code>time</code>：<code>int64</code> 表示自纪元以来的纳秒</li>
+</ul>
+<p><strong>可变长度整数</strong> 用一个前导字节编码，表示后续大端字节的长度。对于有符号的负整数，前导字节的最高有效位为1。</p>
+<ul>
+<li><code>uint</code>：1字节长度前缀可变大小（0~255字节）无符号整数</li>
+<li><code>int</code>：1字节长度前缀变量大小（0~127字节）有符号整数</li>
+</ul>
+<p>注意：虽然数字0（零）用单个字节<code>x00</code>编码，但数字1用两个字节表示：<code>x0101</code>。这不是最高效的表示，但规则更容易记住。</p>
+<table>
+<thead>
+<tr><th style="text-align:left">号码</th><th style="text-align:left">二进制<code>uint</code></th><th style="text-align:left">二进制<code>int</code></th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">0</td><td style="text-align:left"><code>x00</code></td><td style="text-align:left"><code>x00</code></td></tr>
+<tr><td style="text-align:left">1</td><td style="text-align:left"><code>x0101</code></td><td style="text-align:left"><code>x0101</code></td></tr>
+<tr><td style="text-align:left">2</td><td style="text-align:left"><code>x0102</code></td><td style="text-align:left"><code>x0102</code></td></tr>
+<tr><td style="text-align:left">256</td><td style="text-align:left"><code>x020100</code></td><td style="text-align:left"><code>x020100</code></td></tr>
+<tr><td style="text-align:left">2 ^（127 * 8）-1</td><td style="text-align:left"><code>x7FFFFF ...</code></td><td style="text-align:left"><code>x7FFFFF ...</code></td></tr>
+<tr><td style="text-align:left">2 ^（127 * 8）</td><td style="text-align:left"><code>x800100 ......</code></td><td style="text-align:left">溢出</td></tr>
+<tr><td style="text-align:left">2 ^（255 * 8）-1</td><td style="text-align:left"><code>xFFFFFF ...</code></td><td style="text-align:left">溢出</td></tr>
+<tr><td style="text-align:left">-1</td><td style="text-align:left">不适用</td><td style="text-align:left"><code>x8101</code></td></tr>
+<tr><td style="text-align:left">-2</td><td style="text-align:left">不适用</td><td style="text-align:left"><code>x8102</code></td></tr>
+<tr><td style="text-align:left">-256</td><td style="text-align:left">不适用</td><td style="text-align:left"><code>x820100</code></td></tr>
+</tbody>
+</table>
+<p><strong>Structures</strong> 通过按声明顺序对字段值进行编码来编码。</p>
+<table>
+<thead>
+<tr><th style="text-align:left">1234567891011</th><th style="text-align:left">type Foo struct {    MyString string    MyUint32 uint32}var foo = Foo {“626172”，math.MaxUint32} foo的二进制表示： 0103626172FFFFFFFF 0103：<code>int</code>编码的字符串长度，这里是3     626172：3个字节的字符串“bar”           FFFFFFFF：uint32 MaxUint32的4个字节</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>可变长度数组</strong> 用前导“int”编码，表示数组的长度，后跟项目的二进制表示。
+<strong>固定长度数组</strong> 类似，但前面没有前导<code>int</code>。</p>
+<table>
+<thead>
+<tr><th style="text-align:left">123456789101112131415</th><th style="text-align:left">foos：= [] Foo {foo，foo}foos的二进制表示： 01020103626172FFFFFFFF0103626172FFFFFFFF 0102：<code>int</code>编码的数组长度，这里2     0103626172FFFFFFFF：第一个<code>foo</code>                       0103626172FFFFFFFF：第二个<code>foo</code>foos：= [2] Foo {foo，foo} //固定长度数组foos的二进制表示： 0103626172FFFFFFFF0103626172FFFFFFFF 0103626172FFFFFFFF：第一个<code>foo</code>                   0103626172FFFFFFFF：第二个<code>foo</code></th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>接口</strong> 可以代表任意数量的具体类型之一。必须首先使用相应的<code>type byte</code>声明接口的具体类型。然后使用前导“类型字节”对接口进行编码，然后对底层具体类型进行二进制编码。
+注意：字节<code>x00</code>保留用于<code>nil</code>接口值和<code>nil</code>指针值。</p>
+<table>
+<thead>
+<tr><th style="text-align:left">12345678910111213141516</th><th style="text-align:left">type Animal interface{}type Dog uint32type Cat stringRegisterInterface（  struct{ Animal }{},          // Convenience for referencing the 'Animal' interface  ConcreteType{Dog(0),  0x01}, // Register the byte 0x01 to denote a Dog  ConcreteType{Cat(&quot;&quot;), 0x02}, // Register the byte 0x02 to denote a Cat）var animal Animal = Dog（02） The binary representation of animal: 010102 01:     the type byte for a <code>Dog</code>   0102: the bytes of Dog(02)</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>指针</strong> 用一个前导字节<code>x00</code>编码为<code>nil</code>指针，否则用前导字节<code>x01</code>编码，然后是指向的值的二进制编码。
+<strong>注意</strong>：将指针类型转换为接口类型很容易，因为<code>type byte</code> <code>x00</code>总是<code>nil</code>。</p>
+<h4><a class="anchor" aria-hidden="true" id="json编码"></a><a href="#json编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON编码</h4>
+<p>JSON编解码器与[<code>binary</code>]（#binary）编解码器兼容，如果您已经熟悉golang的JSON编码，则相当直观。下面提到了一些特殊规定：</p>
+<ul>
+<li>可变长度和固定长度字节编码为大写十六进制字符串</li>
+<li>接口值被编码为两个项的数组：<code>[type_byte，concrete_value]</code></li>
+<li>次数被编码为rfc2822字符串</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="同步协议"></a><a href="#同步协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>同步协议</h4>
+<p>bytom 目前支持普通同步模式，快速同步模式，SPV Proof。</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Normal</th><th style="text-align:center">Fast Sync</th><th style="text-align:center">SPV</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">BlockMessage</td><td style="text-align:center">HeadersMessage</td><td style="text-align:center">FilterLoadMessage</td></tr>
+<tr><td style="text-align:center">StatusMessage</td><td style="text-align:center">BlocksMessage</td><td style="text-align:center">FilterClearMessage</td></tr>
+<tr><td style="text-align:center">TransationMessage</td><td style="text-align:center"></td><td style="text-align:center">FilterAddMessage</td></tr>
+<tr><td style="text-align:center">MineBlockMessage</td><td style="text-align:center"></td><td style="text-align:center">MerkleBlockMessage</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="节点协议握手"></a><a href="#节点协议握手" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点协议握手</h4>
+<p><img src="https://i.loli.net/2019/12/10/6Zri3e4NoquIO7y.png" alt="88.png"></p>
+<p>节点协议握手首先会向对方发送状态信息，同时通过状态信息获取对方当前状态，同步协议在获取状态之后。</p>
+<p><strong>StatusRequestMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">0</td><td style="text-align:center">null</td><td style="text-align:center"></td><td style="text-align:center">消息体为空，用于向对方获取状态信息</td></tr>
+</tbody>
+</table>
+<p><strong>StatusResponseMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">8byte</td><td style="text-align:center">Height</td><td style="text-align:center">uint64</td><td style="text-align:center">当前本地高度</td></tr>
+<tr><td style="text-align:center">32byte</td><td style="text-align:center">RawHash</td><td style="text-align:center">[32]byte</td><td style="text-align:center">当前最高区块hash</td></tr>
+<tr><td style="text-align:center">[32]byte</td><td style="text-align:center">GenesisHash</td><td style="text-align:center">[32]byte</td><td style="text-align:center">创世块hash</td></tr>
+</tbody>
+</table>
+<p>在握手后会进行交易池同步，交易池同步会把当前池中的交易打包发给对方，发送交易使用<em>TransactionMessage</em>。</p>
+<p><strong>TransactionMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawTx</td><td style="text-align:center">[]byte</td><td style="text-align:center">交易消息</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="同步协议-1"></a><a href="#同步协议-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>同步协议</h4>
+<p><img src="https://i.loli.net/2019/12/10/b3tWypK61QPXMLG.png" alt="89.png"></p>
+<p>目前支持普通同步和快速同步两种模式，区块同步程序定时检查所有连接的节点状态，判断是否需要同步，当需要同步时，判断节点满足快速同步条件时则进行快速同步，否则进行普通同步。为了使挖矿区块能快速同步到全网，当收到挖矿区块时会触发同步流程，使新区块快速上链，并及时更新挖矿区块高度，从而减少孤儿块产生的概率。</p>
+<p><strong>MineBlockMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlock</td><td style="text-align:center">[]byte</td><td style="text-align:center">挖矿产生的区块信息</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="普通同步模式"></a><a href="#普通同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>普通同步模式</h4>
+<p><img src="https://i.loli.net/2019/12/10/FdghRrNkB9WCUnT.png" alt="90.png"></p>
+<p>普通同步模式下，节点按高度获取高度并进行全区块验证。使用<em>GetBlockMessage</em>和<em>BlockMessage</em>消息。</p>
+<p><strong>GetBlockMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">8byte</td><td style="text-align:center">Height</td><td style="text-align:center">uint64</td><td style="text-align:center">使用高度获取区块，如果高度为0，则使用hash获取区块</td></tr>
+<tr><td style="text-align:center">4byte</td><td style="text-align:center">RawHash</td><td style="text-align:center">[32]byte</td><td style="text-align:center">使用hash获取区块</td></tr>
+</tbody>
+</table>
+<p><strong>BlockMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlock</td><td style="text-align:center">[]byte</td><td style="text-align:center">序列化的区块信息</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="快速同步模式"></a><a href="#快速同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快速同步模式</h4>
+<p><img src="https://i.loli.net/2019/12/10/x1nZJ7KTa4gciDm.png" alt="91.png"></p>
+<p>快速同步模式下，通过在代码中加入checkpoint(已确认的区块的hash)，这样同步时只需要比较某些高度区块hash是否和checkpoint区块hash一致，即可判断区块头正确性。通过计算区块中交易merkle树roothash是否和区块头中roothash一致，即可判断区块中的交易正确性。快速同步模式下批量获取区块头以及区块，可以极大提高同步速度。</p>
+<p><strong>GetHeadersMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlockLocator</td><td style="text-align:center">[][32]byte</td><td style="text-align:center">区块头定位器，用于定位获取区块头的开始位置</td></tr>
+<tr><td style="text-align:center">32 byte</td><td style="text-align:center">RawStopHash</td><td style="text-align:center">[32]byte</td><td style="text-align:center">用于定位获取区块头结束的位置。</td></tr>
+</tbody>
+</table>
+<p><strong>HeadersMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">HeadersMessage</td><td style="text-align:center">[][]byte</td><td style="text-align:center">打包的区块头信息</td></tr>
+</tbody>
+</table>
+<p><strong>GetBlocksMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlockLocator</td><td style="text-align:center">[][32]byte</td><td style="text-align:center">区块定位器，用于定位获取区块的开始位置</td></tr>
+<tr><td style="text-align:center">32 byte</td><td style="text-align:center">RawStopHash</td><td style="text-align:center">[32]byte</td><td style="text-align:center">用于定位获取区块结束的位置。</td></tr>
+</tbody>
+</table>
+<p><strong>BlocksMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlocks</td><td style="text-align:center">[][]byte</td><td style="text-align:center">打包的区块信息</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="spv-proof"></a><a href="#spv-proof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SPV Proof</h4>
+<p>简单支付验证（SPV）是Satoshi Nakamoto的论文中描述的一种技术。 SPV允许轻量级客户端验证区块链中是否包含交易，而无需下载整个区块链。 SPV客户端只需要下载块头，这些块头比完整块小得多。 为了验证交易是否在块中，SPV客户端以Merkle block的形式请求包含交易证明。
+SPV提供了两个关键要素：a）它确保您的交易处于一个区块中; b）它提供了区块被添加到链中的确认（工作证明）。</p>
+<p><img src="https://i.loli.net/2019/12/10/zmNe6ucQfHBTnWk.png" alt="92.png"></p>
+<p>SPV 轻客户端首先连接全节点，当与全节点成功建立连接后。轻客户端向全节点注册地址过滤器，过滤器是一个地址集合，包含SPV节点账户的地址。全节点使用地址过滤器对交易进行过滤，并将相关交易发送给轻客户端。轻客户端使用<em>GetMerkleBlockMessage</em>命令向全节点获取<em>MerkleBlockMessage</em>消息。</p>
+<p><strong>FilterLoadMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">Addresses</td><td style="text-align:center">[][]byte</td><td style="text-align:center">地址集合，用于SPV客户端向全节点注册需要过滤的地址</td></tr>
+</tbody>
+</table>
+<p><strong>FilterAddMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">Address</td><td style="text-align:center">[]byte</td><td style="text-align:center">地址信息，用于SPV客户端向全节点添加需要过滤的地址</td></tr>
+</tbody>
+</table>
+<p><strong>FilterClearMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">0</td><td style="text-align:center">null</td><td style="text-align:center"></td><td style="text-align:center">消息体为空，用于SPV客户端向全节点发送清除地址过滤器消息</td></tr>
+</tbody>
+</table>
+<p><strong>GetMerkleBlockMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">8byte</td><td style="text-align:center">Height</td><td style="text-align:center">uint64</td><td style="text-align:center">根据高度获取merkle block，如果为0则通过hash获取</td></tr>
+<tr><td style="text-align:center">32byte</td><td style="text-align:center">RawHash</td><td style="text-align:center">[32]byte</td><td style="text-align:center">根据hash获取merkle block</td></tr>
+</tbody>
+</table>
+<p><strong>MerkleBlockMessage</strong></p>
+<table>
+<thead>
+<tr><th style="text-align:center">Bytes</th><th style="text-align:center">Name</th><th style="text-align:center">Data Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlockHeader</td><td style="text-align:center">[]byte</td><td style="text-align:center">区块头信息</td></tr>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">TxHashes</td><td style="text-align:center">[][32]byte</td><td style="text-align:center">交易或交易merkle树 node hash,用于计算交易merkle root</td></tr>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">RawTxDatas</td><td style="text-align:center">[][]byte</td><td style="text-align:center">满足地址过滤器的交易</td></tr>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">StatusHashes</td><td style="text-align:center">[][32]byte</td><td style="text-align:center">状态或状态merkle树 node hash,用于计算状态merkle root</td></tr>
+<tr><td style="text-align:center">Varies</td><td style="text-align:center">Flags</td><td style="text-align:center">[]byte</td><td style="text-align:center">用于分配TxHashes和StatusHashes到merkle树的特定node</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_25"><span class="arrow-prev">← </span><span>投票</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_27"><span>BVM虚拟机</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

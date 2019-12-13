@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Bytom API · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### Bapp开发者通用指南"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Bytom API · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### Bapp开发者通用指南"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Bapp开发</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Bytom API</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="bapp开发者通用指南"></a><a href="#bapp开发者通用指南" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bapp开发者通用指南</h4>
+<p><strong>初始化 Bapps</strong></p>
+<p>一旦建立了基本的开发环境，就可以开始与byone或bycoin进行交互了。在发送交易的时候，无论你需要调用那种依赖库都非常方便。</p>
+<p><strong>检查bytom环境</strong></p>
+<p>You can detect bytom browser by !!window.bytom, it returns true if current browser is bytom DApp browser.
+你可以通过!window.bytom检查bytom浏览器，如果当前的浏览器是比原的Bapp浏览器，返回true.</p>
+<h4><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h4>
+<p><strong>bytom.send_transaction</strong></p>
+<p>发送正常的事物
+发送参数对象：</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>from</td><td>String</td><td>true</td><td>null</td><td>sender account id or guid</td></tr>
+<tr><td>to</td><td>String</td><td>true</td><td>null</td><td>the receiver address</td></tr>
+<tr><td>amount</td><td>Number</td><td>true</td><td>null</td><td>the amount that do the transaction, in the atom mode</td></tr>
+<tr><td>asset</td><td>String</td><td>true</td><td>null</td><td>asset Id</td></tr>
+<tr><td>confirmations</td><td>Number</td><td>false</td><td>1</td><td>confirmations</td></tr>
+</tbody>
+</table>
+<p>相应对象:</p>
+<table>
+<thead>
+<tr><th>property</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>transaction_hash</td><td>String</td><td>a successful transaction hash</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> params = {
+   <span class="hljs-string">"to"</span>:<span class="hljs-string">"tm1qv3mjueqvdael5m706axlzu0mx9evdy4exrfkt0"</span>,
+   <span class="hljs-string">"from"</span>: <span class="hljs-built_in">window</span>.bytom.default_account.accountId,
+   <span class="hljs-string">"amount"</span>:<span class="hljs-number">20000000</span>,
+   <span class="hljs-string">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>
+}
+
+<span class="hljs-built_in">window</span>.bytom.send_transaction(params).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>{
+    alert(resp)
+  }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>)</span>{
+    alert(err)
+  })
+</code></pre>
+<p><strong>bytom.send_advanced_transaction</strong></p>
+<p>发送高级交易或合约交易。</p>
+<p>发送参数对象：</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>input</td><td>Array of Object</td><td>true</td><td>null</td><td>type: &quot;spend_utxo&quot;,</td></tr>
+<tr><td>type: &quot;spend_wallet&quot;</td><td>suggest that the Dapp developer should put spend_wallet at the very end</td><td>since spend_wallet will encounter multiple UTXO</td><td></td><td></td></tr>
+<tr><td>output</td><td>Array of Object</td><td>true</td><td>null</td><td>type:&quot;control_address&quot;</td></tr>
+<tr><td>gas</td><td>Number</td><td>true</td><td>null</td><td>gas should be in the atom mode</td></tr>
+<tr><td>args</td><td>Array of Object</td><td>false</td><td>null</td><td>arg type. Args needed for contract transaction</td></tr>
+<tr><td>confirmations</td><td>Number</td><td>false</td><td>1</td><td>confirmations</td></tr>
+</tbody>
+</table>
+<p>输入的例子:</p>
+<pre><code class="hljs css language-javascript">[ 
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"spend_utxo"</span>,
+      <span class="hljs-string">"output_id"</span>:<span class="hljs-string">"37921eee9453d2598b6357dfeddd2cf351850f5be917bdac0d1cf208859ece06"</span>
+   },
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"spend_wallet"</span>,
+      <span class="hljs-string">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-string">"amount"</span>:<span class="hljs-number">10000000000</span>
+   }
+]
+</code></pre>
+<p>输出的例子:</p>
+<pre><code class="hljs css language-javascript">[ 
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"control_address"</span>,
+      <span class="hljs-string">"amount"</span>:<span class="hljs-number">99</span>,
+      <span class="hljs-string">"asset"</span>:<span class="hljs-string">"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680"</span>,
+      <span class="hljs-string">"address"</span>:<span class="hljs-string">"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68"</span>
+   },
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"control_program"</span>,
+      <span class="hljs-string">"amount"</span>:<span class="hljs-number">99</span>,
+      <span class="hljs-string">"asset"</span>:<span class="hljs-string">"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680"</span>,
+      <span class="hljs-string">"control_program"</span>:<span class="hljs-string">"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68"</span>
+   }
+]
+</code></pre>
+<p>参数的例子:</p>
+<pre><code class="hljs css language-javascript">[ 
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"data"</span>,
+      <span class="hljs-string">"raw_data"</span>:{ 
+         <span class="hljs-string">"value"</span>:<span class="hljs-string">"ba5a63e7416caeb945eefc2ce874f40bc4aaf6005a1fc792557e41046f7e502f"</span>
+      }
+   },
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"integer"</span>,
+      <span class="hljs-string">"raw_data"</span>:{ 
+         <span class="hljs-string">"value"</span>:<span class="hljs-number">100</span>
+      }
+   },
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"String"</span>,
+      <span class="hljs-string">"raw_data"</span>:{ 
+         <span class="hljs-string">"value"</span>:<span class="hljs-string">"String"</span>
+      }
+   },
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"boolean"</span>,
+      <span class="hljs-string">"raw_data"</span>:{ 
+         <span class="hljs-string">"value"</span>:<span class="hljs-literal">true</span>
+      }
+   },
+   { 
+      <span class="hljs-string">"type"</span>:<span class="hljs-string">"address"</span>,
+      <span class="hljs-string">"raw_data"</span>:{ 
+         <span class="hljs-string">"value"</span>:<span class="hljs-string">"bm1q5u8u4eldhjf3lvnkmyl78jj8a75neuryzlknk0"</span>
+      }
+   }
+]
+</code></pre>
+<p>相应的对象:</p>
+<table>
+<thead>
+<tr><th>property</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>transaction_hash</td><td>String</td><td>a successful transaction hash</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> params = { 
+   <span class="hljs-string">"input"</span>:[ 
+      { 
+         <span class="hljs-string">"amount"</span>:<span class="hljs-number">1750000000</span>,
+         <span class="hljs-string">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+         <span class="hljs-string">"type"</span>:<span class="hljs-string">"spend_wallet"</span>
+      }
+   ],
+   <span class="hljs-string">"output"</span>:[ 
+      { 
+         <span class="hljs-string">"amount"</span>:<span class="hljs-number">1750000000</span>,
+         <span class="hljs-string">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+         <span class="hljs-string">"address"</span>:<span class="hljs-string">"tm1qv3mjueqvdael5m706axlzu0mx9evdy4exrfkt0"</span>,
+         <span class="hljs-string">"type"</span>:<span class="hljs-string">"control_address"</span>
+      }
+   ],
+   <span class="hljs-string">"gas"</span>:<span class="hljs-number">400000</span>
+}
+
+<span class="hljs-built_in">window</span>.bytom.send_advanced_transaction(params).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>{
+    alert(resp)
+  }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>)</span>{
+    alert(err)
+  })
+</code></pre>
+<p><strong>bytom.sign_message</strong></p>
+<p>使用当前账户的地址对消息签名</p>
+<table>
+<thead>
+<tr><th>Params</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>address</td><td>String</td><td>true</td><td>null</td><td>Account address</td></tr>
+<tr><td>message</td><td>String</td><td>true</td><td>null</td><td>Message that want to sign</td></tr>
+</tbody>
+</table>
+<p>相应对象:</p>
+<table>
+<thead>
+<tr><th>property</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>signature</td><td>String</td><td>Sign successful will return an signature</td></tr>
+</tbody>
+</table>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">var</span> params = {
+   <span class="hljs-attr">address</span>:<span class="hljs-built_in">window</span>.bytom.default_account.address,
+   <span class="hljs-attr">message</span>:<span class="hljs-string">"Hello World"</span>
+}
+
+<span class="hljs-built_in">window</span>.bytom.sign_message(params).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resp</span>) </span>{
+    alert(resp)
+  }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>)</span>{
+    alert(err)
+  })
+</code></pre>
+<p><strong>bytom.default_account</strong></p>
+<p>返回当前账户信息</p>
+<p>返回一个账户的信息:</p>
+<table>
+<thead>
+<tr><th>property</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>address</td><td>String</td><td>account address</td></tr>
+<tr><td>alias</td><td>String</td><td>account alias</td></tr>
+<tr><td>balances</td><td>Array of Object</td><td>Object with asset, balance, availableBalance(<strong>only in Vapor Chain</strong>), decimals and alias properties.</td></tr>
+<tr><td>accountId</td><td>String</td><td>Account ID</td></tr>
+<tr><td>rootXpub</td><td>String</td><td>account root xpub</td></tr>
+<tr><td>derivedXpub</td><td>String</td><td>account derived xpub</td></tr>
+</tbody>
+</table>
+<p>返回格式示例:</p>
+<pre><code class="hljs css language-javascript">{ 
+   <span class="hljs-string">"address"</span>:<span class="hljs-string">"tm1q2pd6vkw60a6lmyh5mqjkxmdqrxvmweh5dts0xk"</span>,
+   <span class="hljs-string">"alias"</span>:<span class="hljs-string">"test"</span>,
+   <span class="hljs-string">"balances"</span>:[ 
+      { 
+         <span class="hljs-string">"asset"</span>:<span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+         <span class="hljs-string">"balance"</span>:<span class="hljs-number">1489673000</span>,
+         <span class="hljs-string">"availableBalance"</span>:<span class="hljs-number">1389673000</span>, <span class="hljs-comment">// available only in Vapor Chain</span>
+        <span class="hljs-string">"decimals"</span>:<span class="hljs-number">8</span>,
+         <span class="hljs-string">"alias"</span>:<span class="hljs-string">"BTM"</span>,
+         <span class="hljs-string">"symbol"</span>:<span class="hljs-string">"BTM"</span>
+      }
+   ],
+   <span class="hljs-string">"accountId"</span>:<span class="hljs-string">"c54475ee-2548-4a6d-b327-2e740bece2c3"</span>,
+   <span class="hljs-string">"rootXPub"</span>:<span class="hljs-string">"404f3826f69aebef28a47b1eda..."</span>,
+   <span class="hljs-string">"derivedXpub"</span>:<span class="hljs-string">"xxxxxxxx..."</span>
+}
+</code></pre>
+<p><strong>bytom.net</strong></p>
+<p>返回当前比原网络ID，例如:&quot;testnet&quot;</p>
+<p><strong>bytom.chain</strong></p>
+<p>返回链类型。例如“bytom”或“vapor”</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_46"><span class="arrow-prev">← </span><span>BApp SDK初始化</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_48"><span>Bycoin API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

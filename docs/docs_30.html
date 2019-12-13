@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Equity语法 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 合约组成"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Equity语法 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### 合约组成"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>智能合约</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Equity语法</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="合约组成"></a><a href="#合约组成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约组成</h4>
+<p><code>Equity</code>合约程序是由一个用<code>contract</code>关键字定义的合约结构组成。一个合约的形式为：
+<code>contract ContractName ( parameters ) locks valueAmount of valueAsset { clauses }</code></p>
+<ul>
+<li><code>ContractName</code> 合约名，是一个标识符，代表合约的名称，在编写合约时自定义。</li>
+<li><code>parameters</code> 合约参数列表，其类型名必须是合约语言的基本类型</li>
+<li><code>valueAmount</code> 合约锁定的资产数量，即<code>UTXO</code>中的<code>amount</code>，标识符可以自定义</li>
+<li><code>valueAsset</code> 合约锁定的资产类型，即<code>UTXO</code>中的<code>assetID</code>，标识符可以自定义</li>
+<li><code>clauses</code> 条款（即函数）列表，一个合约至少包含一个<code>clause</code></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="条款组成"></a><a href="#条款组成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>条款组成</h4>
+<p>每个<code>clause</code>条款函数描述了一种解锁合约<code>UTXO</code>的方法和解锁所需的参数信息。<code>clause</code>的结构为：
+<code>clause ClauseName ( parameters ) { statements }</code></p>
+<ul>
+<li><code>ClauseName</code> 条款名，是一个标识符，代表条款函数的名称，在编写时自定义。</li>
+<li><code>parameters</code> 条款参数列表</li>
+<li><code>statements</code> 合约语句列表，一个<code>clause</code>至少包含一条语句</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="参数列表"></a><a href="#参数列表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参数列表</h4>
+<p>合约和条款的参数需指明变量名和变量类型。参数定义的格式是：</p>
+<ul>
+<li><code>name : TypeName</code></li>
+</ul>
+<p>参数列表的格式为：</p>
+<ul>
+<li><code>name1 : TypeName1 , name2 : TypeName2 , …</code></li>
+</ul>
+<p>为简洁起见，可以像这样合并相同类型的相邻参数：</p>
+<ul>
+<li><code>name1 , name2 , … : TypeName</code></li>
+</ul>
+<p>所以这两种合约的声明是等价的：</p>
+<ul>
+<li><code>contract LockWithMultiSig(key1: PublicKey, key2: PublicKey, key3: PublicKey)</code></li>
+<li><code>contract LockWithMultiSig(key1, key2, key3: PublicKey)</code></li>
+</ul>
+<p>可用的变量类型有：</p>
+<ul>
+<li><code>Integer</code> <code>Amount</code> <code>Boolean</code> <code>String</code> <code>Hash</code> <code>Asset</code> <code>PublicKey</code> <code>Signature</code> <code>Program</code></li>
+</ul>
+<p>在数据类型中将会详细介绍这些变量类型。</p>
+<h4><a class="anchor" aria-hidden="true" id="语句组成"></a><a href="#语句组成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>语句组成</h4>
+<p><code>statement</code>合约语句，除了<code>verify</code>、<code>lock</code>和<code>unlock</code>基本语句类型之外，目前还新增加了<code>define</code>、<code>assign</code>和<code>if-else</code>扩展语句类型的支持，语句的格式如下：</p>
+<ul>
+<li><p><code>verify</code>验证条件语句，用来验证表达式的结果是否为真，模式如下:<code>verify expression</code>  其中<code>expression</code>的结果必须是<code>bool</code>类型，<code>expression</code>表达式的结果必须为<code>true</code>时表示验证成功。示例如下：</p></li>
+<li><p><code>verify above(blockNumber)</code> 检测当前块的区块高度是否高于 <code>blockNumber</code>。</p></li>
+<li><p><code>verify checkTxSig(key, sig)</code> 检测给定的签名是否与预先设定的公钥相匹配。</p></li>
+<li><p><code>verify newBid &gt; currentBid</code> 检测<code>newBid</code>是否大于<code>currentBid</code>。</p></li>
+<li><p><code>lock</code> 锁定合约资产语句，模式如下：
+<code>lock valueAmount of valueAsset with program</code>
+其中<code>valueAmount</code>表示资产数量，<code>valueAsset</code>表示资产类型，而<code>program</code>表示接收对象且必须为<code>Program</code>类型。</p></li>
+<li><p><code>unlock</code> 解锁合约资产语句，模式如下：
+<code>unlock valueAmount of valueAsset</code></p></li>
+</ul>
+<p>其中<code>valueAmount</code>表示资产数量，<code>valueAsset</code>表示资产类型，<code>unlock</code>语句表示解锁的资产可以指定给任意接收对象。</p>
+<ul>
+<li><code>define</code>自定义变量语句，模式如下：<code>define identifier : TypeName = expression</code>或<code>define identifier : TypeName</code>  其中<code>identifier</code>表示用户定义了数据类型为<code>TypeName</code>的变量，如果自定义的变量没有赋值，则该变量必须<code>assign</code>语句中赋值。示例如下：
+<ul>
+<li><code>define value : Integer = amount</code> 定义了整型的变量<code>value</code>，并且将<code>amount</code>赋值给该变量。</li>
+<li><code>define value : Integer = amount + shift</code> 定义了整型的变量<code>value</code>，并且将表达式<code>amount + shift</code>的结果赋值给该变量。</li>
+<li><code>define value : Integer</code> 定义了整型的变量<code>value</code>，并没有赋值，该变量需要在<code>assign</code>语句中赋值，否则会报错“变量未赋值”。</li>
+</ul></li>
+<li><code>assign</code>自定义变量赋值语句，模式如下<code>assign identifier = expression</code>  其中<code>identifier</code>必须为<code>define</code>语句中用户自定义的变量，禁止修改<code>contract</code>和<code>clause</code>中的变量。示例如下：
+<ul>
+<li><code>assign value = amount</code> 将<code>amount</code>赋值给变量<code>value</code>，并且变量<code>amount</code>和<code>value</code>的数据类型必须相同。</li>
+</ul></li>
+<li><code>if-else</code> 条件判断语句，模式如下：
+<code>if expression { statements }</code> 或 <code>if expression { statements } else { statements }</code>
+其中<code>expression</code>为<code>if-else</code>语句的条件判断表达式，并且该表达式的结果必须是<code>bool</code>类型，当结果为<code>true</code>时执行<code>if</code>下面的<code>statements</code>语句块，否则执行<code>else</code>下面的<code>statements</code>语句块。</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="数据类型"></a><a href="#数据类型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据类型</h4>
+<p>Equity语言支持的数据类型如下：</p>
+<ul>
+<li><code>Boolean</code> 布尔类型，值为<code>true</code>或<code>false</code>.</li>
+<li><code>Integer</code> 整数类型，取值范围为<code>[-2^63, 2^63-1]</code>.</li>
+<li><code>Amount</code> 无符号整数类型，取值范围为<code>[0, 2^63-1]</code>.</li>
+<li><code>Asset</code> 资产类型，32个字节长度的资产ID.</li>
+<li><code>Hash</code> 哈希类型，32个字节长度的<code>hash</code>值.</li>
+<li><code>PublicKey</code> 公钥类型，32个字节长度的<code>publickey</code>.</li>
+<li><code>Signature</code> 签名类型，该类型需要根据<code>publickey</code>对应的主公钥<code>root_xpub</code>和<code>derivation_path</code>来构造，且只能用于<code>clause</code>的参数列表中.</li>
+<li><code>Program</code> 程序类型，接收<code>program</code>，跟地址是一一对应.</li>
+<li><code>String</code> 字符串类型，16进制字符串.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="表达式"></a><a href="#表达式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>表达式</h4>
+<p><code>Equity</code>表达式可用于上述语句中的<code>expression</code>中，支持的表达式类别如下：</p>
+<ul>
+<li>一元表达式
+<ul>
+<li><code>- expr</code> : 对数学表达式取负值</li>
+<li><code>~ expr</code> : 对字节串做按位翻转</li>
+</ul></li>
+<li>条件表达式，下面的表达式都必须为数字类型操作数(即<code>Integer</code>或<code>Amount</code>类型)，并且返回一个<code>Boolean</code>型的结果：
+<ul>
+<li><code>expr1 &gt; expr2</code> : 检测<code>expr1</code>是否大于<code>expr2</code></li>
+<li><code>expr1 &lt; expr2</code> : 检测<code>expr1</code>是否小于<code>expr2</code></li>
+<li><code>expr1 &gt;= expr2</code> : 检测<code>expr1</code>是否大于或等于<code>expr2</code></li>
+<li><code>expr1 &lt;= expr2</code> : 检测<code>expr1</code>是否小于或等于<code>expr2</code></li>
+<li><code>expr1 == expr2</code> : 检测<code>expr1</code>是否等于<code>expr2</code></li>
+<li><code>expr1 != expr2</code> : 检测<code>expr1</code>是否不等于<code>expr2</code></li>
+</ul></li>
+<li>按位操作表达式，下面的表达式为字节类型，且返回值也是字节类型：
+<ul>
+<li><code>expr1 ^ expr2</code> : 得到两操作数按位异或(XOR)的结果</li>
+<li><code>expr1 | expr2</code> : 得到两操作数按位或(OR)的结果</li>
+<li><code>expr1 &amp; expr2</code> : 得到两操作数按位与(AND)的结果</li>
+</ul></li>
+<li>数值表达式，下面的表达式都是数值型操作数(<code>Integer</code>或<code>Amount</code>)，并且返回数值型的结果：
+<ul>
+<li><code>expr1 + expr2</code> : 两操作数相加</li>
+<li><code>expr1 - expr2</code> : 两操作数相减，<code>expr1</code>减去<code>expr2</code></li>
+<li><code>expr1 * expr2</code> : 两操作数相乘</li>
+<li><code>expr1 / expr2</code> : 两操作数相除，<code>expr1</code>除以<code>expr2</code></li>
+<li><code>expr1 % expr2</code> : 操作数取余，即<code>expr1</code>对<code>expr2</code>取余</li>
+<li><code>expr1 &lt;&lt; expr2</code> : 将<code>expr1</code>按位左移<code>expr2</code>位</li>
+<li><code>expr1 &gt;&gt; expr2</code> : 将<code>expr1</code>按位右移<code>expr2</code>位</li>
+</ul></li>
+<li>其他的表达式类型：
+<ul>
+<li><code>( expr )</code> : 表示<code>expr</code>本身</li>
+<li><code>expr ( arguments )</code> : 表示函数调用，传入的参数列表<code>arguments</code>是用逗号分隔的，具体可查阅下面的内置函数</li>
+<li>单独出现的标识符表示变量本身</li>
+<li><code>[exprs]</code> : 表示一个列表，其中<code>exprs</code>是以逗号分隔的表达式列表(列表参数目前仅用于<code>checkTxMultiSig</code>中)</li>
+<li>以 <code>-</code> 开头的一串数字序列表示整型数据列表</li>
+<li>单引号 <code>'...'</code> 之间的字节序列表示一个字符串</li>
+<li>前缀 <code>0x</code> 后跟 <code>2n</code> 个十六进制数字，其长度为<code>n</code></li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="内置函数"></a><a href="#内置函数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>内置函数</h4>
+<p><code>Equity</code>提供了一下内置函数，相关函数如下：</p>
+<ul>
+<li><code>abs(n)</code> 返回数值<code>n</code>的绝对值.</li>
+<li><code>min(x, y)</code> 返回两个数值<code>x</code>和<code>y</code>中最小的一个.</li>
+<li><code>max(x, y)</code> 返回两个数值<code>x</code>和<code>y</code>中最大的一个.</li>
+<li><code>size(s)</code> 返回任意类型的字节大小<code>size</code>.</li>
+<li><code>concat(s1, s2)</code> 返回连接两个字符串<code>s1</code>和<code>s2</code>生成新的字符串.</li>
+<li><code>concatpush(s1, s2)</code> 将两个字符串类型的虚拟机执行操作码<code>s1</code>和<code>s2</code>连接起来(即将<code>s2</code>拼接在<code>s1</code>的后面），然后将他们<code>push</code>到栈中. 该操作函数主要用于嵌套合约中.</li>
+<li><code>below(height)</code> 判断当前区块高度是否低于参数<code>height</code>，如果是则返回<code>true</code>，否则返回<code>false</code>.</li>
+<li><code>above(height)</code> 判断当前区块高度是否高于参数<code>height</code>，如果是则返回<code>true</code>，否则返回<code>false</code>.</li>
+<li><code>sha3(s)</code> 返回字节类型字符串参数<code>s</code>的<code>SHA3-256</code>的哈希运算结果.</li>
+<li><code>sha256(s)</code> 返回字节类型字符串参数<code>s</code>的<code>SHA-256</code>的哈希运算结果.</li>
+<li><code>checkTxSig(key, sig)</code> 根据一个<code>PublicKey</code>和一个<code>Signature</code>验证交易的签名是否正确.</li>
+<li><code>checkTxMultiSig([key1, key2, ...], [sig1, sig2, ...])</code> 根据多个<code>PublicKey</code>和多个<code>Signature</code>验证交易的多重签名是否正确.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_29"><span class="arrow-prev">← </span><span>Equity介绍</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_31"><span>操作符</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

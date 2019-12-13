@@ -1,0 +1,440 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>合约开发和部署 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 合约交易构造流程"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="合约开发和部署 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### 合约交易构造流程"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>智能合约</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">合约开发和部署</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="合约交易构造流程"></a><a href="#合约交易构造流程" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合约交易构造流程</h4>
+<p><strong>合约参数构造</strong>
+**
+合约参数主要包括两个方面，一个是编译合约<code>contract</code>中的参数，另一个是解锁合约<code>clause</code>中的参数。其中参数的相关注意事项如下：</p>
+<ul>
+<li>调用编译合约API接口<code>compile</code>不加参数是直接编译合约，按照<code>contract</code>中的参数列表顺序加上参数是将合约实例化</li>
+<li>构造解锁合约交易需要添加<code>clause</code>中的参数列表</li>
+<li><code>Signature</code>参数类型只能在<code>clause</code>的参数列表中出现，不允许出现在<code>contract</code>的参数列表中</li>
+<li>如果合约包含多个<code>clause</code>，那么用户只需选择任意一个<code>clause</code>来解锁就可以了。在构造解锁合约的交易过程中，需要添加额外的参数<code>clause_selector</code>（无符号整数类型，小端存储格式），<code>clause_selector</code>是根据合约<code>clause</code>的顺序来指定的，假如<code>clause</code>的个数<code>n</code>，那么选择对应的<code>clause_selector</code>为<code>0 ~ n-1</code>，即第一个<code>clause</code>的<code>clause_selector</code>为<code>0</code>，第二个<code>clause</code>的<code>clause_selector</code>为<code>1</code>，以此类推。</li>
+</ul>
+<p>如果合约的<code>clause</code>参数列表中包含<code>Signature</code>，那么在构造解锁合约交易的时候需要通过签名的必要条件<code>root_xpub</code>和<code>derivation_path</code>来间接获得，因为签名必须通过调用<code>sign-transaction</code>API接口才能得到。参数<code>root_xpub</code>和<code>derivation_path</code>是通过调用<code>list-pubkeys</code>接口获取的，此外<code>Signature</code>一般需要跟<code>PublicKey</code>配套使用，即参数<code>root_xpub</code>和<code>derivation_path</code>需要跟公钥<code>pubkey</code>一一对应，否则合约会执行失败。</p>
+<p>其中<a href="https://github.com/Bytom/bytom/wiki/API-Reference#list-pubkeys">API接口<code>list-pubkeys</code></a>的参数如下：</p>
+<ul>
+<li><code>String</code> - <em>account_id</em>, 账户ID.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户别名.</li>
+<li><code>String</code> - <em>public_key</em>, 根据指定pubkey来查询.</li>
+</ul>
+<p>其请求和响应的json格式如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">// Request</span>
+{
+  <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>
+}
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-attr">"pubkey_infos"</span>: [
+    {
+      <span class="hljs-attr">"derivation_path"</span>: [
+        <span class="hljs-string">"010100000000000000"</span>,
+        <span class="hljs-string">"0300000000000000"</span>
+      ],
+      <span class="hljs-attr">"pubkey"</span>: <span class="hljs-string">"c37d5531f393bc6a3568628c0c0e17801ea452e75d604deb01403c4b161659a3"</span>
+    },
+    {
+      <span class="hljs-attr">"derivation_path"</span>: [
+        <span class="hljs-string">"010100000000000000"</span>,
+        <span class="hljs-string">"0200000000000000"</span>
+      ],
+      <span class="hljs-attr">"pubkey"</span>: <span class="hljs-string">"117d12e84bb19e956451e0b1eb2bffc662ecb7aac7e63d77e524ddd467eb3617"</span>
+    },
+    {
+      <span class="hljs-attr">"derivation_path"</span>: [
+        <span class="hljs-string">"010100000000000000"</span>,
+        <span class="hljs-string">"0100000000000000"</span>
+      ],
+      <span class="hljs-attr">"pubkey"</span>: <span class="hljs-string">"e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78"</span>
+    }
+  ],
+  <span class="hljs-attr">"root_xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>
+}
+</code></pre>
+<hr>
+<p><strong>编译合约</strong>
+**
+编译合约是将合约编译成可执行的虚拟机指令流程。如果合约有参数列表<code>contract parameters</code>的话，在锁定合约之前需要对这些合约参数进行实例化，因为这些参数是解锁合约的限制条件。
+编译合约目前支持两种方式，一种是使用<code>equity</code>编译工具，另一种是调用编译合约的API接口<code>compile</code>。其中通过<a href="https://github.com/Bytom/equity"><code>equity</code>编译工具</a>的方式如下：</p>
+<pre><code class="hljs">./equity <span class="hljs-variable">&lt;contract_file&gt;</span> [<span class="hljs-keyword">flags</span>]
+</code></pre>
+<p>其中<code>flag</code>标志如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">--bin        Binary of the contracts in hex.</span>
+    <span class="hljs-comment">--instance   Object of the Instantiated contracts.</span>
+    <span class="hljs-comment">--shift      Function shift of the contracts.</span>
+</code></pre>
+<p>以<code>LockWithPublicKey</code>为例，编译并实例化合约如下：</p>
+<pre><code class="hljs"><span class="hljs-string">./equity</span> LockWithPublicKey <span class="hljs-params">--instance</span> e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78
+</code></pre>
+<p>返回结果如下：</p>
+<pre><code class="hljs">======= LockWithPublicKey =======
+Instantiated <span class="hljs-function"><span class="hljs-keyword">program</span></span>:
+<span class="hljs-number">2</span>0e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c0
+</code></pre>
+<p>另一种是通过调用编译合约<a href="https://github.com/Bytom/bytom/wiki/API-Reference#compile">API接口<code>compile</code></a>的方式，其接口参数如下：</p>
+<ul>
+<li><code>String</code> - <em>contract</em>, 合约内容.</li>
+<li><code>Array of Object</code>-<em>args</em>, 合约参数结构体（数组类型）.</li>
+<li><code>Boolean</code> - <em>boolean</em>, 布尔类型的合约参数，对应的基本类型是<code>Boolean</code>.</li>
+<li><code>Integer</code> - <em>integer</em>, 整数类型的合约参数，对应的基本类型包括：<code>Integer</code>、<code>Amount</code>.</li>
+<li><code>String</code> - <em>string</em>, 字符串类型的合约参数，对应的基本类型包括：<code>String</code>、<code>Asset</code>、<code>Hash</code>、<code>Program</code>、<code>PublicKey</code>.</li>
+</ul>
+<p>以<code>LockWithPublicKey</code>为例，其请求和响应的json格式如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">// Request</span>
+{
+  <span class="hljs-attr">"contract"</span>: <span class="hljs-string">"contract LockWithPublicKey(publicKey: PublicKey) locks valueAmount of valueAsset { clause unlockWithSig(sig: Signature) { verify checkTxSig(publicKey, sig) unlock valueAmount of valueAsset }}"</span>,
+  <span class="hljs-attr">"args"</span>: [
+    {
+      <span class="hljs-attr">"string"</span>: <span class="hljs-string">"e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78"</span>
+    }
+  ]
+}
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"LockWithPublicKey"</span>,
+  <span class="hljs-attr">"source"</span>: <span class="hljs-string">"contract LockWithPublicKey(publicKey: PublicKey) locks valueAmount of valueAsset { clause unlockWithSig(sig: Signature) { verify checkTxSig(publicKey, sig) unlock valueAmount of valueAsset }}"</span>,
+  <span class="hljs-attr">"program"</span>: <span class="hljs-string">"20e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c0"</span>,
+  <span class="hljs-attr">"params"</span>: [
+    {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"publicKey"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"PublicKey"</span>
+    }
+  ],
+  <span class="hljs-attr">"value"</span>: <span class="hljs-string">"locked"</span>,
+  <span class="hljs-attr">"clause_info"</span>: [
+    {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"unlockWithSig"</span>,
+      <span class="hljs-attr">"args"</span>: [
+        {
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"sig"</span>,
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Signature"</span>
+        }
+      ],
+      <span class="hljs-attr">"value_info"</span>: [
+        {
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"locked"</span>
+        }
+      ],
+      <span class="hljs-attr">"block_heights"</span>: [],
+      <span class="hljs-attr">"hash_calls"</span>: <span class="hljs-literal">null</span>
+    }
+  ],
+  <span class="hljs-attr">"opcodes"</span>: <span class="hljs-string">"0xe9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78 DEPTH 0xae7cac FALSE CHECKPREDICATE"</span>,
+  <span class="hljs-attr">"error"</span>: <span class="hljs-string">""</span>
+}
+</code></pre>
+<hr>
+<p><strong>锁定合约</strong>
+**
+<code>lock</code>锁定合约，即部署合约，其本质是调用<code>build-transaction</code>接口将资产发送到合约特定的<code>program</code>，只需将接收方<code>control_program</code>设置为指定合约即可，构造锁定合约交易的模板如下：（注意：合约交易暂时不支持接收方资产为BTM资产的交易）</p>
+<pre><code class="hljs"><span class="hljs-comment">// Request</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">20000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">900000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>
+    },
+    {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">900000000</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"20e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c0"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-attr">"raw_transaction"</span>: <span class="hljs-string">"0701dfd5c8d505020161015f150ec246dc739a8c4c3f7b4083ededcb2854ca221e437a49f23ec84c7c47ea80ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8099c4d599010001160014726e902e30525e01f0157f12be476c904060383b01000160015ed53c1f3388681f62ae778ac8a54c2b091bbdc91d68ec1e94b20aa2183484f8331e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c2280c8afa02501011600145de3c504b41019d11698d572b1a37d9a4c9118c1010003013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80bfffcb990101160014310c2265e8e3b7057a62caf09a9f907763f369ea00013d1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c2280f69bf32101160014d0d18752a276c94b25f920b02a8edff251b16b7600014f1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c2280d293ad03012820e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c000"</span>,
+  <span class="hljs-attr">"signing_instructions"</span>: [
+    {
+      <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"witness_components"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"keys"</span>: [
+            {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0100000000000000"</span>
+              ]
+            }
+          ],
+          <span class="hljs-attr">"signatures"</span>: <span class="hljs-literal">null</span>
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+          <span class="hljs-attr">"value"</span>: <span class="hljs-string">"e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e78"</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-attr">"position"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"witness_components"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"keys"</span>: [
+            {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0700000000000000"</span>
+              ]
+            }
+          ],
+          <span class="hljs-attr">"signatures"</span>: <span class="hljs-literal">null</span>
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+          <span class="hljs-attr">"value"</span>: <span class="hljs-string">"54df681ac3174a11d4456265641a204e04f64b8f860f37bf5584cf4187f54e99"</span>
+        }
+      ]
+    }
+  ],
+  <span class="hljs-attr">"allow_additional_actions"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p>构建交易成功之后，便可以对交易进行签名<code>sign-transaction</code>，返回结果中<code>sign_complete</code>为<code>true</code>表示签名成功，将签名的交易通过<code>submit-transaction</code>提交到交易池中，等待交易被打包上链</p>
+<p><strong>查找合约UTXO</strong></p>
+<p>部署合约交易发送成功之后，接下来便需要对合约锁定的资产进行解锁，解锁合约之前需要找到合约的UTXO。
+可以通过调用<a href="https://github.com/Bytom/bytom/wiki/API-Reference#list-unspent-outputs">API接口<code>list-unspent-outputs</code></a>来查找，在查合约UTXO的情况下必须将<code>smart_contract</code>设置为<code>true</code>，否则会查不到，其参数如下：</p>
+<ul>
+<li><code>String</code> - <em>id</em>, UTXO对应的<code>outputID</code>，可以根据发布合约交易的输出<code>output</code>中的找到.</li>
+<li><code>Boolean</code> - <em>smart_contract</em>, 是否展示合约的UTXO，默认不显示.</li>
+</ul>
+<p>对应的输入输出结果如下：</p>
+<pre><code class="hljs">// <span class="hljs-string">Request
+</span><span class="hljs-string">curl </span>-X <span class="hljs-string">POST </span><span class="hljs-built_in">list-unspent-outputs</span> -d <span class="hljs-string">'{"id": "413d941faf5a19501ab4c06747fe1eb38c5ae76b74d0f5af524fc40ee6bf7116", "smart_contract": true}'</span>
+// <span class="hljs-string">Result
+</span>{
+  <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-string">"account_id"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-string">"address"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-string">"amount"</span>: <span class="hljs-string">900000000,</span>
+  <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"GOLD"</span>,
+  <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+  <span class="hljs-string">"change"</span>: <span class="hljs-string">false,</span>
+  <span class="hljs-string">"control_program_index"</span>: 0,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"413d941faf5a19501ab4c06747fe1eb38c5ae76b74d0f5af524fc40ee6bf7116"</span>,
+  <span class="hljs-string">"program"</span>: <span class="hljs-string">"20e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c0"</span>,
+  <span class="hljs-string">"source_id"</span>: <span class="hljs-string">"c9680e6dd5e9ae7f825fe7edab9fa35c119eb7feab0ab4e426c84a579daf4ef9"</span>,
+  <span class="hljs-string">"source_pos"</span>: 2,
+  <span class="hljs-string">"valid_height"</span>: 0
+}
+</code></pre>
+<p>找到对应的合约UTXO之后，可以通过<a href="https://github.com/Bytom/bytom/wiki/API-Reference#decode-program">API接口<code>decode-program</code></a>解析合约的参数信息，用户可以根据已有的参数信息判断该合约能否解锁</p>
+<p><strong>解锁合约</strong></p>
+<p><code>unlock</code>解锁合约，即调用合约，其本质是通过给交易添加相应的合约参数以便合约程序<code>program</code>在虚拟机中执行成功，目前合约相关的参数都可以通过<code>build-transaction</code>中的<code>Action</code>结构<code>spend_account_unspent_output</code>中的数组参数<code>arguments</code>进行添加，其中参数如下：</p>
+<ol>
+<li><code>RawTxSigArgument</code> 签名相关的参数，<code>type</code>类型为<code>raw_tx_signature</code>，主要包含主公钥<code>xpub</code>和其对应的派生路径<code>derivation_path</code>，而待验证的<code>publickey</code>是通过该主公钥和派生路径生成的子公钥生成的（这些参数可以通过API接口<code>list-pubkeys</code>获取）</li>
+</ol>
+<ul>
+<li><code>xpub</code> 主公钥</li>
+<li><code>derivation_path</code> 派生路径</li>
+</ul>
+<p>参数格式如下：</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+  <span class="hljs-attr">"raw_data"</span>: {
+    <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+    <span class="hljs-attr">"derivation_path"</span>: [
+      <span class="hljs-string">"010100000000000000"</span>,
+      <span class="hljs-string">"0100000000000000"</span>
+    ]
+  }
+}
+</code></pre>
+<ol start="2">
+<li><code>DataArgument</code> 数据类型参数，<code>type</code>类型为<code>data</code>，该类型可以兼容除了<code>rawTxSigArgument</code>以外的所有合约参数类型，其值是16进制的字符串，需要注意的是<code>integer</code>整数类型是小端存储格式。</li>
+</ol>
+<p>参数格式如下:(以<code>publickey</code>为例）</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+  <span class="hljs-attr">"raw_data"</span>: {
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"b3f37834dfa74174e9f0d208302e77c637cfe66c3e37fe1e1574e416b3516e89"</span>
+  }
+}
+</code></pre>
+<ol start="3">
+<li><code>BoolArgument</code> 布尔类型参数，<code>type</code>类型为<code>boolean</code>，该类型取值为<code>true</code>或<code>false</code>。参数格式如下：</li>
+</ol>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"boolean"</span>,
+  <span class="hljs-attr">"raw_data"</span>: {
+    <span class="hljs-attr">"value"</span>: <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+<ol start="4">
+<li><code>IntegerArgument</code> 整型类型参数，<code>type</code>类型为<code>integer</code>。参数格式如下：</li>
+</ol>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"integer"</span>,
+  <span class="hljs-attr">"raw_data"</span>: {
+    <span class="hljs-attr">"value"</span>: <span class="hljs-number">10000</span>
+  }
+}
+</code></pre>
+<p>5.<code>StrArgument</code> 字符串类型参数，<code>type</code>类型为<code>string</code>。参数格式如下：</p>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"raw_data"</span>: {
+    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"this is a test string"</span>
+  }
+}
+</code></pre>
+<p>以合约<code>LockWithPublicKey</code>为例，其解锁合约交易的模板如下：</p>
+<pre><code class="hljs"><span class="hljs-comment">// Request</span>
+{
+  <span class="hljs-attr">"base_transaction"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"actions"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account_unspent_output"</span>,
+      <span class="hljs-attr">"output_id"</span>: <span class="hljs-string">"413d941faf5a19501ab4c06747fe1eb38c5ae76b74d0f5af524fc40ee6bf7116"</span>,
+      <span class="hljs-attr">"arguments"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"raw_data"</span>: {
+            <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+            <span class="hljs-attr">"derivation_path"</span>: [
+              <span class="hljs-string">"010100000000000000"</span>,
+              <span class="hljs-string">"0100000000000000"</span>
+            ]
+          }
+        }
+      ]
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"control_program"</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c22"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">900000000</span>,
+      <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014726e902e30525e01f0157f12be476c904060383b"</span>
+    },
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"spend_account"</span>,
+      <span class="hljs-attr">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">5000000</span>,
+      <span class="hljs-attr">"account_id"</span>: <span class="hljs-string">"0G1JIR6400A02"</span>
+    }
+  ],
+  <span class="hljs-attr">"ttl"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"time_range"</span>: <span class="hljs-number">1521625823</span>
+}
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-attr">"raw_transaction"</span>: <span class="hljs-string">"0701dfd5c8d5050201720170c9680e6dd5e9ae7f825fe7edab9fa35c119eb7feab0ab4e426c84a579daf4ef91e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c2280d293ad0302012820e9108d3ca8049800727f6a3505b3a2710dc579405dde03c250f16d9a7e1e6e787403ae7cac00c001000160015e8412e8e8c359683f1f5f3a7308b084022f1f149dab176e6e6e8daada895d0e29ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0c6c6944f00011600141313e974d19f3d37db29a212d75b4c763e42f433010002013d1e074b22ed7ae8470c7ba5d8a7bc95e83431a753a17465e8673af68a82500c2280d293ad0301160014726e902e30525e01f0157f12be476c904060383b00013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffa0b095924f011600147076c737d92621e0033899a54d02fa79f362922700"</span>,
+  <span class="hljs-attr">"signing_instructions"</span>: [
+    {
+      <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"witness_components"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"keys"</span>: [
+            {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0100000000000000"</span>
+              ]
+            }
+          ],
+          <span class="hljs-attr">"signatures"</span>: <span class="hljs-literal">null</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-attr">"position"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"witness_components"</span>: [
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>,
+          <span class="hljs-attr">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-attr">"keys"</span>: [
+            {
+              <span class="hljs-attr">"xpub"</span>: <span class="hljs-string">"5c6145b241b1147987565719657a0506ebb417a2e110a235a42cfb40951880f447432f930ce9fd1a6b7e51b3ddbfdc7adb57d33448f93c0defb4de630703a144"</span>,
+              <span class="hljs-attr">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0300000000000000"</span>
+              ]
+            }
+          ],
+          <span class="hljs-attr">"signatures"</span>: <span class="hljs-literal">null</span>
+        },
+        {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"data"</span>,
+          <span class="hljs-attr">"value"</span>: <span class="hljs-string">"c37d5531f393bc6a3568628c0c0e17801ea452e75d604deb01403c4b161659a3"</span>
+        }
+      ]
+    }
+  ],
+  <span class="hljs-attr">"allow_additional_actions"</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p>构建交易成功之后，便可以对交易进行签名<code>sign-transaction</code>，返回结果中<code>sign_complete</code>为<code>true</code>表示签名成功，将签名的交易通过<code>submit-transaction</code>提交到交易池中，等待交易被打包上链</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_33"><span class="arrow-prev">← </span><span>合约模版</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_35"><span>BVM介绍</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

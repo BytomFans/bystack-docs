@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>矿池对接 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="### 矿机配置"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="矿池对接 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="### 矿机配置"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>矿池对接</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">矿池对接</h1></header><article><div><span><h3><a class="anchor" aria-hidden="true" id="矿机配置"></a><a href="#矿机配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>矿机配置</h3>
+<p><a href="https://gist.github.com/HAOYUatHZ/a47400bde4a138825faef415387b532c">https://gist.github.com/HAOYUatHZ/a47400bde4a138825faef415387b532c</a></p>
+<h3><a class="anchor" aria-hidden="true" id="固件升级"></a><a href="#固件升级" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>固件升级</h3>
+<p><a href="https://service.bitmain.com.cn/support">https://service.bitmain.com.cn/support</a></p>
+<ul>
+<li>两个都要刷,先后顺序没关系</li>
+<li><em>update_1000.tar.gz</em> 升级时间较长，升级期间请勿断电</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="配置节点"></a><a href="#配置节点" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置节点</h3>
+<ul>
+<li>测试时可以考虑切换到 testnet 分支降低难度使cpu挖矿也能出块，<code>./bytomd init --chain_id testnet</code> 或 <code>./bytomd init --chain_id solonet</code></li>
+<li><code>init</code>/<code>node</code> 初始化/启动时可以加上 <code>-r &quot;your/directory&quot;</code> 指定数据目录，若目录不存在则会自动新建该目录</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="流程"></a><a href="#流程" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>流程</h3>
+<p>1、初始化节点先建个账户、地址，不然就挖到空地址</p>
+<p>2、矿地址支持自定义，包括 非本地钱包地址</p>
+<p>3、<a href="https://github.com/Bytom/bytom/wiki/API-Reference">API doc</a></p>
+<p>4、矿池向节点 <a href="https://github.com/Bytom/bytom/wiki/API-Reference#get-work">getwork</a></p>
+<p><code>get-work</code> 得到的 <code>block_header</code> 是动态压缩变长的需要进行解析</p>
+<ul>
+<li>使用 <em>golang</em> 的话可以利用 <code>&quot;github.com/bytom/protocol/bc/types&quot;</code> 中 <code>block_header.go</code> 中的函数 <code>UnmarshalText</code></li>
+<li>使用别的语言的话参考 <code>&quot;github.com/bytom/protocol/bc/types&quot;</code> 中 <code>block.go</code> 中的函数 <code>UnmarshalText</code>, <code>readFrom</code>, <code>ReadVarintXXX</code>. <code>ReadVarintXXX</code> 需要参考 <a href="https://go.googlesource.com/go/+/go1.4.3/src/encoding/binary/varint.go">go函数 <code>binary.ReadUvarint</code></a></li>
+</ul>
+<p>5、解析完后进行下发</p>
+<ul>
+<li>通信格式参考 <a href="https://github.com/Bytom/B3-Mimic/blob/master/docs/STRATUM-BTM.md">https://github.com/Bytom/B3-Mimic/blob/master/docs/STRATUM-BTM.md</a> - 收到任务有 <code>login</code> 和 矿池主动下发, 没走 <code>getjob</code>, 只走 <code>login</code> 和 池主动下发 - 这俩都是用 <code>submit</code> 提交</li>
+<li>逻辑参考 <a href="https://github.com/Bytom/B3-Mimic/blob/master/main.go">https://github.com/Bytom/B3-Mimic/blob/master/main.go</a> - <code>Version</code>, <code>Height</code>, <code>Timestamp</code>, <code>Bits</code> 要转小端 - 关于 <code>target</code> + <em>btc.com_antpool</em> 的代码 ~, 并说 <code>target</code> 用以对 <code>bits</code> 对应的 <code>difficulty</code> 放松难度，用来使矿机在单位时间内能够有提交，然后矿池再验证~</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-keyword">var</span> Diff1 = StringToBig(<span class="hljs-string">"0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"</span>)
+
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">GetTargetHex</span><span class="hljs-params">(diff <span class="hljs-keyword">int64</span>)</span> <span class="hljs-title">string</span></span> {
+        padded := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">byte</span>, <span class="hljs-number">32</span>)
+        diffBuff := <span class="hljs-built_in">new</span>(big.Int).Div(Diff1, big.NewInt(diff)).Bytes()
+        <span class="hljs-built_in">copy</span>(padded[<span class="hljs-number">32</span>-<span class="hljs-built_in">len</span>(diffBuff):], diffBuff)
+        buff := padded[<span class="hljs-number">0</span>:<span class="hljs-number">4</span>]
+        targetHex := hex.EncodeToString(Reverse(buff))
+        <span class="hljs-keyword">return</span> targetHex
+     }
+</code></pre>
+<ul>
+<li>矿池下发的targethex是拿 标准难度（<code>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</code>） / 一个难度值得出的</li>
+<li>这个值叫做矿池难度 一般会动态调整 保证矿机提交 share 的频率是稳定的 比如1分钟提交三次 提交得快了就会增加这个值 慢了就会降低这个值</li>
+<li>target 是 16 进制的难度，1, 1024, …..等等，和前导 0 的个数有关，动态调整用来保证矿机每分钟至少提交三次，用来计算矿机算力以及防止矿机算力作弊 <code>ffff3f00</code> 对应 1024，<code>c5a70000</code> 对应 100001</li>
+</ul>
+<p>6、提交完之后矿池需要做验证</p>
+<ul>
+<li>header_hash 使用 golang 的话可以利用 <code>&quot;github.com/bytom/protocol/bc/types&quot;</code> 中 <code>types.BlockHeader{}</code> 的 <code>Hash()</code> 使用别的语言的话参考 <a href="https://github.com/Bytom/B3-Mimic/blob/master/docs/blhr_hash_V3.go">https://github.com/Bytom/B3-Mimic/blob/master/docs/blhr_hash_V3.go</a></li>
+<li>然后就要开始用 tensority 算 hash 结果 很遗憾现在 go 版本、cpp_openblas 版本、cpp_simd 版本都达不到理想的验证效果, 如果想做一个可用的矿池目前有必要上 gpu, 可以考虑 n 卡 1050，或者阿里云服务器 P4</li>
+</ul>
+<blockquote>
+<p>cpp 的 tensority 逻辑在<a href="https://github.com/Bytom/CppTensority">这里</a>，并指出了如何针对 gpu 进行优化的建议，这样矩阵乘法能够跑进 2.5 ms, 整个 tensority 大概 6 ms</p>
+</blockquote>
+<ul>
+<li>init matlist 有开销，seed 其实 256 个区块才改变一次, 遇到新的 seed 每次 gpu tensority 可能需要 100 ms，但做了 cache 的话 init matlist 可以忽略，可以认为每次 tensority 只需要不超过 6 ms</li>
+<li>用 golang 可以 cgo 调用 c 代码，参考 <a href="https://github.com/Bytom/bytom/blob/dev-ts-simd/mining/tensority/algorithm.go">https://github.com/Bytom/bytom/blob/dev-ts-simd/mining/tensority/algorithm.go</a></li>
+<li>改好 gpu 版本后可以参照这个进行调用</li>
+</ul>
+<p>7、验证通过后使用 <a href="https://github.com/Bytom/bytom/wiki/API-Reference#submit-work">submit-work</a> 接口进行提交</p>
+<p>提交的结果 也是 BlockHeader type 的</p>
+<ul>
+<li>使用 <em>golang</em> 的话可以利用 <code>&quot;github.com/bytom/protocol/bc/types&quot;</code> 中 <code>block_header.go</code> 中的函数 <code>MmarshalText</code></li>
+<li>使用别的语言的话参考 <code>&quot;github.com/bytom/protocol/bc/types&quot;</code> 中 <code>block.go</code> 中的函数 <code>MarshalText</code>, <code>WriteTo</code>, <code>WriteVarintXXX</code>. <code>WriteVarintXXX</code> 需要参考 <a href="https://go.googlesource.com/go/+/go1.4.3/src/encoding/binary/varint.go">go函数 <code>binary.PutUvarint</code></a></li>
+</ul>
+<p>8、retarget</p>
+<p>见上面，动态调整使矿机每分钟提交三次</p>
+<p>9、收益计算</p>
+<p>略</p>
+<h3><a class="anchor" aria-hidden="true" id="批量转账"></a><a href="#批量转账" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>批量转账</h3>
+<ul>
+<li>主网地址 bm 开头，长度普通地址42，多签62 工具 <a href="https://github.com/Bytom/bytom/tree/master/tools/sendbulktx">https://github.com/Bytom/bytom/tree/master/tools/sendbulktx</a></li>
+<li>每次发币都会生成新的找零地址</li>
+<li>bytom input有21个的限制</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_56"><span class="arrow-prev">← </span><span>矿池接入</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_57"><span>Bycoin</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

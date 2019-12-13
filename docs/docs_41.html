@@ -1,0 +1,2467 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Bytom API · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="**API 调用点**"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Bytom API · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="**API 调用点**"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>开发工具</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Bytom API</h1></header><article><div><span><p><strong>API 调用点</strong></p>
+<p>默认 JSON-RPC 调用点:</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Client</th><th style="text-align:center">URL</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Go</td><td style="text-align:center"><a href="http://localhost:9888">http://localhost:9888</a></td></tr>
+</tbody>
+</table>
+<p>一个完整的<code>curl</code>例子:</p>
+<p><strong>Go</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// curl -X POST url/method -d data</span>
+curl -X POST http:<span class="hljs-comment">//localhost:9888/create-key -d '{"alias": "alice", "password": "123456"}'</span>
+</code></pre>
+<p><strong>API 方法</strong></p>
+<h4><a class="anchor" aria-hidden="true" id="不论钱包是否打开都可用的方法"></a><a href="#不论钱包是否打开都可用的方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>不论钱包是否打开都可用的方法</h4>
+<ul>
+<li><a href="#create-key"><code>create-key</code></a></li>
+<li><a href="#list-keys"><code>list-keys</code></a></li>
+<li><a href="#update-key-alias"><code>update-key-alias</code></a></li>
+<li><a href="#delete-key"><code>delete-key</code></a></li>
+<li><a href="#check-key-password"><code>check-key-password</code></a></li>
+<li><a href="#reset-key-password"><code>reset-key-password</code></a></li>
+<li><a href="#create-account"><code>create-account</code></a></li>
+<li><a href="#list-accounts"><code>list-accounts</code></a></li>
+<li><a href="#update-account-alias"><code>update-account-alias</code></a></li>
+<li><a href="#delete-account"><code>delete-account</code></a></li>
+<li><a href="#create-account-receiver"><code>create-account-receiver</code></a></li>
+<li><a href="#list-addresses"><code>list-addresses</code></a></li>
+<li><a href="#validate-address"><code>validate-address</code></a></li>
+<li><a href="#get-mining-address"><code>get-mining-address</code></a></li>
+<li><a href="#set-mining-address"><code>set-mining-address</code></a></li>
+<li><a href="#get-coinbase-arbitrary"><code>get-coinbase-arbitrary</code></a></li>
+<li><a href="#set-coinbase-arbitrary"><code>set-coinbase-arbitrary</code></a></li>
+<li><a href="#list-pubkeys"><code>list-pubkeys</code></a></li>
+<li><a href="#create-asset"><code>create-asset</code></a></li>
+<li><a href="#get-asset"><code>get-asset</code></a></li>
+<li><a href="#list-assets"><code>list-assets</code></a></li>
+<li><a href="#update-asset-alias"><code>update-asset-alias</code></a></li>
+<li><a href="#list-balances"><code>list-balances</code></a></li>
+<li><a href="#list-unspent-outputs"><code>list-unspent-outputs</code></a></li>
+<li><a href="#backup-wallet"><code>backup-wallet</code></a></li>
+<li><a href="#restore-wallet"><code>restore-wallet</code></a></li>
+<li><a href="#rescan-wallet"><code>rescan-wallet</code></a></li>
+<li><a href="#recovery-wallet"><code>recovery-wallet</code></a></li>
+<li><a href="#wallet-info"><code>wallet-info</code></a></li>
+<li><a href="#sign-message"><code>sign-message</code></a></li>
+<li><a href="#decode-program"><code>decode-program</code></a></li>
+<li><a href="#get-transaction"><code>get-transaction</code></a></li>
+<li><a href="#list-transactions"><code>list-transactions</code></a></li>
+<li><a href="#build-transaction"><code>build-transaction</code></a></li>
+<li><a href="#build-chain-transactions"><code>build-chain-transactions</code></a></li>
+<li><a href="#sign-transaction"><code>sign-transaction</code></a></li>
+<li><a href="#sign-transactions"><code>sign-transactions</code></a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="钱包必须打开时的可用方法"></a><a href="#钱包必须打开时的可用方法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>钱包必须打开时的可用方法</h4>
+<ul>
+<li><a href="#submit-transaction"><code>submit-transaction</code></a></li>
+<li><a href="#submit-transactions"><code>submit-transactions</code></a></li>
+<li><a href="#estimate-transaction-gas"><code>estimate-transaction-gas</code></a></li>
+<li><a href="#create-access-token"><code>create-access-token</code></a></li>
+<li><a href="#list-access-tokens"><code>list-access-tokens</code></a></li>
+<li><a href="#delete-access-token"><code>delete-access-token</code></a></li>
+<li><a href="#check-access-token"><code>check-access-token</code></a></li>
+<li><a href="#create-transaction-feed"><code>create-transaction-feed</code></a></li>
+<li><a href="#get-transaction-feed"><code>get-transaction-feed</code></a></li>
+<li><a href="#list-transaction-feeds"><code>list-transaction-feeds</code></a></li>
+<li><a href="#delete-transaction-feed"><code>delete-transaction-feed</code></a></li>
+<li><a href="#update-transaction-feed"><code>update-transaction-feed</code></a></li>
+<li><a href="#get-unconfirmed-transaction"><code>get-unconfirmed-transaction</code></a></li>
+<li><a href="#list-unconfirmed-transactions"><code>list-unconfirmed-transactions</code></a></li>
+<li><a href="#decode-raw-transaction"><code>decode-raw-transaction</code></a></li>
+<li><a href="#get-block-count"><code>get-block-count</code></a></li>
+<li><a href="#get-block-hash"><code>get-block-hash</code></a></li>
+<li><a href="#get-block"><code>get-block</code></a></li>
+<li><a href="#get-block-header"><code>get-block-header</code></a></li>
+<li><a href="#get-difficulty"><code>get-difficulty</code></a></li>
+<li><a href="#get-hash-rate"><code>get-hash-rate</code></a></li>
+<li><a href="#net-info"><code>net-info</code></a></li>
+<li><a href="#is-mining"><code>is-mining</code></a></li>
+<li><a href="#set-mining"><code>set-mining</code></a></li>
+<li><a href="#gas-rate"><code>gas-rate</code></a></li>
+<li><a href="#verify-message"><code>verify-message</code></a></li>
+<li><a href="#compile"><code>compile</code></a></li>
+<li><a href="#list-peers"><code>list-peers</code></a></li>
+<li><a href="#disconnect-peer"><code>disconnect-peer</code></a></li>
+<li><a href="#connect-peer"><code>connect-peer</code></a></li>
+<li><a href="#get-work"><code>get-work</code></a></li>
+<li><a href="#submit-work"><code>submit-work</code></a></li>
+<li><a href="#get-work-json"><code>get-work-json</code></a></li>
+<li><a href="#submit-work-json"><code>submit-work-json</code></a></li>
+</ul>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="create-key"></a><a href="#create-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-key</h4>
+<p>它本质上是创建私钥，返回密钥的信息。私钥在文件中加密，对用户不可见。</p>
+<p><strong>参数</strong></p>
+<p><code>Object:</code></p>
+<ul>
+<li><code>String</code> - <em>alias</em>,密钥名字.</li>
+<li><code>String</code> - <em>password</em>, 私钥的密码.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>alias</em>, ，密钥的名字.</li>
+<li><code>String</code> - <em>xpub</em>, 公钥.</li>
+<li><code>String</code> - <em>file</em>, 私钥文件本地存放路径.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST create-key -d <span class="hljs-string">'{"alias": "alice", "password": "123456"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"alias"</span>: <span class="hljs-string">"alice"</span>,
+  <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"a7dae957c2d35b42efe7e6871cf5a75ebd2a0d0e51caffe767db42d3e6d69dbe211d1ca492ecf05908fe6fa625ad61b3253375ea744c9442dd5551613ba50aea"</span>,
+  <span class="hljs-string">"file"</span>: <span class="hljs-string">"/Path/To/Library/Bytom/keystore/UTC--2018-04-22T06-30-27.609315219Z--0e34293c-8856-4f5f-b934-37456a3820fa"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-keys"></a><a href="#list-keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-keys</h4>
+<p>返回所有可用键的列表。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Array of Object</code>, 客户端所拥有的所有私钥信息.
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>alias</em>, 密钥名字.</li>
+<li><code>String</code> - <em>xpub</em>, 公钥文件.</li>
+<li><code>String</code> - <em>file</em>, 密钥文件在客户端本地存放地址</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-keys
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"a7dae957c2d35b42efe7e6871cf5a75ebd2a0d0e51caffe767db42d3e6d69dbe211d1ca492ecf05908fe6fa625ad61b3253375ea744c9442dd5551613ba50aea"</span>,
+    <span class="hljs-string">"file"</span>: <span class="hljs-string">"/Path/To/Library/Bytom/keystore/UTC--2018-04-21T02-35-15.035935116Z--4f2b8bd7-0576-4b82-8941-6cc6da05efe3"</span>
+  },
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"bob"</span>,
+    <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"d30a810e88532f73816b7b5007d413cbd21e526ae9159023e5262511893adc1526b8eacd691b27c080201d7d79336a4f3d2cb4c167d997821cad445765916254"</span>,
+    <span class="hljs-string">"file"</span>: <span class="hljs-string">"/Path/To/Library/Bytom/keystore/UTC--2018-04-22T06-30-27.609315219Z--0e34293c-8856-4f5f-b934-37456a3820fa"</span>
+  }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="delete-key"></a><a href="#delete-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>delete-key</h4>
+<p>删除现有密钥，请确保相关帐户中没有余额。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>xpub</em>, 公钥.</li>
+<li><code>String</code> - <em>password</em>, 密钥的密码.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果密钥已成功删除，则为none。</p>
+<p>否则：</p>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST <span class="hljs-keyword">delete</span>-key -d <span class="hljs-string">'{"xpub": "a7dae957c2d35b42efe7e6871cf5a75ebd2a0d0e51caffe767db42d3e6d69dbe211d1ca492ecf05908fe6fa625ad61b3253375ea744c9442dd5551613ba50aea", "password": "123456"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="reset-key-password"></a><a href="#reset-key-password" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>reset-key-password</h4>
+<p>重置密钥密码。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>xpub</em>, 密钥的公钥.</li>
+<li><code>String</code> - <em>old_password</em>, 密钥文件旧的密码.</li>
+<li><code>String</code> - <em>new_password</em>, 密钥文件新的密码.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Boolean</code> - <em>changed</em>, 返回重置的密钥密码，如果返回true表示返回成功，否则重置失败.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST reset-key-password -d <span class="hljs-string">'{"xpub": "a7dae957c2d35b42efe7e6871cf5a75ebd2a0d0e51caffe767db42d3e6d69dbe211d1ca492ecf05908fe6fa625ad61b3253375ea744c9442dd5551613ba50aea", "old_password": "123456", "new_password": "654321"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"changed"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="create-account"></a><a href="#create-account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-account</h4>
+<p>创建帐户以管理地址。单一标志帐户只包含一个root_xpubs和quorum;但是多符号帐户包含许多root_xpubs和quorum，quorum是验证签名的数量，范围是 [1, len(root_xpubs)]。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Array of String</code> - <em>root_xpubs</em>, 公钥数组.</li>
+<li><code>String</code> - <em>alias</em>, 账户名称.</li>
+<li><code>Integer</code> - <em>quorum</em>, 默认值是<code>1</code>, 交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li><code>String</code> - <em>access_token</em>, 如果在本地创建帐户时是可选的. 但是，如果您想远程创建帐户，它是必不可少的.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 账户id.</li>
+<li><code>String</code> - <em>alias</em>, 账户名称.</li>
+<li><code>Integer</code> - <em>key_index</em>, 账户key的索引.</li>
+<li><code>Integer</code> - <em>quorom</em>,  交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+<li><code>Array of Object</code> - <em>xpubs</em>, 公钥数组.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST create-account -d <span class="hljs-string">'{"root_xpubs":["2d6c07cb1ff7800b0793e300cd62b6ec5c0943d308799427615be451ef09c0304bee5dd492c6b13aaa854d303dc4f1dcb229f9578786e19c52d860803efa3b9a"],"quorum":1,"alias":"alice"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"alias"</span>: <span class="hljs-string">"alice"</span>,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"08FO663C00A02"</span>,
+  <span class="hljs-string">"key_index"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-string">"xpubs"</span>: [
+    <span class="hljs-string">"2d6c07cb1ff7800b0793e300cd62b6ec5c0943d308799427615be451ef09c0304bee5dd492c6b13aaa854d303dc4f1dcb229f9578786e19c52d860803efa3b9a"</span>
+  ]
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-accounts"></a><a href="#list-accounts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-accounts</h4>
+<p>返回所有可用帐户的列表。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Array of Object</code>, 账户数组.
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>id</em>, 账户id.</li>
+<li><code>String</code> - <em>alias</em>, 公钥名称.</li>
+<li><code>Integer</code> - <em>key_index</em>, 账户密钥的索引.</li>
+<li><code>Integer</code> - <em>quorom</em>,  交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+<li><code>Array of Object</code> - <em>xpubs</em>, 公钥数组.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用帐户:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-accounts -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"086KQD75G0A02"</span>,
+    <span class="hljs-string">"key_index"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"xpubs"</span>: [
+      <span class="hljs-string">"180aab8bf247932a7cf68da5cc9a873266279155097612f1e5fdda4add88d5e91e2e7ce5b736f3ac933824cdee9effcf1531b90dfcb388e5cc306d14e9a2c85e"</span>
+    ]
+  },
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"bob"</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"086KQO67G0A04"</span>,
+    <span class="hljs-string">"key_index"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"xpubs"</span>: [
+      <span class="hljs-string">"180aab8bf247932a7cf68da5cc9a873266279155097612f1e5fdda4add88d5e91e2e7ce5b736f3ac933824cdee9effcf1531b90dfcb388e5cc306d14e9a2c85e"</span>
+    ]
+  }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="update-account-alias"></a><a href="#update-account-alias" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>update-account-alias</h4>
+<p>按account id或account alias更新账户别名。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户别名.</li>
+<li><code>String</code> - <em>new_alias</em>, 账户的新别名.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果账户别名更新成功，status为success。</p>
+<p><strong>例子</strong></p>
+<p>更新账户别名：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST update-account-alias -d <span class="hljs-string">'{"account_id":"0JA5BOS300A02","new_alias":"saber"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{<span class="hljs-string">"status"</span>:<span class="hljs-string">"success"</span>}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="delete-account"></a><a href="#delete-account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>delete-account</h4>
+<p>删除现有帐户，请确保相关地址中没有余额。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>account_info</em>, 账户的别名或者ID.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果帐户已成功删除，则为none。</p>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST <span class="hljs-keyword">delete</span>-account -d <span class="hljs-string">'{"account_info": "alice"}'</span>
+or
+curl -X POST <span class="hljs-keyword">delete</span>-account -d <span class="hljs-string">'{"account_info": "08FO663C00A02"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="create-account-receiver"></a><a href="#create-account-receiver" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-account-receiver</h4>
+<p>创建地址和控制程序，地址和控制程序是一对一的关系。在构建事务API中，接收器是动作类型为control_address时的地址，接收器是动作类型为control_program时的控制程序，它们是相同的结果。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>: account_alias | account_id</p>
+<p>可选:</p>
+<ul>
+<li><code>String</code> - <em>account_alias</em>, 账户别名.</li>
+<li><code>String</code> - <em>account_id</em>, 账户ID.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>address</em>, 账户地址.</li>
+<li><code>String</code> - <em>control_program</em>,账户的控制程序.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>//Request</p>
+<pre><code class="hljs css language-bash">curl -X POST create-account-receiver -d <span class="hljs-string">'{"account_alias": "alice", "account_id": "0BDQARM800A02"}'</span>
+</code></pre>
+<p>// Result</p>
+<pre><code class="hljs css language-json">{
+    <span class="hljs-attr">"address"</span>: <span class="hljs-string">"bm1q5u8u4eldhjf3lvnkmyl78jj8a75neuryzlknk0"</span>,
+    <span class="hljs-attr">"control_program"</span>: <span class="hljs-string">"0014a70fcae7edbc931fb276d93fe3ca47efa93cf064"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-addresses"></a><a href="#list-addresses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-addresses</h4>
+<p>按帐户返回所有可用地址的列表。</p>
+<p><strong>参数</strong></p>
+<ul>
+<li><code>String</code> - <em>account_alias</em>, 账户别名.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+</ul>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Array of Object</code>, 账户所有地址的集合.
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>account_alias</em>, 账户别名.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>address</em>, 账户地址.</li>
+<li><code>Boolean</code> - <em>change</em>, 账户地址是否改变.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>按account_id或account_alias列出所有地址:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-addresses -d <span class="hljs-string">'{"account_alias": "alice", "account_id": "086KQD75G0A02"}'</span>
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"086KQD75G0A02"</span>,
+    <span class="hljs-string">"address"</span>: <span class="hljs-string">"bm1qcn9lf7nxhswratvmg6d78nq7r7yupm36qgsv55"</span>,
+    <span class="hljs-string">"change"</span>: <span class="hljs-literal">false</span>
+  },
+  {
+    <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"086KQD75G0A02"</span>,
+    <span class="hljs-string">"address"</span>: <span class="hljs-string">"bm1qew4h5uvt5ssrtg2alms0j77r94c30m78ucrcxy"</span>,
+    <span class="hljs-string">"change"</span>: <span class="hljs-literal">false</span>
+  },
+  {
+    <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"086KQD75G0A02"</span>,
+    <span class="hljs-string">"address"</span>: <span class="hljs-string">"bm1qgnp4lte7wge0rsekevjlrdh39vkzz0c2alheue"</span>,
+    <span class="hljs-string">"change"</span>: <span class="hljs-literal">false</span>
+  }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="validate-address"></a><a href="#validate-address" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>validate-address</h4>
+<p>验证地址是否有效，并判断地址是否为自己。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>string</code> - <em>address</em>, 账户地址.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Boolean</code> - <em>vaild</em>, 账户的地址是否有效.</li>
+<li><code>Boolean</code> - <em>is_local</em>, 账户的地址是否是本地地址.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>检查地址是否有效。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST validate-address -d <span class="hljs-string">'{"address": "bm1qcn9lf7nxhswratvmg6d78nq7r7yupm36qgsv55"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+   <span class="hljs-string">"vaild"</span>: <span class="hljs-literal">true</span>,
+   <span class="hljs-string">"is_local"</span>: <span class="hljs-literal">true</span>,
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="create-asset"></a><a href="#create-asset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-asset</h4>
+<p>创建资产定义，准备发行资产。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Array of String</code> - <em>root_xpubs</em>, 公钥集合.</li>
+<li><code>String</code> - <em>alias</em>, 资产名称.</li>
+<li><code>Integer</code> - <em>quorum</em>, 默认值是<code>1</code>, 交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li><code>Object</code> - <em>definition</em>, 资产定义.</li>
+<li><code>String</code> - <em>access_token</em>, 如果在本地创建资产时是可选的.但是，如果您想远程创建资产，它是必需要填写的.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 资产id.</li>
+<li><code>String</code> - <em>alias</em>, 资产名称.</li>
+<li><code>String</code> - <em>issuance_program</em>, 资产发行控制方案.</li>
+<li><code>Array of Object</code> - <em>keys</em>, 资产公钥信息.</li>
+<li><code>String</code> - <em>definition</em>, 资产定义.</li>
+<li><code>Integer</code> - <em>quorum</em>,  交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>创建资产</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST create-asset -d <span class="hljs-string">'{"alias": "GOLD", "root_xpubs": ["f6a16704f745a168642712060e6c5a69866147e21ec2447ae628f87d756bb68cc9b91405ad0a95f004090e864fde472f62ba97053ea109837bc89d63a64040d5"], "quorum":1}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"3c1cf4c9436e3f942cb2f1d70a584f1c61df3697698dacccdc89e46f46a003d0"</span>,
+  <span class="hljs-string">"alias"</span>: <span class="hljs-string">"GOLD"</span>,
+  <span class="hljs-string">"issuance_program"</span>: <span class="hljs-string">"766baa209683b893483c0a5a317bf9868a8e2a09691f8aa8c1f3e2a7bb62b157e76712e05151ad696c00c0"</span>,
+  <span class="hljs-string">"keys"</span>: [
+    {
+      <span class="hljs-string">"root_xpub"</span>: <span class="hljs-string">"f6a16704f745a168642712060e6c5a69866147e21ec2447ae628f87d756bb68cc9b91405ad0a95f004090e864fde472f62ba97053ea109837bc89d63a64040d5"</span>,
+      <span class="hljs-string">"asset_pubkey"</span>: <span class="hljs-string">"9683b893483c0a5a317bf9868a8e2a09691f8aa8c1f3e2a7bb62b157e76712e012bd443fa7d56a0627df0a29dffcdc52641672a0f5cba54d104ad76ebeb8dfc3"</span>,
+      <span class="hljs-string">"asset_derivation_path"</span>: [
+        <span class="hljs-string">"000200000000000000"</span>
+      ]
+    }
+  ],
+  <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-string">"definition"</span>: {}
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-asset"></a><a href="#get-asset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-asset</h4>
+<p>按assetID查询详细信息资产。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 资产id.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 资产id.</li>
+<li><code>String</code> - <em>alias</em>, 资产名字.</li>
+<li><code>String</code> - <em>issuance_program</em>, 资产发行控制方案.</li>
+<li><code>Integer</code> - <em>key_index</em>, xpub的密钥索引.</li>
+<li><code>Integer</code> - <em>quorum</em>, 交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+<li><code>Array of Object</code> - <em>xpubs</em>, 公钥数组.</li>
+<li><code>String</code> - <em>type</em>,资产类型.</li>
+<li><code>Integer</code> - <em>vm_version</em>, 虚拟机版本.</li>
+<li><code>String</code> - <em>raw_definition_byte</em>, 资产定义的字节.</li>
+<li><code>Object</code> - <em>definition</em>, 资产描述.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>按assetID获取资产。</p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-asset -d '{"id": "50ec80b6bc48073f6aa8fa045131a71213c33f3681203b15ddc2e4b81f1f4730"}'
+
+// Result
+{
+  "alias": "SILVER",
+  "definition": null,
+  "id": "50ec80b6bc48073f6aa8fa045131a71213c33f3681203b15ddc2e4b81f1f4730",
+  "issue_program": "ae2029cd61d9ef31d40af7541f9a50831d6317fdb0870249d0564fcfa9a8f843589c5151ad",
+  "key_index": 1,
+  "quorum": 1,
+  "raw_definition_byte": "",
+  "type": "asset",
+  "vm_version": 1,
+  "xpubs": [
+    "34b16ee500615cd325f8b84099f83c1ebecaca67977c5dc9b71ae32ceaf18207f996b0a9725b901d3792689b2babcb60febe3b81a684d9b56b65f67f307d453d"
+  ]
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-assets"></a><a href="#list-assets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-assets</h4>
+<p>返回所有可用资产的列表。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Array of Object</code>, 资产数组.
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>id</em>, 资产 id.</li>
+<li><code>String</code> - <em>alias</em>, 资产名称.</li>
+<li><code>String</code> - <em>issuance_program</em>, 资产发行控制程序.</li>
+<li><code>Integer</code> - <em>key_index</em>, 公钥索引.</li>
+<li><code>Integer</code> - <em>quorum</em>, 交易必需签名用来支出由账户控制的资产单位的秘钥阀值.</li>
+<li><code>Array of Object</code> - <em>xpubs</em>, 公钥数组.</li>
+<li><code>String</code> - <em>type</em>, 资产类型.</li>
+<li><code>Integer</code> - <em>vm_version</em>, 虚拟机版本.</li>
+<li><code>String</code> - <em>raw_definition_byte</em>, 资产定义的字节.</li>
+<li><code>Object</code> - <em>definition</em>, 资产的描述.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用资产:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-assets -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"BTM"</span>,
+    <span class="hljs-string">"definition"</span>: {
+      <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+      <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+      <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+    },
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+    <span class="hljs-string">"issue_program"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"key_index"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"quorum"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"raw_definition_byte"</span>: <span class="hljs-string">"7b0a202022646563696d616c73223a20382c0a2020226465736372697074696f6e223a20224279746f6d204f6666696369616c204973737565222c0a2020226e616d65223a202262746d222c0a20202273796d626f6c223a202262746d220a7d"</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"internal"</span>,
+    <span class="hljs-string">"vm_version"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"xpubs"</span>: <span class="hljs-literal">null</span>
+  },
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"SILVER"</span>,
+    <span class="hljs-string">"definition"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"50ec80b6bc48073f6aa8fa045131a71213c33f3681203b15ddc2e4b81f1f4730"</span>,
+    <span class="hljs-string">"issue_program"</span>: <span class="hljs-string">"ae2029cd61d9ef31d40af7541f9a50831d6317fdb0870249d0564fcfa9a8f843589c5151ad"</span>,
+    <span class="hljs-string">"key_index"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"raw_definition_byte"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"type"</span>: <span class="hljs-string">"asset"</span>,
+    <span class="hljs-string">"vm_version"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"xpubs"</span>: [
+      <span class="hljs-string">"34b16ee500615cd325f8b84099f83c1ebecaca67977c5dc9b71ae32ceaf18207f996b0a9725b901d3792689b2babcb60febe3b81a684d9b56b65f67f307d453d"</span>
+    ]
+  }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="update-asset-alias"></a><a href="#update-asset-alias" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>update-asset-alias</h4>
+<p>按assetID更新资产别名。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 资产id.</li>
+<li><code>String</code> - <em>alias</em>, 资产的新别名.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果资产别名更新成功，则为none。</p>
+<p><strong>例子</strong></p>
+<p>更新资产别名。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST update-asset-alias -d <span class="hljs-string">'{"id":"50ec80b6bc48073f6aa8fa045131a71213c33f3681203b15ddc2e4b81f1f4730", "alias":"GOLD"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-balances"></a><a href="#list-balances" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-balances</h4>
+<p>返回所有可用帐户余额的列表。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Array of Object</code>,账户里面所有可用的余额.
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>,账户名称.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名称.</li>
+<li><code>Integer</code> - <em>amount</em>, 指定的帐户资产余额.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用的帐户余额。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-balances -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+    {
+      <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+      <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BDQ9AP100A02"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">35508000000000</span>,
+      <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>
+    },
+    {
+      <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+      <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BDQARM800A04"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">60000000000</span>,
+      <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>
+    }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-unspent-outputs"></a><a href="#list-unspent-outputs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-unspent-outputs</h4>
+<p>返回钱包中所有帐户的所有可用未使用输出的列表。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:
+可选:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 未花费的输出id.</li>
+</ul>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Array of Object</code>, 未花费的输出数组.
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>,账户名称.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名字.</li>
+<li><code>Integer</code> - <em>amount</em>, 指定的帐户资产余额.</li>
+<li><code>String</code> - <em>address</em>, 账户地址.</li>
+<li><code>Boolean</code> - <em>change</em>, 账户地址是否改变.</li>
+<li><code>String</code> - <em>id</em>, 未花费的输出id.</li>
+<li><code>String</code> - <em>program</em>, 账户程序.</li>
+<li><code>String</code> - <em>control_program_index</em>, 控制程序索引.</li>
+<li><code>String</code> - <em>source_id</em>, 未花费的输出源id</li>
+<li><code>String</code> - <em>source_pos</em>, 位花费的输出源id在区块中的位置.</li>
+<li><code>String</code> - <em>valid_height</em>, 有效高度.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用的未使用输出：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-unspent-outputs -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BKBR6VR00A06"</span>,
+    <span class="hljs-string">"address"</span>: <span class="hljs-string">"bm1qv3htuvug7qdv46ywcvvzytrwrsyg0swltfa0dm"</span>,
+    <span class="hljs-string">"amount"</span>: <span class="hljs-number">2000</span>,
+    <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"GOLD"</span>,
+    <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1883cce6aab82cf9af8cd085a3115dd4a92cdb8e6a9152acd73d7ae4adb9030a"</span>,
+    <span class="hljs-string">"change"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"control_program_index"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"58f29f0f85f7bd2a91088bcbe536dee41cd0642dfb1480d3a88589bdbfd642d9"</span>,
+    <span class="hljs-string">"program"</span>: <span class="hljs-string">"0014646ebe3388f01acae88ec318222c6e1c0887c1df"</span>,
+    <span class="hljs-string">"source_id"</span>: <span class="hljs-string">"5988c1630c1f325e69bb92cb4b19af14286aa107311bc64b8f1a54629a33e0f4"</span>,
+    <span class="hljs-string">"source_pos"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"valid_height"</span>: <span class="hljs-number">0</span>
+  },
+  {
+    <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+    <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BKBR2D2G0A02"</span>,
+    <span class="hljs-string">"address"</span>: <span class="hljs-string">"bm1qx7ylnhszg24995d5e0nftu9e87kt9vnxcn633r"</span>,
+    <span class="hljs-string">"amount"</span>: <span class="hljs-number">624000000000</span>,
+    <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+    <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+    <span class="hljs-string">"change"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"control_program_index"</span>: <span class="hljs-number">12</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"5af9d3c9b69470983377c1fc0c9125c4ac3bfd32c8d505f2a6042aade8503bc9"</span>,
+    <span class="hljs-string">"program"</span>: <span class="hljs-string">"00143789f9de0242aa52d1b4cbe695f0b93facb2b266"</span>,
+    <span class="hljs-string">"source_id"</span>: <span class="hljs-string">"233d1dd49e591980f98e11f333c6c28a867e78448e272011f045131df5aa260b"</span>,
+    <span class="hljs-string">"source_pos"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"valid_height"</span>: <span class="hljs-number">12</span>
+  }
+]
+</code></pre>
+<p>列出与给定id匹配的未使用的输出：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-unspent-outputs -d <span class="hljs-string">'{"id": "58f29f0f85f7bd2a91088bcbe536dee41cd0642dfb1480d3a88589bdbfd642d9"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+  <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BKBR6VR00A06"</span>,
+  <span class="hljs-string">"address"</span>: <span class="hljs-string">"bm1qv3htuvug7qdv46ywcvvzytrwrsyg0swltfa0dm"</span>,
+  <span class="hljs-string">"amount"</span>: <span class="hljs-number">2000</span>,
+  <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"GOLD"</span>,
+  <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"1883cce6aab82cf9af8cd085a3115dd4a92cdb8e6a9152acd73d7ae4adb9030a"</span>,
+  <span class="hljs-string">"change"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">"control_program_index"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"58f29f0f85f7bd2a91088bcbe536dee41cd0642dfb1480d3a88589bdbfd642d9"</span>,
+  <span class="hljs-string">"program"</span>: <span class="hljs-string">"0014646ebe3388f01acae88ec318222c6e1c0887c1df"</span>,
+  <span class="hljs-string">"source_id"</span>: <span class="hljs-string">"5988c1630c1f325e69bb92cb4b19af14286aa107311bc64b8f1a54629a33e0f4"</span>,
+  <span class="hljs-string">"source_pos"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-string">"valid_height"</span>: <span class="hljs-number">0</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="backup-wallet"></a><a href="#backup-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>backup-wallet</h4>
+<p>备份钱包到镜像文件，它包含帐户镜像，资产镜像和密钥镜像。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Object</code> - <em>account_image</em>, 账户镜像.</li>
+<li><code>Object</code> - <em>asset_image</em>, 资产镜像.</li>
+<li><code>Object</code> - <em>key_images</em>, 秘钥镜像.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X backup-wallet -d {}
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"account_image"</span>: {
+    <span class="hljs-string">"slices"</span>: [
+      {
+        <span class="hljs-string">"account"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"account"</span>,
+          <span class="hljs-string">"xpubs"</span>: [
+            <span class="hljs-string">"395d6e0ac25978c3f52f9c7bdfdf75ce6af02639fd7875b4b1f40778ab1120c6dcf461b7ab6fd310983afb54a9a0fb3e09b6ec0d4364c4808c94383d50fb0681"</span>
+          ],
+          <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">"key_index"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">"ID"</span>: <span class="hljs-string">"0CQTA3EOG0A02"</span>,
+          <span class="hljs-string">"Alias"</span>: <span class="hljs-string">"def"</span>
+        },
+        <span class="hljs-string">"contract_index"</span>: <span class="hljs-number">2</span>
+      }
+    ]
+  },
+  <span class="hljs-string">"asset_image"</span>: {
+    <span class="hljs-string">"assets"</span>: []
+  },
+  <span class="hljs-string">"key_images"</span>: {
+    <span class="hljs-string">"xkeys"</span>: [
+      {
+        <span class="hljs-string">"crypto"</span>: {
+          <span class="hljs-string">"cipher"</span>: <span class="hljs-string">"aes-128-ctr"</span>,
+          <span class="hljs-string">"ciphertext"</span>: <span class="hljs-string">"bf44766fec149478af9500e25ce0a6bc50bb2fa04e40465781da6ff64e9b3a4c9af3d214cd92c5a41d8498db5f4376526740f960ff429b16e52876aec6860e1d"</span>,
+          <span class="hljs-string">"cipherparams"</span>: {
+            <span class="hljs-string">"iv"</span>: <span class="hljs-string">"1b0fc61ae4dacb15f0f77d2b4ba67635"</span>
+          },
+          <span class="hljs-string">"kdf"</span>: <span class="hljs-string">"scrypt"</span>,
+          <span class="hljs-string">"kdfparams"</span>: {
+            <span class="hljs-string">"dklen"</span>: <span class="hljs-number">32</span>,
+            <span class="hljs-string">"n"</span>: <span class="hljs-number">4096</span>,
+            <span class="hljs-string">"p"</span>: <span class="hljs-number">6</span>,
+            <span class="hljs-string">"r"</span>: <span class="hljs-number">8</span>,
+            <span class="hljs-string">"salt"</span>: <span class="hljs-string">"e133b1e7caae771ff1ab34b14824d6e27ef399f2b7ded4ad3500f080ede4a1dd"</span>
+          },
+          <span class="hljs-string">"mac"</span>: <span class="hljs-string">"bc6bf411fb63e61a17bc15b94f29cf0d5a0f084c328955da1f7e2b26757cfc23"</span>
+        },
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"1f40be59-7400-4fdc-b46b-15009f65363a"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"bytom_kd"</span>,
+        <span class="hljs-string">"version"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"c4ec9bfd5df19d175e17ff7fed89193c37a4a64e1c0928387da01387ca76c3bfd99390e3373ec4d438522cc2d4644214cd2ec3b00965f7a1fa3546809583191c"</span>
+      },
+      {
+        <span class="hljs-string">"crypto"</span>: {
+          <span class="hljs-string">"cipher"</span>: <span class="hljs-string">"aes-128-ctr"</span>,
+          <span class="hljs-string">"ciphertext"</span>: <span class="hljs-string">"f0887c8603cbbafc0a66d5b45f71488e089708c7dea4342625a67858a49d6d08c79cd3f1800627e3c8b4668e8df34fcf0be9df5d9d4503acff05373976c312a9"</span>,
+          <span class="hljs-string">"cipherparams"</span>: {
+            <span class="hljs-string">"iv"</span>: <span class="hljs-string">"c111b46f9104f49f2c40aedb827e53b5"</span>
+          },
+          <span class="hljs-string">"kdf"</span>: <span class="hljs-string">"scrypt"</span>,
+          <span class="hljs-string">"kdfparams"</span>: {
+            <span class="hljs-string">"dklen"</span>: <span class="hljs-number">32</span>,
+            <span class="hljs-string">"n"</span>: <span class="hljs-number">4096</span>,
+            <span class="hljs-string">"p"</span>: <span class="hljs-number">6</span>,
+            <span class="hljs-string">"r"</span>: <span class="hljs-number">8</span>,
+            <span class="hljs-string">"salt"</span>: <span class="hljs-string">"d9ef588b258b111dea1d99a4e4c5a4f968ab69072176bb95b111922e3bbea9e6"</span>
+          },
+          <span class="hljs-string">"mac"</span>: <span class="hljs-string">"336f5fee643776e139f05ebe5e4f209d992ff97e16b906105fadac9e86133554"</span>
+        },
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"611d407c-9e97-4297-a02a-13cd68e47983"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"bytom_kd"</span>,
+        <span class="hljs-string">"version"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"alias"</span>: <span class="hljs-string">"def"</span>,
+        <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"395d6e0ac25978c3f52f9c7bdfdf75ce6af02639fd7875b4b1f40778ab1120c6dcf461b7ab6fd310983afb54a9a0fb3e09b6ec0d4364c4808c94383d50fb0681"</span>
+      }
+    ]
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="restore-wallet"></a><a href="#restore-wallet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>restore-wallet</h4>
+<p>按镜像文件还原钱包。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Object</code> - <em>account_image</em>, 账户镜像.</li>
+<li><code>Object</code> - <em>asset_image</em>, 资产镜像.</li>
+<li><code>Object</code> - <em>key_images</em>, 秘钥镜像.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果恢复钱包成功，返回none</p>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST restore-wallet -d <span class="hljs-string">'{"account_image":{"slices":[{"account":{"type":"account","xpubs":["395d6e0ac25978c3f52f9c7bdfdf75ce6af02639fd7875b4b1f40778ab1120c6dcf461b7ab6fd310983afb54a9a0fb3e09b6ec0d4364c4808c94383d50fb0681"],"quorum":1,"key_index":1,"ID":"0CQTA3EOG0A02","Alias":"def"},"contract_index":2}]},"asset_image":{"assets":[]},"key_images":{"xkeys":[{"crypto":{"cipher":"aes-128-ctr","ciphertext":"bf44766fec149478af9500e25ce0a6bc50bb2fa04e40465781da6ff64e9b3a4c9af3d214cd92c5a41d8498db5f4376526740f960ff429b16e52876aec6860e1d","cipherparams":{"iv":"1b0fc61ae4dacb15f0f77d2b4ba67635"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":4096,"p":6,"r":8,"salt":"e133b1e7caae771ff1ab34b14824d6e27ef399f2b7ded4ad3500f080ede4a1dd"},"mac":"bc6bf411fb63e61a17bc15b94f29cf0d5a0f084c328955da1f7e2b26757cfc23"},"id":"1f40be59-7400-4fdc-b46b-15009f65363a","type":"bytom_kd","version":1,"alias":"default","xpub":"c4ec9bfd5df19d175e17ff7fed89193c37a4a64e1c0928387da01387ca76c3bfd99390e3373ec4d438522cc2d4644214cd2ec3b00965f7a1fa3546809583191c"},{"crypto":{"cipher":"aes-128-ctr","ciphertext":"f0887c8603cbbafc0a66d5b45f71488e089708c7dea4342625a67858a49d6d08c79cd3f1800627e3c8b4668e8df34fcf0be9df5d9d4503acff05373976c312a9","cipherparams":{"iv":"c111b46f9104f49f2c40aedb827e53b5"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":4096,"p":6,"r":8,"salt":"d9ef588b258b111dea1d99a4e4c5a4f968ab69072176bb95b111922e3bbea9e6"},"mac":"336f5fee643776e139f05ebe5e4f209d992ff97e16b906105fadac9e86133554"},"id":"611d407c-9e97-4297-a02a-13cd68e47983","type":"bytom_kd","version":1,"alias":"def","xpub":"395d6e0ac25978c3f52f9c7bdfdf75ce6af02639fd7875b4b1f40778ab1120c6dcf461b7ab6fd310983afb54a9a0fb3e09b6ec0d4364c4808c94383d50fb0681"}]}}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="sign-message"></a><a href="#sign-message" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sign-message</h4>
+<p>使用地址的密钥（私钥）对信息进行签名。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>address</em>, 账户地址.</li>
+<li><code>String</code> - <em>message</em>, 地址xpub签名的消息.</li>
+<li><code>String</code> - <em>password</em>, 账户密码.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>derived_xpub</em>, 派生的xpub.</li>
+<li><code>String</code> - <em>signature</em>, 消息的签名.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST sign-message -d <span class="hljs-string">'{"address":"bm1qx2qgvvjz734ur8x5lpfdtlau74aaa5djs0a5jn", "message":"this is a test message", "password":"123456"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"signature"</span>: <span class="hljs-string">"74da3d6572233736e3a439166719244dab57dd0047f8751b1efa2da26eeab251d915c1211dcad77e8b013267b86d96e91ae67ff0be520ef4ec326e911410b609"</span>,
+  <span class="hljs-string">"derived_xpub"</span>: <span class="hljs-string">"6ff8c3d1321ce39a3c3550f57ba70b67dcbcef821e9b85f6150edb7f2f3f91009e67f3075e6e76ed5f657ee4b1a5f4749b7a8c74c8e7e6a1b0e5918ebd5df4d0"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-transaction"></a><a href="#get-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-transaction</h4>
+<p>按transaction ID查询与帐户相关的事务。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>tx_id</em>, 交易 id, 交易hash.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>tx_id</em>, 交易id, 交易hash.</li>
+<li><code>Integer</code> - <em>block_time</em>, 响应请求时的unix时间戳.</li>
+<li><code>String</code> - <em>block_hash</em>, 交易所在区块的hash值.</li>
+<li><code>Integer</code> - <em>block_height</em>, 交易所在的区块高度.</li>
+<li><code>Integer</code> - <em>block_index</em>, 交易所在区块的位置.</li>
+<li><code>Integer</code> - <em>block_transactions_count</em>, 此区块中的所有交易.</li>
+<li><code>Boolean</code> - <em>status_fail</em>, 交易请求的状态是否失败.</li>
+<li><code>Integer</code> - <em>size</em>, 交易占的内存大小.</li>
+<li><code>Array of Object</code> - <em>inputs</em>, 交易的输入对象.
+<ul>
+<li><code>String</code> - <em>type</em>, 输入类型,可选用的选项包括: 'spend'(), 'issue'(), 'coinbase'().</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名字.</li>
+<li><code>Object</code> - <em>asset_definition</em>, 定义资产(json对象).</li>
+<li><code>Integer</code> - <em>amount</em>, 资产数量.</li>
+<li><code>Object</code> - <em>issuance_program</em>, 发行程序, 它仅仅当类型为'issue'时存在.</li>
+<li><code>Object</code> - <em>control_program</em>, 账户控制程序, 它仅仅存在当交易类型为'spend'时.</li>
+<li><code>String</code> - <em>address</em>, 账户地址, 它仅仅存在当交易类型为'spend'时.</li>
+<li><code>String</code> - <em>spent_output_id</em>, 在输入中前一笔交易的输出ID将被花费, 它仅仅存在当交易类型为'spend'时.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户名称.</li>
+<li><code>Object</code> - <em>arbitrary</em>, 矿工可以设置任意信息, 只有当交易类型为 'coinbase'时存在.</li>
+</ul></li>
+<li><code>Array of Object</code> - <em>outputs</em>, 交易的输出对象.
+<ul>
+<li><code>String</code> - <em>type</em>, 输出动作类型, 可用选项包括: 'retire', 'control'.</li>
+<li><code>String</code> - <em>id</em>, 与utxo相关的输出id.</li>
+<li><code>Integer</code> - <em>position</em>, 交易输出的位置.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名称.</li>
+<li><code>Object</code> - <em>asset_definition</em>, 资产的定义(json对象).</li>
+<li><code>Integer</code> - <em>amount</em>, 资产数量.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户名称.</li>
+<li><code>Object</code> - <em>control_program</em>, 账户的控制程序.</li>
+<li><code>String</code> - <em>address</em>, 账户地址.</li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-transaction -d '{"tx_id": "15b8d66e227feff47b3de0f278934ea16d6c828371ec6c13c8f84713dd11703b"}'
+
+// Result
+{
+  "block_hash": "1fa9bb389cf974a9b37b63ca38c0cf3453c30f394b9e8ae7f04f2d1b52c329b4",
+  "block_height": 530,
+  "block_index": 1,
+  "block_time": 1528772056,
+  "block_transactions_count": 2,
+  "inputs": [
+    {
+      "account_alias": "default",
+      "account_id": "0ER7MEFGG0A02",
+      "address": "sm1q4pkg8msjumtep7ecsdzuct3tsuzk5pmnm3p8nr",
+      "amount": 41250000000,
+      "asset_alias": "BTM",
+      "asset_definition": {
+        "decimals": 8,
+        "description": "Bytom Official Issue",
+        "name": "BTM",
+        "symbol": "BTM"
+      },
+      "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "control_program": "0014a86c83ee12e6d790fb388345cc2e2b87056a0773",
+      "spent_output_id": "002025b727148d04197cc7b9cf7eafd9986041f07641ca82dc0a1d9e227b52f6",
+      "type": "spend"
+    }
+  ],
+  "outputs": [
+    {
+      "account_alias": "default",
+      "account_id": "0ER7MEFGG0A02",
+      "address": "sm1qmt6jxrr8etssufr8qp98emyaly3lknxyndh5cj",
+      "amount": 29450000000,
+      "asset_alias": "BTM",
+      "asset_definition": {
+        "decimals": 8,
+        "description": "Bytom Official Issue",
+        "name": "BTM",
+        "symbol": "BTM"
+      },
+      "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "control_program": "0014daf5230c67cae10e2467004a7cec9df923fb4cc4",
+      "id": "35a46dd36eb27b1ffdfdefbe5366175b6325e8f56e5bc3dd2aa1a47197e26e6c",
+      "position": 0,
+      "type": "control"
+    },
+    {
+      "account_alias": "alice",
+      "account_id": "0ER7OAK400A02",
+      "address": "sm1qxe4jwhkekgnxkezu7xutu5gqnnpmyc8ppq98me",
+      "amount": 11700000000,
+      "asset_alias": "BTM",
+      "asset_definition": {
+        "decimals": 8,
+        "description": "Bytom Official Issue",
+        "name": "BTM",
+        "symbol": "BTM"
+      },
+      "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "control_program": "0014366b275ed9b2266b645cf1b8be51009cc3b260e1",
+      "id": "ae791bbde0cc5b370e28a505933b85082d67be8db81bdcc56b8202f200b883e7",
+      "position": 1,
+      "type": "control"
+    }
+  ],
+  "size": 332,
+  "status_fail": false,
+  "tx_id": "15b8d66e227feff47b3de0f278934ea16d6c828371ec6c13c8f84713dd11703b"
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-transactions"></a><a href="#list-transactions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-transactions</h4>
+<p>返回所有与帐户相关的事务的列表。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<p>可选:</p>
+<ul>
+<li><code>String</code> - <em>id</em>, 交易id,交易hash.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>Boolean</code> - <em>detail</em> , 详细事务标志，默认为false（仅返回事务摘要).</li>
+<li><code>Boolean</code> - <em>unconfirmed</em>, 确认事务的标志（查询结果包括所有已确认和未确认的事务），默认为false.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Array of Object</code>, 交易数组.</p>
+<p>可选:</p>
+<ul>
+<li><code>Object</code>:(交易汇总)
+<ul>
+<li><code>String</code> - <em>tx_id</em>, 交易id,交易hash.</li>
+<li><code>Integer</code> - <em>block_time</em>, 响应请求时的unix时间戳.</li>
+<li><code>Array of Object</code> - <em>inputs</em>, 交易的主要输入对象.
+<ul>
+<li><code>String</code> - <em>type</em>, 输入操作的类型，可用选项包括：'spend'，'issue'，'coinbase'.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名称.</li>
+<li><code>Integer</code> - <em>amount</em>, 资产数量.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户名字.</li>
+<li><code>Object</code> - <em>arbitrary</em>, arbitrary infomation can be set by miner, it only exist when type is 'coinbase'.</li>
+</ul></li>
+<li><code>Array of Object</code> - <em>outputs</em>, object of summary outputs for the transaction.
+<ul>
+<li><code>String</code> - <em>type</em>, the type of output action, available option include: 'retire', 'control'.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名字.</li>
+<li><code>Integer</code> - <em>amount</em>, 资产数量.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户名字.</li>
+<li><code>Object</code> - <em>arbitrary</em>, 矿工可以设置任意信息, 它仅存在当交易的输入类型'coinbase'(其他类型默认为空).</li>
+</ul></li>
+</ul></li>
+<li><code>Object</code>:(交易详情)
+<ul>
+<li><code>String</code> - <em>tx_id</em>, 交易id, 交易hash.</li>
+<li><code>Integer</code> - <em>block_time</em>, 请求的时间戳.</li>
+<li><code>String</code> - <em>block_hash</em>, 交易所在区块的hash.</li>
+<li><code>Integer</code> - <em>block_height</em>, 交易所在的区块高度.</li>
+<li><code>Integer</code> - <em>block_index</em>, 交易所在区块的索引.</li>
+<li><code>Integer</code> - <em>block_transactions_count</em>, 计算区块中的总交易笔数.</li>
+<li><code>Boolean</code> - <em>status_fail</em>, 交易的请求状态是否失败.</li>
+<li><code>Integer</code> - <em>size</em>, 交易所占内存大小.</li>
+<li><code>Array of Object</code> - <em>inputs</em>, 交易的输入对象.
+<ul>
+<li><code>String</code> - <em>type</em>, the type of input action, available option include: 'spend', 'issue', 'coinbase'.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名字.</li>
+<li><code>Object</code> - <em>asset_definition</em>, 资产定义(json对象).</li>
+<li><code>Integer</code> - <em>amount</em>, 资产数量.</li>
+<li><code>Object</code> - <em>issuance_program</em>, issuance program, it only exist when type is 'issue'.</li>
+<li><code>Object</code> - <em>control_program</em>, control program of account, it only exist when type is 'spend'.</li>
+<li><code>String</code> - <em>address</em>, 帐户地址，仅当类型为“花费”时才存在.</li>
+<li><code>String</code> - <em>spent_output_id</em>, the front of outputID to be spent in this input, it only exist when type is 'spend'.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户名字.</li>
+<li><code>Object</code> - <em>arbitrary</em>, 矿工可以设置任意信息, 它仅存在当交易的输入类型'coinbase'.</li>
+</ul></li>
+<li><code>Array of Object</code> - <em>outputs</em>, 交易的输出对象.
+<ul>
+<li><code>String</code> - <em>type</em>, 输出动作的类型,可用选项包括：’retire‘，’control‘.</li>
+<li><code>String</code> - <em>id</em>, 与utxo相关的输出id.</li>
+<li><code>Integer</code> - <em>position</em>, 输出的位置.</li>
+<li><code>String</code> - <em>asset_id</em>, 资产id.</li>
+<li><code>String</code> - <em>asset_alias</em>, 资产名称.</li>
+<li><code>Object</code> - <em>asset_definition</em>, 资产的定义(json 对象).</li>
+<li><code>Integer</code> - <em>amount</em>, 资产数量.</li>
+<li><code>String</code> - <em>account_id</em>, 账户id.</li>
+<li><code>String</code> - <em>account_alias</em>, 账户名字.</li>
+<li><code>Object</code> - <em>control_program</em>, 账户的控制程序.</li>
+<li><code>String</code> - <em>address</em>, 账户地址.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用的交易：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-transactions -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"block_time"</span>: <span class="hljs-number">1521771059</span>,
+    <span class="hljs-string">"inputs"</span>: [
+      {
+        <span class="hljs-string">"arbitrary"</span>: <span class="hljs-string">"06"</span>,
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"coinbase"</span>
+      }
+    ],
+    <span class="hljs-string">"outputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BMHBOBVG0A02"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">41250000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      }
+    ],
+    <span class="hljs-string">"tx_id"</span>: <span class="hljs-string">"c631a8de401913a512c338bcf4a61cb2de6cede12a7385d9d11637eaa6578f33"</span>
+  },
+  {
+    <span class="hljs-string">"block_time"</span>: <span class="hljs-number">1521770515</span>,
+    <span class="hljs-string">"inputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BMHBOBVG0A02"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">41250000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+      }
+    ],
+    <span class="hljs-string">"outputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BMHBOBVG0A02"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">34649500000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0BMHDI1P00A04"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">6600000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      }
+    ],
+    <span class="hljs-string">"tx_id"</span>: <span class="hljs-string">"1151ce5c7b32b8755b5e48109ec7ed956fb1783eaea9558bf5a2ad957825e4b7"</span>
+  }
+]
+</code></pre>
+<p>列出与给定tx_id匹配的事务详细信息：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-transactions -d <span class="hljs-string">'{"id": "7e9f9b999381da936e3cae48b5bac2b9bc28bb56c6c862be6c110448f7e2f6b3","detail": true}'</span>
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"block_hash"</span>: <span class="hljs-string">"1b2d0efa025256603e9330273d37f5a900cd3dfb213e015ac53cf645e2315a6d"</span>,
+    <span class="hljs-string">"block_height"</span>: <span class="hljs-number">72</span>,
+    <span class="hljs-string">"block_index"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"block_time"</span>: <span class="hljs-number">1528528584</span>,
+    <span class="hljs-string">"block_transactions_count"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"inputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0ER7MEFGG0A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1q4pkg8msjumtep7ecsdzuct3tsuzk5pmnm3p8nr"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">41250000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014a86c83ee12e6d790fb388345cc2e2b87056a0773"</span>,
+        <span class="hljs-string">"spent_output_id"</span>: <span class="hljs-string">"0072a2c1cee30a7c7b7b006ca08a48c2b479bc81c0ec6463fe4865ef37626ab6"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+      }
+    ],
+    <span class="hljs-string">"outputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0ER7MEFGG0A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qskj096x5w7ejcmk746g3djmv84dpxts62dewvd"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">34649500000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"001485a4f2e8d477b32c6edeae9116cb6c3d5a132e1a"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"b08c9bfc816064ca33da8b569998229774fc9552da7d4f16870b2c5a8f645b3b"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0ER7OAK400A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qxe4jwhkekgnxkezu7xutu5gqnnpmyc8ppq98me"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">6600000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014366b275ed9b2266b645cf1b8be51009cc3b260e1"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"0e8f8dc83a39b2b6d00a77759a797102d047f82f800fe21f5b1d80bb4d5e2e39"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      }
+    ],
+    <span class="hljs-string">"size"</span>: <span class="hljs-number">333</span>,
+    <span class="hljs-string">"status_fail"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"tx_id"</span>: <span class="hljs-string">"7e9f9b999381da936e3cae48b5bac2b9bc28bb56c6c862be6c110448f7e2f6b3"</span>
+  }
+]
+</code></pre>
+<p>列出与给定account_id和未确认标志匹配的标签（未确认标签的block_hash，block_height和block_index默认为零）：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-transactions -d <span class="hljs-string">'{"account_id": "0F1MQVI500A02", "unconfirmed": true, "detail": true}'</span>
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"block_hash"</span>: <span class="hljs-string">"0000000000000000000000000000000000000000000000000000000000000000"</span>,
+    <span class="hljs-string">"block_height"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"block_index"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">"block_time"</span>: <span class="hljs-number">1529032899</span>,
+    <span class="hljs-string">"inputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1L5Q3V00A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1ql67n04pj8mfqzv3wjq8num3yrltdykemgrr45j"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">41250000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014febd37d4323ed201322e900f3e6e241fd6d25b3b"</span>,
+        <span class="hljs-string">"spent_output_id"</span>: <span class="hljs-string">"00570443cbac4f68638ff565e8b04db2062800b9e23b7701913ddf6b190dbe65"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1L5Q3V00A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1ql67n04pj8mfqzv3wjq8num3yrltdykemgrr45j"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">41250000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014febd37d4323ed201322e900f3e6e241fd6d25b3b"</span>,
+        <span class="hljs-string">"spent_output_id"</span>: <span class="hljs-string">"01df9011ca0bed4bb9b95dc84da4c5103fed06ca28c03d92d34ee3d61b945288"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+      }
+    ],
+    <span class="hljs-string">"outputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1L5Q3V00A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qdcfprk7wjy6flavkzhcjh3dxyrwlm935trrs5m"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">41249100000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"00146e1211dbce91349ff59615f12bc5a620ddfd9634"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"09fabb1a2bac44c45054175453e23e81a764557147523d8df70d8a190cf2eb17"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"default"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1L5Q3V00A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qt92xx2f4ys63dyhy58jle87nttcf37zftweklh"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">39150000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014595463293524351692e4a1e5fc9fd35af098f849"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"6efae48663e872193e8a672eb85b8bbf29d8aee98e42816340fa0b2340cc355d"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1MQVI500A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qum6ly8aq9u9k7xrkuck9pq64xg67gw40khnnxu"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">2100000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014e6f5f21fa02f0b6f1876e62c5083553235e43aaf"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"aca1ecc59d8bcf548e4f5afb8a97e38f0eb56e1387b17400fd3c693c074a703d"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      }
+    ],
+    <span class="hljs-string">"size"</span>: <span class="hljs-number">1194</span>,
+    <span class="hljs-string">"status_fail"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"tx_id"</span>: <span class="hljs-string">"9c28a6a2a039ed5bdebe81eea44cdb22a951c472bc25cb1e8188ae423a98f251"</span>
+  },
+  {
+    <span class="hljs-string">"block_hash"</span>: <span class="hljs-string">"474b9c28b225fba02278ad3b097d561bf8f5c562ff2a548226fc10fc1d75b7ed"</span>,
+    <span class="hljs-string">"block_height"</span>: <span class="hljs-number">255</span>,
+    <span class="hljs-string">"block_index"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">"block_time"</span>: <span class="hljs-number">1528963126</span>,
+    <span class="hljs-string">"block_transactions_count"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"inputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1MQVI500A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qum6ly8aq9u9k7xrkuck9pq64xg67gw40khnnxu"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">10000000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014e6f5f21fa02f0b6f1876e62c5083553235e43aaf"</span>,
+        <span class="hljs-string">"spent_output_id"</span>: <span class="hljs-string">"767649aafdfe2c22d46d641a5b74d934e2590330f7280b0fc55b978812a99a58"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1MQVI500A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1qum6ly8aq9u9k7xrkuck9pq64xg67gw40khnnxu"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">1000000000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"GOLD"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: {},
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"symobol"</span>: <span class="hljs-string">""</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"71deb74415f16a1f7bffb04c61d427bb1f93adfba257ffba2673f102d602e78f"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014e6f5f21fa02f0b6f1876e62c5083553235e43aaf"</span>,
+        <span class="hljs-string">"spent_output_id"</span>: <span class="hljs-string">"5d7a88851f5696ded279cb9bc380e050024c555258ea7851dfdedc2797b0d820"</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+      }
+    ],
+    <span class="hljs-string">"outputs"</span>: [
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1MQVI500A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1q39sztlh4jq5nknstn2udvvpm6v5ugussx2djc0"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">9980000000</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"BTM"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">"Bytom Official Issue"</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">"BTM"</span>,
+          <span class="hljs-string">"symbol"</span>: <span class="hljs-string">"BTM"</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014896025fef590293b4e0b9ab8d6303bd329c47210"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"2b44969d28d79544006e792411d6cd1d245f9af20419f6138494b4b5aac2a72e"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      },
+      {
+        <span class="hljs-string">"account_alias"</span>: <span class="hljs-string">"alice"</span>,
+        <span class="hljs-string">"account_id"</span>: <span class="hljs-string">"0F1MQVI500A02"</span>,
+        <span class="hljs-string">"address"</span>: <span class="hljs-string">"sm1q258yd0gvatje4pn0qc8z9w8cdv45j9tvhfpjh8"</span>,
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">999999999901</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"GOLD"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: {},
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"symobol"</span>: <span class="hljs-string">""</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"71deb74415f16a1f7bffb04c61d427bb1f93adfba257ffba2673f102d602e78f"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014550e46bd0ceae59a866f060e22b8f86b2b49156c"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"54be1bc876d1deccb9845acec79eabf62d7eacd5935e337850233657914d0f9d"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      },
+      {
+        <span class="hljs-string">"amount"</span>: <span class="hljs-number">99</span>,
+        <span class="hljs-string">"asset_alias"</span>: <span class="hljs-string">"GOLD"</span>,
+        <span class="hljs-string">"asset_definition"</span>: {
+          <span class="hljs-string">"decimals"</span>: <span class="hljs-number">8</span>,
+          <span class="hljs-string">"description"</span>: {},
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"symobol"</span>: <span class="hljs-string">""</span>
+        },
+        <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"71deb74415f16a1f7bffb04c61d427bb1f93adfba257ffba2673f102d602e78f"</span>,
+        <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"20e864761d8181103b6476435a805cba97361df9a05c40fae644c27f69ce045d3c16001464d928e181900d382fa33def66534c7323c778c4015820684d6683d014abb4e019878b50fbbb547bcbf9c4739498d8eeef565d37f9a82f741a547a6413000000007b7b51547ac1631a000000547a547aae7cac00c0"</span>,
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"347553923bb550c236a703e46600d53f25161e3eb74ee3183884d398e5d894b0"</span>,
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+      }
+    ],
+    <span class="hljs-string">"size"</span>: <span class="hljs-number">691</span>,
+    <span class="hljs-string">"status_fail"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"tx_id"</span>: <span class="hljs-string">"383f8636842301b2fe292c5b8b2f540c6ed7867ba5751680b2e77827c300e41e"</span>
+  }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="build-transaction"></a><a href="#build-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>build-transaction</h4>
+<p>建立交易。</p>
+<p><strong>参数</strong>
+<code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>base_transaction</em>, 交易基本数据, 默认为空.</li>
+<li><code>Integer</code> - <em>ttl</em>, integer of the time to live in milliseconds, it means utxo will be reserved(locked) for builded transaction in this time range, if the transaction will not to be submitted into block, it will be auto unlocked for build transaction again after this ttl time. it will be set to 5 minutes(300 seconds) defaultly when ttl is 0.</li>
+<li><code>Integer</code> - <em>time_range</em>, time stamp(block height)is maximum survival time for the transaction, the transaction will be not submit into block after this time stamp.</li>
+<li><code>Arrary of Object</code> - <em>actions</em>:
+<ul>
+<li><code>Object</code>:
+<ul>
+<li><code>String</code> - <em>account_id_account_alias</em>, 别名或帐户ID.</li>
+<li><code>String</code> - <em>asset_id_asset_alias</em>, 资产的别名或ID.</li>
+<li><code>Integer</code> - <em>amount</em>, 与此交易一起发送的金额的指定资产.</li>
+<li><code>String</code>- <em>type</em>, type of transaction, valid types: 'spend_account', 'issue', 'spend_account_unspent_output', 'control_address', 'control_program', 'retire'.</li>
+<li><code>String</code> - <em>address</em>, (type is control_address) address of receiver, the style of address is P2PKH or P2SH.</li>
+<li><code>String</code> - <em>control_program</em>, (type is control_program) control program of receiver.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>返回</strong></p>
+<ul>
+<li><code>Object of build-transaction</code> - <em>transaction</em>, builded transaction.</li>
+</ul>
+<p><strong>例子</strong></p>
+<ul>
+<li><code>spend</code> - transaction type is spend</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST build-transaction -d <span class="hljs-string">'{"base_transaction":null,"actions":[{"account_id":"0BF63M2U00A04","amount":20000000,"asset_id":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","type":"spend_account"},{"account_id":"0BF63M2U00A04","amount":99,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","type":"spend_account"},{"amount":99,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","address":"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68","type":"control_address"}],"ttl":0,"time_range": 1521625823}'</span>
+</code></pre>
+<ul>
+<li><code>issue</code> - transaction type is issue</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST build-transaction -d <span class="hljs-string">'{"base_transaction":null,"actions":[{"account_id":"0BF63M2U00A04","amount":20000000,"asset_id":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","type":"spend_account"},{"amount":10000,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","type":"issue"},{"amount":10000,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","address":"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68","type":"control_address"}],"ttl":0,"time_range": 1521625823}'</span>
+</code></pre>
+<ul>
+<li><code>address</code> - transaction type is address</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST build-transaction -d <span class="hljs-string">'{"base_transaction":null,"actions":[{"account_id":"0BF63M2U00A04","amount":20000000,"asset_id":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","type":"spend_account"},{"account_id":"0BF63M2U00A04","amount":99,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","type":"spend_account"},{"amount":99,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","address":"bm1q50u3z8empm5ke0g3ngl2t3sqtr6sd7cepd3z68","type":"control_address"}],"ttl":0,"time_range": 1521625823}'</span>
+</code></pre>
+<ul>
+<li><code>retire</code> - transaction type is retire</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST build-transaction -d <span class="hljs-string">'{"base_transaction":null,"actions":[{"account_id":"0BF63M2U00A04","amount":20000000,"asset_id":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","type":"spend_account"},{"account_id":"0BF63M2U00A04","amount":99,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","type":"spend_account"},{"account_id":"0BF63M2U00A04","amount":99,"asset_id":"3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680","type":"retire"}],"ttl":0,"time_range":1521625823}'</span>
+</code></pre>
+<ul>
+<li><code>spend_account_unspent_output</code> - transaction type is spend_account_unspent_output(user can get UTXO information by call <code>list-unspent-outputs</code> API)</li>
+</ul>
+<p>attention:</p>
+<ul>
+<li>action field <code>output_id</code> correspond to UTXO result <code>id</code> field</li>
+<li>UTXO asset and amount will be spent in this transaction</li>
+<li>transaction fee is (utxo asset_amount - output asset_amount)</li>
+</ul>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST build-transaction -d <span class="hljs-string">'{"base_transaction":null,"actions":[{"type":"spend_account_unspent_output","output_id":"01c6ccc6f522228cd4518bba87e9c43fbf55fdf7eb17f5aa300a037db7dca0cb"},{"amount":41243000000,"asset_id":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","address":"sm1qmw8c5s29zlexknfahrze3ghvlqrtn2huuntvpn","type":"control_address"}],"ttl":0,"time_range":0}'</span>
+</code></pre>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Result(this type is spend, the other types are similar.)</span>
+{
+  <span class="hljs-string">"allow_additional_actions"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">"local"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"raw_transaction"</span>: <span class="hljs-string">"07010000020161015fb6a63a3361170afca03c9d5ce1f09fe510187d69545e09f95548b939cd7fffa3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80fc93afdf01000116001426bd1b851cf6eb8a701c20c184352ad8720eeee90100015d015bb6a63a3361170afca03c9d5ce1f09fe510187d69545e09f95548b939cd7fffa33152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680c03e0101160014489a678741ccc844f9e5c502f7fac0a665bedb25010003013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80a2cfa5df0101160014948fb4f500e66d20fbacb903fe108ee81f9b6d9500013a3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680dd3d01160014cd5a822b34e3084413506076040d508bb12232c70001393152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc436806301160014a3f9111f3b0ee96cbd119a3ea5c60058f506fb1900"</span>,
+  <span class="hljs-string">"signing_instructions"</span>: [
+    {
+      <span class="hljs-string">"position"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"witness_components"</span>: [
+        {
+          <span class="hljs-string">"keys"</span>: [
+            {
+              <span class="hljs-string">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0500000000000000"</span>
+              ],
+              <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"ee9dd8affdef7e0cacd0fbbf310217c7f588156c28e414db74c27afaedd8f876cf54547a672b431ff06ee8a146207df9595638a041b55ada1a764a8b5b30bda0"</span>
+            }
+          ],
+          <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">"signatures"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>
+        },
+        {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"data"</span>,
+          <span class="hljs-string">"value"</span>: <span class="hljs-string">"62a73b6b7ffe52b6ad782b0e0efdc8309bf2f057d88f9a17d125e41bb11dbb88"</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-string">"position"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-string">"witness_components"</span>: [
+        {
+          <span class="hljs-string">"keys"</span>: [
+            {
+              <span class="hljs-string">"derivation_path"</span>: [
+                <span class="hljs-string">"010100000000000000"</span>,
+                <span class="hljs-string">"0600000000000000"</span>
+              ],
+              <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"ee9dd8affdef7e0cacd0fbbf310217c7f588156c28e414db74c27afaedd8f876cf54547a672b431ff06ee8a146207df9595638a041b55ada1a764a8b5b30bda0"</span>
+            }
+          ],
+          <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">"signatures"</span>: <span class="hljs-literal">null</span>,
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>
+        },
+        {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"data"</span>,
+          <span class="hljs-string">"value"</span>: <span class="hljs-string">"ba5a63e7416caeb945eefc2ce874f40bc4aaf6005a1fc792557e41046f7e502f"</span>
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="sign-transaction"></a><a href="#sign-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>sign-transaction</h4>
+<p>签署交易。</p>
+<p><strong>参数</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>String</code> - <em>password</em>, 密码签名.</li>
+<li><code>Object</code> - <em>transaction</em>, 构建好的交易.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p><code>Object</code>:</p>
+<ul>
+<li><code>Boolean</code> - <em>sign_complete</em>, 如果签名成功返回true,false签名不成功.</li>
+<li><code>Object of sign-transaction</code> - <em>transaction</em>, 交易签名.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST sign-transaction -d <span class="hljs-string">'{"password":"123456","transaction":{"allow_additional_actions":false,"local":true,"raw_transaction":"07010000020161015fb6a63a3361170afca03c9d5ce1f09fe510187d69545e09f95548b939cd7fffa3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80fc93afdf01000116001426bd1b851cf6eb8a701c20c184352ad8720eeee90100015d015bb6a63a3361170afca03c9d5ce1f09fe510187d69545e09f95548b939cd7fffa33152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680c03e0101160014489a678741ccc844f9e5c502f7fac0a665bedb25010003013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80a2cfa5df0101160014948fb4f500e66d20fbacb903fe108ee81f9b6d9500013a3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680dd3d01160014cd5a822b34e3084413506076040d508bb12232c70001393152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc436806301160014a3f9111f3b0ee96cbd119a3ea5c60058f506fb1900","signing_instructions":[{"position":0,"witness_components":[{"keys":[{"derivation_path":["010100000000000000","0500000000000000"],"xpub":"ee9dd8affdef7e0cacd0fbbf310217c7f588156c28e414db74c27afaedd8f876cf54547a672b431ff06ee8a146207df9595638a041b55ada1a764a8b5b30bda0"}],"quorum":1,"signatures":null,"type":"raw_tx_signature"},{"type":"data","value":"62a73b6b7ffe52b6ad782b0e0efdc8309bf2f057d88f9a17d125e41bb11dbb88"}]},{"position":1,"witness_components":[{"keys":[{"derivation_path":["010100000000000000","0600000000000000"],"xpub":"ee9dd8affdef7e0cacd0fbbf310217c7f588156c28e414db74c27afaedd8f876cf54547a672b431ff06ee8a146207df9595638a041b55ada1a764a8b5b30bda0"}],"quorum":1,"signatures":null,"type":"raw_tx_signature"},{"type":"data","value":"ba5a63e7416caeb945eefc2ce874f40bc4aaf6005a1fc792557e41046f7e502f"}]}]}}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"sign_complete"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"transaction"</span>: {
+    <span class="hljs-string">"allow_additional_actions"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-string">"local"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"raw_transaction"</span>: <span class="hljs-string">"07010000020161015fb6a63a3361170afca03c9d5ce1f09fe510187d69545e09f95548b939cd7fffa3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80fc93afdf01000116001426bd1b851cf6eb8a701c20c184352ad8720eeee96302400d432e6f0e22da3168d76552273e60d23d432d61b4dac53e6769d39a1097f1cd1bd8e54c7d39eda334803e5c904bc2de2f27ff29748166e0334dcfded20e980b2062a73b6b7ffe52b6ad782b0e0efdc8309bf2f057d88f9a17d125e41bb11dbb88015d015bb6a63a3361170afca03c9d5ce1f09fe510187d69545e09f95548b939cd7fffa33152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680c03e0101160014489a678741ccc844f9e5c502f7fac0a665bedb256302401eadd84ad07c3643f71a35cc5669a2c1def96ae98e790d287217e6a3543fe602dd90afffe853c729bd5237a28f33538df631572847d9870829fb1fd1100ff20820ba5a63e7416caeb945eefc2ce874f40bc4aaf6005a1fc792557e41046f7e502f03013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80a2cfa5df0101160014948fb4f500e66d20fbacb903fe108ee81f9b6d9500013a3152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc43680dd3d01160014cd5a822b34e3084413506076040d508bb12232c70001393152a15da72be51b330e1c0f8e1c0db669269809da4f16443ff266e07cc436806301160014a3f9111f3b0ee96cbd119a3ea5c60058f506fb1900"</span>,
+    <span class="hljs-string">"signing_instructions"</span>: [
+      {
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">"witness_components"</span>: [
+          {
+            <span class="hljs-string">"keys"</span>: [
+              {
+                <span class="hljs-string">"derivation_path"</span>: [
+                  <span class="hljs-string">"010100000000000000"</span>,
+                  <span class="hljs-string">"0500000000000000"</span>
+                ],
+                <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"ee9dd8affdef7e0cacd0fbbf310217c7f588156c28e414db74c27afaedd8f876cf54547a672b431ff06ee8a146207df9595638a041b55ada1a764a8b5b30bda0"</span>
+              }
+            ],
+            <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"signatures"</span>: [
+              <span class="hljs-string">"0d432e6f0e22da3168d76552273e60d23d432d61b4dac53e6769d39a1097f1cd1bd8e54c7d39eda334803e5c904bc2de2f27ff29748166e0334dcfded20e980b"</span>
+            ],
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>
+          },
+          {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"data"</span>,
+            <span class="hljs-string">"value"</span>: <span class="hljs-string">"62a73b6b7ffe52b6ad782b0e0efdc8309bf2f057d88f9a17d125e41bb11dbb88"</span>
+          }
+        ]
+      },
+      {
+        <span class="hljs-string">"position"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-string">"witness_components"</span>: [
+          {
+            <span class="hljs-string">"keys"</span>: [
+              {
+                <span class="hljs-string">"derivation_path"</span>: [
+                  <span class="hljs-string">"010100000000000000"</span>,
+                  <span class="hljs-string">"0600000000000000"</span>
+                ],
+                <span class="hljs-string">"xpub"</span>: <span class="hljs-string">"ee9dd8affdef7e0cacd0fbbf310217c7f588156c28e414db74c27afaedd8f876cf54547a672b431ff06ee8a146207df9595638a041b55ada1a764a8b5b30bda0"</span>
+              }
+            ],
+            <span class="hljs-string">"quorum"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-string">"signatures"</span>: [
+              <span class="hljs-string">"1eadd84ad07c3643f71a35cc5669a2c1def96ae98e790d287217e6a3543fe602dd90afffe853c729bd5237a28f33538df631572847d9870829fb1fd1100ff208"</span>
+            ],
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"raw_tx_signature"</span>
+          },
+          {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"data"</span>,
+            <span class="hljs-string">"value"</span>: <span class="hljs-string">"ba5a63e7416caeb945eefc2ce874f40bc4aaf6005a1fc792557e41046f7e502f"</span>
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="submit-transaction"></a><a href="#submit-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>submit-transaction</h4>
+<p>提交交易。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>Object - raw_transaction, 已经签名好的交易.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - tx_id, 交易id 交易hash.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST submit-transaction -d <span class="hljs-string">'{"raw_transaction":"07010000010161015ffe8bdb49bbd08f711a54f0fbed4141b74c276de44c831999aac43bdd56f98309ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80c0b1ca94120001160014d61f9b3354771283461e6cb269bec98e7ee975f6630240403d7b35ec72a80816b21822d645adc98af2c1f07d5b379dda4527d8585ec12ef213ada312e3807ae0ccf7206575f313ffe2b405a286309d3172feabe07e7e0620d013706a314a57e84c2b262c2a291e8e2b063785aea9338476a66d41be4de4f202013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80bc82eb931201160014bdf260424fd2f322dbec9ce4ddbaed8618d8e959000139ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6301160014a3f9111f3b0ee96cbd119a3ea5c60058f506fb1900"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"tx_id"</span>: <span class="hljs-string">"2c0624a7d251c29d4d1ad14297c69919214e78d995affd57e73fbf84ece316cb"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="estimate-transaction-gas"></a><a href="#estimate-transaction-gas" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>estimate-transaction-gas</h4>
+<p>估计交易消耗的neu(1BTM = 10^8NEU)。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>Object - transaction_template, 构建交易响应.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - total_neu,发送交易时总共消耗的neo(1BTM = 10^8NEU),total_neu 是 storage_neu + vm_neu 四舍五入得到的.</li>
+<li>Integer - storage_neu, 存储交易时消耗的neu.</li>
+<li>Integer - vm_neu, 虚拟机执行消耗的neu.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST estimate-transaction-gas -d <span class="hljs-string">'{"transaction_template":{"allow_additional_actions":false,"raw_transaction":"070100010161015ffe8a1209937a6a8b22e8c01f056fd5f1730734ba8964d6b79de4a639032cecddffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8099c4d59901000116001485eb6eee8023332da85df60157dc9b16cc553fb2010002013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80afa08b4f011600142b4fd033bc76b4ddf5cb00f625362c4bc7b10efa00013dffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8090dfc04a011600146eea1ce6cfa5b718ae8094376be9bc1a87c9c82700","signing_instructions":[{"position":0,"witness_components":[{"keys":[{"derivation_path":["010100000000000000","0100000000000000"],"xpub":"cb4e5932d808ee060df9552963d87f60edac42360b11d4ad89558ef2acea4d4aaf4818f2ebf5a599382b8dfce0a0c798c7e44ec2667b3a1d34c61ba57609de55"}],"quorum":1,"signatures":null,"type":"raw_tx_signature"},{"type":"data","value":"1c9b5c1db7f4afe31fd1b7e0495a8bb042a271d8d7924d4fc1ff7cf1bff15813"}]}]}}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"storage_neu"</span>: <span class="hljs-number">3840000</span>,
+  <span class="hljs-string">"total_neu"</span>: <span class="hljs-number">5259000</span>,
+  <span class="hljs-string">"vm_neu"</span>: <span class="hljs-number">1419000</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="create-access-token"></a><a href="#create-access-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-access-token</h4>
+<p>创建访问令牌，它为HTTP协议提供基本访问身份验证，返回token包含用户名和密码，它们用冒号分隔。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - id, token ID.</li>
+</ul>
+<p>optional:</p>
+<ul>
+<li>String - type, token类型.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - token, 访问令牌，身份验证用户名和密码（用冒号分隔）.</li>
+<li>String - id, token ID.</li>
+<li>String - type, token类型.</li>
+<li>Object - created_at, token创建时间.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>创建访问token。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST create-access-token -d <span class="hljs-string">'{"id":"token1"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"token"</span>: <span class="hljs-string">"token1:1fee70f537128a201338bd5f25a3adbf33dad02eae4f4c9ac43f336a069df8f3"</span>,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"token1"</span>,
+  <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2018-03-20T18:56:01.043919771+08:00"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="list-access-tokens"></a><a href="#list-access-tokens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>list-access-tokens</h4>
+<p>返回所有可用access token的列表。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<ul>
+<li>Array of Object, 访问令牌数组.
+<ul>
+<li>Object:
+<ul>
+<li>String - token, 访问令牌.</li>
+<li>String - id, 令牌id.</li>
+<li>String - type, 令牌类型.</li>
+<li>Object - created_at, 令牌创建时间.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用的access token。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-access-tokens -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"token"</span>: <span class="hljs-string">"token1:1fee70f537128a201338bd5f25a3adbf33dad02eae4f4c9ac43f336a069df8f3"</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"token1"</span>,
+    <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2018-03-20T18:56:01.043919771+08:00"</span>
+  },
+  {
+    <span class="hljs-string">"token"</span>: <span class="hljs-string">"alice:78598c6d9fb9e3258d01f78005d4e5725ad0d45e20af90a30b577b407d4a2edd"</span>,
+    <span class="hljs-string">"id"</span>: <span class="hljs-string">"alice"</span>,
+    <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2018-03-20T18:56:01.043919771+08:00"</span>
+  }
+]
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="delete-access-token"></a><a href="#delete-access-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>delete-access-token</h4>
+<p>删除已存在的access token.</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - id, 令牌 id.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果成功删除访问令牌，则为none。</p>
+<p><strong>例子</strong></p>
+<p>删除access token</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST <span class="hljs-keyword">delete</span>-access-token -d <span class="hljs-string">'{"id": "token1"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="check-access-token"></a><a href="#check-access-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>check-access-token</h4>
+<p>检查access token有效。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - id, 令牌id.</li>
+<li>String - secret, secret of token, the second part of the colon division for token.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果access token被选中有效，则为none。</p>
+<p><strong>例子</strong></p>
+<p>检查access token是否有效。</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST check-access-token -d <span class="hljs-string">'{"id": "token1", "secret": "1fee70f537128a201338bd5f25a3adbf33dad02eae4f4c9ac43f336a069df8f3"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="create-transaction-feed"></a><a href="#create-transaction-feed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create-transaction-feed</h4>
+<p>创建交易反馈。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - alias, 交易反馈的名字.</li>
+<li>String - filter, 交易反馈的过滤器.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果交易反馈已成功创建，返回none。</p>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST create-transaction-feed -d <span class="hljs-string">'{"alias": "test1", "filter": "asset_id='</span><span class="hljs-number">84778</span>a666fe453cf73b2e8c783dbc9e04bc4fd7cbb4f50caeaee99cf9967ebed<span class="hljs-string">' AND amount_lower_limit = 50 AND amount_upper_limit = 100"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-transaction-feed"></a><a href="#get-transaction-feed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-transaction-feed</h4>
+<p>按名称查询交易反馈详细信息。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - alias, 交易反馈的名字.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - id, 交易反馈的id.</li>
+<li>String - alias, 交易反馈的名字.</li>
+<li>String - filter, 交易反馈的过滤器.</li>
+<li>Object - param, 交易反馈的参数.
+<ul>
+<li>String - assetid, 资产id.</li>
+<li>Integer - lowerlimit, 资产数额下限.</li>
+<li>Integer - upperlimit, 资产数额上限.</li>
+<li>String - transtype, 交易类型.</li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出别名可用的txfeed：</p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-transaction-feed -d '{"alias": "test1"}'
+
+// Result
+{
+  "alias": "test1",
+  "filter": "asset_id='84778a666fe453cf73b2e8c783dbc9e04bc4fd7cbb4f50caeaee99cf9967ebed' AND amount_lower_limit = 50 AND amount_upper_limit = 100",
+  "param": {}
+}
+</code></pre>
+<p>list-transaction-feeds</p>
+<p>返回所有可用交易反馈的列表。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<ul>
+<li>Array of Object, 交易反馈列表.
+<ul>
+<li>Object:
+<ul>
+<li>String - id, 交易反馈id.</li>
+<li>String - alias, 交易反馈名字.</li>
+<li>String - filter, 交易反馈过滤器.</li>
+<li>Object - param, 交易反馈参数.
+<ul>
+<li>String - assetid, 资产id.</li>
+<li>Integer - lowerlimit, 资产数额下限.</li>
+<li>Integer - upperlimit, 资产数额上限.</li>
+<li>String - transtype, 交易类型.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>列出所有可用的txfeed：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-transaction-feeds -d {}
+
+<span class="hljs-comment">// Result</span>
+[
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"test1"</span>,
+    <span class="hljs-string">"filter"</span>: <span class="hljs-string">"asset_id='84778a666fe453cf73b2e8c783dbc9e04bc4fd7cbb4f50caeaee99cf9967ebed' AND amount_lower_limit = 50 AND amount_upper_limit = 100"</span>,
+    <span class="hljs-string">"param"</span>: {}
+  },
+  {
+    <span class="hljs-string">"alias"</span>: <span class="hljs-string">"test2"</span>,
+    <span class="hljs-string">"filter"</span>: <span class="hljs-string">"asset_id='cee6a588cc3fc280749021ef42d5209952a1e6feceada4e69dd8a424ad22b199' AND amount_lower_limit = 30 AND amount_upper_limit = 100"</span>,
+    <span class="hljs-string">"param"</span>: {}
+  }
+]
+</code></pre>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="delete-transaction-feed"></a><a href="#delete-transaction-feed" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>delete-transaction-feed</h4>
+<p>根据交易名字删除交易反馈.</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - alias, 交易反馈名字.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果交易反馈删除成功，则无返回.</p>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST <span class="hljs-keyword">delete</span>-transaction-feed -d <span class="hljs-string">'{"alias": "test1"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<p>update-transaction-feed</p>
+<p>更新交易反馈.</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - alias, 交易反馈名字.</li>
+<li>String - filter, 交易反馈过滤器.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>如果交易反馈更新成功无返回.</p>
+<p><strong>例子</strong></p>
+<p>当交易反馈存在的时候删除它，并使用别名和过滤器创建它:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST update-transaction-feed -d <span class="hljs-string">'{"alias": "test1", "filter": "asset_id='</span><span class="hljs-number">84778</span>a666fe453cf73b2e8c783dbc9e04bc4fd7cbb4f50caeaee99cf9967ebed<span class="hljs-string">' AND amount_lower_limit = 60 AND amount_upper_limit = 80"}'</span>
+
+<span class="hljs-comment">// Result</span>
+</code></pre>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="get-unconfirmed-transaction"></a><a href="#get-unconfirmed-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-unconfirmed-transaction</h4>
+<p>根据交易ID查询在缓冲池里面查询未确认的交易.</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - tx_id, 交易id,交易hash.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - id, 交易id,交易hash.</li>
+<li>Integer - version, 交易版本.</li>
+<li>Integer - size, 交易大小.</li>
+<li>Integer - time_range, 交易的时间范围.</li>
+<li>Boolean - status_fail, 请求的状态是否失败.</li>
+<li>String - mux_id, 前一笔交易的mux id(钱包启用可以获得，这个地方是空的).</li>
+<li>Array of Object - inputs, 交易的输入对象(输入结构请参考get-transaction API描述).</li>
+<li>Array of Object - outputs, 交易输出对象(输出结构请参考get-transction API描述).</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-unconfirmed-transaction -d '{"tx_id": "382090f24fbfc2f737fa7372b9d161a43f00d1c597a7130a56589d1f469d04b5"}'
+
+// Result
+{
+  "id": "382090f24fbfc2f737fa7372b9d161a43f00d1c597a7130a56589d1f469d04b5",
+  "inputs": [
+    {
+      "address": "bm1qqrm7ruecx7yrg9smtwmnmgj3umg9vcukgy5sdj",
+      "amount": 41250000000,
+      "asset_definition": {},
+      "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "control_program": "001400f7e1f338378834161b5bb73da251e6d0566396",
+      "spent_output_id": "161b44e547a6cc68d732eb64fa38031da98211a99319e088cfe632223f9ac6d8",
+      "type": "spend"
+    }
+  ],
+  "mux_id": "0000000000000000000000000000000000000000000000000000000000000000",
+  "outputs": [
+    {
+      "address": "bm1qehxd5cdnepckh5jc72ggn30havd78lsgcqmt7k",
+      "amount": 21230000000,
+      "asset_definition": {},
+      "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "control_program": "0014cdccda61b3c8716bd258f29089c5f7eb1be3fe08",
+      "id": "a8f21ad24689c290634db85278f56d152efe6fe08bc194e5dee5127ed6d3ebee",
+      "position": 0,
+      "type": "control"
+    },
+    {
+      "address": "bm1q2me9gwccnm3ehpnrcr99gcnj730js2zfucms3r",
+      "amount": 20000000000,
+      "asset_definition": {},
+      "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "control_program": "001456f2543b189ee39b8663c0ca546272f45f282849",
+      "id": "78219e422ea3257aeb32f6d952b5ce5560dab1d6440c9f3aebcdaad2a852d2a8",
+      "position": 1,
+      "type": "control"
+    }
+  ],
+  "size": 664,
+  "status_fail": false,
+  "time_range": 0,
+  "version": 1
+}
+</code></pre>
+<p>list-unconfirmed-transactions</p>
+<p>返回缓冲池交易的总数和交易ID列表.</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - total, 交易版本.</li>
+<li>Array of Object - tx_ids, 列出所有交易id.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST list-unconfirmed-transactions -d {}
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"total"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-string">"tx_ids"</span>: [
+    <span class="hljs-string">"382090f24fbfc2f737fa7372b9d161a43f00d1c597a7130a56589d1f469d04b5"</span>,
+    <span class="hljs-string">"fc2da5dfa094c2170144f149fa07a312983157aec0ec95063a1319eedcb2d23b"</span>
+  ]
+}
+</code></pre>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="decode-raw-transaction"></a><a href="#decode-raw-transaction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>decode-raw-transaction</h4>
+<p>反序列化交易十六进制字符串为json对象.</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - raw_transaction, 交易的序列化字符串.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - version,交易版本.</li>
+<li>String - size, 交易大小.</li>
+<li>String - time_range, 交易时间范围.</li>
+<li>String - fee, 发送交易的反馈.</li>
+<li>Array of Object - inputs, 交易的输入对象(输入结构请参考get-transaction API描述).</li>
+<li>Array of Object - outputs, 交易输出对象(输出结构请参考get-transction API描述).</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST decode-raw-transaction -d <span class="hljs-string">'{"raw_transaction": "070100010161015fc8215913a270d3d953ef431626b19a89adf38e2486bb235da732f0afed515299ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8099c4d59901000116001456ac170c7965eeac1cc34928c9f464e3f88c17d8630240b1e99a3590d7db80126b273088937a87ba1e8d2f91021a2fd2c36579f7713926e8c7b46c047a43933b008ff16ecc2eb8ee888b4ca1fe3fdf082824e0b3899b02202fb851c6ed665fcd9ebc259da1461a1e284ac3b27f5e86c84164aa518648222602013effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff80bbd0ec980101160014c3d320e1dc4fe787e9f13c1464e3ea5aae96a58f00013cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8084af5f01160014bb93cdb4eca74b068321eeb84ac5d33686281b6500"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"fee"</span>: <span class="hljs-number">20000000</span>,
+  <span class="hljs-string">"inputs"</span>: [
+    {
+      <span class="hljs-string">"address"</span>: <span class="hljs-string">"tm1q26kpwrrevhh2c8xrfy5vnaryu0ugc97c4yxp66"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">41250000000</span>,
+      <span class="hljs-string">"asset_definition"</span>: {},
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"001456ac170c7965eeac1cc34928c9f464e3f88c17d8"</span>,
+      <span class="hljs-string">"spent_output_id"</span>: <span class="hljs-string">"01bb3309666618a1507cb5be845b17dee5eb8028ee7e71b17d74b4dc97085bc8"</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"spend"</span>
+    }
+  ],
+  <span class="hljs-string">"outputs"</span>: [
+    {
+      <span class="hljs-string">"address"</span>: <span class="hljs-string">"tm1qc0fjpcwuflnc06038s2xfcl2t2hfdfv06pfd70"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">41030000000</span>,
+      <span class="hljs-string">"asset_definition"</span>: {},
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014c3d320e1dc4fe787e9f13c1464e3ea5aae96a58f"</span>,
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"567b34857614d16292220beaca16ce34b939c75023a49cc43fa432fff51ca0dd"</span>,
+      <span class="hljs-string">"position"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+    },
+    {
+      <span class="hljs-string">"address"</span>: <span class="hljs-string">"tm1qhwfumd8v5a9sdqepa6uy43wnx6rzsxm9uhmk4q"</span>,
+      <span class="hljs-string">"amount"</span>: <span class="hljs-number">200000000</span>,
+      <span class="hljs-string">"asset_definition"</span>: {},
+      <span class="hljs-string">"asset_id"</span>: <span class="hljs-string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>,
+      <span class="hljs-string">"control_program"</span>: <span class="hljs-string">"0014bb93cdb4eca74b068321eeb84ac5d33686281b65"</span>,
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"a8069d412e48c2b2994d2816758078cff46b215421706b4bad41f72a32928d92"</span>,
+      <span class="hljs-string">"position"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"control"</span>
+    }
+  ],
+  <span class="hljs-string">"size"</span>: <span class="hljs-number">332</span>,
+  <span class="hljs-string">"time_range"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"version"</span>: <span class="hljs-number">1</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-block-count"></a><a href="#get-block-count" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-block-count</h4>
+<p>返回当前区块链的高度.</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - block_count, 当前的区块高度.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST <span class="hljs-keyword">get</span>-block-count
+
+// Result
+{
+    <span class="hljs-string">"block_count"</span>: <span class="hljs-number">519</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-block-hash"></a><a href="#get-block-hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-block-hash</h4>
+<p>返回当前区块的hash.</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - block_hash, 最近的区块hash.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST <span class="hljs-keyword">get</span>-block-hash
+
+// Result
+{
+  <span class="hljs-string">"block_hash"</span>: <span class="hljs-string">"997bf5cecb4df097991a7a121a7fd3cb5a404fa856e3d6032c791ac07bc7c74c"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-block"></a><a href="#get-block" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-block</h4>
+<p>区块高度或块哈希返回详细信息块。</p>
+<p><strong>参数</strong></p>
+<p>Object: block_height | block_hash</p>
+<p>optional:</p>
+<ul>
+<li>String - block_hash, 区块hash.</li>
+<li>Integer - block_height, 区块高度.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - hash, 区块hash.</li>
+<li>Integer - size, 区块大小.</li>
+<li>Integer - version, 区块版本.</li>
+<li>Integer - height, 区块高度.</li>
+<li>String - previous_block_hash, 前一个区块hash.</li>
+<li>Integer - timestamp, 区块时间戳.</li>
+<li>Integer - nonce, 随机数值.</li>
+<li>Integer - bits, 区块难度.</li>
+<li>String - difficulty, 难度值(String type).</li>
+<li>String - transaction_merkle_root, 交易的默克尔根.</li>
+<li>String - transaction_status_hash, 交易状态的默克尔根.</li>
+<li>Array of Object - transactions, 交易对象:
+<ul>
+<li>String - id, transaction id, 交易hash.</li>
+<li>Integer - version, 交易版本.</li>
+<li>Integer - size, 交易大小.</li>
+<li>Integer - time_range, 响应请求时的unix时间戳.</li>
+<li>Boolean - status_fail, 请求状态是否是失败的.</li>
+<li>String - mux_id, 前一笔交易的mux id(utxo的源ID).</li>
+<li>Array of Object - inputs, 交易对象的输入.
+<ul>
+<li>String - type, 输入操作的类型，可用选项包括: 'spend', 'issue', 'coinbase'.</li>
+<li>String - asset_id, 资产id.</li>
+<li>String - asset_alias, 资产名字.</li>
+<li>Object - asset_definition, 资产定义(json 对象).</li>
+<li>Integer - amount, 资产数量.</li>
+<li>Object - issuance_program, issuance program, 当交易类型为'issue'.</li>
+<li>Object - control_program, control program of account, 当交易类型为'spend'.</li>
+<li>String - address, 账户地址, 当类型是'spend'时存在.</li>
+<li>String - spent_output_id, the front of outputID to be spent in this input, 当交易类型为'spend'.</li>
+<li>String - account_id, 账户id.</li>
+<li>String - account_alias, 账户名字.</li>
+<li>Object - arbitrary, 任意信息都可以由矿工设置，当交易类型为'coinbase'时.</li>
+</ul></li>
+<li>Array of Object - outputs, 交易输出对象.
+<ul>
+<li>String - type, 输出action的类型，可选项包括:&quot;retire&quot;,&quot;control&quot;.</li>
+<li>String - id, 与utxo相关的交易输出id.</li>
+<li>Integer - position, 输出的位置.</li>
+<li>String - asset_id, 资产id.</li>
+<li>String - asset_alias, 资产名字.</li>
+<li>Object - asset_definition, 资产定义(json 对象).</li>
+<li>Integer - amount, 资产数量.</li>
+<li>String - account_id, 账户id.</li>
+<li>String - account_alias, 账户名字.</li>
+<li>Object - control_program, 账户的控制程序.</li>
+<li>String - address, 账户地址.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>例子</strong></p>
+<p>通过block_hash或block_height获取指定的块信息，如果两者都存在，则块结果通过哈希查询。</p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-block -d '{"block_height": 43, "block_hash": "886a8e85b275e7d65b569ba510875c0e63dece1a94569914d7624c0dac8002f9"}'
+
+// Result
+{
+  "bits": 2305843009222082600,
+  "difficulty": "5549086336",
+  "hash": "886a8e85b275e7d65b569ba510875c0e63dece1a94569914d7624c0dac8002f9",
+  "height": 43,
+  "nonce": 3,
+  "previous_block_hash": "2c72ccbd53b92a4f9423c5b610b4e106bbe8fbf3ecf2e16a1266b17ee323ff9d",
+  "size": 386,
+  "timestamp": 1521614189,
+  "transaction_merkle_root": "77d40262cfeca3a16d4587132974552ef00951e43ce567a26801ebc3dbdb4d96",
+  "transaction_status_hash": "53c0ab896cb7a3778cc1d35a271264d991792b7c44f5c334116bb0786dbc5635",
+  "transactions": [
+    {
+      "id": "4576b1b1ec251da3263dbdd5486bcbf9a1cd1f712172dbe7a7a5fe46ab194629",
+      "inputs": [
+        {
+          "amount": 0,
+          "arbitrary": "09",
+          "asset_definition": "7b7d",
+          "asset_id": "0000000000000000000000000000000000000000000000000000000000000000",
+          "type": "coinbase"
+        }
+      ],
+      "mux_id": "2383cefe8a34ea5810cc0706f2cf8cf08a106f90fc3eb3441f723cecdbc61331",
+      "outputs": [
+        {
+          "address": "sm1q4pkg8msjumtep7ecsdzuct3tsuzk5pmnm3p8nr",
+          "amount": 624000000000,
+          "asset_definition": "7b7d",
+          "asset_id": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "control_program": "0014f3403bcd8b443d03882a280b50f6f98986e1a255",
+          "id": "da87b40854a9b93be72ecdc24fe7bb03986ea3530e344b0f918f0788c3d83717",
+          "position": 0,
+          "type": "control"
+        }
+      ],
+      "size": 77,
+      "status_fail": false,
+      "time_range": 0,
+      "version": 1
+    }
+  ],
+  "version": 1
+}
+</code></pre>
+<hr>
+<h4><a class="anchor" aria-hidden="true" id="get-block-header"></a><a href="#get-block-header" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-block-header</h4>
+<p>按块高度或块哈希返回详细信息块标头。</p>
+<p><strong>参数</strong></p>
+<p>Object: block_height | block_hash</p>
+<p>optional:</p>
+<ul>
+<li>String - block_hash, 区块hash.</li>
+<li>Integer - block_height, 区块高度.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Object - block_header, 区块头.</li>
+<li>Integer - reward, 区块奖励.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-block-header -d '{"block_height": 43, "block_hash": "886a8e85b275e7d65b569ba510875c0e63dece1a94569914d7624c0dac8002f9"}'
+
+// Result
+{
+  "block_header": "01019601e87da37e7d73f31d54304c719c9058ec7bc7de7819deda89a7c8834a99bc05b8fbdbe6d60540eba9e5d5cb79fd87b3c0fad32f6772c1e4483f2a070e093a6176d85226d986a8c9c377e5192668bc0a367e4a4764f11e7c725ecced1d7b6a492974fab1b6d5bc00ad918480808080801e",
+  "reward": 41250000000
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-difficulty"></a><a href="#get-difficulty" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-difficulty</h4>
+<p>通过块高度或块散列返回块高度，当请求为空时返回当前块高度。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<p>optional:</p>
+<ul>
+<li>String - block_hash, 区块hash.</li>
+<li>Integer - block_height, 区块高度.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - bits, 区块的位.</li>
+<li>String - difficulty, 区块难度.</li>
+<li>String - hash, 区块hash.</li>
+<li>Integer - height, 区块高度.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>为当前块或指定的块散列/高度获取困难。</p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-difficulty -d '{"block_height": 506, "block_hash": "d1fce60caea5466eae2b812e4586b55120c52aca27b6c92bd7c51e9cda82dcdf"}'
+
+// Result
+{
+  "bits": 2161727821137910500,
+  "difficulty": "15154807",
+  "hash": "d1fce60caea5466eae2b812e4586b55120c52aca27b6c92bd7c51e9cda82dcdf",
+  "height": 506
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-hash-rate"></a><a href="#get-hash-rate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-hash-rate</h4>
+<p>通过块高度或块散列返回块散列率，当请求为空时，它返回当前块散列率。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<p>optional:</p>
+<ul>
+<li>String - block_hash, 区块hash.</li>
+<li>Integer - block_height, 区块高度.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - hash_rate, 区块的出块难度.</li>
+<li>String - hash, 区块 hash.</li>
+<li>Integer - height, 区块 height.</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>获取当前块或指定块散列/高度的哈希率。</p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-hash-rate -d '{"block_height": 506, "block_hash": "d1fce60caea5466eae2b812e4586b55120c52aca27b6c92bd7c51e9cda82dcdf"}'
+
+// Result
+{
+  "hash": "d1fce60caea5466eae2b812e4586b55120c52aca27b6c92bd7c51e9cda82dcdf",
+  "hash_rate": 7577403,
+  "height": 506
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="net-info"></a><a href="#net-info" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>net-info</h4>
+<p>返回当前网络节点的信息。</p>
+<p><strong>参数</strong></p>
+<p>无</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Boolean - listening, 节点是否正在监听.</li>
+<li>Boolean - syncing, 节点是否正在同步.</li>
+<li>Boolean - mining, 节点是否在挖矿.</li>
+<li>Integer - peer_count, 当前节点连接数.</li>
+<li>Integer - current_block, 当前节点中链的高度.</li>
+<li>Integer - highest_block, 当前节点的最新区块高度.</li>
+<li>String - network_id, 网络id.</li>
+<li>String - version, 比原版本.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST net-info
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"listening"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"syncing"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"mining"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"peer_count"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"current_block"</span>: <span class="hljs-number">627</span>,
+  <span class="hljs-string">"highest_block"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"network_id"</span>: <span class="hljs-string">"mainnet"</span>,
+  <span class="hljs-string">"version"</span>: <span class="hljs-string">"0.5.0"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="is-mining"></a><a href="#is-mining" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>is-mining</h4>
+<p>返回挖矿状态。</p>
+<p><strong>参数</strong></p>
+<p>无</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Boolean - is_mining, 节点是否启动了挖矿.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST is-mining
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"is_mining"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="set-mining"></a><a href="#set-mining" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>set-mining</h4>
+<p>启动节点。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>Boolean - is_mining, 节点是否启动了挖矿.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST set-mining -d '{"is_mining": true}'
+
+// Result
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="gas-rate"></a><a href="#gas-rate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>gas-rate</h4>
+<p>gas消耗率。</p>
+<p><strong>参数</strong></p>
+<p>无</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Integer - gas_rate, gas 费率.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST gas-rate -d <span class="hljs-string">'{}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"gas_rate"</span>: <span class="hljs-number">1000</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="verify-message"></a><a href="#verify-message" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>verify-message</h4>
+<p>用地址派生的pubkey验证已签名的消息。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - address, 账户地址.</li>
+<li>String - derived_xpub, 派生的xpub.</li>
+<li>String - message, 来自derived_xpub的签名消息.</li>
+<li>String - signature, 消息签名.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Boolean - result, 验证结果.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST verify-message -d <span class="hljs-string">'{"address":"bm1qx2qgvvjz734ur8x5lpfdtlau74aaa5djs0a5jn", "derived_xpub":"6ff8c3d1321ce39a3c3550f57ba70b67dcbcef821e9b85f6150edb7f2f3f91009e67f3075e6e76ed5f657ee4b1a5f4749b7a8c74c8e7e6a1b0e5918ebd5df4d0", "message":"this is a test message", "signature":"74da3d6572233736e3a439166719244dab57dd0047f8751b1efa2da26eeab251d915c1211dcad77e8b013267b86d96e91ae67ff0be520ef4ec326e911410b609"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"result"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="decode-program"></a><a href="#decode-program" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>decode-program</h4>
+<p>解码程序。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - program, 账户程序.</li>
+</ul>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>String - instructions, 程序的说明和数据.</li>
+</ul>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST decode-program -d <span class="hljs-string">'{"program":"0014a86c83ee12e6d790fb388345cc2e2b87056a0773"}'</span>
+
+<span class="hljs-comment">// Result</span>
+{
+  <span class="hljs-string">"instructions"</span>: <span class="hljs-string">"DUP \nHASH160 \nDATA_20 a86c83ee12e6d790fb388345cc2e2b87056a0773\nEQUALVERIFY \nTXSIGHASH \nSWAP \nCHECKSIG \n"</span>
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="get-work"></a><a href="#get-work" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>get-work</h4>
+<p>获得工作证明。</p>
+<p><strong>参数</strong></p>
+<p>none</p>
+<p><strong>返回</strong></p>
+<p>Object:</p>
+<ul>
+<li>Object - block_header, 原始区块头.</li>
+<li>Object - seed, 随机种子.</li>
+</ul>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">type</span> GetWorkResp <span class="hljs-keyword">struct</span> {
+    BlockHeader *types.BlockHeader <span class="hljs-string">`json:"block_header"`</span>
+    Seed        *bc.Hash           <span class="hljs-string">`json:"seed"`</span>
+}
+</code></pre>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript">// Request
+curl -X POST get-work -d '{}'
+
+// Result
+{
+  "block_header": "0101870103f2c7495164c8f3af43697e81faa21dcb2d60aa5e10ce4f233491e62420742fbeadfcd50540bef2670a5fade2e58ad4955e2375a04ad1e4cb9c104faddab43f4a79e35be253c9c377e5192668bc0a367e4a4764f11e7c725ecced1d7b6a492974fab1b6d5bc00ffffff838080808020",
+  "seed": "702bef3f1707577fd0d75b6359a2919fa216487fe306771e27710acbaa9164ce"
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="submit-work"></a><a href="#submit-work" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>submit-work</h4>
+<p>提交工作证明。</p>
+<p><strong>参数</strong></p>
+<p>Object:</p>
+<ul>
+<li>Object - block_header, 原始区块头.</li>
+</ul>
+<pre><code class="hljs css language-go"><span class="hljs-keyword">type</span> SubmitWorkReq <span class="hljs-keyword">struct</span> {
+    BlockHeader *types.BlockHeader <span class="hljs-string">`json:"block_header"`</span>
+}
+</code></pre>
+<p><strong>返回</strong></p>
+<p>如果成功返回true</p>
+<p><strong>例子</strong></p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// Request</span>
+curl -X POST submit-work -d <span class="hljs-string">'{"block_header": "0101870103f2c7495164c8f3af43697e81faa21dcb2d60aa5e10ce4f233491e62420742fbeadfcd50540bef2670a5fade2e58ad4955e2375a04ad1e4cb9c104faddab43f4a79e35be253c9c377e5192668bc0a367e4a4764f11e7c725ecced1d7b6a492974fab1b6d5bc00ffffff838080808020"}'</span>
+
+<span class="hljs-comment">// Result</span>
+<span class="hljs-literal">true</span> / error
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_40"><span class="arrow-prev">← </span><span class="function-name-prevnext">BlockCenter Vapor API</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_42"><span>Vapor API</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>命令行工具 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="`Bytom`提供`CLI`客户端(`bytomcli`), 它是进入`Bytom`网络的入口点,能够作为全节点运行."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="命令行工具 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="`Bytom`提供`CLI`客户端(`bytomcli`), 它是进入`Bytom`网络的入口点,能够作为全节点运行."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Bytom主链</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">命令行工具</h1></header><article><div><span><p><code>Bytom</code>提供<code>CLI</code>客户端(<code>bytomcli</code>), 它是进入<code>Bytom</code>网络的入口点,能够作为全节点运行.</p>
+<p>其他进程可使用<code>HTTP</code>、<code>WebSocket</code>或<code>IPC</code>等方式通过<code>JSON RPC</code>调用访问<code>Bytom</code>网络.</p>
+<p>完整的<code>CLI</code>选项可使用<code>bytomcli --help</code>查看, 或参阅 <a href="https://github.com/Bytom/bytom/wiki/Command-Line-Options">bytomcli Wiki</a> 页面.</p>
+<p>包含从账户、密钥、资产、token、交易、区块及其他等几个方面.</p>
+<h2><a class="anchor" aria-hidden="true" id="账户"></a><a href="#账户" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>账户</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">create-account</td><td style="text-align:left">创建一个新账户</td><td style="text-align:left"><code>&lt;alias&gt; &lt;xpub(s)&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-accounts</td><td style="text-align:left">获取节点中所有账户</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">delete-account</td><td style="text-align:left">删除指定账户</td><td style="text-align:left"><code>&lt;&lt;accountID/alias&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">create-account-receiver</td><td style="text-align:left">给指定账户新建地址</td><td style="text-align:left"><code>&lt;accountAlias&gt; [accountID] [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-addresses</td><td style="text-align:left">获取账户下所有地址</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">validate-address</td><td style="text-align:left">检验地址是否合法</td><td style="text-align:left"><code>&lt;address&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-pubkeys</td><td style="text-align:left">获取账户公钥</td><td style="text-align:left"><code>&lt;accountInfo&gt; [publicKey] [flags</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-balances</td><td style="text-align:left">获取账户余额</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-unspent-outputs</td><td style="text-align:left">获取账户未花费输出</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="密钥"></a><a href="#密钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>密钥</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">create-key</td><td style="text-align:left">创建密钥</td><td style="text-align:left"><code>&lt;alias&gt; &lt;password&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-keys</td><td style="text-align:left">获取节点中的所有密钥</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">delete-key</td><td style="text-align:left">删除密钥</td><td style="text-align:left"><code>&lt;xpub&gt; &lt;password&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">reset-key-password</td><td style="text-align:left">修改密钥密码</td><td style="text-align:left"><code>&lt;xpub&gt; &lt;old-password&gt; &lt;new-password&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">check-key-password</td><td style="text-align:left">校验密钥密码</td><td style="text-align:left"><code>&lt;xpub&gt; &lt;password&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">sign-message</td><td style="text-align:left">签名消息以产生签名</td><td style="text-align:left"><code>&lt;address&gt; &lt;message&gt; &lt;password&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">verify-message</td><td style="text-align:left">特定消息校验签名</td><td style="text-align:left"><code>&lt;address&gt; &lt;xpub&gt; &lt;message&gt; &lt;signature&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="资产"></a><a href="#资产" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>资产</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">create-asset</td><td style="text-align:left">创建一类资产</td><td style="text-align:left"><code>&lt;alias&gt; &lt;xpub(s)&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-asset</td><td style="text-align:left">通过资产id查询资产</td><td style="text-align:left"><code>&lt;assetID&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-assets</td><td style="text-align:left">查询现存所有资产</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">update-asset-alias</td><td style="text-align:left">更改资产别名</td><td style="text-align:left"><code>&lt;assetID&gt; &lt;newAlias&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="令牌"></a><a href="#令牌" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>令牌</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">create-access-token</td><td style="text-align:left">创建新的资产token</td><td style="text-align:left"><code>&lt;tokenID&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-access-tokens</td><td style="text-align:left">查询所有资产token</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">delete-access-token</td><td style="text-align:left">删除一种资产token</td><td style="text-align:left"><code>&lt;tokenID&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">check-access-token</td><td style="text-align:left">校验资产token</td><td style="text-align:left"><code>&lt;tokenID&gt; &lt;secret&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="交易"></a><a href="#交易" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>交易</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">build-transaction</td><td style="text-align:left">构造一笔交易(默认使用账户及资产id)</td><td style="text-align:left"><code>&lt;accountID/alias&gt; &lt;assetID/alias&gt; &lt;amount&gt;[outputID] [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">sign-transaction</td><td style="text-align:left">签名一笔交易</td><td style="text-align:left"><code>&lt;json templates&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">submit-transaction</td><td style="text-align:left">广播已签名的交易</td><td style="text-align:left"><code>&lt;json templates&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">create-transaction-feed</td><td style="text-align:left">创建交易费</td><td style="text-align:left"><code>&lt;alias&gt; &lt;filter&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">list-transaction-feeds</td><td style="text-align:left">查询所有交易费</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">delete-transaction-feed</td><td style="text-align:left">删除交易费</td><td style="text-align:left"><code>&lt;alias&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-transaction-feed</td><td style="text-align:left">通过别名查询交易费</td><td style="text-align:left"><code>&lt;alias&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">update-transaction-feed</td><td style="text-align:left">更改交易费</td><td style="text-align:left"><code>&lt;alias&gt; &lt;fiter&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="区块"></a><a href="#区块" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>区块</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">get-block-hash</td><td style="text-align:left">查询最新区块哈希</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-block-count</td><td style="text-align:left">查询最新去区块高度</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-block</td><td style="text-align:left">依据给定区块哈希或高度查询区块体</td><td style="text-align:left"><code>&lt;hash&gt; / &lt;height&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-block-header</td><td style="text-align:left">依据给定区块哈希或高度查询区块头</td><td style="text-align:left"><code>&lt;hash&gt; / &lt;height&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-difficulty</td><td style="text-align:left">获取最新区块难度值</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">get-hash-rate</td><td style="text-align:left">查询最新区块的哈希率</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="其它"></a><a href="#其它" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>其它</h2>
+<table>
+<thead>
+<tr><th style="text-align:left">选项</th><th style="text-align:left">含义</th><th style="text-align:left">参数</th><th style="text-align:left">示例</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">is-mining</td><td style="text-align:left">检查客户端是否开启挖矿</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">set-mining</td><td style="text-align:left">设置是否开启挖矿模式</td><td style="text-align:left"><code>&lt;true or false&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">net-info</td><td style="text-align:left">输出网络概要信息</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">decode-program</td><td style="text-align:left">将程序解码成指令集数据</td><td style="text-align:left"><code>&lt;program&gt; [flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">version</td><td style="text-align:left">获取命令行工具版本号</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">wallet-info</td><td style="text-align:left">输出钱包信息</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+<tr><td style="text-align:left">rescan-wallet</td><td style="text-align:left">触发扫描区块信息至钱包</td><td style="text-align:left"><code>[flags]</code></td><td style="text-align:left"></td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_6"><span class="arrow-prev">← </span><span>下载运行</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_8"><span>区块</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#账户">账户</a></li><li><a href="#密钥">密钥</a></li><li><a href="#资产">资产</a></li><li><a href="#令牌">令牌</a></li><li><a href="#交易">交易</a></li><li><a href="#区块">区块</a></li><li><a href="#其它">其它</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

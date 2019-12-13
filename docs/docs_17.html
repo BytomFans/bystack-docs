@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>命令行工具 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="**vaporcli**"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="命令行工具 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="**vaporcli**"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Vapor侧链</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">命令行工具</h1></header><article><div><span><p><strong>vaporcli</strong></p>
+<p>vaporcli是用户与vapord进程在命令行下建立通信的RPC客户端，用户能够使用使用vaporcli对vapor侧链发起管理请求。
+vaporli的使用分为两种：一种是后面接flags参数，vaporcli [flags],如，<code>vaporcli -h</code> 查看使用帮助；另一种是后面接子命令，<code>vaporcli [command]</code>,具体的命令如下：</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Commands</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">build-transaction</td><td style="text-align:center">Build one transaction template</td></tr>
+<tr><td style="text-align:center">check-access-token</td><td style="text-align:center">Check an access token</td></tr>
+<tr><td style="text-align:center">check-key-password</td><td style="text-align:center">check key password</td></tr>
+<tr><td style="text-align:center">create-access-token</td><td style="text-align:center">Create a new access token</td></tr>
+<tr><td style="text-align:center">create-account</td><td style="text-align:center">Create an account</td></tr>
+<tr><td style="text-align:center">create-account-receiver</td><td style="text-align:center">Create an account receiver</td></tr>
+<tr><td style="text-align:center">create-asset</td><td style="text-align:center">Create an asset</td></tr>
+<tr><td style="text-align:center">create-key</td><td style="text-align:center">Create a key</td></tr>
+<tr><td style="text-align:center">create-transaction-feed</td><td style="text-align:center">Create a transaction feed filter</td></tr>
+<tr><td style="text-align:center">decode-program</td><td style="text-align:center">decode program to instruction and data</td></tr>
+<tr><td style="text-align:center">decode-raw-transaction</td><td style="text-align:center">decode the raw transaction</td></tr>
+<tr><td style="text-align:center">delete-access-token</td><td style="text-align:center">Delete an access token</td></tr>
+<tr><td style="text-align:center">delete-account</td><td style="text-align:center">Delete the existing account</td></tr>
+<tr><td style="text-align:center">delete-key</td><td style="text-align:center">Delete a key</td></tr>
+<tr><td style="text-align:center">delete-transaction-feed</td><td style="text-align:center">Delete a transaction feed filter</td></tr>
+<tr><td style="text-align:center">estimate-transaction-gas</td><td style="text-align:center">estimate gas for build transaction</td></tr>
+<tr><td style="text-align:center">gas-rate</td><td style="text-align:center">Print the current gas rate</td></tr>
+<tr><td style="text-align:center">get-asset</td><td style="text-align:center">get asset by assetID</td></tr>
+<tr><td style="text-align:center">get-block</td><td style="text-align:center">Get a whole block matching the given hash or height</td></tr>
+<tr><td style="text-align:center">get-block-count</td><td style="text-align:center">Get the number of most recent block</td></tr>
+<tr><td style="text-align:center">get-block-hash</td><td style="text-align:center">Get the hash of most recent block</td></tr>
+<tr><td style="text-align:center">get-block-header</td><td style="text-align:center">Get the header of a block matching the given hash or height</td></tr>
+<tr><td style="text-align:center">get-difficulty</td><td style="text-align:center">Get the difficulty of most recent block</td></tr>
+<tr><td style="text-align:center">get-hash-rate</td><td style="text-align:center">Get the nonce of most recent block</td></tr>
+<tr><td style="text-align:center">get-transaction</td><td style="text-align:center">get the transaction by matching the given transaction hash</td></tr>
+<tr><td style="text-align:center">get-transaction-feed</td><td style="text-align:center">get a transaction feed by alias</td></tr>
+<tr><td style="text-align:center">get-unconfirmed-transaction</td><td style="text-align:center">get unconfirmed transaction by matching the given transaction hash</td></tr>
+<tr><td style="text-align:center">help</td><td style="text-align:center">Help about any command</td></tr>
+<tr><td style="text-align:center">is-mining</td><td style="text-align:center">If client is actively mining new blocks</td></tr>
+<tr><td style="text-align:center">list-access-tokens</td><td style="text-align:center">List the existing access tokens</td></tr>
+<tr><td style="text-align:center">list-accounts</td><td style="text-align:center">List the existing accounts</td></tr>
+<tr><td style="text-align:center">list-addresses</td><td style="text-align:center">List the account addresses</td></tr>
+<tr><td style="text-align:center">list-assets</td><td style="text-align:center">List the existing assets</td></tr>
+<tr><td style="text-align:center">list-balances</td><td style="text-align:center">List the accounts balances</td></tr>
+<tr><td style="text-align:center">list-keys</td><td style="text-align:center">List the existing keys</td></tr>
+<tr><td style="text-align:center">list-pubkeys</td><td style="text-align:center">list the account pubkeys</td></tr>
+<tr><td style="text-align:center">list-transaction-feeds</td><td style="text-align:center">list all of transaction feeds</td></tr>
+<tr><td style="text-align:center">list-transactions</td><td style="text-align:center">List the transactions</td></tr>
+<tr><td style="text-align:center">list-unconfirmed-transactions</td><td style="text-align:center">list unconfirmed transactions hashes</td></tr>
+<tr><td style="text-align:center">list-unspent-outputs</td><td style="text-align:center">List the accounts unspent outputs</td></tr>
+<tr><td style="text-align:center">net-info</td><td style="text-align:center">Print the summary of network</td></tr>
+<tr><td style="text-align:center">rescan-wallet</td><td style="text-align:center">Trigger to rescan block information into related wallet</td></tr>
+<tr><td style="text-align:center">reset-key-password</td><td style="text-align:center">Reset key password</td></tr>
+<tr><td style="text-align:center">set-mining</td><td style="text-align:center">start or stop mining</td></tr>
+<tr><td style="text-align:center">sign-message</td><td style="text-align:center">sign message to generate signature</td></tr>
+<tr><td style="text-align:center">sign-transaction</td><td style="text-align:center">Sign transaction templates with account password</td></tr>
+<tr><td style="text-align:center">submit-transaction</td><td style="text-align:center">Submit signed transaction</td></tr>
+<tr><td style="text-align:center">update-account-alias</td><td style="text-align:center">update account alias</td></tr>
+<tr><td style="text-align:center">update-asset-alias</td><td style="text-align:center">Update the asset alias</td></tr>
+<tr><td style="text-align:center">update-key-alias</td><td style="text-align:center">Update key alias</td></tr>
+<tr><td style="text-align:center">update-transaction-feed</td><td style="text-align:center">Update transaction feed</td></tr>
+<tr><td style="text-align:center">validate-address</td><td style="text-align:center">validate the account addresses</td></tr>
+<tr><td style="text-align:center">verify-message</td><td style="text-align:center">verify signature for specified message</td></tr>
+<tr><td style="text-align:center">version</td><td style="text-align:center">Print the version number of vaporcli</td></tr>
+<tr><td style="text-align:center">wallet-info</td><td style="text-align:center">Print the information of wallet</td></tr>
+</tbody>
+</table>
+<p>每个Command具有自己的flag参数，如创建access token</p>
+<pre><code class="hljs"><span class="hljs-string">vaporcli </span><span class="hljs-built_in">create-access-token</span> &lt;<span class="hljs-string">tokenID&gt;</span> [<span class="hljs-string">flags]</span>
+</code></pre>
+<p>使用示例</p>
+<pre><code class="hljs"><span class="hljs-string">vaporcli </span><span class="hljs-built_in">create-access-token</span> <span class="hljs-string">token1
+</span></code></pre>
+<p>每个Command均可使用-h参数来查看使用帮助</p>
+<p>如</p>
+<pre><code class="hljs"><span class="hljs-string">vaporcli </span><span class="hljs-built_in">create-access-token</span> -h
+</code></pre>
+<p>返回结果如下</p>
+<pre><code class="hljs"><span class="hljs-string">Create </span>a <span class="hljs-string">new </span><span class="hljs-string">access </span><span class="hljs-string">token
+</span>
+<span class="hljs-string">Usage:</span>
+  <span class="hljs-string">vaporcli </span><span class="hljs-built_in">create-access-token</span> &lt;<span class="hljs-string">tokenID&gt;</span> [<span class="hljs-string">flags]</span>
+
+<span class="hljs-string">Flags:</span>
+  -h, <span class="hljs-built_in">--help</span>   <span class="hljs-string">help </span><span class="hljs-string">for </span><span class="hljs-built_in">create-access-token</span>
+</code></pre>
+<p><strong>Vapor Dashboard</strong></p>
+<p>vapor dashboard与vaporcli功能类似，都是发送请求与vapord进程建立通信，dashboard使用了Web方式提供了相比vaporcli更友好的使用体验。</p>
+<p>在执行<code>vapord node</code>运行vapor节点后dashboard会默认开启，无需收到部署与开启。你可以也可通过传入<code>--web.closed</code>参数关闭该功能。</p>
+<p>首先需要创建access token.</p>
+<p>可以通过vaporcli命令行工具或API接口</p>
+<pre><code class="hljs"><span class="hljs-string">vaporcli </span><span class="hljs-built_in">create-access-token</span>
+</code></pre>
+<pre><code class="hljs"><span class="hljs-string">curl </span>-X <span class="hljs-string">POST </span><span class="hljs-string">http:</span>//<span class="hljs-string">127.</span>0.0.<span class="hljs-string">1:9889/</span><span class="hljs-built_in">create-access-token</span> -d <span class="hljs-string">'{"id":"token1"}'</span>
+</code></pre>
+<p>打开dashboard网址</p>
+<pre><code class="hljs">$ <span class="hljs-built_in">open</span> http:<span class="hljs-comment">//127.0.0.1:9889/</span>
+</code></pre>
+<p><img src="https://i.loli.net/2019/12/06/gEjVWe8nOiuKRaC.png" alt="26.png"></p>
+<p>在文本框输入access token(以tokenname:xyz...的形式)登录dashboaed</p>
+<p><img src="https://i.loli.net/2019/12/06/kA6aCXyF84iWSIV.png" alt="27.png"></p>
+<p>在初始化页面可以选择创建新的钱包，输入账户别名与钱包后即可创建新的钱包</p>
+<p><img src="https://i.loli.net/2019/12/06/RtSkNOenubvGIJB.png" alt="28.png"></p>
+<p>如果之前有备份的Keystore文件可选择从keystore文件恢复选项，恢复之前备份的钱包</p>
+<p><img src="https://i.loli.net/2019/12/06/gLWVpu9Ykd8IXx1.png" alt="29.png"></p>
+<p>新建或恢复钱包后可进入主界面进行账户、交易、钱包、挖矿操作</p>
+<p><img src="https://i.loli.net/2019/12/06/khui91pAo4R6nGM.png" alt="30.png"></p>
+<p><strong>SDK</strong></p>
+<p>多语言sdk接入</p>
+<p>见SDK使用</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_16"><span class="arrow-prev">← </span><span>下载运行</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_18"><span>介绍</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>

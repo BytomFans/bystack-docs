@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>操作符 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### 常见数值操作码"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="操作符 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="#### 常见数值操作码"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>智能合约</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">Bystack</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">架构介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">操作符</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="常见数值操作码"></a><a href="#常见数值操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>常见数值操作码</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_1ADD</td><td style="text-align:left">0x8b</td><td style="text-align:left">返回栈顶数据加1</td></tr>
+<tr><td style="text-align:left">OP_1SUB</td><td style="text-align:left">0x8c</td><td style="text-align:left">返回栈顶数据减1</td></tr>
+<tr><td style="text-align:left">OP_2MUL</td><td style="text-align:left">0x8d</td><td style="text-align:left">返回栈顶数据乘2</td></tr>
+<tr><td style="text-align:left">OP_2DIV</td><td style="text-align:left">0x8e</td><td style="text-align:left">返回栈顶数据除2</td></tr>
+<tr><td style="text-align:left">OP_NEGATE</td><td style="text-align:left">0x8f</td><td style="text-align:left">返回栈顶数据符号取反结果</td></tr>
+<tr><td style="text-align:left">OP_ABS</td><td style="text-align:left">0x90</td><td style="text-align:left">返回栈顶数据符号取正结果</td></tr>
+<tr><td style="text-align:left">OP_NOT</td><td style="text-align:left">0x91</td><td style="text-align:left">判断输入值是否为0，如果为0则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_0NOTEQUAL</td><td style="text-align:left">0x92</td><td style="text-align:left">判断输入值是否不为0，如果不为0则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_ADD</td><td style="text-align:left">0x93</td><td style="text-align:left">返回两个输入值之和</td></tr>
+<tr><td style="text-align:left">OP_SUB</td><td style="text-align:left">0x94</td><td style="text-align:left">返回两个输入值之差，即x-y，其中两个输入值的顺序为y、x</td></tr>
+<tr><td style="text-align:left">OP_MUL</td><td style="text-align:left">0x95</td><td style="text-align:left">返回两个输入值之积</td></tr>
+<tr><td style="text-align:left">OP_DIV</td><td style="text-align:left">0x96</td><td style="text-align:left">返回两个输入值相除的结果，即x/y，其中两个输入值的顺序为y、x</td></tr>
+<tr><td style="text-align:left">OP_MOD</td><td style="text-align:left">0x97</td><td style="text-align:left">返回两个输入值取余的结果，即x mod y，其中两个输入值的顺序为y、x</td></tr>
+<tr><td style="text-align:left">OP_LSHIFT</td><td style="text-align:left">0x98</td><td style="text-align:left">返回左移位结果，表示y向左移动x位，即 y « uint(x)，其中第一个输入值表示移位系数x，第二个输入值表示操作数y</td></tr>
+<tr><td style="text-align:left">OP_RSHIFT</td><td style="text-align:left">0x99</td><td style="text-align:left">返回右移位结果，表示y向右移动x位，即 y » uint(x)，其中第一个输入值表示移位系数x，第二个输入值表示操作数y</td></tr>
+<tr><td style="text-align:left">OP_BOOLAND</td><td style="text-align:left">0x9a</td><td style="text-align:left">布尔类型逻辑与操作，即两个输入值都为非零时返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_BOOLOR</td><td style="text-align:left">0x9b</td><td style="text-align:left">布尔类型逻辑或操作，即两个输入值至少有一个为非零时返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_NUMEQUAL</td><td style="text-align:left">0x9c</td><td style="text-align:left">判断两个整型输入值是否相等，如果相等则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_NUMEQUALVERIFY</td><td style="text-align:left">0x9d</td><td style="text-align:left">先执行OP_NUMEQUAL操作，然后再执行OP_VERIFY操作，即两个整型输入值相等时，返回nil（VERIFY成功），否则VERIFY失败</td></tr>
+<tr><td style="text-align:left">OP_NUMNOTEQUAL</td><td style="text-align:left">0x9e</td><td style="text-align:left">判断两个整型输入值是否不相等，如果不相等则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_LESSTHAN</td><td style="text-align:left">0x9f</td><td style="text-align:left">两个输入值的顺序为x、y，如果 y&lt;x 则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_GREATERTHAN</td><td style="text-align:left">0xa0</td><td style="text-align:left">两个输入值的顺序为x、y，如果 y&gt;x 则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_LESSTHANOREQUAL</td><td style="text-align:left">0xa1</td><td style="text-align:left">两个输入值的顺序为x、y，如果 y&lt;=x 则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_GREATERTHANOREQUAL</td><td style="text-align:left">0xa2</td><td style="text-align:left">两个输入值的顺序为x、y，如果 y&gt;=x 则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_MIN</td><td style="text-align:left">0xa3</td><td style="text-align:left">返回两个栈顶数值中较小的一项</td></tr>
+<tr><td style="text-align:left">OP_MAX</td><td style="text-align:left">0xa4</td><td style="text-align:left">返回两个栈顶数值中较大的一项</td></tr>
+<tr><td style="text-align:left">OP_WITHIN</td><td style="text-align:left">0xa5</td><td style="text-align:left">三个输入值的顺序为x、y、z，如果 y &lt;= z &lt;= x 则返回true，否则返回fale</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="位操作码"></a><a href="#位操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>位操作码</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_INVERT</td><td style="text-align:left">0x83</td><td style="text-align:left">返回输入值按位取反的运算结果</td></tr>
+<tr><td style="text-align:left">OP_AND</td><td style="text-align:left">0x84</td><td style="text-align:left">返回输入值按位逻辑与运算</td></tr>
+<tr><td style="text-align:left">OP_OR</td><td style="text-align:left">0x85</td><td style="text-align:left">返回输入值按位逻辑或运算</td></tr>
+<tr><td style="text-align:left">OP_XOR</td><td style="text-align:left">0x86</td><td style="text-align:left">返回输入值按位逻辑异或运算</td></tr>
+<tr><td style="text-align:left">OP_EQUAL</td><td style="text-align:left">0x87</td><td style="text-align:left">判断两个输入值是否相等，如果相等则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_EQUALVERIFY</td><td style="text-align:left">0x88</td><td style="text-align:left">先执行OP_EQUAL操作，然后再执行OP_VERIFY操作，即两个输入值相等时，返回nil（VERIFY成功），否则VERIFY失败</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="字符串处理操作码"></a><a href="#字符串处理操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>字符串处理操作码</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_CAT</td><td style="text-align:left">0x7e</td><td style="text-align:left">返回连接两个字符串的结果，输入字符串的顺序为a、b，返回结果为 ab</td></tr>
+<tr><td style="text-align:left">OP_SUBSTR</td><td style="text-align:left">0x7f</td><td style="text-align:left">返回从指定偏移量开始截取固定长度的字符串子集，输入值的顺序为size、offset、str，返回结果为从str字符串的offset位置截取size大小的字符串子集。输入大小2，offset=c，str=abdcfghk，返回结果为fg</td></tr>
+<tr><td style="text-align:left">OP_LEFT</td><td style="text-align:left">0x80</td><td style="text-align:left">返回截取字符串左边指定长度的子串，输入值的顺序为size、str，返回结果为截取str字符串左边size大小的字符串子集。输入size=3，str=hello，返回结果为hel</td></tr>
+<tr><td style="text-align:left">OP_RIGHT</td><td style="text-align:left">0x81</td><td style="text-align:left">返回截取字符串右边指定长度的子串，输入值的顺序为size、str，返回结果为截取str字符串右边size大小的字符串子集。输入size=3，str=hello，返回结果为llo</td></tr>
+<tr><td style="text-align:left">OP_SIZE</td><td style="text-align:left">0x82</td><td style="text-align:left">返回字符串的长度大小，即len(str)</td></tr>
+<tr><td style="text-align:left">OP_CATPUSHDATA</td><td style="text-align:left">0x89</td><td style="text-align:left">返回连接两个[]byte数据结果，输入数据的顺序为a、b，返回结果为 append(b, a)</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="加密和散列操作码"></a><a href="#加密和散列操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>加密和散列操作码</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_SHA256</td><td style="text-align:left">0xa8</td><td style="text-align:left">返回输入项的sha256哈希值</td></tr>
+<tr><td style="text-align:left">OP_SHA3</td><td style="text-align:left">0xaa</td><td style="text-align:left">返回输入项的sha3哈希值</td></tr>
+<tr><td style="text-align:left">OP_HASH160</td><td style="text-align:left">0xab</td><td style="text-align:left">返回输入项的Ripemd160哈希值</td></tr>
+<tr><td style="text-align:left">OP_CHECKSIG</td><td style="text-align:left">0xac</td><td style="text-align:left">验证交易签名是否正确，如果验证成功则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_CHECKMULTISIG</td><td style="text-align:left">0xad</td><td style="text-align:left">依次验证每个签名和公钥对是否正确，如果所有的签名和公钥对都验证成功则返回true，否则返回false</td></tr>
+<tr><td style="text-align:left">OP_TXSIGHASH</td><td style="text-align:left">0xae</td><td style="text-align:left">返回交易签名哈希，即虚拟机中context的TxSigHash</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="控制流程操作码"></a><a href="#控制流程操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>控制流程操作码</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_JUMP</td><td style="text-align:left">0x63</td><td style="text-align:left">无条件跳转到堆栈的指定位置，将PC设置为栈顶的四字节小端存储的无符号整数地址。如果该值不存在则执行失败</td></tr>
+<tr><td style="text-align:left">OP_JUMPIF</td><td style="text-align:left">0x64</td><td style="text-align:left">条件跳转到堆栈的指定位置，跟OP_JUMP的区别在于该操作从数据堆栈中取出一个boolean值，如果为true才把PC设置到该地址，如果为false则不进行任何操作</td></tr>
+<tr><td style="text-align:left">OP_VERIFY</td><td style="text-align:left">0x69</td><td style="text-align:left">校验数据堆栈的栈顶的结果，如果为true，则删除栈顶元素，并返回nil，否则执行失败</td></tr>
+<tr><td style="text-align:left">OP_FAIL</td><td style="text-align:left">0x6a</td><td style="text-align:left">无条件执行失败</td></tr>
+<tr><td style="text-align:left">OP_CHECKPREDICATE</td><td style="text-align:left">0xc0</td><td style="text-align:left">调用子虚拟机执行对应的program，如果执行成功则返回true，否则返回false。如果VM的运行限制小于256，则立即执行失败</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="堆栈控制操作码"></a><a href="#堆栈控制操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>堆栈控制操作码</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_TOALTSTACK</td><td style="text-align:left">0x6b</td><td style="text-align:left">把主堆栈的栈顶元素压入辅堆栈顶部，从主堆栈删除</td></tr>
+<tr><td style="text-align:left">OP_FROMALTSTACK</td><td style="text-align:left">0x6c</td><td style="text-align:left">把辅堆栈的栈顶元素压入主堆栈顶部，从辅堆栈删除。如果辅堆栈为空则执行失败</td></tr>
+<tr><td style="text-align:left">OP_2DROP</td><td style="text-align:left">0x6d</td><td style="text-align:left">删除栈顶两个元素</td></tr>
+<tr><td style="text-align:left">OP_2DUP</td><td style="text-align:left">0x6e</td><td style="text-align:left">复制栈顶两个元素</td></tr>
+<tr><td style="text-align:left">OP_3DUP</td><td style="text-align:left">0x6f</td><td style="text-align:left">复制栈顶三个元素</td></tr>
+<tr><td style="text-align:left">OP_2OVER</td><td style="text-align:left">0x70</td><td style="text-align:left">把栈底的两个元素复制到栈顶</td></tr>
+<tr><td style="text-align:left">OP_2ROT</td><td style="text-align:left">0x71</td><td style="text-align:left">将数据堆栈中的第五和第六个元素移动到栈顶。</td></tr>
+<tr><td style="text-align:left">OP_2SWAP</td><td style="text-align:left">0x72</td><td style="text-align:left">将数据堆栈中的第三第四个元素移动到栈顶</td></tr>
+<tr><td style="text-align:left">OP_IFDUP</td><td style="text-align:left">0x73</td><td style="text-align:left">当数据堆栈的栈顶不是false时进行复制栈顶</td></tr>
+<tr><td style="text-align:left">OP_DEPTH</td><td style="text-align:left">0x74</td><td style="text-align:left">把数据堆栈的元素个数压入堆栈</td></tr>
+<tr><td style="text-align:left">OP_DROP</td><td style="text-align:left">0x75</td><td style="text-align:left">从数据堆栈中删除栈顶元素</td></tr>
+<tr><td style="text-align:left">OP_DUP</td><td style="text-align:left">0x76</td><td style="text-align:left">复制数据堆栈的栈顶元素</td></tr>
+<tr><td style="text-align:left">OP_NIP</td><td style="text-align:left">0x77</td><td style="text-align:left">删除栈顶的下一个元素</td></tr>
+<tr><td style="text-align:left">OP_OVER</td><td style="text-align:left">0x78</td><td style="text-align:left">复制数据堆栈的栈顶下一个元素到栈顶</td></tr>
+<tr><td style="text-align:left">OP_PICK</td><td style="text-align:left">0x79</td><td style="text-align:left">将数据堆栈的第n个元素复制到栈顶</td></tr>
+<tr><td style="text-align:left">OP_ROLL</td><td style="text-align:left">0x7a</td><td style="text-align:left">将数据堆栈的第n个元素移动到栈顶</td></tr>
+<tr><td style="text-align:left">OP_ROT</td><td style="text-align:left">0x7b</td><td style="text-align:left">将数据堆栈中的第三个元素向左翻转</td></tr>
+<tr><td style="text-align:left">OP_SWAP</td><td style="text-align:left">0x7c</td><td style="text-align:left">数据堆栈中栈顶的两个元素交换</td></tr>
+<tr><td style="text-align:left">OP_TUCK</td><td style="text-align:left">0x7d</td><td style="text-align:left">从数据堆栈中栈顶元素复制并插入到栈顶下一个元素后面</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="vm检查操作码"></a><a href="#vm检查操作码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VM检查操作码</h4>
+<p>这些指令会导致VM立即停止并返回false 。</p>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_CHECKOUTPUT</td><td style="text-align:left">0xc1</td><td style="text-align:left">从数据堆栈中弹出5项进行检查：prog，version，assetid，amount，index</td></tr>
+<tr><td style="text-align:left">OP_ASSET</td><td style="text-align:left">0xc2</td><td style="text-align:left">这条指令已经删掉了Nonce类型）返回资产ID（assetid），即虚拟机中context的AssetID。校验context的资产ID，主要有两种情况：1）如果第一个action对象是Issuance，则直接推送value.AssetID;2）如果第一个action对象是Spend，则推送SpentOutput.Source.Value.AssetID</td></tr>
+<tr><td style="text-align:left">OP_AMOUNT</td><td style="text-align:left">0xc3</td><td style="text-align:left">这条指令已经删掉了Nonce类型）返回资产数量（amount），即虚拟机中context的Amount。校验context的资产数量，主要有两种情况：1）如果第一个action对象是Issuance，则直接推送value.Amount; 2）如果第一个action对象是Spend，则推送SpentOutput.Source.Value.Amount</td></tr>
+<tr><td style="text-align:left">OP_PROGRAM</td><td style="text-align:left">0xc4</td><td style="text-align:left">返回接收的program，即虚拟机中context的Code</td></tr>
+<tr><td style="text-align:left">OP_INDEX</td><td style="text-align:left">0xc9</td><td style="text-align:left">返回目标接收对象的索引位置，即虚拟机中context的DestPos</td></tr>
+<tr><td style="text-align:left">OP_ENTRYID</td><td style="text-align:left">0xca</td><td style="text-align:left">返回目标接收对象的交易entryID，即虚拟机中context的EntryID</td></tr>
+<tr><td style="text-align:left">OP_OUTPUTID</td><td style="text-align:left">0xcb</td><td style="text-align:left">返回已花费UTXO生成的交易SpentOutputID，即虚拟机中context的SpentOutputID</td></tr>
+<tr><td style="text-align:left">OP_BLOCKHEIGHT</td><td style="text-align:left">0xcd</td><td style="text-align:left">返回当前块的高度height，即虚拟机中context的BlockHeight</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="数据入栈操作指令"></a><a href="#数据入栈操作指令" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据入栈操作指令</h4>
+<table>
+<thead>
+<tr><th style="text-align:left">关键字</th><th style="text-align:left">代码</th><th style="text-align:left">描述</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:left">OP_PUSHDATA1</td><td style="text-align:left">0x4c</td><td style="text-align:left">将一个字节的数据长度前缀和对应长度大小的字节数据压入堆栈，即(prefix + data)，其中prefix=len(data)，而前缀prefix所能表示的范围为:(0, 255)bytes，对应的十六进制范围为:(0x00, 0xFF)</td></tr>
+<tr><td style="text-align:left">OP_PUSHDATA2</td><td style="text-align:left">0x4d</td><td style="text-align:left">将两个字节的数据长度前缀和对应长度大小的字节数据压入堆栈，即(prefix + data)，其中prefix=len(data)，而前缀prefix所能表示的范围为:(0, 65535)bytes，对应的十六进制范围为:(0x0000, 0xFFFF)</td></tr>
+<tr><td style="text-align:left">OP_PUSHDATA4</td><td style="text-align:left">0x4e</td><td style="text-align:left">将四个字节的数据长度前缀和对应长度大小的字节数据压入堆栈，即(prefix + data)，其中prefix=len(data)，而前缀prefix所能表示的范围为:(0, 4294967295)bytes，对应的十六进制范围为:(0x00000000, 0xFFFFFFFF)</td></tr>
+<tr><td style="text-align:left">OP_1NEGATE</td><td style="text-align:left">0x4f</td><td style="text-align:left">数字 -1 被压入堆栈</td></tr>
+<tr><td style="text-align:left">OP_NOP</td><td style="text-align:left">0x61</td><td style="text-align:left">无任何操作</td></tr>
+<tr><td style="text-align:left">OP_FALSE / OP_0</td><td style="text-align:left">0x00</td><td style="text-align:left">一个字节空串被推到堆栈中（并非OP_NOP操作，这里会有一个元素被压入堆栈）</td></tr>
+<tr><td style="text-align:left">OP_TRUE</td><td style="text-align:left">0x51</td><td style="text-align:left">数字 1 被压入堆栈</td></tr>
+<tr><td style="text-align:left">OP_1 ~ OP_16</td><td style="text-align:left">0x51 ~ 0x60</td><td style="text-align:left">数字 n 被压入堆栈，n的取值范围为[1, 16]</td></tr>
+<tr><td style="text-align:left">OP_DATA_1 ~ OP_DATA_75</td><td style="text-align:left">0x01 ~ 0x4b</td><td style="text-align:left">把 n 个字节大小的数据压入堆栈， n的取值范围为[1, 75]</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_30"><span class="arrow-prev">← </span><span>Equity语法</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_33"><span>合约模版</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
