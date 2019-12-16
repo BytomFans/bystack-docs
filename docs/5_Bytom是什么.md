@@ -14,7 +14,7 @@ Bytom Blockchain Protocol（简称比原链：Bytom），一个针对资产领�
 - 通用地址格式
 - 支持国密标准
 - 资产命名采用 ODIN 标识
-- 人工智能 ASIC 芯片友好型 POW 算法
+- 人工智能 ASIC 芯片友好型 [POW](https://bytomfans.github.io/bystack-docs/docs/docs_9) 算法
 - 使用侧链支持跨链资产交易及分红
 - 增强的交易灵活性
 
@@ -24,12 +24,12 @@ Bytom Blockchain Protocol（简称比原链：Bytom），一个针对资产领�
 - `2019.9.27`   管理团队更新升级
 - `2019.9.19`   发布Layer 2价值交换协议“MOV”白皮书
 - `2019.8.24`   成功举办Bytom DevCon 2
-- `2019.7.20`   Vapor主网上线
-- `2019.6.20`   Vapor测试网上线
-- `2019.5.23`   发布Bystack拜占庭容错共识论文
-- `2019.5.15`   比原链BaaS平台Bystack白皮书发布
-- `2019.4.8`    首款多资产插件钱包Bystore上线
-- `2018.12.25`  首款多资产轻钱包Bycoin上线
+- `2019.7.20`   [Vapor](https://bytomfans.github.io/bystack-docs/docs/docs_15)主网上线
+- `2019.6.20`   [Vapor](https://bytomfans.github.io/bystack-docs/docs/docs_15)测试网上线
+- `2019.5.23`   发布[Bystack](https://www.bystack.com/zh/) 拜占庭容错共识论文
+- `2019.5.15`   比原链BaaS平台[Bystack](https://www.bystack.com/zh/) 白皮书发布
+- `2019.4.8`    首款多资产插件钱包[Byone](https://bytomfans.github.io/bystack-docs/docs/docs_58) 上线
+- `2018.12.25`  首款多资产轻钱包[Bycoin](https://bytomfans.github.io/bystack-docs/docs/docs_57) 上线
 - `2018.11.18`  比原链第一届全球开发者大赛
 - `2018.11.17`  侧链发布
 - `2018.10.17`  国密网发布

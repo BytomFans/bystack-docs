@@ -4,11 +4,11 @@ title: POW共识
 sidebar_label: POW共识
 ---
 
-#### AI-PoW 介绍
+## AI-PoW 介绍
 
 Tensority 算法利用种子和区块头哈希作为输入值并产生相应的工作量。
 
-#### 算法流程
+**算法流程**
 
 Tensority算法总体分为以下几个步骤：
 
