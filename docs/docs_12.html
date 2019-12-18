@@ -311,8 +311,8 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 <tbody>
 </tbody>
 </table>
-<p><strong>接口</strong> 可以代表任意数量的具体类型之一。必须首先使用相应的<code>type byte</code>声明接口的具体类型。然后使用前导“类型字节”对接口进行编码，然后对底层具体类型进行二进制编码。
-注意：字节<code>x00</code>保留用于<code>nil</code>接口值和<code>nil</code>指针值。</p>
+<p><strong>接口</strong> 可以代表任意数量的具体类型之一。必须首先使用相应的<code>type byte</code>声明接口的具体类型。然后使用前导“类型字节”对接口进行编码，然后对底层具体类型进行二进制编码。</p>
+<p>注意：字节<code>x00</code>保留用于<code>nil</code>接口值和<code>nil</code>指针值。</p>
 <table>
 <thead>
 <tr><th style="text-align:left">12345678910111213141516</th><th style="text-align:left">type Animal interface{}type Dog uint32type Cat stringRegisterInterface（  struct{ Animal }{},          // Convenience for referencing the 'Animal' interface  ConcreteType{Dog(0),  0x01}, // Register the byte 0x01 to denote a Dog  ConcreteType{Cat(&quot;&quot;), 0x02}, // Register the byte 0x02 to denote a Cat）var animal Animal = Dog（02） The binary representation of animal: 010102 01:     the type byte for a <code>Dog</code>   0102: the bytes of Dog(02)</th></tr>
