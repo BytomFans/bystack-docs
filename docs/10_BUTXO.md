@@ -22,4 +22,4 @@ sidebar_label: BUTXO
  	   Change                          bool
     }
 
-`ControlProgram` 的结构：参见 “智能合约” 章节. 
+`ControlProgram` 的结构：参见 [智能合约](https://bytomfans.github.io/bystack-docs/docs/docs_30) 。
