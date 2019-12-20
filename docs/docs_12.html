@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>P2P网络 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 节点发现协议"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="P2P网络 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="## 节点发现协议"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>协议规范</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_67">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_13">BVM合约虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>P2P网络 · Bytom开发文档</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 节点发现协议"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="P2P网络 · Bytom开发文档"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bytomfans.github.io/bystack-docs/"/><meta property="og:description" content="## 节点发现协议"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/bystack-docs/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/bystack-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/bystack-docs/css/main.css"/><script src="/bystack-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bystack-docs/"><h2 class="headerTitle">Bytom开发文档</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/bystack-docs/docs/docs_1" target="_self">文档</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>协议规范</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Bystack</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_1">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_2">解决方案</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">架构实现</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_66">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_3">一主多侧</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_4">分层架构</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bytom主链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_5">Bytom是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_6">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_7">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_67">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_8">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_9">POW共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_10">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_11">交易</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/bystack-docs/docs/docs_12">P2P网络</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_14">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Vapor侧链</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_15">Vapor是什么</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_16">下载运行</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_17">命令行工具</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">联邦节点</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_18">介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_19">如何跨链</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_20">联邦节点和共识节点关系</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">协议规范</h4><ul><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_21">区块</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_22">BBFT共识</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_23">BUTXO</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_24">交易</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_25">投票</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_26">P2P网络</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_27">BVM虚拟机</a></li></ul></div><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_28">搭建私有链</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">智能合约</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_29">Equity介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_30">Equity语法</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_31">操作符</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_33">合约模版</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_34">合约开发和部署</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">合约虚拟机</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_35">BVM介绍</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_36">运行机制</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_37">异常处理</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Blockcenter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_38">BlockCenter SDK</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_39">BlockCenter Bytom API V2</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_63">BlockCenter Bytom API  V3</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_40">BlockCenter Vapor API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发工具</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_41">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_42">Vapor API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_43">SDKS</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_61">Bytom kit</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_62">Bytom Spanner</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Bapp开发</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_44">BApp开发框架</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_45">BApp案例</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_46">BApp SDK初始化</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_47">Bytom API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_48">Bycoin API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_49">Bapp开发流程</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">区块链浏览器</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_50">Blockmeta</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_51">Bytom浏览器 API</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_52">Vapor 浏览器 API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">矿池对接</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_53">GPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_54">CPU/ASIC</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_55">ASIC矿机</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_56">矿池接入</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_65">矿池对接</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">客户端下载</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_57">Bycoin</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_58">Byone</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">白皮书</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_59">白皮书</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">FAQ</h3><ul class=""><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_60">FAQ</a></li><li class="navListItem"><a class="navItem" href="/bystack-docs/docs/docs_64">Error code</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -87,50 +87,39 @@
 <p>如果一轮FindNode查询无法返回比已知最近的节点更近的节点，启动器将FindNode重新发送到k个最近节点中未查找过得节点。</p>
 <p><strong>协议消息及编码</strong></p>
 <p>协议实现了Kademlia协议的两组节点发现命令：</p>
+<pre><code class="hljs">ping&lt;-------------&gt;pong
+findnode &lt;----------&gt;neighbors
+</code></pre>
 <p>节点发现消息作为UDP数据报发送。数据包的最大大小为1280字节。</p>
-<p>|             1              |          packet = packet-header      |  packet-data |</p>
+<pre><code class="hljs">packet = packet-header || packet-data
+</code></pre>
 <p>每个数据包都以header开头：</p>
-<p>| 123 | packet-header = hash ||nodeID ||signature||packet-typehash = sha3（nodeID || signature || packet-type || packet-data）signature = sign（packet-type || packet-data） |
-| :--- | :--- |</p>
+<pre><code class="hljs">packet-header = hash ||nodeID ||signature||packet-type
+hash = sha3（nodeID || signature || packet-type || packet-data）
+signature = sign（packet-type || packet-data）
+</code></pre>
 <p><em>hash</em> 字段使在同一个UDP端口上运行多个协议时可识别。
 <em>packet-type</em> 是定义消息类型。</p>
 <p><strong>Ping Packet（0x01）</strong></p>
-<table>
-<thead>
-<tr><th style="text-align:left">123</th><th style="text-align:left">packet-data = [version，from，to，expiration]from = [sender-ip，sender-udp-port，sender-tcp-port]to = [recipient-ip，recipient-udp-port，0]</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">packet-data = [version，from，to，expiration]
+from = [sender-ip，sender-udp-port，sender-tcp-port]
+to = [recipient-ip，recipient-udp-port，0]
+</code></pre>
 <p><em>expiration</em> 字段是绝对的UNIX时间戳。包含过去时间戳的数据包会因为过期而无法处理。
 收到ping数据包后，收件人应使用pong数据包进行回复。</p>
 <p><strong>Pong Packet（0x02）</strong></p>
-<table>
-<thead>
-<tr><th style="text-align:left">1</th><th style="text-align:left">packet-data = [to，ping-hash，expiration]</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">packet-data = [to，ping-hash，expiration]
+</code></pre>
 <p>Pong是对ping的回复。
 <em>ping-hash</em> 应该等于相应ping包的hash。应该忽略没有包含最新ping-hash的pong数据包，因为不是对最新ping消息做出的响应。</p>
 <p><strong>FindNode Packet（0x03）</strong></p>
-<table>
-<thead>
-<tr><th style="text-align:left">1</th><th style="text-align:left">packet-data = [target，expiration]</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">packet-data = [target，expiration]
+</code></pre>
 <p><em>FindNode</em> 数据包请求接近target的节点的信息。收到FindNode后，收件人应回复<em>Neighbors</em>数据包，在其本地表中找到最接近target的16个节点并返回。</p>
 <p><strong>Neighbors Packet（0x04）</strong></p>
-<table>
-<thead>
-<tr><th style="text-align:left">12</th><th style="text-align:left">packet-data = [node，expiration]nodes = [[ip，udp-port，tcp-port，node-id]，...]</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">packet-data = [node，expiration]
+nodes = [[ip，udp-port，tcp-port，node-id]，...]
+</code></pre>
 <p>Neighbors是对FindNode的回复。</p>
 <h4><a class="anchor" aria-hidden="true" id="2、数据同步协议"></a><a href="#2、数据同步协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2、数据同步协议</h4>
 <p>Bytom网络数据同步协议栈如下图所示。协议栈基于tcp/ip,Encryption完成数据的加密传输，Wire Protocol完成数据序列化，最上层为同步协议。</p>
@@ -144,9 +133,7 @@
 <tr><td style="text-align:center">TCP/IP</td></tr>
 </tbody>
 </table>
-<p>**                                                  基于tcp/ip同步协议**
-**
-数据同步首先会在节点之间建立连接，建立连接后会对连接进行加密处理，区块，交易数据序列化为二进制数据流通过加密通道传递给其它节点。</p>
+<p>数据同步首先会在节点之间建立连接，建立连接后会对连接进行加密处理，区块，交易数据序列化为二进制数据流通过加密通道传递给其它节点。</p>
 <h4><a class="anchor" aria-hidden="true" id="建立加密连接"></a><a href="#建立加密连接" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>建立加密连接</h4>
 <p><strong>建立多路复用连接</strong>
 <em>MConnection</em> 是在单个tcp连接上支持多个独立流传输的多路复用连接，并且每个流提供了单独的服务质量保证。每个流称为<em>Channel</em>，每个<em>Channel</em>具有全局唯一的_ byte id _。每个<em>channel</em>也具有决定服务质量的相对优先级。<em>byte id</em> 和每个Channel的相对优先级在初始化时配置。
@@ -162,25 +149,20 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 当在MConnection上收到ping消息时，会发送一个pong作为响应。如果在ping之后没有及时收到pong消息，则节点将断开连接。</p>
 <p><strong>Msg</strong>
 通道中的消息被切割成较小的<em>msgPacket</em> 以进行多路复用。</p>
-<table>
-<thead>
-<tr><th style="text-align:left">12345</th><th style="text-align:left">type msgPacket struct {    ChannelID byte    EOF       byte // 1 means message ends here.    Bytes     []byte}</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">type msgPacket struct {
+   ChannelID byte
+   EOF       byte // 1 means message ends here.
+   Bytes     []byte
+}
+</code></pre>
 <p>用<a href="https://github.com/Bytom/bytom/tree/master/vendor/github.com/tendermint/go-wire">go-wire</a>进行序列化，并以0x3为前缀。接收到的一组数据包的“字节”被附加在一起直到收到带有<code>EOF = 1</code> 的数据包，然后完整的序列化消息由相应<em>channel</em>的<em>onReceive</em>函数处理。</p>
 <p><strong>多路复用</strong>
 消息从<em>sendRoutine</em> 发送，它循环在select状态上并发送ping，pong或msg消息。该批数据消息可以包括来自多个<em>channel</em>的消息。消息字节排队等待在各自的通道中发送，每个通道一次取一个未发送的消息。从最近发送的字节与信道优先级的比最低的信道选择一个消息发送。</p>
 <p><strong>发送消息</strong>
 发送消息有两种方法：</p>
-<table>
-<thead>
-<tr><th style="text-align:left">12</th><th style="text-align:left">func (m MConnection) Send(chID byte, msg interface{}) bool {}func (m MConnection) TrySend(chID byte, msg interface{}) bool {}</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">func (m MConnection) Send(chID byte, msg interface{}) bool {}
+func (m MConnection) TrySend(chID byte, msg interface{}) bool {}
+</code></pre>
 <p><code>Send（chID，msg）</code>是一个阻塞调用，等待<em>msg</em>成功排队到给定id字节<em>chID</em>的通道。消息<em>msg</em>被序列化使用<em>wire</em>子模块的<code>WriteBinary()</code>反射函数。
 <code>TrySend（chID，msg）</code>是一个非阻塞调用，它将消息<em>msg</em>排入<em>chID</em>通道如果队列未满;否则立即回<em>false</em>。
 <code>Send（）</code>和<code>TrySend（）</code>对每个<em>Peer</em>可见。</p>
@@ -295,31 +277,42 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 </tbody>
 </table>
 <p><strong>Structures</strong> 通过按声明顺序对字段值进行编码来编码。</p>
-<table>
-<thead>
-<tr><th style="text-align:left">1234567891011</th><th style="text-align:left">type Foo struct {    MyString string    MyUint32 uint32}var foo = Foo {“626172”，math.MaxUint32} foo的二进制表示： 0103626172FFFFFFFF 0103：<code>int</code>编码的字符串长度，这里是3     626172：3个字节的字符串“bar”           FFFFFFFF：uint32 MaxUint32的4个字节</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">type Foo struct {
+    MyString string
+    MyUint32 uint32
+}
+ar foo = Foo {“626172”，math.MaxUint32}
+foo的二进制表示：
+0103626172FFFFFFFF
+0103：`int`编码的字符串长度，这里是3
+626172：3个字节的字符串“bar”
+FFFFFFFF：uint32 MaxUint32的4个字节
+</code></pre>
 <p><strong>可变长度数组</strong> 用前导“int”编码，表示数组的长度，后跟项目的二进制表示。
 <strong>固定长度数组</strong> 类似，但前面没有前导<code>int</code>。</p>
-<table>
-<thead>
-<tr><th style="text-align:left">123456789101112131415</th><th style="text-align:left">foos：= [] Foo {foo，foo}foos的二进制表示： 01020103626172FFFFFFFF0103626172FFFFFFFF 0102：<code>int</code>编码的数组长度，这里2     0103626172FFFFFFFF：第一个<code>foo</code>                       0103626172FFFFFFFF：第二个<code>foo</code>foos：= [2] Foo {foo，foo} //固定长度数组foos的二进制表示： 0103626172FFFFFFFF0103626172FFFFFFFF 0103626172FFFFFFFF：第一个<code>foo</code>                   0103626172FFFFFFFF：第二个<code>foo</code></th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">foos：= [] Foo {foo，foo}
+foos的二进制表示：01020103626172FFFFFFFF0103626172FFFFFFFF
+0102：`int`编码的数组长度，这里2
+0103626172FFFFFFFF：第一个`foo`, 0103626172FFFFFFFF：第二个`foo`
+foos：= [2] Foo {foo，foo} //固定长度数组
+foos的二进制表示：0103626172FFFFFFFF0103626172FFFFFFFF
+0103626172FFFFFFFF：第一个`foo`, 0103626172FFFFFFFF：第二个`foo`
+</code></pre>
 <p><strong>接口</strong> 可以代表任意数量的具体类型之一。必须首先使用相应的<code>type byte</code>声明接口的具体类型。然后使用前导“类型字节”对接口进行编码，然后对底层具体类型进行二进制编码。</p>
 <p>注意：字节<code>x00</code>保留用于<code>nil</code>接口值和<code>nil</code>指针值。</p>
-<table>
-<thead>
-<tr><th style="text-align:left">12345678910111213141516</th><th style="text-align:left">type Animal interface{}type Dog uint32type Cat stringRegisterInterface（  struct{ Animal }{},          // Convenience for referencing the 'Animal' interface  ConcreteType{Dog(0),  0x01}, // Register the byte 0x01 to denote a Dog  ConcreteType{Cat(&quot;&quot;), 0x02}, // Register the byte 0x02 to denote a Cat）var animal Animal = Dog（02） The binary representation of animal: 010102 01:     the type byte for a <code>Dog</code>   0102: the bytes of Dog(02)</th></tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<pre><code class="hljs">type Animal interface{}
+type Dog uint32
+type Cat string
+RegisterInterface（
+   struct{ Animal }{},          // Convenience for referencing the 'Animal' interface
+   ConcreteType{Dog(0),  0x01}, // Register the byte 0x01 to denote a Dog
+   ConcreteType{Cat(&quot;&quot;), 0x02}, // Register the byte 0x02 to denote a Cat
+）
+var animal Animal = Dog（02）
+The binary representation of animal: 010102
+01:     the type byte for a `Dog`
+0102: the bytes of Dog(02)
+</code></pre>
 <p><strong>指针</strong> 用一个前导字节<code>x00</code>编码为<code>nil</code>指针，否则用前导字节<code>x01</code>编码，然后是指向的值的二进制编码。
 <strong>注意</strong>：将指针类型转换为接口类型很容易，因为<code>type byte</code> <code>x00</code>总是<code>nil</code>。</p>
 <h4><a class="anchor" aria-hidden="true" id="json编码"></a><a href="#json编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON编码</h4>
@@ -343,8 +336,8 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="节点协议握手"></a><a href="#节点协议握手" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点协议握手</h4>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/454931/1568183190087-23cadad4-51c8-4e94-8b7a-23d4664d9be1.png#align=left&amp;display=inline&amp;height=489&amp;name=image.png&amp;originHeight=489&amp;originWidth=687&amp;size=37746&amp;status=done&amp;width=687" alt="image.png">
-节点协议握手首先会向对方发送状态信息，同时通过状态信息获取对方当前状态，同步协议在获取状态之后。</p>
+<p><img src="https://i.loli.net/2019/12/19/SctenVWwJhPl7jH.png" alt="12.png"></p>
+<p>节点协议握手首先会向对方发送状态信息，同时通过状态信息获取对方当前状态，同步协议在获取状态之后。</p>
 <p><strong>StatusRequestMessage</strong></p>
 <table>
 <thead>
@@ -388,8 +381,8 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="普通同步模式"></a><a href="#普通同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>普通同步模式</h4>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/454931/1568183322083-fbace89f-31b2-4804-9f2c-e1293bf4643e.png#align=left&amp;display=inline&amp;height=676&amp;name=image.png&amp;originHeight=676&amp;originWidth=574&amp;size=66287&amp;status=done&amp;width=574" alt="image.png">
-普通同步模式下，节点按高度获取高度并进行全区块验证。使用<em>GetBlockMessage</em>和<em>BlockMessage</em>消息。</p>
+<p><img src="https://i.loli.net/2019/12/20/ArmqWU8Pzt7oG3L.png" alt="14.png"></p>
+<p>普通同步模式下，节点按高度获取高度并进行全区块验证。使用<em>GetBlockMessage</em>和<em>BlockMessage</em>消息。</p>
 <p><strong>GetBlockMessage</strong></p>
 <table>
 <thead>
@@ -410,7 +403,7 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="快速同步模式"></a><a href="#快速同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快速同步模式</h4>
-<p><img src="https://cdn.nlark.com/yuque/0/2019/png/454931/1568183347868-c85ab534-9c44-4cb5-9d98-0df117943892.png#align=left&amp;display=inline&amp;height=671&amp;name=image.png&amp;originHeight=671&amp;originWidth=602&amp;size=82300&amp;status=done&amp;width=602" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/12/19/kmVcl5tbPUy9Muv.png" alt="14.png"></p>
 <p>快速同步模式下，通过在代码中加入checkpoint(已确认的区块的hash)，这样同步时只需要比较某些高度区块hash是否和checkpoint区块hash一致，即可判断区块头正确性。通过计算区块中交易merkle树roothash是否和区块头中roothash一致，即可判断区块中的交易正确性。快速同步模式下批量获取区块头以及区块，可以极大提高同步速度。</p>
 <p><strong>GetHeadersMessage</strong></p>
 <table>
@@ -452,9 +445,9 @@ ping和pong消息向连接写入单个字节;分别为0x1和0x2。
 </table>
 <h4><a class="anchor" aria-hidden="true" id="spv-proof"></a><a href="#spv-proof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SPV Proof</h4>
 <p>简单支付验证（SPV）是Satoshi Nakamoto的论文中描述的一种技术。 SPV允许轻量级客户端验证区块链中是否包含交易，而无需下载整个区块链。 SPV客户端只需要下载块头，这些块头比完整块小得多。 为了验证交易是否在块中，SPV客户端以Merkle block的形式请求包含交易证明。
-SPV提供了两个关键要素：a）它确保您的交易处于一个区块中; b）它提供了区块被添加到链中的确认（工作证明）。
-<img src="https://cdn.nlark.com/yuque/0/2019/png/454931/1568183379732-3369e39e-41ee-48f1-bf87-91215ae19df7.png#align=left&amp;display=inline&amp;height=431&amp;name=image.png&amp;originHeight=431&amp;originWidth=663&amp;size=38577&amp;status=done&amp;width=663" alt="image.png">
-SPV 轻客户端首先连接全节点，当与全节点成功建立连接后。轻客户端向全节点注册地址过滤器，过滤器是一个地址集合，包含SPV节点账户的地址。全节点使用地址过滤器对交易进行过滤，并将相关交易发送给轻客户端。轻客户端使用<em>GetMerkleBlockMessage</em>命令向全节点获取<em>MerkleBlockMessage</em>消息。</p>
+SPV提供了两个关键要素：a）它确保您的交易处于一个区块中; b）它提供了区块被添加到链中的确认（工作证明）。</p>
+<p><img src="https://i.loli.net/2019/12/19/iykQZmSdnBsLv9M.png" alt="13.png"></p>
+<p>SPV 轻客户端首先连接全节点，当与全节点成功建立连接后。轻客户端向全节点注册地址过滤器，过滤器是一个地址集合，包含SPV节点账户的地址。全节点使用地址过滤器对交易进行过滤，并将相关交易发送给轻客户端。轻客户端使用<em>GetMerkleBlockMessage</em>命令向全节点获取<em>MerkleBlockMessage</em>消息。</p>
 <p><strong>FilterLoadMessage</strong></p>
 <table>
 <thead>
@@ -505,4 +498,4 @@ SPV 轻客户端首先连接全节点，当与全节点成功建立连接后。�
 <tr><td style="text-align:center">Varies</td><td style="text-align:center">Flags</td><td style="text-align:center">[]byte</td><td style="text-align:center">用于分配TxHashes和StatusHashes到merkle树的特定node</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_11"><span class="arrow-prev">← </span><span>交易</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_13"><span>BVM合约虚拟机</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#节点发现协议">节点发现协议</a></li><li><a href="#节点id及距离">节点ID及距离</a></li><li><a href="#节点路由表">节点路由表</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_11"><span class="arrow-prev">← </span><span>交易</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_14"><span>搭建私有链</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#节点发现协议">节点发现协议</a></li><li><a href="#节点id及距离">节点ID及距离</a></li><li><a href="#节点路由表">节点路由表</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
