@@ -226,7 +226,7 @@ func (m MConnection) TrySend(chID byte, msg interface{}) bool {}
 <li><code>peer.NodeInfo.Network</code> 网络类型与我们的不一样。</li>
 </ul>
 <p>此时，如果没有断开连接，则节点有效。它通过<code>AddPeer</code>方法添加到<code>switch</code>中，因此被添加到所有<code>reactor</code>中。</p>
-<h4><a class="anchor" aria-hidden="true" id="数据序列化协议"></a><a href="#数据序列化协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据序列化协议</h4>
+<h2><a class="anchor" aria-hidden="true" id="数据序列化协议"></a><a href="#数据序列化协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>数据序列化协议</h2>
 <p><strong>支持的类型</strong></p>
 <ul>
 <li>原始类型
@@ -246,7 +246,7 @@ func (m MConnection) TrySend(chID byte, msg interface{}) bool {}
 <li>指针</li>
 </ul></li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="二进制编码"></a><a href="#二进制编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>二进制编码</h4>
+<p>####二进制编码</p>
 <p><strong>固定长度基本类型</strong> 用1,2,3或4个大端字节编码。</p>
 <ul>
 <li><code>uint8</code>（又名<code>byte</code>），<code>uint16</code>，<code>uint32</code>，<code>uint64</code>：分别占用1,2,3和4个字节</li>
@@ -315,14 +315,14 @@ The binary representation of animal: 010102
 </code></pre>
 <p><strong>指针</strong> 用一个前导字节<code>x00</code>编码为<code>nil</code>指针，否则用前导字节<code>x01</code>编码，然后是指向的值的二进制编码。
 <strong>注意</strong>：将指针类型转换为接口类型很容易，因为<code>type byte</code> <code>x00</code>总是<code>nil</code>。</p>
-<h4><a class="anchor" aria-hidden="true" id="json编码"></a><a href="#json编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON编码</h4>
+<h3><a class="anchor" aria-hidden="true" id="json编码"></a><a href="#json编码" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON编码</h3>
 <p>JSON编解码器与[<code>binary</code>]（#binary）编解码器兼容，如果您已经熟悉golang的JSON编码，则相当直观。下面提到了一些特殊规定：</p>
 <ul>
 <li>可变长度和固定长度字节编码为大写十六进制字符串</li>
 <li>接口值被编码为两个项的数组：<code>[type_byte，concrete_value]</code></li>
 <li>次数被编码为rfc2822字符串</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="同步协议"></a><a href="#同步协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>同步协议</h4>
+<h2><a class="anchor" aria-hidden="true" id="同步协议"></a><a href="#同步协议" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>同步协议</h2>
 <p>bytom 目前支持普通同步模式，快速同步模式，SPV Proof。</p>
 <table>
 <thead>
@@ -335,8 +335,8 @@ The binary representation of animal: 010102
 <tr><td style="text-align:center">MineBlockMessage</td><td style="text-align:center"></td><td style="text-align:center">MerkleBlockMessage</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="节点协议握手"></a><a href="#节点协议握手" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点协议握手</h4>
-<p><img src="https://i.loli.net/2019/12/19/SctenVWwJhPl7jH.png" alt="12.png"></p>
+<h3><a class="anchor" aria-hidden="true" id="节点协议握手"></a><a href="#节点协议握手" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点协议握手</h3>
+<p><img src="https://i.loli.net/2019/12/20/gjecl9WY7Ph8XHT.png" alt="12.png"></p>
 <p>节点协议握手首先会向对方发送状态信息，同时通过状态信息获取对方当前状态，同步协议在获取状态之后。</p>
 <p><strong>StatusRequestMessage</strong></p>
 <table>
@@ -368,8 +368,8 @@ The binary representation of animal: 010102
 <tr><td style="text-align:center">Varies</td><td style="text-align:center">RawTx</td><td style="text-align:center">[]byte</td><td style="text-align:center">交易消息</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="同步协议-1"></a><a href="#同步协议-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>同步协议</h4>
-<p><img src="https://i.loli.net/2019/12/20/L5RA8wsMSVovdFy.png" alt="16.png"></p>
+<h2><a class="anchor" aria-hidden="true" id="同步协议-1"></a><a href="#同步协议-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>同步协议</h2>
+<p><img src="https://i.loli.net/2019/12/20/WbdTRqr4xeXJfGN.png" alt="17.png"></p>
 <p>目前支持普通同步和快速同步两种模式，区块同步程序定时检查所有连接的节点状态，判断是否需要同步，当需要同步时，判断节点满足快速同步条件时则进行快速同步，否则进行普通同步。为了使挖矿区块能快速同步到全网，当收到挖矿区块时会触发同步流程，使新区块快速上链，并及时更新挖矿区块高度，从而减少孤儿块产生的概率。</p>
 <p><strong>MineBlockMessage</strong></p>
 <table>
@@ -380,8 +380,8 @@ The binary representation of animal: 010102
 <tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlock</td><td style="text-align:center">[]byte</td><td style="text-align:center">挖矿产生的区块信息</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="普通同步模式"></a><a href="#普通同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>普通同步模式</h4>
-<p><img src="https://i.loli.net/2019/12/20/ArmqWU8Pzt7oG3L.png" alt="14.png"></p>
+<h3><a class="anchor" aria-hidden="true" id="普通同步模式"></a><a href="#普通同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>普通同步模式</h3>
+<p><img src="https://i.loli.net/2019/12/20/k1CnezhDAiLKmI8.png" alt="14.png"></p>
 <p>普通同步模式下，节点按高度获取高度并进行全区块验证。使用<em>GetBlockMessage</em>和<em>BlockMessage</em>消息。</p>
 <p><strong>GetBlockMessage</strong></p>
 <table>
@@ -402,8 +402,8 @@ The binary representation of animal: 010102
 <tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlock</td><td style="text-align:center">[]byte</td><td style="text-align:center">序列化的区块信息</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="快速同步模式"></a><a href="#快速同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快速同步模式</h4>
-<p><img src="https://i.loli.net/2019/12/19/kmVcl5tbPUy9Muv.png" alt="14.png"></p>
+<h3><a class="anchor" aria-hidden="true" id="快速同步模式"></a><a href="#快速同步模式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快速同步模式</h3>
+<p><img src="https://i.loli.net/2019/12/20/jmZYPLUEtsSRxlO.png" alt="16.png"></p>
 <p>快速同步模式下，通过在代码中加入checkpoint(已确认的区块的hash)，这样同步时只需要比较某些高度区块hash是否和checkpoint区块hash一致，即可判断区块头正确性。通过计算区块中交易merkle树roothash是否和区块头中roothash一致，即可判断区块中的交易正确性。快速同步模式下批量获取区块头以及区块，可以极大提高同步速度。</p>
 <p><strong>GetHeadersMessage</strong></p>
 <table>
@@ -443,10 +443,10 @@ The binary representation of animal: 010102
 <tr><td style="text-align:center">Varies</td><td style="text-align:center">RawBlocks</td><td style="text-align:center">[][]byte</td><td style="text-align:center">打包的区块信息</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="spv-proof"></a><a href="#spv-proof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SPV Proof</h4>
+<h2><a class="anchor" aria-hidden="true" id="spv-proof"></a><a href="#spv-proof" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SPV Proof</h2>
 <p>简单支付验证（SPV）是Satoshi Nakamoto的论文中描述的一种技术。 SPV允许轻量级客户端验证区块链中是否包含交易，而无需下载整个区块链。 SPV客户端只需要下载块头，这些块头比完整块小得多。 为了验证交易是否在块中，SPV客户端以Merkle block的形式请求包含交易证明。
 SPV提供了两个关键要素：a）它确保您的交易处于一个区块中; b）它提供了区块被添加到链中的确认（工作证明）。</p>
-<p><img src="https://i.loli.net/2019/12/19/iykQZmSdnBsLv9M.png" alt="13.png"></p>
+<p><img src="https://i.loli.net/2019/12/20/yNGne2JWziFlvsp.png" alt="13.png"></p>
 <p>SPV 轻客户端首先连接全节点，当与全节点成功建立连接后。轻客户端向全节点注册地址过滤器，过滤器是一个地址集合，包含SPV节点账户的地址。全节点使用地址过滤器对交易进行过滤，并将相关交易发送给轻客户端。轻客户端使用<em>GetMerkleBlockMessage</em>命令向全节点获取<em>MerkleBlockMessage</em>消息。</p>
 <p><strong>FilterLoadMessage</strong></p>
 <table>
@@ -498,4 +498,4 @@ SPV提供了两个关键要素：a）它确保您的交易处于一个区块中;
 <tr><td style="text-align:center">Varies</td><td style="text-align:center">Flags</td><td style="text-align:center">[]byte</td><td style="text-align:center">用于分配TxHashes和StatusHashes到merkle树的特定node</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_11"><span class="arrow-prev">← </span><span>交易</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_14"><span>搭建私有链</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#节点发现协议">节点发现协议</a></li><li><a href="#节点id及距离">节点ID及距离</a></li><li><a href="#节点路由表">节点路由表</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_11"><span class="arrow-prev">← </span><span>交易</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_14"><span>搭建私有链</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#节点发现协议">节点发现协议</a></li><li><a href="#节点id及距离">节点ID及距离</a></li><li><a href="#节点路由表">节点路由表</a></li><li><a href="#数据序列化协议">数据序列化协议</a><ul class="toc-headings"><li><a href="#json编码">JSON编码</a></li></ul></li><li><a href="#同步协议">同步协议</a><ul class="toc-headings"><li><a href="#节点协议握手">节点协议握手</a></li></ul></li><li><a href="#同步协议-1">同步协议</a><ul class="toc-headings"><li><a href="#普通同步模式">普通同步模式</a></li><li><a href="#快速同步模式">快速同步模式</a></li></ul></li><li><a href="#spv-proof">SPV Proof</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
