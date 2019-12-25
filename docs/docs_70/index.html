@@ -75,13 +75,31 @@
 <li><a href="#编码公钥">编码</a>点<code>P</code>作为<code>pubkey</code>。</li>
 <li>返回扩展公钥<code>xpub = pubkey || salt</code>（64字节）。</li>
 </ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <h3><a class="anchor" aria-hidden="true" id="衍生强化扩展私钥"></a><a href="#衍生强化扩展私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>衍生强化扩展私钥</h3>
+<p>=======</p>
+<h3><a class="anchor" aria-hidden="true" id="派生强化扩展私钥"></a><a href="#派生强化扩展私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>派生强化扩展私钥</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>2b8e247c8d085eb01af944b9913813e655fe1688</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p><strong>输入：</strong></p>
 <ol>
 <li><code>xprv</code>，扩展私钥。</li>
-<li><code>selector</code>，可变长度字节序列用作衍生金钥。</li>
+<li><code>selector</code>，可变长度字节序列用作派生金钥。</li>
 </ol>
-<p><strong>输出：</strong><code>xprv'</code>，衍生强化扩展公钥。</p>
+<p><strong>输出：</strong><code>xprv'</code>，派生强化扩展公钥。</p>
 <ol>
 <li>把<code>xprv</code>分成两部分：32字节的<code>privkey</code>和32字节的<code>salt</code>。</li>
 <li>使<code>len</code>为<code>selector</code>的字节长度。</li>
@@ -91,68 +109,143 @@
 <li>假设<code>privkey'</code>是用32字节字符串以小端字节序编码的标量<code>s'</code>。</li>
 <li>返回<code>xprv' = privkey' || salt'</code>。</li>
 </ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <h3><a class="anchor" aria-hidden="true" id="衍生非强化扩展私钥"></a><a href="#衍生非强化扩展私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>衍生非强化扩展私钥</h3>
+<p>=======</p>
+<h3><a class="anchor" aria-hidden="true" id="派生非强化扩展私钥"></a><a href="#派生非强化扩展私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>派生非强化扩展私钥</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>2b8e247c8d085eb01af944b9913813e655fe1688</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p><strong>输入：</strong></p>
 <ol>
 <li><code>xprv</code>，扩展私钥。</li>
-<li><code>selector</code>，可变长度字节序列用作衍生金钥。</li>
+<li><code>selector</code>，可变长度字节序列用作派生金钥。</li>
 </ol>
-<p><strong>输出：</strong><code>xprv'</code>，衍生强化扩展公钥。</p>
+<p><strong>输出：</strong><code>xprv'</code>，派生强化扩展公钥。</p>
 <ol>
-<li>把<code>xprv</code>分成两部分：32字节的<code>privkey</code>和32字节的<code>salt</code>。</li>
-<li>使<code>s</code>为从<code>privkey</code>以以小端字节序解码的标量。</li>
-<li>做固定基标量乘算法<code>P = s*B</code>，其中<code>B</code>是Ed25519的基点。</li>
-<li><a href="#编码公钥">编码</a>点<code>P</code>作为<code>pubkey</code>。</li>
-<li>使<code>len</code>为<code>selector</code>的字节长度。</li>
-<li>使<code>I = Hash512(0x01 || pubkey || salt || LEB128(len) || selector)</code>。</li>
-<li>把<code>I</code>分成两部分：32字节的<code>fbuffer</code>和32字节的<code>salt'</code>。</li>
-<li>从缓冲器<code>fbuffer</code>中<a href="#生成秘密标量">生成秘密标量</a><code>f</code>。</li>
-<li>计算衍生秘密标量<code>s' = (f + s) mod L</code>（其中L代表B的阶）。</li>
-<li>假设<code>privkey'</code>是用32字节字符串以小端字节序编码的标量<code>s'</code>。</li>
-<li>返回<code>xprv' = privkey' || salt'</code>。</li>
+<li><p>把<code>xprv</code>分成两部分：32字节的<code>privkey</code>和32字节的<code>salt</code>。</p></li>
+<li><p>使<code>s</code>为从<code>privkey</code>以以小端字节序解码的标量。</p></li>
+<li><p>做固定基标量乘算法<code>P = s*B</code>，其中<code>B</code>是Ed25519的基点。</p></li>
+<li><p><a href="#编码公钥">编码</a>点<code>P</code>作为<code>pubkey</code>。</p></li>
+<li><p>使<code>len</code>为<code>selector</code>的字节长度。</p></li>
+<li><p>使<code>I = Hash512(0x01 || pubkey || salt || LEB128(len) || selector)</code>。</p></li>
+<li><p>把<code>I</code>分成两部分：32字节的<code>fbuffer</code>和32字节的<code>salt'</code>。</p></li>
+<li><p>从缓冲器<code>fbuffer</code>中<a href="#生成秘密标量">生成秘密标量</a><code>f</code>。
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p></li>
+<li><p>计算衍生秘密标量<code>s' = (f + s) mod L</code>（其中L代表B的阶）。
+=======</p></li>
+<li><p>计算派生秘密标量<code>s' = (f + s) mod L</code>（其中L代表B的阶）。</p></li>
+<li><p>假设<code>privkey'</code>是用32字节字符串以小端字节序编码的标量<code>s'</code>。</p></li>
+<li><p>返回<code>xprv' = privkey' || salt'</code>。</p></li>
 </ol>
-<h3><a class="anchor" aria-hidden="true" id="衍生非强化扩展公钥"></a><a href="#衍生非强化扩展公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>衍生非强化扩展公钥</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>2b8e247c8d085eb01af944b9913813e655fe1688</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ol start="10">
+<li><p>假设<code>privkey'</code>是用32字节字符串以小端字节序编码的标量<code>s'</code>。</p></li>
+<li><p>返回<code>xprv' = privkey' || salt'</code>。</p></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="派生非强化扩展公钥"></a><a href="#派生非强化扩展公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>派生非强化扩展公钥</h3>
 <p><strong>输入：</strong></p>
 <ol>
 <li><code>xpub</code>，扩展公钥。</li>
-<li><code>selector</code>，可变长度字节序列用作衍生金钥。</li>
+<li><code>selector</code>，可变长度字节序列用作派生金钥。</li>
 </ol>
-<p><strong>输出：</strong><code>xpub'</code>，衍生强化扩展公钥。</p>
+<p><strong>输出：</strong><code>xpub'</code>，派生强化扩展公钥。</p>
 <ol>
-<li>把<code>xpub</code>分成两部分：32字节的pubkey和32字节的<code>salt</code>。</li>
-<li>使<code>len</code>为<code>selector</code>的字节长度。</li>
-<li>使<code>I = Hash512(0x01 || pubkey || salt || LEB128(len) || selector)</code>。</li>
-<li>把<code>I</code>分成两部分：32字节的<code>fbuffer</code>和32字节的<code>salt'</code>。</li>
-<li>从缓冲器<code>fbuffer</code>中<a href="#生成秘密标量">生成秘密标量</a><code>f</code>。</li>
-<li>做固定基标量乘算法<code>F = f*B</code>，其中<code>B</code>是Ed25519的基点。</li>
-<li>根据EdDSA从<code>pubkey</code>解码点<code>P</code>。</li>
-<li>做点加法<code>P' = P + F</code>。</li>
-<li><a href="#编码公钥">编码</a>点<code>P'</code>作为<code>pubkey'</code>。</li>
-<li>返回<code>xpub' = pubkey' || salt'</code>。</li>
+<li><p>把<code>xpub</code>分成两部分：32字节的pubkey和32字节的<code>salt</code>。</p></li>
+<li><p>使<code>len</code>为<code>selector</code>的字节长度。</p></li>
+<li><p>使<code>I = Hash512(0x01 || pubkey || salt || LEB128(len) || selector)</code>。</p></li>
+<li><p>把<code>I</code>分成两部分：32字节的<code>fbuffer</code>和32字节的<code>salt'</code>。</p></li>
+<li><p>从缓冲器<code>fbuffer</code>中<a href="#生成秘密标量">生成秘密标量</a><code>f</code>。</p></li>
+<li><p>做固定基标量乘算法<code>F = f*B</code>，其中<code>B</code>是Ed25519的基点。</p></li>
+<li><p>根据EdDSA从<code>pubkey</code>解码点<code>P</code>。</p></li>
+</ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<ol start="8">
+<li>做点加法<code>P' = P + F</code>。
+=======</li>
 </ol>
 <h2><a class="anchor" aria-hidden="true" id="keystore文件"></a><a href="#keystore文件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>KeyStore文件</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>2b8e247c8d085eb01af944b9913813e655fe1688</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ol start="9">
+<li><p><a href="#编码公钥">编码</a>点<code>P'</code>作为<code>pubkey'</code>。</p></li>
+<li><p>返回<code>xpub' = pubkey' || salt'</code>。</p></li>
+</ol>
+<p>Keystore的本质是加密后的私钥，Keystore必须配合你的钱包密码来使用。</p>
+<p><strong>Keystore文件数据结构</strong></p>
+<table>
+<thead>
+<tr><th>字段</th><th>类型</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>ID</td><td>uuid.UUID</td><td>用户 uid</td></tr>
+<tr><td>KeyType</td><td>string</td><td>私钥类型</td></tr>
+<tr><td>Alias</td><td>string</td><td>账户别名</td></tr>
+<tr><td>XPrv</td><td>chainkd.XPrv</td><td>公钥</td></tr>
+<tr><td>XPub</td><td>chainkd.XPub</td><td>私钥</td></tr>
+</tbody>
+</table>
 <h2><a class="anchor" aria-hidden="true" id="签名"></a><a href="#签名" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>签名</h2>
 <h3><a class="anchor" aria-hidden="true" id="签名-1"></a><a href="#签名-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>签名</h3>
 <p><strong>输入：</strong></p>
 <ol>
-<li><code>xprv</code>，扩展私钥。</li>
-<li><code>message</code>，表示待签名的信息的可变长度字节序列。</li>
+<li><p><code>xprv</code>，扩展私钥。</p></li>
+<li><p><code>message</code>，表示待签名的信息的可变长度字节序列。</p></li>
 </ol>
 <p><strong>输出：</strong><code>(R,S)</code>，表示EdDSA签名的64字节字符串。</p>
 <ol>
-<li>拆分<code>xprv</code>为两个部分：32字节<code>privkey</code>和32字节<code>salt</code>。</li>
-<li>假设<code>s</code>是<code>privkey</code>使用小端字节序解码的标量。</li>
-<li>让<code>h = Hash512(0x02 || privkey || salt)</code>。</li>
-<li>假设<code>prefix</code>是<code>h</code>的前半部分：<code>prefix = h[0:32]</code>。</li>
-<li>执行固定基数标量乘法<code>P = s*B</code>，其中<code>B</code>是Ed25519的基点。</li>
-<li>将点<code>P</code><a href="#编码公钥">编码</a>为<code>pubkey</code>。</li>
-<li>计算<code>Hash512(prefix || message)</code>将64字节digest密文转成小端字节序排列的整型<code>r</code>。</li>
-<li>计算点<code>r*B</code>。 为了提高效率，用先做<code>r</code>模<code>L</code>降低计算复杂度，其中L是<code>B</code>的阶（group order）。</li>
-<li>令字符串<code>R</code>为点<code>r*B</code>的<a href="#编码公钥">编码</a>。</li>
-<li>计算<code>Hash512(R || pubkey || message)</code>并将64字节digest密文转成小端字节序排列的整型<code>k</code>。</li>
-<li>计算<code>S = (r + k * s) mod L</code>。为了提高效率，再次先做<code>k</code>模<code>L</code>。</li>
-<li>将<code>R</code>（32字节）和小端字节序编码的<code>S</code>（32个字节，最后一个字节的三个最高有效位始终为零）合并。</li>
-<li>返回<code>(R,S)</code>（64字节）。</li>
+<li><p>拆分<code>xprv</code>为两个部分：32字节<code>privkey</code>和32字节<code>salt</code>。</p></li>
+<li><p>假设<code>s</code>是<code>privkey</code>使用小端字节序解码的标量。</p></li>
+<li><p>让<code>h = Hash512(0x02 || privkey || salt)</code>。</p></li>
+<li><p>假设<code>prefix</code>是<code>h</code>的前半部分：<code>prefix = h[0:32]</code>。</p></li>
+<li><p>执行固定基数标量乘法<code>P = s*B</code>，其中<code>B</code>是Ed25519的基点。</p></li>
+<li><p>将点<code>P</code><a href="#编码公钥">编码</a>为<code>pubkey</code>。</p></li>
+<li><p>计算<code>Hash512(prefix || message)</code>将64字节digest密文转成小端字节序排列的整型<code>r</code>。</p></li>
+<li><p>计算点<code>r*B</code>。 为了提高效率，用先做<code>r</code>模<code>L</code>降低计算复杂度，其中L是<code>B</code>的阶（group order）。</p></li>
+<li><p>令字符串<code>R</code>为点<code>r*B</code>的<a href="#编码公钥">编码</a>。</p></li>
+<li><p>计算<code>Hash512(R || pubkey || message)</code>并将64字节digest密文转成小端字节序排列的整型<code>k</code>。</p></li>
+<li><p>计算<code>S = (r + k * s) mod L</code>。为了提高效率，再次先做<code>k</code>模<code>L</code>。</p></li>
+<li><p>将<code>R</code>（32字节）和小端字节序编码的<code>S</code>（32个字节，最后一个字节的三个最高有效位始终为零）合并。</p></li>
+<li><p>返回<code>(R,S)</code>（64字节）。</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="验证签名"></a><a href="#验证签名" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证签名</h3>
 <p><strong>输入：</strong></p>
@@ -163,25 +256,26 @@
 </ol>
 <p><strong>输出：</strong>判断签名是否有效的布尔值（boolean value）。</p>
 <ol>
-<li>提取公钥<code>pubkey</code>作为<code>xpub</code>的前32字节。</li>
-<li>根据<a href="https://tools.ietf.org/html/rfc8032">RFC 8032</a>使用<code>pubkey</code>并把Hash512替换SHA512哈希函数
-，验证<code>message</code>上的验证EdDSA签名<code>(R,S)</code>（Hash512在ChainKD-SHA2实例中等于SHA512，因此与EdDSA验证过程保持完全兼容）。</li>
+<li><p>提取公钥<code>pubkey</code>作为<code>xpub</code>的前32字节。</p></li>
+<li><p>根据<a href="https://tools.ietf.org/html/rfc8032">RFC 8032</a>使用<code>pubkey</code>并把Hash512替换SHA512哈希函数
+，验证<code>message</code>上的验证EdDSA签名<code>(R,S)</code>（ChainKD-SHA2实例中，Hash512等于SHA512，从而保证验证过程与EdDSA完全兼容）。</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="生成秘密标量"></a><a href="#生成秘密标量" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成秘密标量</h3>
 <p><strong>输入：</strong><code>buffer</code>，32字节字符串。</p>
 <p><strong>输出：</strong><code>s</code>，256比特整型。</p>
 <ol>
-<li>修剪缓冲器<code>buffer</code>：第一个字节的最低3位被清除，最末字节的最高位被剪除，最末字节的第二高位被设定。</li>
-<li><code>buffer</code>被设作小端字节序整型，形成标量<code>s</code>。</li>
-<li>返回<code>s</code>。</li>
+<li><p>修剪缓冲器<code>buffer</code>：第一个字节的最低3位被清除，最末字节的最高位被剪除，最末字节的第二高位被设定。</p></li>
+<li><p><code>buffer</code>被设作小端字节序整型，形成标量<code>s</code>。</p></li>
+<li><p>返回<code>s</code>。</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="编码公钥"></a><a href="#编码公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编码公钥</h3>
 <p><strong>输入：</strong><code>P</code>，Ed25519曲线的点。</p>
 <p><strong>输出：</strong><code>pubkey</code>，32字节字符串代表一个Ed25519曲线的点。</p>
 <ol>
-<li>首先，将纵坐标（y coordinate）编码（在0 &lt;= y &lt; p的范围内）成32字节的小端字节序字符串。最末字节的最高有效位始终为零。</li>
-<li>将横坐标（x coordinate）的最末位字节的最低有效位复制给最高有效位，形成点<code>P</code>的编码。</li>
-<li>返回产生的32字节字符串记作<code>pubkey</code>。</li>
+<li><p>首先，将纵坐标（y coordinate）编码（在0 &lt;= y &lt; p的范围内）成32字节的小端字节序字符串。最末字节的最高有效位始终为零。</p></li>
+<li><p>将横坐标（x coordinate）的最末位字节的最低有效位复制给最高有效位，形成点<code>P</code>的编码。</p></li>
+<li><p>返回产生的32字节字符串记作<code>pubkey</code>。</p></li>
 </ol>
+<h2><a class="anchor" aria-hidden="true" id="chainkd-链密钥派生"></a><a href="#chainkd-链密钥派生" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ChainKD (链密钥派生)</h2>
 <h2><a class="anchor" aria-hidden="true" id="参考资料"></a><a href="#参考资料" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参考资料</h2>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_69"><span class="arrow-prev">← </span><span>交易合法性验证</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_12"><span>P2P网络</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#生成">生成</a><ul class="toc-headings"><li><a href="#生成根密钥">生成根密钥</a></li><li><a href="#生成扩展公钥">生成扩展公钥</a></li><li><a href="#衍生强化扩展私钥">衍生强化扩展私钥</a></li><li><a href="#衍生非强化扩展私钥">衍生非强化扩展私钥</a></li><li><a href="#衍生非强化扩展公钥">衍生非强化扩展公钥</a></li></ul></li><li><a href="#keystore文件">KeyStore文件</a></li><li><a href="#签名">签名</a><ul class="toc-headings"><li><a href="#签名-1">签名</a></li><li><a href="#验证签名">验证签名</a></li><li><a href="#生成秘密标量">生成秘密标量</a></li><li><a href="#编码公钥">编码公钥</a></li></ul></li><li><a href="#参考资料">参考资料</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_69"><span class="arrow-prev">← </span><span>交易合法性验证</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_12"><span>P2P网络</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#生成">生成</a><ul class="toc-headings"><li><a href="#生成根密钥">生成根密钥</a></li><li><a href="#生成扩展公钥">生成扩展公钥</a></li><li><a href="#衍生强化扩展私钥">衍生强化扩展私钥</a></li><li><a href="#派生强化扩展私钥">派生强化扩展私钥</a></li><li><a href="#衍生非强化扩展私钥">衍生非强化扩展私钥</a></li><li><a href="#派生非强化扩展私钥">派生非强化扩展私钥</a></li><li><a href="#派生非强化扩展公钥">派生非强化扩展公钥</a></li></ul></li><li><a href="#keystore文件">KeyStore文件</a></li><li><a href="#签名">签名</a><ul class="toc-headings"><li><a href="#签名-1">签名</a></li><li><a href="#验证签名">验证签名</a></li><li><a href="#生成秘密标量">生成秘密标量</a></li><li><a href="#编码公钥">编码公钥</a></li></ul></li><li><a href="#chainkd-链密钥派生">ChainKD (链密钥派生)</a></li><li><a href="#参考资料">参考资料</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
