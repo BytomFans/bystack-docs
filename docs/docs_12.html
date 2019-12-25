@@ -59,7 +59,8 @@
 <h2><a class="anchor" aria-hidden="true" id="节点id及距离"></a><a href="#节点id及距离" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点ID及距离</h2>
 <p>网络中每个节点都有一个唯一ID，节点第一次启动时都会产生ED25519公私钥对，并保存在本地，其中公钥作为节点的ID，长度32byte。
 两个节点之间的<strong>距离</strong>是以下公式计算而来，所以节点之间的距离代表逻辑距离，而不是节点间的真实物理距离。</p>
-<p><img src="https://cdn.nlark.com/yuque/__latex/17a98866b59db7fb1a6c3a6311c84a75.svg#card=math&amp;code=distance%28n%E2%82%81%2C%20n%E2%82%82%29%20%3D%20hash%28IDn%E2%82%81%29%20%5Coplus%20hash%28IDn%E2%82%82%29&amp;height=24&amp;width=350" alt=""></p>
+<pre><code class="hljs">distance(n1, n2) = hash(IDn1) + hash(IDn2)
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="节点路由表"></a><a href="#节点路由表" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>节点路由表</h2>
 <table>
 <thead>
