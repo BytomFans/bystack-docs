@@ -62,8 +62,8 @@
 <h2><a class="anchor" aria-hidden="true" id="hash"></a><a href="#hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hash</h2>
 <p>把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。</p>
 <h2><a class="anchor" aria-hidden="true" id="point"></a><a href="#point" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Point</h2>
-<p>指针编码为String32，并通过其ID标识另一个条目。指针限制的可接受类型：Pointer<X>必须引用type的条目X。
-一个指针可以是nil（不指向任何条目），在这种情况下，它由全零的32字节哈希表示：</p>
+<p>指针编码为String32，并通过其ID标识另一个参数。指针限制的可接受类型：Pointer<X>必须引用type的参数X。
+一个指针可以是nil（不指向任何参数），在这种情况下，它由全零的32字节哈希表示：</p>
 <pre><code class="hljs"> 0x0000000000000000000000000000000000000000000000000000000000000000
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="sha3"></a><a href="#sha3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SHA3</h2>
@@ -75,22 +75,16 @@
 <tr><th>字段</th><th>类型</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td>虚拟机版本</td><td>Integer</td><td>评估程序时要使用的VM版本</td></tr>
-<tr><td>字节码</td><td>String</td><td>要执行的程序代码。</td></tr>
+<tr><td>VM Version</td><td>Integer</td><td>评估程序时要使用的VM版本</td></tr>
+<tr><td>Bytecode</td><td>String</td><td>要执行的程序代码。</td></tr>
 </tbody>
 </table>
 <p><strong>程序验证</strong></p>
 <p><strong>输入：</strong></p>
 <ul>
-<li><ol>
 <li>程序</li>
-</ol></li>
-<li><ol start="2">
 <li>参数（字符串列表）</li>
-</ol></li>
-<li><ol start="3">
 <li>交易版本（整数）</li>
-</ol></li>
 </ul>
 <p><strong>算法：</strong></p>
 <ol>
@@ -115,9 +109,9 @@
 <tr><th>字段</th><th>类型</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td>初始块ID</td><td>String32</td><td>定义此资产的区块链的创世块的ID</td></tr>
-<tr><td>发行程序</td><td>Program</td><td>发行此资产必须满足的程序</td></tr>
-<tr><td>资产参考数据</td><td>String32</td><td>此资产的参考数据（以前称为“资产定义”）的哈希值</td></tr>
+<tr><td>Initial Block ID</td><td>String32</td><td>定义此资产的区块链的创世块的ID</td></tr>
+<tr><td>Issuance Program</td><td>Program</td><td>发行此资产必须满足的程序</td></tr>
+<tr><td>Asset Reference Data</td><td>String32</td><td>此资产的参考数据（以前称为“资产定义”）的哈希值</td></tr>
 </tbody>
 </table>
 <p><strong>资产编号</strong></p>
@@ -132,20 +126,20 @@
 <tr><th>字段</th><th>类型</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td>资产编号</td><td>String32</td><td>资产ID</td></tr>
-<tr><td>值</td><td>Integer</td><td>参考资产的单位数</td></tr>
+<tr><td>AssetID</td><td>String32</td><td>资产ID</td></tr>
+<tr><td>Value</td><td>Integer</td><td>参考资产的单位数</td></tr>
 </tbody>
 </table>
 <p><strong>价值来源1</strong></p>
-<p>一个条目使用ValueSource引用其他条目提供了它的价值。</p>
+<p>一个参数使用ValueSource引用其他参数提供了它的价值。</p>
 <table>
 <thead>
 <tr><th>字段</th><th>类型</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td>参考</td><td>Pointer&lt;Issuance1</td><td>Spend1</td><td>Mux1&gt;</td><td>此ValueSource引用的上一个条目</td></tr>
-<tr><td>值</td><td>AssetAmount1</td><td>引用条目中包含的金额和资产ID</td></tr>
-<tr><td>位置</td><td>Integer</td><td>如果该源引用了Mux条目，则Position是输出的索引。如果此来源引用“ 发行”或“ 支出”条目，则Position必须为0</td></tr>
+<tr><td>Ref</td><td>Pointer&lt;Issuance1/Spend1/Mux1&gt;</td><td>此ValueSource引用的上一个参数</td></tr>
+<tr><td>Value</td><td>AssetAmount1</td><td>引用参数中包含的金额和资产ID</td></tr>
+<tr><td>Position</td><td>Integer</td><td>如果该源引用了Mux参数，则Position是输出的索引。如果此来源引用“ 发行”或“ 支出”参数，则Position必须为0</td></tr>
 </tbody>
 </table>
 <p><strong>值源1验证</strong></p>
@@ -154,30 +148,38 @@
 <li><p>定义RefDestination如下：</p></li>
 </ol>
 <ul>
-<li><p>如果Ref是发行或支出：1. 验证Position为0。 2. 定义RefDestination为Ref.Destination</p></li>
-<li><p>如果Ref是Mux：1. 验证Mux.Destinations至少包含Position + 1ValueDestinations。2.定义RefDestination为Mux.Destinations[Position]。</p></li>
+<li><p>如果Ref是发行或支出：</p>
+<ol>
+<li>验证Position为0。</li>
+<li>定义RefDestination为Ref.Destination</li>
+</ol></li>
+<li><p>如果Ref是Mux：</p>
+<ol>
+<li>验证Mux.Destinations至少包含Position + 1ValueDestinations。</li>
+<li>定义RefDestination为Mux.Destinations[Position]。</li>
+</ol></li>
 </ul>
 <ol start="3">
-<li><p>验证RefDestination.Ref是否等于当前条目的ID。</p></li>
+<li><p>验证RefDestination.Ref是否等于当前参数的ID。</p></li>
 <li><p>验证RefDestination.Position等于SourcePosition，其中SourcePosition定义如下：</p></li>
 </ol>
 <ul>
-<li><p>如果当前正在验证的条目是Output1或Retirement1，SourcePosition则为0。</p></li>
-<li><p>如果正在验证的当前条目是a Mux，SourcePosition则它ValueSource是当前条目的索引Sources。</p></li>
+<li><p>如果当前正在验证的参数是Output1或Retirement1，SourcePosition则为0。</p></li>
+<li><p>如果正在验证的当前参数是aMux，SourcePosition则它ValueSource是当前参数的索引Sources。</p></li>
 </ul>
 <ol start="5">
 <li>验证RefDestination.Value等于Value。</li>
 </ol>
 <p><strong>价值目标1</strong></p>
-<p>条目使用ValueDestination引用其他从当前条目接收值的条目。</p>
+<p>参数使用ValueDestination引用其他从当前参数接收值的条目。</p>
 <table>
 <thead>
 <tr><th>字段</th><th>类型</th><th>描述</th></tr>
 </thead>
 <tbody>
-<tr><td>参考</td><td>Pointer&lt;Output1</td><td>Retirement1</td><td>Mux1&gt;</td><td>此ValueDestination引用的下一个条目</td></tr>
-<tr><td>值</td><td>AssetAmount1</td><td>引用条目中包含的金额和资产ID</td></tr>
-<tr><td>位置</td><td>Integer</td><td>如果此目的地引用了多路复用器条目，则位置是多路复用器编号的输入之一。否则，该位置必须为0</td></tr>
+<tr><td>Ref</td><td>Pointer&lt;Output1/Retirement1/Mux1&gt;</td><td>此ValueDestination引用的下一个条目</td></tr>
+<tr><td>Value</td><td>AssetAmount1</td><td>引用条目中包含的金额和资产ID</td></tr>
+<tr><td>Position</td><td>Integer</td><td>如果此目的地引用了多路复用器条目，则位置是多路复用器编号的输入之一。否则，该位置必须为0</td></tr>
 </tbody>
 </table>
 <p><strong>值目标1验证</strong></p>
@@ -186,8 +188,16 @@
 <li><p>定义RefSource如下：</p></li>
 </ol>
 <ul>
-<li><p>如果Ref是Output或Retirement：1.验证Position为0。 2. 定义RefSource为Ref.Source。</p></li>
-<li><p>如果Ref是Mux：1.验证Ref.Sources至少包含Position + 1ValueSources。 2. 定义RefSource为Ref.Sources[Position]。</p></li>
+<li><p>如果Ref是Output或Retirement：</p>
+<ol>
+<li>验证Position为0。</li>
+<li>定义RefSource为Ref.Source。</li>
+</ol></li>
+<li><p>如果Ref是Mux：</p>
+<ol>
+<li>验证Ref.Sources至少包含Position + 1ValueSources。</li>
+<li>定义RefSource为Ref.Sources[Position]。</li>
+</ol></li>
 </ul>
 <ol start="3">
 <li><p>验证RefSource.Ref是否等于当前条目的ID。</p></li>
