@@ -55,91 +55,149 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">基本数据结构</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="int64"></a><a href="#int64" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>int64</h2>
-<p>一个LEB128整数，最大允许值为0x7fffffffffffffffff（2 63 – 1），最小值为0。varint63可以装入带符号的64位整数。</p>
+<p>一个LEB128整数，最大允许值为0x7fffffffffffffffff（2^63 – 1），最小值为0。varint63可以装入带符号的64位整数。</p>
 <h2><a class="anchor" aria-hidden="true" id="string"></a><a href="#string" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>String</h2>
-<p>带有LEB128前缀的二进制字符串，以字节为单位指定其长度。基础字符串的最大允许长度为0x7fffffff（2 31 – 1）。
+<p>带有LEB128前缀的二进制字符串，以字节为单位指定其长度。基础字符串的最大允许长度为0x7fffffff（2^31 – 1）。
 空字符串编码为单字节0x00，一个字节字符串编码为两个字节0x01 0xNN，两个字节字符串编码为0x02 0xNN 0xMM，依此类推。</p>
 <h2><a class="anchor" aria-hidden="true" id="hash"></a><a href="#hash" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hash</h2>
 <p>把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。</p>
 <h2><a class="anchor" aria-hidden="true" id="point"></a><a href="#point" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Point</h2>
-<p>A Pointer编码为String32，并通过其ID标识另一个条目。
-Pointer限制可能的可接受类型：Pointer<X>必须引用type的条目X。</p>
-<p>A Pointer可以是nil（不指向任何条目），在这种情况下，它由全零的32字节哈希表示：</p>
+<p>指针编码为String32，并通过其ID标识另一个条目。指针限制的可接受类型：Pointer<X>必须引用type的条目X。
+一个指针可以是nil（不指向任何条目），在这种情况下，它由全零的32字节哈希表示：</p>
 <pre><code class="hljs"> 0x0000000000000000000000000000000000000000000000000000000000000000
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="sha3"></a><a href="#sha3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SHA3</h2>
-<p>SHA3指SHA3​​-256功能中定义FIPS202与固定长度的32字节输出。该散列函数在本规范中的所有数据结构和算法中都使用，除了SHA-512（请参阅FIPS180）在内部在Ed25519内部用作函数H（请参阅RFC8032）。</p>
+<p>SHA3指SHA3​​-256功能中定义<a href="https://dx.doi.org/10.6028/NIST.FIPS.202">FIPS202</a>与固定长度的32字节输出。该散列函数在本规范中的所有数据结构和算法中都使用，除了SHA-512(请参阅<a href="http://csrc.nist.gov/publications/fips/fips180-2/fips180-2withchangenotice.pdf">FIPS180</a>）在内部在Ed25519内部用作函数H（请参阅<a href="https://tools.ietf.org/html/rfc8032">RFC8032</a>）。</p>
 <h2><a class="anchor" aria-hidden="true" id="program"></a><a href="#program" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Program</h2>
-<p>程序封装了VM的版本以及该VM应该执行的字节码。</p>
-<p>领域  类型  描述
-虚拟机版本   整数  评估程序时要使用的VM版本。
-字节码 串   要执行的程序代码。
-程序验证
-输入：</p>
-<p>程序，
-参数（字符串列表），
-交易版本（整数）。
-算法：</p>
-<p>如果VM Version大于1：
-如果事务版本为1，则验证失败。
-如果事务版本大于1，则验证成功。
-如果VM Version等于1：
-实例化VM版本1，并将初始状态和扩展标志设置为trueiff事务版本大于1。
-Bytecode用给定的参数评估。
-如果程序评估成功，则验证成功。如果程序评估失败，则验证失败。
-资产定义</p>
+<p>程序封装了虚拟机的版本以及该虚拟机应该执行的字节码。</p>
+<table>
+<thead>
+<tr><th>字段</th><th>类型</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>虚拟机版本</td><td>Integer</td><td>评估程序时要使用的VM版本</td></tr>
+<tr><td>字节码</td><td>String</td><td>要执行的程序代码。</td></tr>
+</tbody>
+</table>
+<p><strong>程序验证</strong></p>
+<p><strong>输入：</strong></p>
+<ul>
+<li><ol>
+<li>程序</li>
+</ol></li>
+<li><ol start="2">
+<li>参数（字符串列表）</li>
+</ol></li>
+<li><ol start="3">
+<li>交易版本（整数）</li>
+</ol></li>
+</ul>
+<p><strong>算法：</strong></p>
+<ol>
+<li>如果VM Version大于1：</li>
+</ol>
+<ul>
+<li>如果事务版本为1，则验证失败。</li>
+<li>如果事务版本大于1，则验证成功。</li>
+</ul>
+<ol start="2">
+<li>如果VM Version等于1：</li>
+</ol>
+<ul>
+<li><p>实例化VM版本1，并将初始状态和扩展标志设置为trueiff事务版本大于1。</p></li>
+<li><p>Bytecode用给定的参数评估。</p></li>
+<li><p>如果程序评估成功，则验证成功。如果程序评估失败，则验证失败。</p></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="asset"></a><a href="#asset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Asset</h2>
-<p>领域  类型  描述
-初始块ID   字串32    定义此资产的区块链的创世块的ID。
-发行程序    程序  发行此资产必须满足的程序。
-资产参考数据  字串32    此资产的参考数据（以前称为“资产定义”）的哈希值。
-资产编号
-资产ID是所有区块链中给定资产的全球唯一标识符。</p>
+<p><strong>资产定义</strong></p>
+<table>
+<thead>
+<tr><th>字段</th><th>类型</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>初始块ID</td><td>String32</td><td>定义此资产的区块链的创世块的ID</td></tr>
+<tr><td>发行程序</td><td>Program</td><td>发行此资产必须满足的程序</td></tr>
+<tr><td>资产参考数据</td><td>String32</td><td>此资产的参考数据（以前称为“资产定义”）的哈希值</td></tr>
+</tbody>
+</table>
+<p><strong>资产编号</strong></p>
+<p>资产ID是所有区块链中给定资产的全球唯一标识符。</p>
 <p>资产ID被定义为SHA3​​-256所述的资产定义：</p>
-<p>AssetID = SHA3-256(AssetDefinition)
-资产金额1
-AssetAmount1结构将资产的单位数量及其资产ID封装在一起。</p>
-<p>领域  类型  描述
-资产编号    字串32    资产ID。
-值   整数  参考资产的单位数。
-价值来源1
-一个条目使用ValueSource引用其他条目提供了它的价值。</p>
-<p>领域  类型  描述
-参考  指针 &lt; Issue1 | 支出1 | Mux1 &gt;  此ValueSource引用的上一个条目。
-值   资产金额1   引用条目中包含的金额和资产ID。
-位置  整数  如果该源引用了Mux条目，则Position是输出的索引。如果此来源引用“ 发行”或“ 支出”条目，则Position必须为0。
-值源1验证
-确认Ref存在并有效。
-定义RefDestination如下：
-如果Ref是发行或支出：
-验证Position为0。
-定义RefDestination为Ref.Destination。
-如果Ref是Mux：
-验证Mux.Destinations至少包含Position + 1ValueDestinations。
-定义RefDestination为Mux.Destinations[Position]。
-验证RefDestination.Ref是否等于当前条目的ID。
-验证RefDestination.Position等于SourcePosition，其中SourcePosition定义如下：
-如果当前正在验证的条目是Output1或Retirement1，SourcePosition则为0。
-如果正在验证的当前条目是a Mux，SourcePosition则它ValueSource是当前条目的索引Sources。
-验证RefDestination.Value等于Value。
-价值目标1
-条目使用ValueDestination引用其他从当前条目接收值的条目。</p>
-<p>领域  类型  描述
-参考  指针 &lt; Output1 | 退休1 | Mux1 &gt; 此ValueDestination引用的下一个条目。
-值   资产金额1   引用条目中包含的金额和资产ID
-位置  整数  如果此目的地引用了多路复用器条目，则位置是多路复用器编号的输入之一。否则，该位置必须为0。
-值目标1验证
-确认Ref存在。（这意味着必须通过遍历Results并Sources从TxHeader开始访问它。）
-定义RefSource如下：
-如果Ref是Output或Retirement：
-验证Position为0。
-定义RefSource为Ref.Source。
-如果Ref是Mux：
-验证Ref.Sources至少包含Position + 1ValueSources。
-定义RefSource为Ref.Sources[Position]。
-验证RefSource.Ref是否等于当前条目的ID。
-验证RefSource.Position等于DestinationPosition，其中DestinationPosition定义如下：
-如果正在验证的当前条目是Issuance或Spend，DestinationPosition则为0。
-如果正在验证的当前条目是a Mux，DestinationPosition则它ValueDestination是当前条目的索引Destinations。
-验证RefSource.Value等于Value。</p>
+<pre><code class="hljs">AssetID = SHA3-256(AssetDefinition)
+</code></pre>
+<p><strong>资产金额1</strong></p>
+<p>AssetAmount1结构将资产的单位数量及其资产ID封装在一起。</p>
+<table>
+<thead>
+<tr><th>字段</th><th>类型</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>资产编号</td><td>String32</td><td>资产ID</td></tr>
+<tr><td>值</td><td>Integer</td><td>参考资产的单位数</td></tr>
+</tbody>
+</table>
+<p><strong>价值来源1</strong></p>
+<p>一个条目使用ValueSource引用其他条目提供了它的价值。</p>
+<table>
+<thead>
+<tr><th>字段</th><th>类型</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>参考</td><td>Pointer&lt;Issuance1</td><td>Spend1</td><td>Mux1&gt;</td><td>此ValueSource引用的上一个条目</td></tr>
+<tr><td>值</td><td>AssetAmount1</td><td>引用条目中包含的金额和资产ID</td></tr>
+<tr><td>位置</td><td>Integer</td><td>如果该源引用了Mux条目，则Position是输出的索引。如果此来源引用“ 发行”或“ 支出”条目，则Position必须为0</td></tr>
+</tbody>
+</table>
+<p><strong>值源1验证</strong></p>
+<ol>
+<li><p>确认Ref存在并有效。</p></li>
+<li><p>定义RefDestination如下：</p></li>
+</ol>
+<ul>
+<li><p>如果Ref是发行或支出：1. 验证Position为0。 2. 定义RefDestination为Ref.Destination</p></li>
+<li><p>如果Ref是Mux：1. 验证Mux.Destinations至少包含Position + 1ValueDestinations。2.定义RefDestination为Mux.Destinations[Position]。</p></li>
+</ul>
+<ol start="3">
+<li><p>验证RefDestination.Ref是否等于当前条目的ID。</p></li>
+<li><p>验证RefDestination.Position等于SourcePosition，其中SourcePosition定义如下：</p></li>
+</ol>
+<ul>
+<li><p>如果当前正在验证的条目是Output1或Retirement1，SourcePosition则为0。</p></li>
+<li><p>如果正在验证的当前条目是a Mux，SourcePosition则它ValueSource是当前条目的索引Sources。</p></li>
+</ul>
+<ol start="5">
+<li>验证RefDestination.Value等于Value。</li>
+</ol>
+<p><strong>价值目标1</strong></p>
+<p>条目使用ValueDestination引用其他从当前条目接收值的条目。</p>
+<table>
+<thead>
+<tr><th>字段</th><th>类型</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr><td>参考</td><td>Pointer&lt;Output1</td><td>Retirement1</td><td>Mux1&gt;</td><td>此ValueDestination引用的下一个条目</td></tr>
+<tr><td>值</td><td>AssetAmount1</td><td>引用条目中包含的金额和资产ID</td></tr>
+<tr><td>位置</td><td>Integer</td><td>如果此目的地引用了多路复用器条目，则位置是多路复用器编号的输入之一。否则，该位置必须为0</td></tr>
+</tbody>
+</table>
+<p><strong>值目标1验证</strong></p>
+<ol>
+<li><p>确认Ref存在。（这意味着必须通过遍历Results并Sources从TxHeader开始访问它。）</p></li>
+<li><p>定义RefSource如下：</p></li>
+</ol>
+<ul>
+<li><p>如果Ref是Output或Retirement：1.验证Position为0。 2. 定义RefSource为Ref.Source。</p></li>
+<li><p>如果Ref是Mux：1.验证Ref.Sources至少包含Position + 1ValueSources。 2. 定义RefSource为Ref.Sources[Position]。</p></li>
+</ul>
+<ol start="3">
+<li><p>验证RefSource.Ref是否等于当前条目的ID。</p></li>
+<li><p>验证RefSource.Position等于DestinationPosition，其中DestinationPosition定义如下：</p></li>
+</ol>
+<ul>
+<li><p>如果正在验证的当前条目是Issuance或Spend，DestinationPosition则为0。</p></li>
+<li><p>如果正在验证的当前条目是a Mux，DestinationPosition则它ValueDestination是当前条目的索引Destinations。</p></li>
+</ul>
+<ol start="5">
+<li>验证RefSource.Value等于Value。</li>
+</ol>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_67"><span class="arrow-prev">← </span><span>介绍</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_8"><span>区块</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#int64">int64</a></li><li><a href="#string">String</a></li><li><a href="#hash">Hash</a></li><li><a href="#point">Point</a></li><li><a href="#sha3">SHA3</a></li><li><a href="#program">Program</a></li><li><a href="#asset">Asset</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
