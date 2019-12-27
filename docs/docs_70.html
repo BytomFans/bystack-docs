@@ -60,50 +60,51 @@
 <p><strong>ChainKD3：</strong> 哈希函数为SHA3-512</p>
 <p><strong>特征：</strong></p>
 <ul>
-<li>Scheme是完全确定性的，并允许从单个高熵种子生成复杂的键层次结构</li>
-<li>使用“强化派生”从扩展私钥中派生私钥</li>
-<li>使用“非硬化派生”独立于私钥派生公钥</li>
-<li>强化和非强化的公钥和签名与EdDSA规范兼容</li>
-<li>可变长度的字符串选择器，而不是固定长度的整数索引</li>
-<li>短的64字节扩展公共和私有密钥，无特殊编码</li>
-<li>没有元数据：扩展密钥仅携带一个额外的32字节盐，以避免派生功能仅依赖于密钥本身</li>
-<li>隐私：扩展密钥既不会揭示其在层次结构中的位置，也不会揭示其派生方式（强化或非强化）</li>
+<li>该方案已经完全确定，可以从一个高熵种子（high-entropy seed）生成结构复杂的密钥。</li>
+<li>使用“强化派生”从扩展私钥派生私钥</li>
+<li>使用“非强化派生”私钥独立派生公钥。</li>
+<li>强化公钥、非强化公钥和签名与EdDSA规范兼容。</li>
+<li>用字节长度可变的串选择符（selector），而不是固定长度的整型索引。</li>
+<li>没有特殊编码的短64字节扩展公钥和私钥。</li>
+<li>没有元数据：扩展密钥仅携带额外的32字节的盐值，以避免派生函数仅依赖于密钥本身。</li>
+<li>隐私：扩展密钥既不显示其在层次结构中的位置，也不显示派生的方式（强化或非强化）。</li>
 </ul>
 <p><strong>定义</strong></p>
 <ul>
-<li><strong>Hash512</strong> 是具有512位输出（SHA2-512或SHA3-512）的加密哈希函数，</li>
-<li><strong>选择器</strong> 是一个可变长度的字节字符串，可以用作派生索引</li>
-<li><strong>秘密</strong> 标量是32字节的字符串，表示使用little-endian约定的256位整数</li>
-<li><strong>公钥</strong> 是一个32字节的字符串，表示椭圆曲线Ed25519 RFC 8032上的一个点</li>
-<li><strong>扩展私钥</strong>（又名“ xprv”）是一个64字节的字符串，表示可用于派生子扩展私钥和公钥的密钥</li>
-<li><strong>扩展公共密钥</strong>（又名“ xpub”）是一个64字节的字符串，表示可用于派生子扩展公共密钥的密钥</li>
-<li><strong>LEB128</strong> 是Little Endian Base-128编码，用于无符号整数，用于可变长度选择器字符串的长度前缀。</li>
+<li><strong>Hash512</strong>：具有512比特输出（SHA2-512或SHA3-512）的加密哈希函数，</li>
+<li><strong>选择符</strong>：字节长度可变的字符串，可以用作派生索引</li>
+<li><strong>秘密标量</strong>：32字节的字符串，表示使用小端字节序排列的256比特整型</li>
+<li><strong>公钥</strong> ：32字节的字符串，表示椭圆曲线Ed25519 RFC 8032上的一个点</li>
+<li><strong>扩展私钥</strong>（xprv）：64字节的字符串，表示可用于派生子扩展私钥和公钥的密钥</li>
+<li><strong>扩展公钥</strong>（xpub）：64字节的字符串，表示可用于派生子扩展公钥的密钥</li>
+<li><strong>LEB128</strong>：用小端字节序Base-128编码的无符号整型，用于可变长度选择符字符串的长度前缀。</li>
 </ul>
 <p><strong>安全</strong></p>
 <p>种子或根扩展私钥：</p>
 <ul>
-<li>允许派生强化扩展私钥</li>
-<li>允许派生非强化扩展私钥</li>
-<li>允许使用根密钥签名消息</li>
+<li>可派生强化扩展私钥</li>
+<li>可派生非强化扩展私钥</li>
+<li>可使用根密钥签名信息</li>
 </ul>
 <p>扩展私钥：</p>
 <ul>
-<li>允许派生强化扩展私钥</li>
-<li>允许派生非强化扩展私钥</li>
-<li>允许使用该密钥签名消息</li>
+<li>可派生强化扩展私钥</li>
+<li>可派生非强化扩展私钥</li>
+<li>可使用根密钥签名信息</li>
 </ul>
 <p>扩展公钥：</p>
 <ul>
-<li>允许派生非强化的公共密钥</li>
-<li>不允许确定它是以强化还是非强化方式派生的</li>
-<li>不允许确定另一个扩展公共密钥是否是该密钥的同级</li>
-<li>不允许签名</li>
-<li>不允许派生私钥</li>
-<li>不允许派生强化的公钥</li>
+<li>可派生非强化公钥</li>
+<li>无法确定它是以强化还是非强化方式派生的</li>
+<li>无法确定另一个扩展公钥是否与该密钥同级</li>
+<li>无法签名</li>
+<li>无法派生私钥</li>
+<li>无法派生强化公钥</li>
 </ul>
-<p>父级扩展公钥和非强化派生扩展私钥之一：</p>
-<pre><code class="hljs">允许提取父母的私有密钥：s = (s’ - f) mod L这里f是从父派生xpub和s’从子提取xprv’
-</code></pre>
+<p>父级扩展公钥和非强化派生扩展私钥：</p>
+<ul>
+<li>可提取父私钥：<code>s = (s' - f) mod L</code>，其中<code>f</code>是从父<code>xpub</code>派生，<code>s'</code>从子<code>xprv'</code>提取。</li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="生成"></a><a href="#生成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成</h2>
 <h3><a class="anchor" aria-hidden="true" id="生成根密钥"></a><a href="#生成根密钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>生成根密钥</h3>
 <p><strong>输入：</strong></p>
@@ -134,7 +135,7 @@
 <h3><a class="anchor" aria-hidden="true" id="衍生强化扩展私钥"></a><a href="#衍生强化扩展私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>衍生强化扩展私钥</h3>
 <p><strong>输入：</strong></p>
 <p><code>xprv</code>: 扩展私钥</p>
-<p><code>selector</code>: 可变长度字节序列用作派生金钥</p>
+<p><code>selector</code>: 字节长度可变的序列用作派生金钥</p>
 <p><strong>输出：</strong></p>
 <p><code>xprv'</code>: 派生强化扩展公钥</p>
 <p><strong>计算:</strong></p>
@@ -150,7 +151,7 @@
 <h3><a class="anchor" aria-hidden="true" id="衍生非强化扩展私钥"></a><a href="#衍生非强化扩展私钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>衍生非强化扩展私钥</h3>
 <p><strong>输入：</strong></p>
 <p><code>xprv</code>:扩展私钥</p>
-<p><code>selector</code>: 可变长度字节序列用作派生金钥</p>
+<p><code>selector</code>: 字节长度可变的序列用作派生金钥</p>
 <p><strong>输出：</strong></p>
 <p><code>xprv</code>: 派生强化扩展公钥</p>
 <p><strong>计算：</strong></p>
@@ -170,7 +171,7 @@
 <h3><a class="anchor" aria-hidden="true" id="派生非强化扩展公钥"></a><a href="#派生非强化扩展公钥" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>派生非强化扩展公钥</h3>
 <p><strong>输入：</strong></p>
 <p><code>xpub</code>: 扩展公钥</p>
-<p><code>selector</code>:可变长度字节序列用作派生金钥</p>
+<p><code>selector</code>:字节长度可变的序列用作派生金钥</p>
 <p><strong>输出：</strong></p>
 <p><code>xpub</code>，派生强化扩展公钥</p>
 <p><strong>计算：</strong></p>
@@ -205,7 +206,7 @@
 <h3><a class="anchor" aria-hidden="true" id="签名-1"></a><a href="#签名-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>签名</h3>
 <p><strong>输入：</strong></p>
 <p><code>xprv</code>: 扩展私钥。</p>
-<p><code>message</code>: 表示待签名的信息的可变长度字节序列</p>
+<p><code>message</code>: 表示待签名的信息的字节长度可变的序列</p>
 <p><strong>输出：</strong></p>
 <p><code>(R,S)</code>: 表示EdDSA签名的64字节字符串</p>
 <p><strong>计算：</strong></p>
@@ -216,7 +217,7 @@
 <li>假设<code>prefix</code>是<code>h</code>的前半部分：<code>prefix = h[0:32]</code></li>
 <li>执行固定基数标量乘法<code>P = s*B</code>，其中<code>B</code>是Ed25519的基点</li>
 <li>将点<code>P</code><a href="#编码公钥">编码</a>为<code>pubkey</code></li>
-<li>计算<code>Hash512(prefix || message)</code>将64字节digest密文转成小端字节序排列的整型`r</li>
+<li>计算<code>Hash512(prefix || message)</code>将64字节digest密文转成小端字节序排列的整型<code>r</code></li>
 <li>计算点<code>r*B</code>。 为了提高效率，用先做<code>r</code>模<code>L</code>降低计算复杂度，其中L是<code>B</code>的阶（group order）</li>
 <li>令字符串<code>R</code>为点<code>r*B</code>的<a href="#编码公钥">编码</a></li>
 <li>计算<code>Hash512(R || pubkey || message)</code>并将64字节digest密文转成小端字节序排列的整型<code>k</code></li>
@@ -227,7 +228,7 @@
 <h3><a class="anchor" aria-hidden="true" id="验证签名"></a><a href="#验证签名" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>验证签名</h3>
 <p><strong>输入：</strong></p>
 <p><code>xprv</code>: 扩展公钥</p>
-<p><code>message</code>: 表示已签名的信息的可变长度字节序列</p>
+<p><code>message</code>: 表示已签名的信息的字节长度可变的序列</p>
 <p><code>(R,S)</code>: 64字节签名</p>
 <p><strong>输出：</strong></p>
 <p>判断签名是否有效的布尔值（boolean value）</p>
