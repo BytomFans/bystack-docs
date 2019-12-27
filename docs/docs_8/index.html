@@ -103,4 +103,95 @@
 <li>计算得到的交易状态的Merkle树根哈希值是否与区块头中的一致</li>
 <li>对区块体中每一笔交易进行验证</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_68"><span class="arrow-prev">← </span><span>基本数据结构</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_9"><span>POW共识</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#介绍">介绍</a></li><li><a href="#区块结构">区块结构</a></li><li><a href="#区块头结构">区块头结构</a></li><li><a href="#区块标识符：区块头哈希值和区块高度">区块标识符：区块头哈希值和区块高度</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
+<h2><a class="anchor" aria-hidden="true" id="区块头验证逻辑"></a><a href="#区块头验证逻辑" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>区块头验证逻辑</h2>
+<p>区块头验证是保证区块链不产生分叉的重要手段。如果没有区块头验证，则在同步区块的过程中节点间会产生较多的分叉。分叉会对链上资金和财产安全造成极大的威胁。</p>
+<p>一般的会在以下四种情况对区块进行验证：</p>
+<ul>
+<li>挖矿节点在成功挖到一个区块并向链上提交区块时，节点会验证区块是否合法。</li>
+<li>用户通过API接口向节点提交区块到区块链时，节点会验证区块是否合法。</li>
+<li>同步区块时，节点收到其他节点同步过来的区块，节点会先验证同步的区块是否合法。如果合法则将其加入到本地链。</li>
+<li>矿池中的节点向矿池提交工作时，矿池会验证矿机提交的区块。</li>
+</ul>
+<p><code>bytom</code>的简单快速验证方法如下：</p>
+<pre><code class="hljs"> // ProcessBlock is the entry for handle block insert
+ func (c *Chain) processBlock(block *types.Block) (bool, error) {
+    blockHash := block.Hash()
+    if c.BlockExist(&amp;blockHash) {
+       log.WithFields(log.Fields{&quot;module&quot;: logModule, &quot;hash&quot;: blockHash.String(), &quot;height&quot;: block.Height}).Info(&quot;block has been processed&quot;)
+       return c.orphanManage.BlockExist(&amp;blockHash), nil
+    }
+
+ if parent := c.index.GetNode(&amp;block.PreviousBlockHash); parent == nil {
+    c.orphanManage.Add(block)
+    return true, nil
+ }
+
+ if err := c.saveBlock(block); err != nil {
+    return false, err
+ }
+
+ bestBlock := c.saveSubBlock(block)
+ bestBlockHash := bestBlock.Hash()
+ bestNode := c.index.GetNode(&amp;bestBlockHash)
+
+ if bestNode.Parent == c.bestNode {
+    log.WithFields(log.Fields{&quot;module&quot;: logModule}).Debug(&quot;append block to the end of mainchain&quot;)
+    return false, c.connectBlock(bestBlock)
+ }
+
+ if bestNode.Height &gt; c.bestNode.Height &amp;&amp; bestNode.WorkSum.Cmp(c.bestNode.WorkSum) &gt;= 0 {
+    log.WithFields(log.Fields{&quot;module&quot;: logModule}).Debug(&quot;start to reorganize chain&quot;)
+    return false, c.reorganizeChain(bestNode)
+ }
+ return false, nil
+ }
+</code></pre>
+<p>区块头验证主要包扩以下6部分:</p>
+<ul>
+<li>当前的区块版本号要与父区块的版本号相同。</li>
+<li>当前区块高度只能比父区块高度大1.</li>
+<li>当前区块的难度目标要等于根据父区块高度计算出的下一个区块的难度目标。</li>
+<li>当前区块的父区块的哈希值要等于父区块的哈希值。</li>
+<li>当前区块的时间戳不能比当前时间延后一小时，并且不能早于之前11个区块时间戳的中位数</li>
+<li>验证区块的哈希值是否等于给定的难度目标。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="创世区块"></a><a href="#创世区块" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创世区块</h2>
+<p>区块链中的第一个区块称为创世区块，它是区块链里面所有区块的共同祖先。一般情况下创世区块被硬编码到代码核心中，每一个节点都始于同一个创世区块，这能确保创世区块不会被修改。每个节点都把创世区块作为区块链的首区块，从而构建了一个安全可信的区块链。</p>
+<p>通过<a href="https://bytomfans.github.io/bystack-docs/docs/docs_7#get-block">命令行工具</a>可以获取创世区块的信息。</p>
+<p><strong>生成创世区块</strong></p>
+<p>当启动一个节点的时候，节点会先尝试从本地的LevelDB数据库中加载区块信息。如果节点没有从LevelDB中获取到区块，则节点会认为自己是一个全新的节点。因此，节点会根据硬编码的创世区块信息初始化本地链。</p>
+<p>硬编码的创世区块信息如下：</p>
+<pre><code class="hljs"> func mainNetGenesisBlock() *types.Block {
+   tx := GenesisTx()
+   txStatus := bc.NewTransactionStatus()
+   if err := txStatus.SetStatus(0, false); err != nil {
+     log.Panicf(err.Error())
+   }
+   txStatusHash, err := types.TxStatusMerkleRoot(txStatus.VerifyStatus)
+   if err != nil {
+      log.Panicf(&quot;fail on calc genesis tx status merkle root&quot;)
+   }
+
+   merkleRoot, err := types.TxMerkleRoot([]*bc.Tx{tx.Tx})
+   if err != nil {
+      log.Panicf(&quot;fail on calc genesis tx merkel root&quot;)
+   }
+
+   block := &amp;types.Block{
+     BlockHeader: types.BlockHeader{
+        Version:   1,
+        Height:    0,
+        Nonce:     9253507043297,
+        Timestamp: 1524549600,
+        Bits:      2161727821137910632,
+        BlockCommitment: types.BlockCommitment{
+            TransactionsMerkleRoot: merkleRoot,
+            TransactionStatusHash:  txStatusHash,
+        },
+     },
+     Transactions: []*types.Tx{tx},
+  }
+  return block
+</code></pre>
+<p>}</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/bystack-docs/docs/docs_68"><span class="arrow-prev">← </span><span>基本数据结构</span></a><a class="docs-next button" href="/bystack-docs/docs/docs_9"><span>POW共识</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#介绍">介绍</a></li><li><a href="#区块结构">区块结构</a></li><li><a href="#区块头结构">区块头结构</a></li><li><a href="#区块标识符：区块头哈希值和区块高度">区块标识符：区块头哈希值和区块高度</a></li><li><a href="#区块头验证逻辑">区块头验证逻辑</a></li><li><a href="#创世区块">创世区块</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bystack-docs/" class="nav-home"></a><div><h5>文档</h5><a href="/bystack-docs/docs/en/doc1.html">快速开始</a><a href="/bystack-docs/docs/en/doc2.html">引导</a><a href="/bystack-docs/docs/en/doc3.html">API接口</a></div><div><h5>社区</h5><a href="/bystack-docs/en/https://t.me/BytomInternational">Telegram</a><a href="https://www.reddit.com/r/BytomBlockchain" target="_blank" rel="noreferrer noopener">Reddit</a><a href="https://discordapp.com/invite/U3RSYr5">Discord</a><a href="https://www.meetup.com/Bytomblockchain/" target="_blank" rel="noreferrer noopener">Meetup</a></div><div><h5>更多</h5><a href="https://bytom.io/zh/">官网</a><a href="https://github.com/BytomFans/bystack-docs">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Bytom Community</section></footer></div></body></html>
