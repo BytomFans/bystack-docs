@@ -1,5 +1,6 @@
-# BytomJava.github.io
-此文档介绍了包含[bytom docs](https://github.com/BytomFans/bystack-docs)提供支持的网站配置和文档。
+# 文档链接
+
+此文档介绍了包含[bystack docs](https://github.com/BytomFans/bystack-docs)提供支持的网站配置和文档。
 
 ## 入门
 
@@ -58,6 +59,20 @@ root-directory
 └─README.md
 ```
 
+### 获取源码
+
+本地环境测试好了以后，clone文档
+
+     git clone https://github.com/BytomFans/bystack-docs.git
+
+切换到test分之下，在website目录下启下载依赖包
+
+     yarn install
+
+本地部署
+
+     yarn start
+
 ### 网站配置 
 
 该网站的配置文件可以在`website / siteConfig.js`找到，配置文件的详细信息可以在[Docusaurus如何构建网站](http://docusaurus.io/docs/en/site-config.html)中找到。修改以下内容：
@@ -72,13 +87,6 @@ const siteConfig = {
   ...
 }
 ```
-
-### 创建分支
-
-1. `git checkout master`在本地项目根目录
-
-2. `git pull origin master`保持代码最新
-3. `git checkout -b the-name-of-my-branch`（the-name-of-my-branch替换成自定义的分支名）
 
 ### 发布到Github Pages
 
@@ -99,4 +107,4 @@ GIT_USER=<GIT_USER> \
 
 ### 访问网站
 
-在您的github项目setting里选择Github Pages显示的分支。
+地址： https://bytomfans.github.io/bystack-docs/docs/docs_1
