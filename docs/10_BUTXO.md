@@ -31,10 +31,10 @@ sidebar_label: BUTXO
 比原链在UTXO的基础上加入了MUX结构，从而能够在一笔交易中支持多输入和多输出。Mux是一个资产混合器结构的哈希值。Mux结构可以理解为一个交易池，将一笔交易中的输入放入到MUX中，然后分配成不同的输入。MUX结构将所有的资产根据不同的种类汇总起来，并根据不同的输出进行分配，在MUX中一个资产类型对应一个或者多个输入，同时也可以对应一个或者多个不同输出。MUX结构最重要的好处就是将原本多对多的关系，简化为一次多对一和一次一对多的关系，从而简化多资产的验证逻辑。
 
 	type Mux struct {
-		Sources             []*ValueSource      `protobuf:"bytes,1,rep,name=sources" json:"sources,omitempty"`
-		Program             *Program            `protobuf:"bytes,2,opt,name=program" json:"program,omitempty"`
-		WitnessDestinations []*ValueDestination `protobuf:"bytes,3,rep,name=witness_destinations,json=witnessDestinations" json:"witness_destinations,omitempty"`
-		WitnessArguments    [][]byte            `protobuf:"bytes,4,rep,name=witness_arguments,json=witnessArguments,proto3" json:"witness_arguments,omitempty"`
+		Sources             []*ValueSource
+		Program             *Program
+		WitnessDestinations []*ValueDestination
+		WitnessArguments    [][]byte
 	}
 
 ### BUTXO ID
@@ -99,70 +99,70 @@ func EntryID(e Entry) (hash Hash) {
 ### tx_header
 
 	type TxHeader struct {
-		Version        uint64  `protobuf:"varint,1,opt,name=version" json:"version,omitempty"`
-		SerializedSize uint64  `protobuf:"varint,2,opt,name=serialized_size,json=serializedSize" json:"serialized_size,omitempty"`
-		TimeRange      uint64  `protobuf:"varint,3,opt,name=time_range,json=timeRange" json:"time_range,omitempty"`
-		ResultIds      []*Hash `protobuf:"bytes,4,rep,name=result_ids,json=resultIds" json:"result_ids,omitempty"`
+		Version        uint64
+		SerializedSize uint64
+		TimeRange      uint64
+		ResultIds      []*Hash
 	}
 
 ### output1
 
 	type Output struct {
-		Source         *ValueSource `protobuf:"bytes,1,opt,name=source" json:"source,omitempty"`
-		ControlProgram *Program     `protobuf:"bytes,2,opt,name=control_program,json=controlProgram" json:"control_program,omitempty"`
-		Ordinal        uint64       `protobuf:"varint,3,opt,name=ordinal" json:"ordinal,omitempty"`
+		Source         *ValueSource
+		ControlProgram *Program
+		Ordinal        uint64
 	}
 
 ### issuance1
 
 	type Issuance struct {
-		NonceHash              *Hash             `protobuf:"bytes,1,opt,name=nonce_hash,json=nonceHash" json:"nonce_hash,omitempty"`
-		Value                  *AssetAmount      `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
-		WitnessDestination     *ValueDestination `protobuf:"bytes,3,opt,name=witness_destination,json=witnessDestination" json:"witness_destination,omitempty"`
-		WitnessAssetDefinition *AssetDefinition  `protobuf:"bytes,4,opt,name=witness_asset_definition,json=witnessAssetDefinition" json:"witness_asset_definition,omitempty"`
-		WitnessArguments       [][]byte          `protobuf:"bytes,5,rep,name=witness_arguments,json=witnessArguments,proto3" json:"witness_arguments,omitempty"`
-		Ordinal                uint64            `protobuf:"varint,6,opt,name=ordinal" json:"ordinal,omitempty"`
+		NonceHash              *Hash
+		Value                  *AssetAmount
+		WitnessDestination     *ValueDestination
+		WitnessAssetDefinition *AssetDefinition
+		WitnessArguments       [][]byte
+		Ordinal                uint64
 	}
 
 ### mux1
 
 	type Mux struct {
-		Sources             []*ValueSource      `protobuf:"bytes,1,rep,name=sources" json:"sources,omitempty"`
-		Program             *Program            `protobuf:"bytes,2,opt,name=program" json:"program,omitempty"`
-		WitnessDestinations []*ValueDestination `protobuf:"bytes,3,rep,name=witness_destinations,json=witnessDestinations" json:"witness_destinations,omitempty"`
-		WitnessArguments    [][]byte            `protobuf:"bytes,4,rep,name=witness_arguments,json=witnessArguments,proto3" json:"witness_arguments,omitempty"`
+		Sources             []*ValueSource
+		Program             *Program
+		WitnessDestinations []*ValueDestination
+		WitnessArguments    [][]byte
 	}
 
 ### Value Source1
 
 	type ValueSource struct {
-		Ref      *Hash        `protobuf:"bytes,1,opt,name=ref" json:"ref,omitempty"`
-		Value    *AssetAmount `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
-		Position uint64       `protobuf:"varint,3,opt,name=position" json:"position,omitempty"`
+		Ref      *Hash
+		Value    *AssetAmount
+		Position uint64
 	}
 
 ### value Destination1
 
 	type ValueDestination struct {
-		Ref      *Hash        `protobuf:"bytes,1,opt,name=ref" json:"ref,omitempty"`
-		Value    *AssetAmount `protobuf:"bytes,2,opt,name=value" json:"value,omitempty"`
-		Position uint64       `protobuf:"varint,3,opt,name=position" json:"position,omitempty"`
+		Ref      *Hash
+		Value    *AssetAmount
+		Position uint64
 	}
 
 ### Retirement1
 
 	type Retirement struct {
-		Source  *ValueSource `protobuf:"bytes,1,opt,name=source" json:"source,omitempty"`
-		Ordinal uint64       `protobuf:"varint,2,opt,name=ordinal" json:"ordinal,omitempty"`
+		Source  *ValueSource
+		Ordinal uint64
 	}
 
 ### Spend1
 
 	type Spend struct {
-		SpentOutputId      *Hash             `protobuf:"bytes,1,opt,name=spent_output_id,json=spentOutputId" json:"spent_output_id,omitempty"`
-		WitnessDestination *ValueDestination `protobuf:"bytes,2,opt,name=witness_destination,json=witnessDestination" json:"witness_destination,omitempty"`
-		WitnessArguments   [][]byte          `protobuf:"bytes,3,rep,name=witness_arguments,json=witnessArguments,proto3" json:"witness_arguments,omitempty"`
-		Ordinal            uint64            `protobuf:"varint,4,opt,name=ordinal" json:"ordinal,omitempty"`
+		SpentOutputId      *Hash
+		WitnessDestination *ValueDestination
+		WitnessArguments   [][]byte
+		Ordinal            uint64
 	}
 
 ### nonce
