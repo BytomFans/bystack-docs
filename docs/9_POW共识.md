@@ -4,11 +4,11 @@ title: POW共识
 sidebar_label: POW共识
 ---
 
-#### AI-PoW 介绍
+**AI-PoW**
 
 Tensority 算法利用种子和区块头哈希作为输入值并产生相应的工作量。
 
-#### 算法流程
+**算法流程**
 
 Tensority算法总体分为以下几个步骤：
 
@@ -141,6 +141,6 @@ Output: hash
 
 将2.5得到的哈希值与区块要求的难度值相比较，小于规定值则说明挖矿成功，否则更换随机数重新生成区块头，开始新的计算。
 
-#### 随机性分析
+**随机性分析**
 
 可以参考[Tensority算法白皮书](https://github.com/Bytom/bytom/wiki/download/tensority-v1.2.pdf)。

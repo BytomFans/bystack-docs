@@ -7,6 +7,7 @@
                 "type": "subcategory",
                 "label": "架构实现",
                 "ids": [
+                    "docs_66",
                     "docs_3",
                     "docs_4"
                 ]
@@ -20,12 +21,15 @@
                 "type": "subcategory",
                 "label": "协议规范",
                 "ids": [
+                    "docs_67",
+                    "docs_68",
                     "docs_8",
                     "docs_9",
                     "docs_10",
                     "docs_11",
-                    "docs_12",
-                    "docs_13"   
+                    "docs_69",
+                    "docs_70",
+                    "docs_12"
                 ]
             },
             "docs_14"
@@ -62,7 +66,6 @@
             "docs_29",
             "docs_30",
             "docs_31",
-            "docs_32",
             "docs_33",
             "docs_34"
         ],
@@ -74,6 +77,7 @@
         "Blockcenter": [
             "docs_38",
             "docs_39",
+            "docs_63",
             "docs_40"
         ],
         "开发工具": [
@@ -100,7 +104,8 @@
             "docs_53",
             "docs_54",
             "docs_55",
-            "docs_56"
+            "docs_56",
+            "docs_65"
         ],
         "客户端下载": [
             "docs_57",
@@ -110,7 +115,8 @@
              "docs_59"  
         ],
         "FAQ": [      
-             "docs_60"
+             "docs_60",
+             "docs_64"
         ]
     }
 }

@@ -49,27 +49,27 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>社区</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
+            <a href={this.pageUrl('https://t.me/BytomInternational', this.props.language)}>
               Telegram
             </a>
             <a
-              href="https://stackoverflow.com/questions/tagged/"
+              href="https://www.reddit.com/r/BytomBlockchain"
               target="_blank"
               rel="noreferrer noopener">
-              Stack Overflow
+              Reddit
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
+            <a href="https://discordapp.com/invite/U3RSYr5">Discord</a>
             <a
-              href="https://twitter.com/"
+              href="https://www.meetup.com/Bytomblockchain/"
               target="_blank"
               rel="noreferrer noopener">
-              Twitter
+              Meetup
             </a>
           </div>
           <div>
             <h5>更多</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://bytom.io/zh/">官网</a>
+            <a href="https://github.com/BytomFans/bystack-docs">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}

@@ -1,5 +1,5 @@
 # BytomJava.github.io
-此文档介绍了包含[bytom java sdk](<https://github.com/Bytom/bytom-java-sdk>)提供支持的网站配置和文档。
+此文档介绍了包含[bytom docs](https://github.com/BytomFans/bystack-docs)提供支持的网站配置和文档。
 
 ## 入门
 
@@ -14,7 +14,7 @@
 3. 在github上clone项目到本地文件夹，项目中包含两个文件夹： `docs` and `website`.
 
 ```bash
-git clone https://github.com/BytomFans/java-docs.git
+git clone https://github.com/BytomFans/bystack-docs.git
 ```
 
 ### 安装
@@ -29,7 +29,7 @@ git clone https://github.com/BytomFans/java-docs.git
 1. 使用命令 `yarn start` or `npm start`运行网站.
 2. 如果没有自动打开本地的示例网站，请在 [http://localhost:3000](http://localhost:3000/) 访问站点.
 
-![](./img/example.png)
+![](.img/example.png)
 
 ### 概述
 

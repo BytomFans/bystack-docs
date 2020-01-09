@@ -1,7 +1,7 @@
 ---
 id: docs_41
-title: Byone API
-sidebar_label: Vapor API
+title: Bytom API
+sidebar_label: Bytom API
 ---
 
 **API 调用点**

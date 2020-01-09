@@ -19,7 +19,7 @@ const users = [{
 }, ];
 
 const siteConfig = {
-    title: 'Bystack开发者文档', // Title for your website.
+    title: 'Bytom开发文档', // Title for your website.
     tagline: 'A website for Bystack docs',
     url: 'https://bytomfans.github.io', // Your website URL
     baseUrl: '/bystack-docs/', // Base URL for your project */
