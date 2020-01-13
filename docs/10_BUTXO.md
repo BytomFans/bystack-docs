@@ -51,6 +51,18 @@ Entry是由区块链的每个可寻址单元执行的接口： 交易部件如sp
 
 每个Entry有以下通用结构：
 
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | Entry的类型，例如Issuance1、Retirement1等等 |
+|Body | struct | 因类型而异 |
+|Witness | struct | 因类型而异 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|proto.Message | Struct | 类型产生唯一标识可读短字符串 |
+|Type | string | Entry的Type |
+|writeForHash | Struct | 哈希entry的主体 |
+
 	type Entry interface {
 		proto.Message
 
@@ -63,6 +75,10 @@ Entry是由区块链的每个可寻址单元执行的接口： 交易部件如sp
 	}
 
 ### Entry ID
+
+Entry ID基于其余其 _类型_ 与 _主体_ 。类型编码成原始字节序列（不带长度前缀）。主体编码为连接body结构的所有字段的SHA3-256哈希。
+
+	entryID = SHA3-256("entryid:" || type || ":" || SHA3-256(body))
 
 ```bash
 func EntryID(e Entry) (hash Hash) {
@@ -100,6 +116,19 @@ func EntryID(e Entry) (hash Hash) {
 
 ### tx_header
 
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "txheader" |
+|Body | struct | 见下方 |
+|Witness | struct | 空的结构体 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Version | uint64 | 交易版本 = 1 |
+|SerializedSize | uint64 | 序列化结果大小 |
+|TimeRange | uint64 | 时间范围 |
+|ResultIds | *Hash | 指针列表指向输出或指令引退。该列表一定包含至少一项元素。 |
+
 	type TxHeader struct {
 		Version        uint64
 		SerializedSize uint64
@@ -107,8 +136,19 @@ func EntryID(e Entry) (hash Hash) {
 		ResultIds      []*Hash
 	}
 
-
 ### output1
+
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "output1" |
+|Body | struct | 见下方 |
+|Witness | struct | 空的结构体 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Source | *ValueSource | 单元的Source包含于output之中。  |
+|ControlProgram | *Program | 控制其输出的程序 |
+|Ordinal | uint64 | 序号 |
 
 	type Output struct {
 		Source         *ValueSource
@@ -117,6 +157,24 @@ func EntryID(e Entry) (hash Hash) {
 	}
 
 ### issuance1
+
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "issuance1" |
+|Body | struct | 见下方 |
+|Witness | struct | 见下方 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|NonceHash | *Hash | 临时的哈希  |
+|Value | *AssetAmount | 已发行的Asset ID和数量.  |
+|Ordinal | uint64 | 序号 |
+
+| 见证字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|WitnessDestination | *ValueDestination | 该[Spend](#spend1)中值的Destination（前指针）。直接指向某一`Output`或`Mux`，经过其自己的`Destinations`指向`Output` Entry  |
+|WitnessAssetDefinition | *AssetDefinition | 已发行Asset的Asset定义.  |
+|WitnessArguments | *byte | control program的参数包含于SpentOutput |
 
 	type Issuance struct {
 		NonceHash              *Hash
@@ -129,6 +187,22 @@ func EntryID(e Entry) (hash Hash) {
 
 ### mux1
 
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "mux1" |
+|Body | struct | 见下方 |
+|Witness | struct | 见下方 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Sources | *ValueSource | 单元的Source包含于Mux之中。  |
+|Program | *Program | 控制Mux中值并一定计算为true的程序  |
+
+| 见证字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|WitnessDestination | *ValueDestination | 该Mux中值的Destination（前指针）。可以直接指向某一`Output`或其他Mux，经过其自己的`Destinations`指向`Output` Entry  |
+|WitnessArguments | *byte | program的参数包含于[Nonce](#nonce) |
+
 	type Mux struct {
 		Sources             []*ValueSource
 		Program             *Program
@@ -138,6 +212,12 @@ func EntryID(e Entry) (hash Hash) {
 
 ### Value Source1
 
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Ref | *Hash | 上一个entry引用自该ValueSource。 |
+|Value | *AssetAmount | 数量和资产ID包含于引用的entry。 |
+|Position | uint64 | 如果该source是[Mux](#mux1) entry，那么`Position`就是输出的索引。如果该source是[Issuance](#issuance1)或[Spend](#spend1) entry，那么`Position`一定是0。 |
+
 	type ValueSource struct {
 		Ref      *Hash
 		Value    *AssetAmount
@@ -145,6 +225,12 @@ func EntryID(e Entry) (hash Hash) {
 	}
 
 ### value Destination1
+
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Ref | *Hash | 下一个entry引用自该ValueDestination。 |
+|Value | *AssetAmount | 数量和资产ID包含于引用的entry。 |
+|Position | uint64 | 如果该destination是[Mux](#mux1) entry，那么`Position`就是一个mux的标号输入。如果不是，那么`Position`一定是0。 |
 
 	type ValueDestination struct {
 		Ref      *Hash
@@ -154,12 +240,39 @@ func EntryID(e Entry) (hash Hash) {
 
 ### Retirement1
 
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "retirement1" |
+|Body | struct | 见下方 |
+|Witness | struct | 空的结构体 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Source | *ValueSource | 退役的单元Source。  |
+|Ordinal | uint64 | 序号 |
+
 	type Retirement struct {
 		Source  *ValueSource
 		Ordinal uint64
 	}
 
 ### Spend1
+
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "mux1" |
+|Body | struct | 见下方 |
+|Witness | struct | 见下方 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|SpentOutputId | *Hash | 已被该spend消耗的Output entry |
+|Ordinal | uint64 | 序号 |
+
+| 见证字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|WitnessDestination | *ValueDestination | 该spend中值的Destination（前指针）。可以直接指向某一`Output`或Mux，经过其自己的`Destinations`指向`Output` Entry  |
+|WitnessArguments | *byte | program的参数包含于SpentOutput |
 
 	type Spend struct {
 		SpentOutputId      *Hash
@@ -170,8 +283,29 @@ func EntryID(e Entry) (hash Hash) {
 
 ### nonce
 
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "nonce" |
+|Body | struct | 见下方 |
+|Witness | struct | 见下方 |
+
+| 主体字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Program | Program | 保护nonce不重启并一定计算为true的程序  |
+|Time Range | Pointer | 引用TimeRange Entry  |
+
+| 见证字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|WitnessArguments | *byte | program的参数包含于[Nonce](#nonce) |
+
 	Nonce uint64
 
 ### timerange
+
+| 字段 | 类型 | 描述 | 
+| --- | --- |--- |
+|Type | string | "timerange" |
+|Body | struct | 空的结构体 |
+|Witness | struct | 空的结构体 |
 
 	timeRange uint64
