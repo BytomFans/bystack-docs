@@ -286,17 +286,8 @@ func EntryID(e Entry) (hash Hash) {
 | 字段 | 类型 | 描述 | 
 | --- | --- |--- |
 |Type | string | "nonce" |
-|Body | struct | 见下方 |
-|Witness | struct | 见下方 |
-
-| 主体字段 | 类型 | 描述 | 
-| --- | --- |--- |
-|Program | Program | 保护nonce不重启并一定计算为true的程序  |
-|Time Range | Pointer | 引用TimeRange Entry  |
-
-| 见证字段 | 类型 | 描述 | 
-| --- | --- |--- |
-|WitnessArguments | *byte | program的参数包含于[Nonce](#nonce) |
+|Body | struct | 空的结构体 |
+|Witness | struct | 空的结构体 |
 
 	Nonce uint64
 
