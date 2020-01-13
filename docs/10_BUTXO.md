@@ -43,11 +43,14 @@ BUTXO ID就是`OutputID`,可花费的utxo，其实就是找到接收地址或接
 
 ## Entry
 
+Entry是由区块链的每个可寻址单元执行的接口： 交易部件如spends、issuances、outputs和retirements等等，外加区块头。
+
+区块链 _有向无环图_ 中的Entry:区块头引用transaction header（默克尔树），而transaction header又引用来自mux、issuances和spend的output。
+
 ### 数据结构
 
-	// Entry is the interface implemented by each addressable unit in a
-	// blockchain: transaction components such as spends, issuances,
-	// outputs, and retirements (among others), plus blockheaders.
+每个Entry有以下通用结构：
+
 	type Entry interface {
 		proto.Message
 
@@ -58,7 +61,6 @@ BUTXO ID就是`OutputID`,可花费的utxo，其实就是找到接收地址或接
 		// writeForHash writes the entry's body for hashing.
 		writeForHash(w io.Writer)
 	}
-
 
 ### Entry ID
 
@@ -104,6 +106,7 @@ func EntryID(e Entry) (hash Hash) {
 		TimeRange      uint64
 		ResultIds      []*Hash
 	}
+
 
 ### output1
 
