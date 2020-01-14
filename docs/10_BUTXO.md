@@ -124,9 +124,9 @@ func EntryID(e Entry) (hash Hash) {
 
 | 主体字段 | 类型 | 描述 | 
 | --- | --- |--- |
-|Version | uint64 | 交易版本 = 1 |
-|SerializedSize | uint64 | 序列化结果大小 |
-|TimeRange | uint64 | 时间范围 |
+|Version | uint64 | 交易版本号 = 1 |
+|SerializedSize | uint64 | 交易总字节数 |
+|TimeRange | uint64 | 交易过期时间 |
 |ResultIds | *Hash | 指针列表指向输出或指令引退。该列表一定包含至少一项元素。 |
 
 	type TxHeader struct {
