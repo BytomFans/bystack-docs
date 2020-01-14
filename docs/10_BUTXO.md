@@ -80,7 +80,7 @@ Entry ID基于其余其 _类型_ 与 _主体_ 。类型编码成原始字节序�
 
 	entryID = SHA3-256("entryid:" || type || ":" || SHA3-256(body))
 
-```bash
+```golang
 func EntryID(e Entry) (hash Hash) {
 	if e == nil {
 		return hash
