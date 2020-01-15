@@ -6,7 +6,7 @@ sidebar_label: POW共识
 
 **AI-PoW**
 
-Tensority 算法利用种子和区块头哈希作为输入值并产生相应的工作量。
+Tensority算法利用种子和区块头哈希作为输入值并产生相应的工作量。
 
 **算法流程**
 
@@ -21,16 +21,16 @@ Tensority算法总体分为以下几个步骤：
 
 **生成seed**
 
-种子 seed 是生成 cache 的输入值。
+种子seed是生成cache的输入值。
 
-seed 每 256 块改变一次。第 0～256 块 (此处有 257 个块) 使用第 0 块的 block header hash，第 257～512 块使用第 256 块的 block header hash，第 513～768 块使用第 512 块的hash，以此类推。
+种子每256个块更新一次。第0～256块（此处有257个块）使用第0块的区块头哈希，第257～512块使用第256块的区块头哈希，第513～768块使用第512块的哈希，以此类推。
 
 **生成cache**
 
-cache由seed生成，seed和cache是相互对应的关系，因此cache的产生周期也与seed相同。cache的作用就是填充256个矩阵组成的列表，因为每个矩阵行列均为256，每个元素为长度为一个字节的整型数据int8，所以cache的大小为256X256X256X1B=16777216B=16MB。生成cache算法使用的是Scrypt算法，Scrypt算法在计算过程中会产生相应的伪随机数集合，以此作为cache值。由于Scrypt算法的特点，需要输入一个128字节的seed作为输入值。因此，首先需要将2.1得到的32字节的seed值进行扩展，得到一个128字节的扩展种子extseed。之后将extseed进行循环128次Scrypt中的smix过程，将128次过程中产生的随机数集合连接起来组成cache。具体算法如Algorithm calcSeedCache.
+缓存cache由seed生成，seed和cache是相互对应的关系，因此cache的产生周期也与seed相同。cache的作用就是填充256个矩阵组成的列表，因为每个矩阵行列均为256，每个元素为长度为一个字节的整型数据int8，所以cache的大小为256X256X256X1B=16777216B=16MB。生成cache算法使用的是Scrypt算法，Scrypt算法在计算过程中会产生相应的伪随机数集合，以此作为cache值。由于Scrypt算法的特点，需要输入一个128字节的seed作为输入值。因此，首先需要将2.1得到的32字节的seed值进行扩展，得到一个128字节的扩展种子extseed。之后将extseed进行循环128次Scrypt中的smix过程，将128次过程中产生的随机数集合连接起来组成cache。具体算法如Algorithm calcSeedCache.
 
 ```
-Algorithm: calcSeedCache
+Algorithm: 根据种子生成缓存（calcSeedCache）
 ------------------------------------------------
 Input: seed
 Output: cache
@@ -57,7 +57,7 @@ Output: cache
 16MB的cache分成128组，每一组中有32X1024个元素，每个元素值类型为uint32。每一组中，将32个元素视为一个单元，由此可以得到一个规格为32X1024X128的缓存矩阵列表tmpmatrix，每个元素为uint32。重组矩阵列表recomposedmatrix规格也与tmpmatrix相同。tmpmatrix中奇数索引的元素值与recomposedmatrix中的1至512号元素相互对应。类似，tmpmatrix中偶数索引的元素值与recomposedmatrix中的513至1024号元素相互对应。之后将之转化为规格为256X256X256的矩阵列表cachematrix，每个矩阵元素为一个字节的int8。具体算法如Algorithm constructCacheMatrix。
 
 ```
-Algorithm: constructCacheMatrix
+Algorithm: 构造缓存矩阵（constructCacheMatrix）
 ------------------------------------------------------------------------------
 Input: cache
 Output: cachematrix
