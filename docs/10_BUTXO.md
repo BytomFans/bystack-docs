@@ -212,6 +212,8 @@ func EntryID(e Entry) (hash Hash) {
 
 ### Value Source1
 
+Entry用ValueSource引用其他Entry提供其值。
+
 | 字段 | 类型 | 描述 | 
 | --- | --- |--- |
 | Ref | *Hash | 上一个entry引用自该ValueSource。 |
@@ -225,6 +227,8 @@ func EntryID(e Entry) (hash Hash) {
 	}
 
 ### value Destination1
+
+Entry用ValueDestination引用其他Entry从当前Entry接收值。
 
 | 字段 | 类型 | 描述 | 
 | --- | --- |--- |
@@ -281,22 +285,3 @@ func EntryID(e Entry) (hash Hash) {
 		Ordinal            uint64
 	}
 
-### nonce
-
-| 字段 | 类型 | 描述 | 
-| --- | --- |--- |
-| Type | string | "nonce" |
-| Body | struct | 空的结构体 |
-| Witness | struct | 空的结构体 |
-
-	Nonce uint64
-
-### timerange
-
-| 字段 | 类型 | 描述 | 
-| --- | --- |--- |
-| Type | string | "timerange" |
-| Body | struct | 空的结构体 |
-| Witness | struct | 空的结构体 |
-
-	timeRange uint64
